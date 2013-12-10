@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
+		3518D1571854583000EFC1AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1561854583000EFC1AF /* CoreGraphics.framework */; };
+		3518D1591854583000EFC1AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1581854583000EFC1AF /* UIKit.framework */; };
+		3518D15F1854583000EFC1AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3518D15D1854583000EFC1AF /* InfoPlist.strings */; };
+		3518D1611854583000EFC1AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D1601854583000EFC1AF /* main.m */; };
+		3518D1651854583000EFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D1641854583000EFC1AF /* AppDelegate.m */; };
+		3518D1681854583000EFC1AF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1661854583000EFC1AF /* Main_iPhone.storyboard */; };
+		3518D16B1854583000EFC1AF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1691854583000EFC1AF /* Main_iPad.storyboard */; };
+		3518D16E1854583000EFC1AF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D16D1854583000EFC1AF /* HomeViewController.m */; };
+		3518D1701854583000EFC1AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3518D16F1854583000EFC1AF /* Images.xcassets */; };
+		3518D1771854583000EFC1AF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1761854583000EFC1AF /* XCTest.framework */; };
+		3518D1781854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
+		3518D1791854583000EFC1AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1581854583000EFC1AF /* UIKit.framework */; };
+		3518D1811854583000EFC1AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3518D17F1854583000EFC1AF /* InfoPlist.strings */; };
+		3518D1831854583000EFC1AF /* VITacademicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D1821854583000EFC1AF /* VITacademicsTests.m */; };
+		3518D19218545F1300EFC1AF /* RMStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D18D18545F1300EFC1AF /* RMStep.m */; };
+		3518D19318545F1300EFC1AF /* RMStepsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D18F18545F1300EFC1AF /* RMStepsBar.m */; };
+		3518D19418545F1300EFC1AF /* RMStepsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D19118545F1300EFC1AF /* RMStepsController.m */; };
+		3518D19918545FE500EFC1AF /* InitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D19818545FE500EFC1AF /* InitView.m */; };
+		3518D1A51854633B00EFC1AF /* MuseoSans_500_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D19B1854633B00EFC1AF /* MuseoSans_500_Italic.otf */; };
+		3518D1A61854633B00EFC1AF /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D19C1854633B00EFC1AF /* MuseoSans_500.otf */; };
+		3518D1A71854633B00EFC1AF /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D19D1854633B00EFC1AF /* MuseoSans_700.otf */; };
+		3518D1A81854633B00EFC1AF /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D19E1854633B00EFC1AF /* MuseoSans_900.otf */; };
+		3518D1A91854633B00EFC1AF /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D19F1854633B00EFC1AF /* MuseoSans-100.otf */; };
+		3518D1AA1854633B00EFC1AF /* MuseoSans-100Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1A01854633B00EFC1AF /* MuseoSans-100Italic.otf */; };
+		3518D1AB1854633B00EFC1AF /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1A11854633B00EFC1AF /* MuseoSans-300.otf */; };
+		3518D1AC1854633B00EFC1AF /* MuseoSans-300Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1A21854633B00EFC1AF /* MuseoSans-300Italic.otf */; };
+		3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1A31854633B00EFC1AF /* MuseoSans-700Italic.otf */; };
+		3518D1AE1854633B00EFC1AF /* MuseoSans-900Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1A41854633B00EFC1AF /* MuseoSans-900Italic.otf */; };
+		3518D1B41854CF7600EFC1AF /* StepsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D1B31854CF7600EFC1AF /* StepsViewController.m */; };
+		3518D1B61854F7F800EFC1AF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1B51854F7F800EFC1AF /* Parse.framework */; };
+		3518D1B81854F82200EFC1AF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1B71854F82200EFC1AF /* AudioToolbox.framework */; };
+		3518D1BA1854F82800EFC1AF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1B91854F82800EFC1AF /* CFNetwork.framework */; };
+		3518D1BC1854F83400EFC1AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1BB1854F83400EFC1AF /* CoreLocation.framework */; };
+		3518D1BE1854F83D00EFC1AF /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1BD1854F83D00EFC1AF /* libz.1.1.3.dylib */; };
+		3518D1C01854F84500EFC1AF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1BF1854F84500EFC1AF /* MobileCoreServices.framework */; };
+		3518D1C21854F84900EFC1AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C11854F84900EFC1AF /* QuartzCore.framework */; };
+		3518D1C41854F85000EFC1AF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C31854F85000EFC1AF /* Security.framework */; };
+		3518D1C61854F85400EFC1AF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C51854F85400EFC1AF /* StoreKit.framework */; };
+		3518D1C81854F85800EFC1AF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */; };
+		3518D1CA1854F97000EFC1AF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C91854F97000EFC1AF /* FacebookSDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3518D17A1854583000EFC1AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3518D1491854583000EFC1AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3518D1501854583000EFC1AF;
+			remoteInfo = VITacademics;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3518D1511854583000EFC1AF /* VITacademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VITacademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3518D1541854583000EFC1AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3518D1561854583000EFC1AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3518D1581854583000EFC1AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3518D15C1854583000EFC1AF /* VITacademics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VITacademics-Info.plist"; sourceTree = "<group>"; };
+		3518D15E1854583000EFC1AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3518D1601854583000EFC1AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3518D1621854583000EFC1AF /* VITacademics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VITacademics-Prefix.pch"; sourceTree = "<group>"; };
+		3518D1631854583000EFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3518D1641854583000EFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3518D1671854583000EFC1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		3518D16A1854583000EFC1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		3518D16C1854583000EFC1AF /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3518D16D1854583000EFC1AF /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3518D16F1854583000EFC1AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3518D1751854583000EFC1AF /* VITacademicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VITacademicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3518D1761854583000EFC1AF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3518D17E1854583000EFC1AF /* VITacademicsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VITacademicsTests-Info.plist"; sourceTree = "<group>"; };
+		3518D1801854583000EFC1AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3518D1821854583000EFC1AF /* VITacademicsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VITacademicsTests.m; sourceTree = "<group>"; };
+		3518D18C18545F1300EFC1AF /* RMStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStep.h; sourceTree = "<group>"; };
+		3518D18D18545F1300EFC1AF /* RMStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMStep.m; sourceTree = "<group>"; };
+		3518D18E18545F1300EFC1AF /* RMStepsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStepsBar.h; sourceTree = "<group>"; };
+		3518D18F18545F1300EFC1AF /* RMStepsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMStepsBar.m; sourceTree = "<group>"; };
+		3518D19018545F1300EFC1AF /* RMStepsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStepsController.h; sourceTree = "<group>"; };
+		3518D19118545F1300EFC1AF /* RMStepsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMStepsController.m; sourceTree = "<group>"; };
+		3518D19718545FE500EFC1AF /* InitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitView.h; sourceTree = "<group>"; };
+		3518D19818545FE500EFC1AF /* InitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitView.m; sourceTree = "<group>"; };
+		3518D19B1854633B00EFC1AF /* MuseoSans_500_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500_Italic.otf; sourceTree = "<group>"; };
+		3518D19C1854633B00EFC1AF /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
+		3518D19D1854633B00EFC1AF /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
+		3518D19E1854633B00EFC1AF /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
+		3518D19F1854633B00EFC1AF /* MuseoSans-100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100.otf"; sourceTree = "<group>"; };
+		3518D1A01854633B00EFC1AF /* MuseoSans-100Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100Italic.otf"; sourceTree = "<group>"; };
+		3518D1A11854633B00EFC1AF /* MuseoSans-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300.otf"; sourceTree = "<group>"; };
+		3518D1A21854633B00EFC1AF /* MuseoSans-300Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300Italic.otf"; sourceTree = "<group>"; };
+		3518D1A31854633B00EFC1AF /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
+		3518D1A41854633B00EFC1AF /* MuseoSans-900Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900Italic.otf"; sourceTree = "<group>"; };
+		3518D1B21854CF7600EFC1AF /* StepsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepsViewController.h; sourceTree = "<group>"; };
+		3518D1B31854CF7600EFC1AF /* StepsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsViewController.m; sourceTree = "<group>"; };
+		3518D1B51854F7F800EFC1AF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		3518D1B71854F82200EFC1AF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3518D1B91854F82800EFC1AF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3518D1BB1854F83400EFC1AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3518D1BD1854F83D00EFC1AF /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		3518D1BF1854F84500EFC1AF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3518D1C11854F84900EFC1AF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3518D1C31854F85000EFC1AF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3518D1C51854F85400EFC1AF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3518D1C91854F97000EFC1AF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3518D14E1854583000EFC1AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3518D1C81854F85800EFC1AF /* SystemConfiguration.framework in Frameworks */,
+				3518D1C61854F85400EFC1AF /* StoreKit.framework in Frameworks */,
+				3518D1C41854F85000EFC1AF /* Security.framework in Frameworks */,
+				3518D1C21854F84900EFC1AF /* QuartzCore.framework in Frameworks */,
+				3518D1C01854F84500EFC1AF /* MobileCoreServices.framework in Frameworks */,
+				3518D1BE1854F83D00EFC1AF /* libz.1.1.3.dylib in Frameworks */,
+				3518D1BC1854F83400EFC1AF /* CoreLocation.framework in Frameworks */,
+				3518D1571854583000EFC1AF /* CoreGraphics.framework in Frameworks */,
+				3518D1BA1854F82800EFC1AF /* CFNetwork.framework in Frameworks */,
+				3518D1B81854F82200EFC1AF /* AudioToolbox.framework in Frameworks */,
+				3518D1591854583000EFC1AF /* UIKit.framework in Frameworks */,
+				3518D1B61854F7F800EFC1AF /* Parse.framework in Frameworks */,
+				3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */,
+				3518D1CA1854F97000EFC1AF /* FacebookSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3518D1721854583000EFC1AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3518D1771854583000EFC1AF /* XCTest.framework in Frameworks */,
+				3518D1791854583000EFC1AF /* UIKit.framework in Frameworks */,
+				3518D1781854583000EFC1AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3518D1481854583000EFC1AF = {
+			isa = PBXGroup;
+			children = (
+				3518D15A1854583000EFC1AF /* VITacademics */,
+				3518D17C1854583000EFC1AF /* VITacademicsTests */,
+				3518D1531854583000EFC1AF /* Frameworks */,
+				3518D1521854583000EFC1AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3518D1521854583000EFC1AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3518D1511854583000EFC1AF /* VITacademics.app */,
+				3518D1751854583000EFC1AF /* VITacademicsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3518D1531854583000EFC1AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3518D1C91854F97000EFC1AF /* FacebookSDK.framework */,
+				3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */,
+				3518D1C51854F85400EFC1AF /* StoreKit.framework */,
+				3518D1C31854F85000EFC1AF /* Security.framework */,
+				3518D1C11854F84900EFC1AF /* QuartzCore.framework */,
+				3518D1BF1854F84500EFC1AF /* MobileCoreServices.framework */,
+				3518D1BD1854F83D00EFC1AF /* libz.1.1.3.dylib */,
+				3518D1BB1854F83400EFC1AF /* CoreLocation.framework */,
+				3518D1B91854F82800EFC1AF /* CFNetwork.framework */,
+				3518D1B71854F82200EFC1AF /* AudioToolbox.framework */,
+				3518D1B51854F7F800EFC1AF /* Parse.framework */,
+				3518D1541854583000EFC1AF /* Foundation.framework */,
+				3518D1561854583000EFC1AF /* CoreGraphics.framework */,
+				3518D1581854583000EFC1AF /* UIKit.framework */,
+				3518D1761854583000EFC1AF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3518D15A1854583000EFC1AF /* VITacademics */ = {
+			isa = PBXGroup;
+			children = (
+				3518D19618545F2200EFC1AF /* Libraries */,
+				3518D1631854583000EFC1AF /* AppDelegate.h */,
+				3518D1641854583000EFC1AF /* AppDelegate.m */,
+				3518D1661854583000EFC1AF /* Main_iPhone.storyboard */,
+				3518D1691854583000EFC1AF /* Main_iPad.storyboard */,
+				3518D16C1854583000EFC1AF /* HomeViewController.h */,
+				3518D16D1854583000EFC1AF /* HomeViewController.m */,
+				3518D16F1854583000EFC1AF /* Images.xcassets */,
+				3518D15B1854583000EFC1AF /* Supporting Files */,
+				3518D19718545FE500EFC1AF /* InitView.h */,
+				3518D19818545FE500EFC1AF /* InitView.m */,
+				3518D1B21854CF7600EFC1AF /* StepsViewController.h */,
+				3518D1B31854CF7600EFC1AF /* StepsViewController.m */,
+			);
+			path = VITacademics;
+			sourceTree = "<group>";
+		};
+		3518D15B1854583000EFC1AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3518D19A1854633100EFC1AF /* Fonts */,
+				3518D15C1854583000EFC1AF /* VITacademics-Info.plist */,
+				3518D15D1854583000EFC1AF /* InfoPlist.strings */,
+				3518D1601854583000EFC1AF /* main.m */,
+				3518D1621854583000EFC1AF /* VITacademics-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3518D17C1854583000EFC1AF /* VITacademicsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3518D1821854583000EFC1AF /* VITacademicsTests.m */,
+				3518D17D1854583000EFC1AF /* Supporting Files */,
+			);
+			path = VITacademicsTests;
+			sourceTree = "<group>";
+		};
+		3518D17D1854583000EFC1AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3518D17E1854583000EFC1AF /* VITacademicsTests-Info.plist */,
+				3518D17F1854583000EFC1AF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3518D19518545F1900EFC1AF /* RMStepsController */ = {
+			isa = PBXGroup;
+			children = (
+				3518D18C18545F1300EFC1AF /* RMStep.h */,
+				3518D18D18545F1300EFC1AF /* RMStep.m */,
+				3518D18E18545F1300EFC1AF /* RMStepsBar.h */,
+				3518D18F18545F1300EFC1AF /* RMStepsBar.m */,
+				3518D19018545F1300EFC1AF /* RMStepsController.h */,
+				3518D19118545F1300EFC1AF /* RMStepsController.m */,
+			);
+			name = RMStepsController;
+			sourceTree = "<group>";
+		};
+		3518D19618545F2200EFC1AF /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				3518D19518545F1900EFC1AF /* RMStepsController */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		3518D19A1854633100EFC1AF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3518D19B1854633B00EFC1AF /* MuseoSans_500_Italic.otf */,
+				3518D19C1854633B00EFC1AF /* MuseoSans_500.otf */,
+				3518D19D1854633B00EFC1AF /* MuseoSans_700.otf */,
+				3518D19E1854633B00EFC1AF /* MuseoSans_900.otf */,
+				3518D19F1854633B00EFC1AF /* MuseoSans-100.otf */,
+				3518D1A01854633B00EFC1AF /* MuseoSans-100Italic.otf */,
+				3518D1A11854633B00EFC1AF /* MuseoSans-300.otf */,
+				3518D1A21854633B00EFC1AF /* MuseoSans-300Italic.otf */,
+				3518D1A31854633B00EFC1AF /* MuseoSans-700Italic.otf */,
+				3518D1A41854633B00EFC1AF /* MuseoSans-900Italic.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3518D1501854583000EFC1AF /* VITacademics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3518D1861854583000EFC1AF /* Build configuration list for PBXNativeTarget "VITacademics" */;
+			buildPhases = (
+				3518D14D1854583000EFC1AF /* Sources */,
+				3518D14E1854583000EFC1AF /* Frameworks */,
+				3518D14F1854583000EFC1AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VITacademics;
+			productName = VITacademics;
+			productReference = 3518D1511854583000EFC1AF /* VITacademics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3518D1741854583000EFC1AF /* VITacademicsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3518D1891854583000EFC1AF /* Build configuration list for PBXNativeTarget "VITacademicsTests" */;
+			buildPhases = (
+				3518D1711854583000EFC1AF /* Sources */,
+				3518D1721854583000EFC1AF /* Frameworks */,
+				3518D1731854583000EFC1AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3518D17B1854583000EFC1AF /* PBXTargetDependency */,
+			);
+			name = VITacademicsTests;
+			productName = VITacademicsTests;
+			productReference = 3518D1751854583000EFC1AF /* VITacademicsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3518D1491854583000EFC1AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Siddharth Gupta";
+				TargetAttributes = {
+					3518D1741854583000EFC1AF = {
+						TestTargetID = 3518D1501854583000EFC1AF;
+					};
+				};
+			};
+			buildConfigurationList = 3518D14C1854583000EFC1AF /* Build configuration list for PBXProject "VITacademics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3518D1481854583000EFC1AF;
+			productRefGroup = 3518D1521854583000EFC1AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3518D1501854583000EFC1AF /* VITacademics */,
+				3518D1741854583000EFC1AF /* VITacademicsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3518D14F1854583000EFC1AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3518D1AB1854633B00EFC1AF /* MuseoSans-300.otf in Resources */,
+				3518D1AA1854633B00EFC1AF /* MuseoSans-100Italic.otf in Resources */,
+				3518D1AC1854633B00EFC1AF /* MuseoSans-300Italic.otf in Resources */,
+				3518D1A61854633B00EFC1AF /* MuseoSans_500.otf in Resources */,
+				3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */,
+				3518D16B1854583000EFC1AF /* Main_iPad.storyboard in Resources */,
+				3518D1AE1854633B00EFC1AF /* MuseoSans-900Italic.otf in Resources */,
+				3518D1A51854633B00EFC1AF /* MuseoSans_500_Italic.otf in Resources */,
+				3518D1701854583000EFC1AF /* Images.xcassets in Resources */,
+				3518D1681854583000EFC1AF /* Main_iPhone.storyboard in Resources */,
+				3518D15F1854583000EFC1AF /* InfoPlist.strings in Resources */,
+				3518D1A81854633B00EFC1AF /* MuseoSans_900.otf in Resources */,
+				3518D1A71854633B00EFC1AF /* MuseoSans_700.otf in Resources */,
+				3518D1A91854633B00EFC1AF /* MuseoSans-100.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3518D1731854583000EFC1AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3518D1811854583000EFC1AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3518D14D1854583000EFC1AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3518D16E1854583000EFC1AF /* HomeViewController.m in Sources */,
+				3518D19318545F1300EFC1AF /* RMStepsBar.m in Sources */,
+				3518D19418545F1300EFC1AF /* RMStepsController.m in Sources */,
+				3518D1651854583000EFC1AF /* AppDelegate.m in Sources */,
+				3518D19218545F1300EFC1AF /* RMStep.m in Sources */,
+				3518D1611854583000EFC1AF /* main.m in Sources */,
+				3518D1B41854CF7600EFC1AF /* StepsViewController.m in Sources */,
+				3518D19918545FE500EFC1AF /* InitView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3518D1711854583000EFC1AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3518D1831854583000EFC1AF /* VITacademicsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3518D17B1854583000EFC1AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3518D1501854583000EFC1AF /* VITacademics */;
+			targetProxy = 3518D17A1854583000EFC1AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3518D15D1854583000EFC1AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3518D15E1854583000EFC1AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3518D1661854583000EFC1AF /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3518D1671854583000EFC1AF /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		3518D1691854583000EFC1AF /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3518D16A1854583000EFC1AF /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		3518D17F1854583000EFC1AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3518D1801854583000EFC1AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3518D1841854583000EFC1AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3518D1851854583000EFC1AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3518D1871854583000EFC1AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Siddharth/Documents/VITacademics,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VITacademics/VITacademics-Prefix.pch";
+				INFOPLIST_FILE = "VITacademics/VITacademics-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3518D1881854583000EFC1AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Siddharth/Documents/VITacademics,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VITacademics/VITacademics-Prefix.pch";
+				INFOPLIST_FILE = "VITacademics/VITacademics-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3518D18A1854583000EFC1AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VITacademics.app/VITacademics";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VITacademics/VITacademics-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VITacademicsTests/VITacademicsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3518D18B1854583000EFC1AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VITacademics.app/VITacademics";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VITacademics/VITacademics-Prefix.pch";
+				INFOPLIST_FILE = "VITacademicsTests/VITacademicsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3518D14C1854583000EFC1AF /* Build configuration list for PBXProject "VITacademics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3518D1841854583000EFC1AF /* Debug */,
+				3518D1851854583000EFC1AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3518D1861854583000EFC1AF /* Build configuration list for PBXNativeTarget "VITacademics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3518D1871854583000EFC1AF /* Debug */,
+				3518D1881854583000EFC1AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3518D1891854583000EFC1AF /* Build configuration list for PBXNativeTarget "VITacademicsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3518D18A1854583000EFC1AF /* Debug */,
+				3518D18B1854583000EFC1AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3518D1491854583000EFC1AF /* Project object */;
+}
