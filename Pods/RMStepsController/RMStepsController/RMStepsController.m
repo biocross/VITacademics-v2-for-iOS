@@ -47,13 +47,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self loadStepViewControllers];
+    [self showStepViewController:[self.childViewControllers objectAtIndex:0] animated:NO];
+    
     [self.view addSubview:self.stepViewControllerContainer];
     [self.view addSubview:self.stepsBar];
     
+    id<UILayoutSupport> topGuide = self.topLayoutGuide;
     RMStepsBar *stepsBar = self.stepsBar;
     UIView *container = self.stepViewControllerContainer;
     
-    NSDictionary *bindingsDict = NSDictionaryOfVariableBindings(stepsBar, container);
+    NSDictionary *bindingsDict = NSDictionaryOfVariableBindings(topGuide, stepsBar, container);
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[stepsBar]" options:0 metrics:nil views:bindingsDict]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[container]-(0)-|" options:0 metrics:nil views:bindingsDict]];
@@ -62,9 +66,12 @@
     
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.stepsBar attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBaseline multiplier:1 constant:44];
     [self.view addConstraint:constraint];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    [self loadStepViewControllers];
-    [self showStepViewController:[self.childViewControllers objectAtIndex:0] animated:NO];
+    [self.stepsBar reloadData];
 }
 
 #pragma mark - Properties
@@ -96,19 +103,6 @@
 }
 
 #pragma mark - Helper
-- (BOOL)extendViewControllerBelowBars:(UIViewController *)aViewController {
-    return (aViewController.extendedLayoutIncludesOpaqueBars || (aViewController.edgesForExtendedLayout & UIRectEdgeTop));
-}
-
-- (void)updateContentInsetsForViewController:(UIViewController *)aViewController {
-    if([self extendViewControllerBelowBars:aViewController]) {
-        UIEdgeInsets insets = UIEdgeInsetsZero;
-        insets.top += self.stepsBar.frame.size.height;
-        
-        [aViewController adaptToEdgeInsets:insets];
-    }
-}
-
 - (void)loadStepViewControllers {
     NSArray *stepViewControllers = [self stepViewControllers];
     NSAssert([stepViewControllers count] > 0, @"Fatal: At least one step view controller must be returned by +[%@ stepViewControllers].", [self class]);
@@ -122,8 +116,6 @@
         [self addChildViewController:aViewController];
         [aViewController didMoveToParentViewController:self];
     }
-    
-    [self.stepsBar reloadData];
 }
 
 - (void)showStepViewController:(UIViewController *)aViewController animated:(BOOL)animated {
@@ -132,23 +124,20 @@
     } else {
         [self showStepViewControllerWithSlideInAnimation:aViewController];
     }
-    
-    [self updateContentInsetsForViewController:aViewController];
 }
 
 - (void)showStepViewControllerWithoutAnimation:(UIViewController *)aViewController {
+    [self.currentStepViewController viewWillDisappear:NO];
     [self.currentStepViewController.view removeFromSuperview];
-
-    CGFloat y = 0;
-    if(![self extendViewControllerBelowBars:aViewController])
-        y = self.stepsBar.frame.origin.y + self.stepsBar.frame.size.height;
+    [self.currentStepViewController viewDidDisappear:NO];
     
-    aViewController.view.frame = CGRectMake(0, y, self.stepViewControllerContainer.frame.size.width, self.stepViewControllerContainer.frame.size.height - y);
+    aViewController.view.frame = CGRectMake(0, 0, self.stepViewControllerContainer.frame.size.width, self.stepViewControllerContainer.frame.size.height);
     aViewController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    aViewController.view.translatesAutoresizingMaskIntoConstraints = YES;
     
+    [aViewController viewWillAppear:NO];
     [self.stepViewControllerContainer addSubview:aViewController.view];
-
+    [aViewController viewDidAppear:NO];
+    
     self.currentStepViewController = aViewController;
     [self.stepsBar setIndexOfSelectedStep:[self.childViewControllers indexOfObject:aViewController] animated:NO];
 }
@@ -163,35 +152,26 @@
     else
         fromLeft = YES;
     
-    CGFloat y = 0;
-    if(![self extendViewControllerBelowBars:aViewController])
-        y = self.stepsBar.frame.origin.y + self.stepsBar.frame.size.height;
-    
-    aViewController.view.frame = CGRectMake(fromLeft ? -self.stepViewControllerContainer.frame.size.width : self.stepViewControllerContainer.frame.size.width, y, self.stepViewControllerContainer.frame.size.width, self.stepViewControllerContainer.frame.size.height - y);
+    aViewController.view.frame = CGRectMake(fromLeft ? -self.stepViewControllerContainer.frame.size.width : self.stepViewControllerContainer.frame.size.width, 0, self.stepViewControllerContainer.frame.size.width, self.stepViewControllerContainer.frame.size.height);
     aViewController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    aViewController.view.translatesAutoresizingMaskIntoConstraints = YES;
     
+    [self.currentStepViewController viewWillDisappear:YES];
+    [aViewController viewWillAppear:YES];
     [self.stepViewControllerContainer addSubview:aViewController.view];
     
     [self.stepsBar setIndexOfSelectedStep:[self.childViewControllers indexOfObject:aViewController] animated:YES];
     
     __weak RMStepsController *blockself = self;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        aViewController.view.frame = CGRectMake(0, y, blockself.stepViewControllerContainer.frame.size.width, blockself.stepViewControllerContainer.frame.size.height - y);
-        blockself.currentStepViewController.view.frame = CGRectMake(fromLeft ? blockself.stepViewControllerContainer.frame.size.width : -blockself.stepViewControllerContainer.frame.size.width, self.currentStepViewController.view.frame.origin.y, blockself.currentStepViewController.view.frame.size.width, blockself.currentStepViewController.view.frame.size.height);
+        aViewController.view.frame = CGRectMake(0, 0, blockself.stepViewControllerContainer.frame.size.width, blockself.stepViewControllerContainer.frame.size.height);
+        blockself.currentStepViewController.view.frame = CGRectMake(fromLeft ? blockself.stepViewControllerContainer.frame.size.width : -blockself.stepViewControllerContainer.frame.size.width, 0, blockself.stepViewControllerContainer.frame.size.width, blockself.stepViewControllerContainer.frame.size.height);
     } completion:^(BOOL finished) {
         [blockself.currentStepViewController.view removeFromSuperview];
+        [blockself.currentStepViewController viewDidDisappear:YES];
+        
+        [aViewController viewDidAppear:YES];
         blockself.currentStepViewController = aViewController;
     }];
-}
-
-- (void)viewDidLayoutSubviews {
-    CGFloat y = 0;
-    if(![self extendViewControllerBelowBars:self.currentStepViewController])
-        y = self.stepsBar.frame.origin.y + self.stepsBar.frame.size.height;
-    
-    self.currentStepViewController.view.frame = CGRectMake(0, y, self.stepViewControllerContainer.frame.size.width, self.stepViewControllerContainer.frame.size.height - y);
-    [self updateContentInsetsForViewController:self.currentStepViewController];
 }
 
 #pragma mark - Actions
@@ -274,11 +254,6 @@ static char const * const stepKey = "stepKey";
 
 - (void)setStep:(RMStep *)step {
     objc_setAssociatedObject(self, stepKey, step, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-#pragma mark - Helper
-- (void)adaptToEdgeInsets:(UIEdgeInsets)newInsets {
-    
 }
 
 @end

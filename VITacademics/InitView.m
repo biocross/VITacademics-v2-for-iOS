@@ -7,6 +7,7 @@
 //
 
 #import "InitView.h"
+#import "SettingsViewController.h"
 
 @interface InitView ()
 
@@ -44,10 +45,19 @@
     UIViewController *secondStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutSecond"];
     secondStep.step.title = @"Sign In";
     
-    return @[firstStep, secondStep];
+    SettingsViewController *thirdStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutThird"];
+    secondStep.step.title = @"Credentials";
+    
+    StepsViewController *fourthStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutFourth"];
+    secondStep.step.title = @"Good To Go!";
+    
+    thirdStep.sender = fourthStep;
+    
+    return @[firstStep, secondStep, thirdStep, fourthStep ];
 }
 
 - (void)finishedAllSteps {
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

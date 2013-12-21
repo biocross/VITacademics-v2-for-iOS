@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C6724091-DBB9-42FC-8F74-63080CC2A93A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VITacademics</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>478DBBA0-88E3-490C-AFFF-B40016D82D7C</key>
+		<string>https://github.com/biocross/VITacademics-v2-for-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VITacademics.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>478DBBA0-88E3-490C-AFFF-B40016D82D7C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/biocross/VITacademics-v2-for-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>478DBBA0-88E3-490C-AFFF-B40016D82D7C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>478DBBA0-88E3-490C-AFFF-B40016D82D7C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VITacademics</string>
+		</dict>
+	</array>
+</dict>
+</plist>

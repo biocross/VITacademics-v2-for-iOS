@@ -118,14 +118,6 @@
 @property (nonatomic, assign) NSUInteger indexOfSelectedStep;
 
 /**
- *  Used to show or hide the cancel button with animation
- *
- *  @param newHideCancelButton    If YES the cancel button will be hidden. If NO the cancel button will be shown.
- *  @param animated               If YES the transition will be animated. If NO the transition will not be animated.
- */
-- (void)setHideCancelButton:(BOOL)newHideCancelButton animated:(BOOL)animated;
-
-/**
  Used to set the index of the selected step.
  
  @param newIndexOfSelectedStep The index of the new selected step.
