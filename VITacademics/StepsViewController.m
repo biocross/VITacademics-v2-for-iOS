@@ -48,7 +48,9 @@
 }
 
 -(IBAction)loginWithFacebook:(id)sender{
+    [self.stepsController showNextStep];
     
+    /*
     NSArray *permissionsArray = @[ @"user_about_me", @"email"];
     [_activityIndicator startAnimating];
     [_logginInLabel setAlpha:1];
@@ -72,6 +74,7 @@
             
         }
     }];
+     */
     
 }
 
@@ -194,7 +197,19 @@
     
     
     //Loading Marks
-    self.four.enabled = NO;
+    
+    //Creating Binding on Parse
+    PFObject *gameScore = [PFObject objectWithClassName:@"Bindings"];
+    gameScore[@"registrationNumber"] = registrationNumber;
+    gameScore[@"facebookID"] = [preferences objectForKey:@"facebookID"];
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+       self.four.enabled = NO;
+        if(!error){
+            NSLog(@"Saved Binding");
+        }
+    }];
+    
+    
     
     //Loading Time Table
     dispatch_queue_t secondQueue = dispatch_queue_create("attendanceLoader", nil);

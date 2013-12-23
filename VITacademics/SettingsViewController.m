@@ -19,7 +19,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    if([preferences stringForKey:@"dateOfBirth"]){
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"ddMMYYYY"];;
+        NSDate *anyDate = [dateFormat dateFromString:[preferences stringForKey:@"dateOfBirth"]];
+        @try{
+            [self.myPicker setDate:anyDate];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@", [exception description]);
+        }
+    }
 
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -27,8 +42,38 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if(textField == _dateOfBirth){
+        CGRect pickerFrame = CGRectMake(0,250,320,216);
+        
+        self.myPicker = [[UIDatePicker alloc] initWithFrame:pickerFrame];
+        self.myPicker.datePickerMode = UIDatePickerModeDate;
+        [self.myPicker addTarget:self action:@selector(pickerChanged:) forControlEvents:UIControlEventValueChanged];
+        [self.view addSubview:self.myPicker];
+        
+        _dateOfBirth.inputView = self.myPicker;
+    }
+}
+
+- (void)pickerChanged:(id)sender
+{
+    NSLog(@"value: %@",[sender date]);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"ddMMYYYY"];
+    _dateOfBirth.text = [dateFormatter stringFromDate:[self.myPicker date]];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+    
+}
+
 
 - (IBAction)saveButton:(id)sender {
+    
+    [_registrationNumber resignFirstResponder];
+    [_dateOfBirth resignFirstResponder];
     
     //Begin Verification:
     VITxAPI *handler = [[VITxAPI alloc] init];

@@ -44,12 +44,11 @@
         
 
         self.todaysTimeTable = [ofToday getTodaysTimeTable];
-        [self.tableView registerClass:[CurrentClassTableViewCell class] forCellReuseIdentifier:@"iPhoneTodayCell"];
         currentClass = [[ofToday getCurrentClass] isKindOfClass:[NSDictionary class]] ? [ofToday getCurrentClass] : 0;
     }
     
 
-    self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [self.todaysTimeTable count]];
+    self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)[self.todaysTimeTable count]];
     
 
     
@@ -73,6 +72,11 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     NSString *string = @"Others";
     
@@ -92,7 +96,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int rows = 1;
+    NSInteger rows = 1;
     
     if(section == 1){
         rows = [self.todaysTimeTable count];
@@ -104,15 +108,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    int height = 50;
-    if(indexPath.section == 0){
-        height = 183;
-    }
+    int height = 183;
+
     if(indexPath.section == 1){
         height = 91;
     }
     
     return height;
+    
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,11 +124,12 @@
     if(indexPath.section == 0){
         
     
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CurrentClassTableViewCell" owner:self options:nil];
-    CurrentClassTableViewCell *cell = [nib objectAtIndex:0];
+    
     
     if(currentClass){
-#warning Harcoded Values
+        
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CurrentClassTableViewCell" owner:self options:nil];
+        CurrentClassTableViewCell *cell = [nib objectAtIndex:0];
         cell.subjectTitle.text = [currentClass objectForKey:@"title"];
         cell.subjectSlot.text = [currentClass objectForKey:@"slot"];
         cell.subjectVenue.text = [currentClass objectForKey:@"venue"];
@@ -151,24 +156,15 @@
         [cell.calculatedLabels setFont:calculatedFont];
         
         
-        
+        return cell;
         
     }
     else{
-        cell.subjectTitle.text = @"No Class right now";
-        cell.subjectSlot.text = @"Next one begins in 42 minutes...";
-        
-        UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:21];
-        [cell.subjectTitle setFont:titleFont];
-        
-        [cell.greyedText setAlpha:0];
-        [cell.ifYou setAlpha:0];
-        
-        
-        
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NoClassRightNow" owner:self options:nil];
+        UITableViewCell *cell = [nib objectAtIndex:0];
+        return cell;
         }
-        
-    return cell;
+    
 
     }
     
@@ -176,9 +172,9 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UpcomingClassCell" owner:self options:nil];
         UpcomingClassCell *cell = [nib objectAtIndex:0];
         
-        cell.subjectTitle.text = [self.todaysTimeTable[1] objectForKey:@"title"];
-        cell.subjectVenue.text = [self.todaysTimeTable[1] objectForKey:@"venue"];
-        cell.subjectSlot.text = [self.todaysTimeTable[1] objectForKey:@"slot"];
+        cell.subjectTitle.text = [self.todaysTimeTable[indexPath.row] objectForKey:@"title"];
+        cell.subjectVenue.text = [self.todaysTimeTable[indexPath.row] objectForKey:@"venue"];
+        cell.subjectSlot.text = [self.todaysTimeTable[indexPath.row] objectForKey:@"slot"];
         
         UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
         [cell.subjectTitle setFont:titleFont];

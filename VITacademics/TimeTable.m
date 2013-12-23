@@ -67,6 +67,8 @@
     NSInteger currentHour = [components hour];
     NSInteger currentMinute = [components minute];
     
+    NSLog(@"Got stuck in getcurrentclass");
+    
     id currentClass;
     
     if(currentHour >= 8 && currentMinute <50){
@@ -102,6 +104,8 @@
         currentClass = self.todaysTimeTable[9];
     }
     
+    NSLog(@"Got stuck in getcurrentclass - nope");
+    
     return currentClass;
 }
 
@@ -109,6 +113,8 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     NSString *todaysDay = [dateFormatter stringFromDate:[NSDate date]];
+    
+    NSLog(@"Got stuck in todaysTimeTable");
     
     self.todaysTimeTable = [[NSMutableArray alloc] init];
     
@@ -133,15 +139,16 @@
     
     NSMutableArray *legibleTimetable = [[NSMutableArray alloc] init];
     
-    int length = [self.todaysTimeTable count];
+    NSInteger length = [self.todaysTimeTable count];
     for(int i = 0 ; i<length ; i++){
         if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
             [legibleTimetable addObject:self.todaysTimeTable[i]];
         }
     }
     
-    self.todaysTimeTable = legibleTimetable;
-    return self.todaysTimeTable;
+    NSLog(@"Got stuck in todaysTimeTable - nope");
+    
+    return legibleTimetable;
 }
 
 

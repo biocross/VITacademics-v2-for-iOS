@@ -35,7 +35,11 @@
     if([preferences objectForKey:@"registrationNumber"]){
     }
     else{
-        RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
+        
+        NSLog(@"%@", [preferences objectForKey:@"registrationNumber"]);
+        
+        
+         RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
         [self presentViewController:firstStep animated:YES completion:nil];
         
     }

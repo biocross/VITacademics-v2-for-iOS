@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "StepsViewController.h"
 
-@interface SettingsViewController : UITableViewController
+@interface SettingsViewController : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *registrationNumber;
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirth;
 - (IBAction)saveButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonOutlet;
 @property (strong) StepsViewController *sender;
+@property UIDatePicker *myPicker;
 
 @end

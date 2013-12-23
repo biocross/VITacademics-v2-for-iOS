@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface FriendsViewController : UITableViewController <FBFriendPickerDelegate, UISearchBarDelegate>
-
+@interface FriendsViewController : UITableViewController
 - (IBAction)pickFriend:(id)sender;
 
-@property (retain, nonatomic) FBFriendPickerViewController *friendPickerController;
 @property (retain, nonatomic) UISearchBar *searchBar;
 @property (retain, nonatomic) NSString *searchText;
 
