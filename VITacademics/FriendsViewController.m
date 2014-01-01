@@ -66,8 +66,7 @@
 
 -(void)pickFriend:(id)sender{
     PFUser *currentUser = [PFUser currentUser];
-    NSMutableDictionary* params =   [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                      nil];
+    NSMutableDictionary* params =   [NSMutableDictionary dictionaryWithObjectsAndKeys:nil];
     
     [FBWebDialogs presentRequestsDialogModallyWithSession:nil
                                                   message:[NSString stringWithFormat:@"%@ has just requested access to your timetable on VITacademics", currentUser[@"facebookName"]]

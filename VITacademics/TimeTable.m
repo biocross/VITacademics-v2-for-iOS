@@ -67,7 +67,6 @@
     NSInteger currentHour = [components hour];
     NSInteger currentMinute = [components minute];
     
-    NSLog(@"Got stuck in getcurrentclass");
     
     id currentClass;
     
@@ -104,7 +103,6 @@
         currentClass = self.todaysTimeTable[9];
     }
     
-    NSLog(@"Got stuck in getcurrentclass - nope");
     
     return currentClass;
 }
@@ -114,7 +112,6 @@
     [dateFormatter setDateFormat:@"EEEE"];
     NSString *todaysDay = [dateFormatter stringFromDate:[NSDate date]];
     
-    NSLog(@"Got stuck in todaysTimeTable");
     
     self.todaysTimeTable = [[NSMutableArray alloc] init];
     
@@ -137,7 +134,10 @@
         self.todaysTimeTable = _monday;
     }
     
+    
+    /*
     NSMutableArray *legibleTimetable = [[NSMutableArray alloc] init];
+    
     
     NSInteger length = [self.todaysTimeTable count];
     for(int i = 0 ; i<length ; i++){
@@ -145,10 +145,9 @@
             [legibleTimetable addObject:self.todaysTimeTable[i]];
         }
     }
+    */
     
-    NSLog(@"Got stuck in todaysTimeTable - nope");
-    
-    return legibleTimetable;
+    return self.todaysTimeTable;
 }
 
 
@@ -297,9 +296,105 @@
         
     }
     
+    else{
+        NSMutableArray *finalSlots = [[NSMutableArray alloc] init];
+        NSString *temp = [[NSString alloc] init];
+        
+        slot = [NSString stringWithFormat:@"%@+", slot];
+        
+        while([slot length] != 0){
+            temp = [self extractSlotNumber:slot];
+            [finalSlots addObject:temp];
+            slot = [slot substringFromIndex:[self getEndRange:slot] + 1];
+            }
+        
+        int length = [finalSlots count];
+        for(int i=0 ; i<length ; i++){
+            [self addLabSlotsToTT:[finalSlots[i] integerValue] subject:subject];
+        }
+    }
+  
+}
+
+-(void)addLabSlotsToTT:(int)slot subject:(NSDictionary *)subject{
     
+    int skippyBoy = 0;
+    if(slot > 30){
+        skippyBoy = 5;
+        slot = slot - 30;
+    }
+    
+    if(slot < 7){
+        [_monday replaceObjectAtIndex:slot-1+skippyBoy withObject:subject];
+    }
+    else if(slot > 6 && slot < 13){
+        [_tuesday replaceObjectAtIndex:slot-7+skippyBoy withObject:subject];
+    }
+    else if(slot > 12 && slot < 19){
+        [_wednesday replaceObjectAtIndex:slot-13+skippyBoy withObject:subject];
+    }
+    else if(slot > 18 && slot < 25){
+        [_thursday replaceObjectAtIndex:slot-19+skippyBoy withObject:subject];
+    }
+    else if(slot > 24 && slot < 31){
+        [_friday replaceObjectAtIndex:slot-25+skippyBoy withObject:subject];
+    }
     
 }
+
+
+
+- (NSString *)extractSlotNumber:(NSString *)original{
+    NSRange startRange = [original rangeOfString:@"L"];
+    NSRange endRange = [original rangeOfString:@"+"];
+    NSRange searchRange = NSMakeRange(startRange.location+1, endRange.location-1);
+    NSString *temp = [original substringWithRange:searchRange];
+    
+    return temp;
+}
+
+-(int)getEndRange:(NSString *)originalString{
+    NSRange endRange = [originalString rangeOfString:@"+"];
+    return endRange.location;
+}
+
+-(NSMutableArray *)getTimeSlotArray{
+    NSMutableArray *timeSlots = [[NSMutableArray alloc] init];
+    
+    for(int i=0; i<5; i++){
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+        [components setHour:8+i];
+        [components setMinute:0];
+        [components setSecond:0];
+        [timeSlots addObject:components];
+    }
+    
+    NSDateComponents *components1 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+    [components1 setHour:12];
+    [components1 setMinute:0];
+    [components1 setSecond:0];
+    [timeSlots addObject:components1];
+    
+    
+    for(int i=0; i<5; i++){
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+        [components setHour:14+i];
+        [components setMinute:0];
+        [components setSecond:0];
+        [timeSlots addObject:components];
+    }
+    
+    NSDateComponents *components2 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+    [components2 setHour:18];
+    [components2 setMinute:0];
+    [components2 setSecond:0];
+    [timeSlots addObject:components2];
+    
+    return timeSlots;
+}
+
+
+
 
 
 @end

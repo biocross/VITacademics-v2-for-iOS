@@ -38,7 +38,6 @@
         
         NSLog(@"%@", [preferences objectForKey:@"registrationNumber"]);
         
-        
          RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
         [self presentViewController:firstStep animated:YES completion:nil];
         

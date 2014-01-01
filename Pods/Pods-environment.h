@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_CSNotificationView 3
 #define COCOAPODS_VERSION_PATCH_CSNotificationView 3
 
+// NSDate+TimeAgo
+#define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
+#define COCOAPODS_VERSION_MAJOR_NSDate_TimeAgo 1
+#define COCOAPODS_VERSION_MINOR_NSDate_TimeAgo 0
+#define COCOAPODS_VERSION_PATCH_NSDate_TimeAgo 2
+
 // PulsingHalo
 #define COCOAPODS_POD_AVAILABLE_PulsingHalo
 #define COCOAPODS_VERSION_MAJOR_PulsingHalo 0

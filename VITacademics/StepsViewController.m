@@ -48,10 +48,10 @@
 }
 
 -(IBAction)loginWithFacebook:(id)sender{
-    [self.stepsController showNextStep];
+    //[self.stepsController showNextStep];
     
-    /*
-    NSArray *permissionsArray = @[ @"user_about_me", @"email"];
+    
+    NSArray *permissionsArray = @[@"user_about_me", @"email"];
     [_activityIndicator startAnimating];
     [_logginInLabel setAlpha:1];
     // Login PFUser using Facebook
@@ -74,7 +74,7 @@
             
         }
     }];
-     */
+    
     
 }
 
@@ -124,7 +124,9 @@
 }
 
 - (IBAction)startUsingVITacademics:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTimeTable" object:nil];
     [self.stepsController finishedAllSteps];
+    
 }
 
 // Called every time a chunk of the data is received
@@ -160,7 +162,7 @@
                 }
                 else{
                     NSLog(@"There was a problem saving to current user");
-                    [self.one setTitle:@"Error saving to backend, Nevermind." forState:UIControlStateNormal];
+                    [self.one setTitle:@"Error, Nevermind." forState:UIControlStateNormal];
                 }
             }];
         }

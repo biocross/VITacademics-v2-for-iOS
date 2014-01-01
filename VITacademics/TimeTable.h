@@ -15,6 +15,10 @@
 - (void)printArrays;
 - (id)initWithTTString:(NSString *)TimeTableString;
 - (void)parseSubjectAndAddToTT:(NSDictionary *)subject;
+- (NSString *)extractSlotNumber:(NSString *)originalString;
+- (int)getEndRange:(NSString *)originalString;
+- (void)addLabSlotsToTT:(int)slot subject:(NSDictionary *)subject;
+-(NSMutableArray *)getTimeSlotArray;
 
 -(id)getCurrentClass;
 -(NSMutableArray *)getTodaysTimeTable;

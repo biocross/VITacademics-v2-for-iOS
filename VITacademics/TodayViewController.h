@@ -11,6 +11,9 @@
 @interface TodayViewController : UITableViewController
 
 @property (strong) NSMutableArray *todaysTimeTable;
+@property NSDictionary *temporaryComparator;
 @property bool notificationReceived;
+@property NSMutableArray *legibleTimeTable;
+@property NSMutableArray *timeSlots;
 
 @end
