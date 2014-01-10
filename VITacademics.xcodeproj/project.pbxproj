@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3510174E18661DC7005F4101 /* StoreKit.framework */; };
 		35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35128E80186844E500DBC06D /* NoClassRightNow.xib */; };
+		35155D7E1878125300513E05 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D7D1878125300513E05 /* AttendanceViewController.m */; };
+		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
 		3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
 		3518D1571854583000EFC1AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1561854583000EFC1AF /* CoreGraphics.framework */; };
 		3518D1591854583000EFC1AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1581854583000EFC1AF /* UIKit.framework */; };
@@ -71,6 +73,10 @@
 /* Begin PBXFileReference section */
 		3510174E18661DC7005F4101 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		35128E80186844E500DBC06D /* NoClassRightNow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoClassRightNow.xib; path = ../NoClassRightNow.xib; sourceTree = "<group>"; };
+		35155D7C1878125300513E05 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
+		35155D7D1878125300513E05 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
+		35155D7F18781A8100513E05 /* SettingsTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTabViewController.h; sourceTree = "<group>"; };
+		35155D8018781A8100513E05 /* SettingsTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTabViewController.m; sourceTree = "<group>"; };
 		3518D1511854583000EFC1AF /* VITacademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VITacademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3518D1541854583000EFC1AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3518D1561854583000EFC1AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -241,6 +247,10 @@
 				359EDB99185DBA1600D14248 /* FriendsViewController.m */,
 				35A751F3185B9608009FC74D /* TabViewController.h */,
 				35A751F4185B9608009FC74D /* TabViewController.m */,
+				35155D7C1878125300513E05 /* AttendanceViewController.h */,
+				35155D7D1878125300513E05 /* AttendanceViewController.m */,
+				35155D7F18781A8100513E05 /* SettingsTabViewController.h */,
+				35155D8018781A8100513E05 /* SettingsTabViewController.m */,
 				35128E7F18683C6000DBC06D /* User Interface */,
 				35A751F6185B9BEA009FC74D /* Tutorial */,
 				35A751F7185B9BF6009FC74D /* APIs */,
@@ -476,8 +486,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */,
+				35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */,
 				3518D1651854583000EFC1AF /* AppDelegate.m in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
+				35155D7E1878125300513E05 /* AttendanceViewController.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,

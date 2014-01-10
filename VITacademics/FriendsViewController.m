@@ -76,6 +76,8 @@
                                                       if (error) {
                                                           // Case A: Error launching the dialog or sending request.
                                                           NSLog(@"Error sending request.");
+                                                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You need to have a working internet connection to do this." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                                                          [alert show];
                                                       } else {
                                                           if (result == FBWebDialogResultDialogNotCompleted) {
                                                               // Case B: User clicked the "x" icon
