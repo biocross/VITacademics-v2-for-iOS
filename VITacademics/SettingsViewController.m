@@ -71,11 +71,6 @@
 
 
 - (IBAction)saveButton:(id)sender {
-    
-    [_registrationNumber resignFirstResponder];
-    [_dateOfBirth resignFirstResponder];
-    [self successHappened];
-    /*
     //Begin Verification:
     VITxAPI *handler = [[VITxAPI alloc] init];
 
@@ -123,7 +118,6 @@
             
         });
     });//end of GCD
-    */
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

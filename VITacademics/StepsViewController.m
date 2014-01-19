@@ -30,8 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@", [self.one description]);
-    //self.one.enabled    = NO;
+
     PulsingHaloLayer *halo = [PulsingHaloLayer layer];
     halo.position = self.sampleProfilePhoto.center;
     [self.view.layer insertSublayer:halo below:self.sampleProfilePhoto.layer];
@@ -54,31 +53,11 @@
     NSArray *permissionsArray = @[@"user_about_me", @"email"];
     [_activityIndicator startAnimating];
     [_logginInLabel setAlpha:1];
-    // Login PFUser using Facebook
-    /*[PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        
-        if (!user) {
-            if (!error) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-            } else {
-                NSLog(@"Uh oh. An error occurred: %@", error);
-            }
-        } else if (user.isNew) {
-            NSLog(@"User with facebook signed up and logged in!");
-            [self extractUserInfo];
-            
-            
-        } else {
-            NSLog(@"User with facebook logged in!");
-            [self extractUserInfo];
-            
-        }
-    }];*/
+    
     PFUser *user = [PFUser currentUser];
     if (![PFFacebookUtils isLinkedWithUser:user]) {
         [PFFacebookUtils linkUser:user permissions:permissionsArray block:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-                NSLog(@"Woohoo, user logged in with Facebook!");
                 [self extractUserInfo];
             }
         }];
@@ -152,7 +131,6 @@
 
 
 -(void)finalSetup{
-    [self viewDidLoad];
     VITxAPI *attendanceManager = [[VITxAPI alloc] init];
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *registrationNumber = [preferences objectForKey:@"registrationNumber"];
@@ -165,7 +143,6 @@
         name = @"No Facebook";
     }
     
-    NSLog(@"%@", [self.one description]);
     
     //Contacting Backend
     PFUser *currentUser = [PFUser currentUser];
@@ -192,7 +169,7 @@
     }
     else {
         // show the signup or login screen
-        NSLog(@"What the f*ck, this isn't possible!");
+    
     }
     
     //Saving Data
@@ -214,7 +191,6 @@
             NSDate *date = [[NSDate alloc] init];
             [preferences setObject:date forKey:@"lastUpdated"];
             
-            NSLog(@"loaded attendance" );
             self.three.enabled = NO;
         });
         
@@ -237,7 +213,6 @@
     }
     else{
         [self.four setTitle:@"Facebook Not Connected" forState:UIControlStateNormal];
-        NSLog(@"four disabled");
         self.four.enabled = NO;
     }
     
