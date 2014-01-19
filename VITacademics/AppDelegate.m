@@ -25,11 +25,11 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
     
-    /* //ResetCode:
+     /*//ResetCode:
     NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
     [new removeObjectForKey:@"registrationNumber"];
-    [new removeObjectForKey:@"dateOfBirth"];
-    */
+    [new removeObjectForKey:@"dateOfBirth"];*/
+    
     return YES;
 }
 							

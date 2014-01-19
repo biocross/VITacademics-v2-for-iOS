@@ -42,22 +42,19 @@
     UIViewController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutFirst"];
     firstStep.step.title = @"Welcome";
     
-    UIViewController *secondStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutSecond"];
-    secondStep.step.title = @"Sign In";
-    
-    SettingsViewController *thirdStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutThird"];
+    SettingsViewController *secondStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutThird"];
     secondStep.step.title = @"Credentials";
     
+    UIViewController *thirdStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutSecond"];
+    thirdStep.step.title = @"Facebook";
+    
     StepsViewController *fourthStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutFourth"];
-    secondStep.step.title = @"Good To Go!";
+    fourthStep.step.title = @"Good To Go!";
     
-    thirdStep.sender = fourthStep;
-    
-    return @[firstStep, secondStep, thirdStep, fourthStep ];
+    return @[firstStep, secondStep, thirdStep, fourthStep];
 }
 
 - (void)finishedAllSteps {
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

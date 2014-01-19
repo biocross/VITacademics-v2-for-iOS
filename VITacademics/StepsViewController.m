@@ -30,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%@", [self.one description]);
+    //self.one.enabled    = NO;
     PulsingHaloLayer *halo = [PulsingHaloLayer layer];
     halo.position = self.sampleProfilePhoto.center;
     [self.view.layer insertSublayer:halo below:self.sampleProfilePhoto.layer];
@@ -48,14 +50,12 @@
 }
 
 -(IBAction)loginWithFacebook:(id)sender{
-    //[self.stepsController showNextStep];
-    
     
     NSArray *permissionsArray = @[@"user_about_me", @"email"];
     [_activityIndicator startAnimating];
     [_logginInLabel setAlpha:1];
     // Login PFUser using Facebook
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+    /*[PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         
         if (!user) {
             if (!error) {
@@ -73,7 +73,16 @@
             [self extractUserInfo];
             
         }
-    }];
+    }];*/
+    PFUser *user = [PFUser currentUser];
+    if (![PFFacebookUtils isLinkedWithUser:user]) {
+        [PFFacebookUtils linkUser:user permissions:permissionsArray block:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Woohoo, user logged in with Facebook!");
+                [self extractUserInfo];
+            }
+        }];
+    }
     
     
 }
@@ -115,6 +124,7 @@
             [_activityIndicator stopAnimating];
             
             [self.stepsController showNextStep];
+            [self finalSetup];
             
             
         }
@@ -142,19 +152,27 @@
 
 
 -(void)finalSetup{
-    
+    [self viewDidLoad];
     VITxAPI *attendanceManager = [[VITxAPI alloc] init];
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *registrationNumber = [preferences objectForKey:@"registrationNumber"];
     NSString *dateOfBirth = [preferences objectForKey:@"dateOfBirth"];
-    NSString *name = [preferences objectForKey:@"facebookName"];
+    NSString *name;
+    if([preferences objectForKey:@"facebookName"]){
+         name = [preferences objectForKey:@"facebookName"];
+    }
+    else{
+        name = @"No Facebook";
+    }
+    
+    NSLog(@"%@", [self.one description]);
     
     //Contacting Backend
     PFUser *currentUser = [PFUser currentUser];
+    
     if (currentUser) {
+        if([PFFacebookUtils isLinkedWithUser:currentUser]){
             currentUser[@"facebookName"] = name;
-            currentUser[@"registrationNumber"] = registrationNumber;
-            currentUser[@"dateOfBirth"] = dateOfBirth;
             [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if(succeeded){
                     NSLog(@"Saved credentials to currentUser");
@@ -166,11 +184,15 @@
                 }
             }];
         }
+        else{
+            NSLog(@"Facebook No Connected");
+            [self.one setTitle:@"You didn't login with facebook." forState:UIControlStateNormal];
+            self.one.enabled = NO;
+        }
+    }
     else {
         // show the signup or login screen
-        NSLog(@"An error has occured while querying the current user, did you log in?");
-        [self.one setTitle:@"You didn't login with facebook." forState:UIControlStateNormal];
-        self.one.enabled = NO;
+        NSLog(@"What the f*ck, this isn't possible!");
     }
     
     //Saving Data
@@ -192,6 +214,7 @@
             NSDate *date = [[NSDate alloc] init];
             [preferences setObject:date forKey:@"lastUpdated"];
             
+            NSLog(@"loaded attendance" );
             self.three.enabled = NO;
         });
         
@@ -201,15 +224,23 @@
     //Loading Marks
     
     //Creating Binding on Parse
-    PFObject *gameScore = [PFObject objectWithClassName:@"Bindings"];
-    gameScore[@"registrationNumber"] = registrationNumber;
-    gameScore[@"facebookID"] = [preferences objectForKey:@"facebookID"];
-    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-       self.four.enabled = NO;
-        if(!error){
-            NSLog(@"Saved Binding");
-        }
-    }];
+    if([PFFacebookUtils isLinkedWithUser:currentUser]){
+        PFObject *gameScore = [PFObject objectWithClassName:@"Bindings"];
+        gameScore[@"registrationNumber"] = registrationNumber;
+        gameScore[@"facebookID"] = [preferences objectForKey:@"facebookID"];
+        [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            self.four.enabled = NO;
+            if(!error){
+                NSLog(@"Saved Binding");
+            }
+        }];
+    }
+    else{
+        [self.four setTitle:@"Facebook Not Connected" forState:UIControlStateNormal];
+        NSLog(@"four disabled");
+        self.four.enabled = NO;
+    }
+    
     
     
     
@@ -253,6 +284,11 @@
     //All done
     
     
+}
+
+- (IBAction)skipFacebook:(id)sender {
+    [self.stepsController showNextStep];
+    [self finalSetup];
 }
 
 

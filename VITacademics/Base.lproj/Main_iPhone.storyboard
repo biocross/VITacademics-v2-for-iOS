@@ -156,7 +156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jk6-eq-PO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="811"/>
+            <point key="canvasLocation" x="814" y="816"/>
         </scene>
         <!--Steps View Controller-->
         <scene sceneID="5no-CV-Wus">
@@ -466,6 +466,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJW-Jy-qnI">
+                                <rect key="frame" x="116" y="491" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip for later">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipFacebook:" destination="7PM-P0-jVC" eventType="touchUpInside" id="Z5q-OR-75y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -478,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKt-G0-z1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="811"/>
+            <point key="canvasLocation" x="1189" y="816"/>
         </scene>
         <!--Steps View Controller-->
         <scene sceneID="7Tp-wm-gHK">
@@ -573,13 +583,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="five" destination="vYJ-VR-Naa" id="xeC-2L-7EK"/>
-                        <outlet property="four" destination="tJj-R7-kec" id="DIf-R7-PCt"/>
-                        <outlet property="one" destination="SIo-C7-lgU" id="caJ-XC-wk2"/>
-                        <outlet property="seven" destination="B0b-re-c89" id="obT-0u-d0U"/>
-                        <outlet property="six" destination="cRJ-56-jig" id="ddP-k0-nvE"/>
-                        <outlet property="three" destination="04g-1x-mle" id="Nk1-uW-dbV"/>
-                        <outlet property="two" destination="FZC-gw-TQs" id="SmU-TW-x49"/>
+                        <outlet property="five" destination="vYJ-VR-Naa" id="pgD-7P-9VH"/>
+                        <outlet property="four" destination="tJj-R7-kec" id="Qbh-1n-oHk"/>
+                        <outlet property="one" destination="SIo-C7-lgU" id="tmj-de-2iT"/>
+                        <outlet property="seven" destination="B0b-re-c89" id="Vtw-yD-TdJ"/>
+                        <outlet property="six" destination="cRJ-56-jig" id="rUe-bf-ahU"/>
+                        <outlet property="three" destination="04g-1x-mle" id="6sp-p6-YGc"/>
+                        <outlet property="two" destination="FZC-gw-TQs" id="P9U-KO-upA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pca-FA-y80" userLabel="First Responder" sceneMemberID="firstResponder"/>

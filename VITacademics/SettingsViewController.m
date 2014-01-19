@@ -74,10 +74,10 @@
     
     [_registrationNumber resignFirstResponder];
     [_dateOfBirth resignFirstResponder];
-    
+    [self successHappened];
+    /*
     //Begin Verification:
     VITxAPI *handler = [[VITxAPI alloc] init];
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
 
     
     //show progress
@@ -108,16 +108,9 @@
             }
             else if([result rangeOfString:@"success"].location != NSNotFound){
                 NSLog(@"We're In!");
-                [preferences removeObjectForKey:@"registrationNumber"];
-                [preferences removeObjectForKey:@"dateOfBirth"];
-                [preferences setObject:_registrationNumber.text forKey:@"registrationNumber"];
-                [preferences setObject:_dateOfBirth.text forKey:@"dateOfBirth"];
+                [self successHappened];
                 
-                [_buttonOutlet setTitle:@"Successfully Verified" forState:UIControlStateNormal];
-                
-                [self.stepsController showNextStep];
-                [self.sender finalSetup];
-                
+    
             }
             else if([result isEqualToString:@"networkerror"]){
                 //Network Error
@@ -130,7 +123,85 @@
             
         });
     });//end of GCD
+    */
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)successHappened{
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+
+    [preferences removeObjectForKey:@"registrationNumber"];
+    [preferences removeObjectForKey:@"dateOfBirth"];
+    [preferences setObject:_registrationNumber.text forKey:@"registrationNumber"];
+    [preferences setObject:_dateOfBirth.text forKey:@"dateOfBirth"];
     
+    [_buttonOutlet setTitle:@"Just one sec!" forState:UIControlStateNormal];
+    
+    
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:_registrationNumber.text];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!object) {
+            NSLog(@"User does not already exist!.");
+            PFUser *user = [PFUser user];
+            user.username = _registrationNumber.text;
+            user.password = _dateOfBirth.text;
+            user[@"registrationNumber"] = _registrationNumber.text;
+            user[@"dateOfBirth"] = _dateOfBirth.text;
+            
+            [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    // Hooray! Let them use the app now.
+                    [_buttonOutlet setTitle:@"Verified." forState:UIControlStateNormal];
+                    [self.stepsController showNextStep];
+                } else {
+                    NSString *errorString = [error userInfo][@"error"];
+                    NSLog(@"%@", errorString);
+                    // Show the errorString somewhere and let the user try again.
+                    
+                }
+            }];
+            
+        } else {
+            // The find succeeded.
+            [PFUser logInWithUsernameInBackground:_registrationNumber.text password:_dateOfBirth.text block:^(PFUser *user, NSError *error) {
+                if(user){
+                    [user deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if(succeeded){
+                            NSLog(@"user logged in and deleted");
+                            PFUser *user = [PFUser user];
+                            user.username = _registrationNumber.text;
+                            user.password = _dateOfBirth.text;
+                            user[@"registrationNumber"] = _registrationNumber.text;
+                            user[@"dateOfBirth"] = _dateOfBirth.text;
+                            
+                            [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                if (!error) {
+                                    // Hooray! Let them use the app now.
+                                    [_buttonOutlet setTitle:@"Verified." forState:UIControlStateNormal];
+                                    [self.stepsController showNextStep];
+                                } else {
+                                    NSString *errorString = [error userInfo][@"error"];
+                                    NSLog(@"%@", errorString);
+                                    
+                                }
+                            }];
+                        }
+                        else{
+                            NSLog(@"could not delete user");
+                        }
+                    }];
+                }
+                else{
+                    NSLog(@"Could not login user");
+                }
+            }];
+        }
+    }];
 }
 
 
