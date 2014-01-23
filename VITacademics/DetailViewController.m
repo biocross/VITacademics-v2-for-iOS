@@ -30,8 +30,7 @@
 {
     
         _subject = newDetailItem;
-        
-        // Update the view.
+    
         [self configureView];
     
     
@@ -54,7 +53,6 @@
         self.subjectAttended.text = [NSString stringWithFormat:@"%ld",(long)_subject.attendedClasses];
         self.subjectConducted.text = [NSString stringWithFormat:@"%ld",(long)_subject.conductedClasses];
         
-        NSLog(@"Got: %@", self.subject.subjectTitle);
         [self recalculateAttendance];
     }
     
@@ -93,10 +91,10 @@
     
     PNCircleChart *circleChart;
     if(calculatedPercentage > 0){
-        circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 80.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:displayPercentageInteger]];
+        circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:displayPercentageInteger]];
     }
     else{
-        circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 80.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:0]];
+        circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:0]];
     }
     circleChart.backgroundColor = [UIColor clearColor];
     [circleChart setStrokeColor:PNGreen];
@@ -104,7 +102,32 @@
     
     
     [self.view addSubview:circleChart];
-    self.title = @"Circle Chart";
+    
+    if(self.subject.subjectCode){
+        self.title = self.subject.subjectCode;
+    }
+    else{
+      self.title = @"Subject Details";
+    }
+    
+    
+    UIFont *codeFont = [UIFont fontWithName:@"MuseoSans-300" size:11];
+    [self.subjectCode setFont:codeFont];
+    [self.lastUpdatedLabel setFont:codeFont];
+    [self.staticElevenLabel setFont:codeFont];
+    
+    UIFont *subjectNameFont = [UIFont fontWithName:@"MuseoSans-300" size:23];
+    [self.subjectName setFont:subjectNameFont];
+    
+    UIFont *subjectTypeFont = [UIFont fontWithName:@"MuseoSans-300" size:14];
+    [self.subjectType setFont:subjectTypeFont];
+    [self.subjectSlot setFont:subjectTypeFont];
+    
+    UIFont *thirteenFont = [UIFont fontWithName:@"MuseoSans-300" size:14];
+    [self.subjectAttended  setFont:thirteenFont];
+    [self.subjectConducted setFont:thirteenFont];
+    [self.staticFourteenLabel setFont:thirteenFont];
+    
     
 }
 

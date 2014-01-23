@@ -12,12 +12,13 @@
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *staticElevenLabel;
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) Subjects *subject;
 @property (strong, nonatomic) NSArray *subjectMarks;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
 
-@property (weak, nonatomic) IBOutlet UIView *circleView;
+@property (weak, nonatomic) IBOutlet UILabel *staticFourteenLabel;
 
 - (void)setDetailItem:(id)newDetailItem;
 - (void)recalculateAttendance;

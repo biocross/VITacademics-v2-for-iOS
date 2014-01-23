@@ -347,7 +347,6 @@
          }
      
      detailViewController.subject = self.theorySubjects[selectedRowIndex.row];
-     NSLog(@"Sending: %@", self.theorySubjects[selectedRowIndex.row].subjectTitle);
      
      if(indexOfMatchedSubject < [marksArray count] && indexOfMatchedSubject != -1){
          detailViewController.subjectMarks = marksArray[indexOfMatchedSubject];
