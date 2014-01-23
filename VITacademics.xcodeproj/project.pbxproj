@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3510174E18661DC7005F4101 /* StoreKit.framework */; };
 		35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35128E80186844E500DBC06D /* NoClassRightNow.xib */; };
-		35155D7E1878125300513E05 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D7D1878125300513E05 /* AttendanceViewController.m */; };
 		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
 		3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
 		3518D1571854583000EFC1AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1561854583000EFC1AF /* CoreGraphics.framework */; };
@@ -48,6 +47,10 @@
 		3518D1C81854F85800EFC1AF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */; };
 		3518D1CA1854F97000EFC1AF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C91854F97000EFC1AF /* FacebookSDK.framework */; };
 		35204C5918586CC20005319B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35204C5818586CC20005319B /* SettingsViewController.m */; };
+		355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */; };
+		355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */; };
+		355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962F188D1E8700BB0945 /* AttendanceViewController.m */; };
+		35668E1B188EFC7E005DBD9D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 35668E1A188EFC7E005DBD9D /* settings.png */; };
 		356802AD1859118E00C41D69 /* VITxAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 356802AC1859118E00C41D69 /* VITxAPI.m */; };
 		359C60BE185CD25000FB36B2 /* CurrentClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C60BD185CD25000FB36B2 /* CurrentClassTableViewCell.m */; };
 		359C60C0185CD27200FB36B2 /* CurrentClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 359C60BF185CD27200FB36B2 /* CurrentClassTableViewCell.xib */; };
@@ -55,8 +58,11 @@
 		35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751EE185B90AF009FC74D /* TodayViewController.m */; };
 		35A751F2185B91E6009FC74D /* TimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F1185B91E6009FC74D /* TimeTable.m */; };
 		35A751F5185B9608009FC74D /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F4185B9608009FC74D /* TabViewController.m */; };
+		35B954F3188C11B800389DA6 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B954F0188C11B800389DA6 /* Subject.m */; };
+		35B954F4188C11B800389DA6 /* Subjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B954F2188C11B800389DA6 /* Subjects.m */; };
 		35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D20BE71864FF46001139C9 /* UpcomingClassCell.m */; };
 		35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */; };
+		35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2181C188FDBF5000E5BEC /* DetailViewController.m */; };
 		F05DA906B6EC44E6B2253C4C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E84647C95C14A498AD2419D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,8 +79,6 @@
 /* Begin PBXFileReference section */
 		3510174E18661DC7005F4101 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		35128E80186844E500DBC06D /* NoClassRightNow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoClassRightNow.xib; path = ../NoClassRightNow.xib; sourceTree = "<group>"; };
-		35155D7C1878125300513E05 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
-		35155D7D1878125300513E05 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
 		35155D7F18781A8100513E05 /* SettingsTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTabViewController.h; sourceTree = "<group>"; };
 		35155D8018781A8100513E05 /* SettingsTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTabViewController.m; sourceTree = "<group>"; };
 		3518D1511854583000EFC1AF /* VITacademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VITacademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,12 @@
 		3518D1C91854F97000EFC1AF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		35204C5718586CC20005319B /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		35204C5818586CC20005319B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		355F9629188D1BBB00BB0945 /* iPhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneTableViewCell.h; sourceTree = "<group>"; };
+		355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneTableViewCell.m; sourceTree = "<group>"; };
+		355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhoneCellNib.xib; sourceTree = "<group>"; };
+		355F962E188D1E8700BB0945 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
+		355F962F188D1E8700BB0945 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
+		35668E1A188EFC7E005DBD9D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		356802AB1859118E00C41D69 /* VITxAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VITxAPI.h; sourceTree = "<group>"; };
 		356802AC1859118E00C41D69 /* VITxAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VITxAPI.m; sourceTree = "<group>"; };
 		359C60BC185CD25000FB36B2 /* CurrentClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentClassTableViewCell.h; sourceTree = "<group>"; };
@@ -134,9 +144,15 @@
 		35A751F1185B91E6009FC74D /* TimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeTable.m; sourceTree = "<group>"; };
 		35A751F3185B9608009FC74D /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		35A751F4185B9608009FC74D /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		35B954EF188C11B800389DA6 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		35B954F0188C11B800389DA6 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		35B954F1188C11B800389DA6 /* Subjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subjects.h; sourceTree = "<group>"; };
+		35B954F2188C11B800389DA6 /* Subjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subjects.m; sourceTree = "<group>"; };
 		35D20BE61864FF46001139C9 /* UpcomingClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingClassCell.h; sourceTree = "<group>"; };
 		35D20BE71864FF46001139C9 /* UpcomingClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingClassCell.m; sourceTree = "<group>"; };
 		35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingClassCell.xib; sourceTree = "<group>"; };
+		35D2181B188FDBF5000E5BEC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		35D2181C188FDBF5000E5BEC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		48D705E98F504EBB9C77839A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		4E84647C95C14A498AD2419D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,6 +205,9 @@
 				35D20BE71864FF46001139C9 /* UpcomingClassCell.m */,
 				35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */,
 				35128E80186844E500DBC06D /* NoClassRightNow.xib */,
+				355F9629188D1BBB00BB0945 /* iPhoneTableViewCell.h */,
+				355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */,
+				355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -247,10 +266,13 @@
 				359EDB99185DBA1600D14248 /* FriendsViewController.m */,
 				35A751F3185B9608009FC74D /* TabViewController.h */,
 				35A751F4185B9608009FC74D /* TabViewController.m */,
-				35155D7C1878125300513E05 /* AttendanceViewController.h */,
-				35155D7D1878125300513E05 /* AttendanceViewController.m */,
+				355F962E188D1E8700BB0945 /* AttendanceViewController.h */,
+				355F962F188D1E8700BB0945 /* AttendanceViewController.m */,
 				35155D7F18781A8100513E05 /* SettingsTabViewController.h */,
 				35155D8018781A8100513E05 /* SettingsTabViewController.m */,
+				35D2181B188FDBF5000E5BEC /* DetailViewController.h */,
+				35D2181C188FDBF5000E5BEC /* DetailViewController.m */,
+				35B954F5188C11BD00389DA6 /* Model */,
 				35128E7F18683C6000DBC06D /* User Interface */,
 				35A751F6185B9BEA009FC74D /* Tutorial */,
 				35A751F7185B9BF6009FC74D /* APIs */,
@@ -327,8 +349,20 @@
 				356802AC1859118E00C41D69 /* VITxAPI.m */,
 				35A751F0185B91E6009FC74D /* TimeTable.h */,
 				35A751F1185B91E6009FC74D /* TimeTable.m */,
+				35668E1A188EFC7E005DBD9D /* settings.png */,
 			);
 			name = APIs;
+			sourceTree = "<group>";
+		};
+		35B954F5188C11BD00389DA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35B954EF188C11B800389DA6 /* Subject.h */,
+				35B954F0188C11B800389DA6 /* Subject.m */,
+				35B954F1188C11B800389DA6 /* Subjects.h */,
+				35B954F2188C11B800389DA6 /* Subjects.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,9 +453,11 @@
 			files = (
 				3518D1AB1854633B00EFC1AF /* MuseoSans-300.otf in Resources */,
 				3518D1AA1854633B00EFC1AF /* MuseoSans-100Italic.otf in Resources */,
+				355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */,
 				3518D1AC1854633B00EFC1AF /* MuseoSans-300Italic.otf in Resources */,
 				3518D1A61854633B00EFC1AF /* MuseoSans_500.otf in Resources */,
 				3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */,
+				35668E1B188EFC7E005DBD9D /* settings.png in Resources */,
 				359C60C0185CD27200FB36B2 /* CurrentClassTableViewCell.xib in Resources */,
 				3518D16B1854583000EFC1AF /* Main_iPad.storyboard in Resources */,
 				35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */,
@@ -489,12 +525,16 @@
 				35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */,
 				3518D1651854583000EFC1AF /* AppDelegate.m in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
-				35155D7E1878125300513E05 /* AttendanceViewController.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,
+				35B954F4188C11B800389DA6 /* Subjects.m in Sources */,
+				35B954F3188C11B800389DA6 /* Subject.m in Sources */,
 				35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */,
+				355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */,
+				35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */,
 				359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */,
+				355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */,
 				3518D1B41854CF7600EFC1AF /* StepsViewController.m in Sources */,
 				356802AD1859118E00C41D69 /* VITxAPI.m in Sources */,
 				359C60BE185CD25000FB36B2 /* CurrentClassTableViewCell.m in Sources */,

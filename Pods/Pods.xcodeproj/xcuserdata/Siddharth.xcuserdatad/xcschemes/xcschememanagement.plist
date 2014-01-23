@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-JBChartView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-NSDate+TimeAgo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PNChart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>32F058B48E664149AE22BE7E</key>
+		<key>33EE790682BC4B5F8DB2E067</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4BF3C433D1824DB59A87B5C5</key>
+		<key>82DA475C1DD248F3B1AE9017</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50C83427382C48C5A06A67F8</key>
+		<key>CB792DD36B1147ACA399B6D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0FA4992CDEA4C75A35F3280</key>
+		<key>CB9A8B2718BE4374AF7975B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBD1AF2E538A4387B86199E2</key>
+		<key>D51849F3BF82451C8652F77B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBF1CEF9BD22419BBB9513B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EEA220FE35314741AF988829</key>
 		<dict>
 			<key>primary</key>
 			<true/>

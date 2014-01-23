@@ -1,19 +1,25 @@
 PODS:
   - CSNotificationView (0.3.3)
+  - JBChartView (1.1.3)
   - NSDate+TimeAgo (1.0.2)
+  - PNChart (0.3.1)
   - PulsingHalo (0.0.1)
   - RMStepsController (0.9)
 
 DEPENDENCIES:
   - CSNotificationView (~> 0.3.3)
+  - JBChartView (~> 1.1.3)
   - NSDate+TimeAgo
+  - PNChart (~> 0.3.1)
   - PulsingHalo
   - RMStepsController (~> 0.9)
 
 SPEC CHECKSUMS:
   CSNotificationView: f14352657afe7255be9fb2446eb99d5914b97b5d
+  JBChartView: 12893527d095c173e38aaac4925b72854a13ed4f
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
+  PNChart: 2538e83bfda6809f2c50e95151edbc86f8425879
   PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
   RMStepsController: f44a6cc217e5b1fc77df5dad201bbd7f6cf293f9
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.29.0

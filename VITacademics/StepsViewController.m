@@ -182,7 +182,7 @@
         NSString *result = [attendanceManager loadAttendanceWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
         NSString *marks = [attendanceManager loadMarksWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            NSLog(@"%@", result);
             [preferences removeObjectForKey:[preferences objectForKey:@"registrationNumber"]];
             [preferences setObject:result forKey:[preferences objectForKey:@"registrationNumber"]];
             NSString *marksKey = [NSString stringWithFormat:@"MarksOf%@", [preferences objectForKey:@"registrationNumber"]];
@@ -236,12 +236,18 @@
                     NSLog(@"Saved timetable to server!");
                     self.six.enabled = NO;
                     self.seven.enabled = YES;
+                    NSLog(@"Finished Everything");
                 }
                 else{
                     NSLog(@"Problem saving timetable to server");
                     NSLog(@"%@", [error localizedDescription]);
                     self.six.enabled = NO;
                     self.seven.enabled = YES;
+                    UIAlertView *new = [[UIAlertView alloc] initWithTitle:@"Done" message:@"Everything finished" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    
+                    [new show];
+                    
+                    
                 }
             }];
             
