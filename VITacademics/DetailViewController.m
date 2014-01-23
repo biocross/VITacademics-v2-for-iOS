@@ -45,7 +45,6 @@
 {
     // Update the user interface for the detail item.
     if (self.subject) {
-        self.subjectCode.text = _subject.subjectCode;
         self.title = @"";
         self.subjectName.text = _subject.subjectTitle;
         self.subjectSlot.text = _subject.subjectSlot;
@@ -61,22 +60,10 @@
 - (void)recalculateAttendance{
     float calculatedPercentage =(float) [self.subjectAttended.text intValue] / [self.subjectConducted.text intValue];
     float displayPercentageInteger = ceil(calculatedPercentage * 100);
-    NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
-    self.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
-    [self.progressBar setProgress:calculatedPercentage animated:YES];
+    //NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
     
-    if(displayPercentageInteger >= 80){
-        [self.subjectPercentage setTextColor:[UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0]];
-        [self.progressBar setProgressTintColor:[UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0]];
-    }
-    else if(displayPercentageInteger >= 75 && displayPercentageInteger < 80){
-        [self.subjectPercentage setTextColor:[UIColor orangeColor]];
-        [self.progressBar setProgressTintColor:[UIColor orangeColor]];
-    }
-    else{
-        [self.subjectPercentage setTextColor:[UIColor redColor]];
-        [self.progressBar setProgressTintColor:[UIColor redColor]];
-    }
+    
+    
     
     int length = [_subject.subjectDetails count];
     if(length != 0){
@@ -89,19 +76,26 @@
         self.lastUpdatedLabel.text = [_subject.subjectDetails objectAtIndex:length - 2];
     }
     
-    PNCircleChart *circleChart;
     if(calculatedPercentage > 0){
-        circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:displayPercentageInteger]];
+        self.circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:displayPercentageInteger]];
     }
     else{
-        circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:0]];
+        self.circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:0]];
     }
-    circleChart.backgroundColor = [UIColor clearColor];
-    [circleChart setStrokeColor:PNGreen];
-    [circleChart strokeChart];
+    self.circleChart.backgroundColor = [UIColor clearColor];
     
+    if(displayPercentageInteger >= 80){
+        [self.circleChart setStrokeColor:PNFreshGreen];
+    }
+    else if(displayPercentageInteger >= 75 && displayPercentageInteger < 80){
+        [self.circleChart setStrokeColor:[UIColor orangeColor]];
+    }
+    else{
+        [self.circleChart setStrokeColor:PNRed];
+    }
     
-    [self.view addSubview:circleChart];
+    [self.circleChart strokeChart];
+    [self.view addSubview:self.circleChart];
     
     if(self.subject.subjectCode){
         self.title = self.subject.subjectCode;
@@ -112,7 +106,6 @@
     
     
     UIFont *codeFont = [UIFont fontWithName:@"MuseoSans-300" size:11];
-    [self.subjectCode setFont:codeFont];
     [self.lastUpdatedLabel setFont:codeFont];
     [self.staticElevenLabel setFont:codeFont];
     
