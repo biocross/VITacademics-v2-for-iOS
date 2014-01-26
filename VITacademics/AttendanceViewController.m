@@ -363,6 +363,8 @@
          detailViewController.subjectMarks = [[NSArray alloc] init];
      }
     
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 #pragma mark - VITx API Calls
