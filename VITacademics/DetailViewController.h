@@ -9,18 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "Subject.h"
 #import "Subjects.h"
-#import "PNChart.h"
+#import "DPMeterView.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *staticElevenLabel;
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) Subjects *subject;
 @property (strong, nonatomic) NSArray *subjectMarks;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
-@property (strong, nonatomic) PNCircleChart *circleChart;
 
 
+@property (strong) DPMeterView *progressView;
 @property (weak, nonatomic) IBOutlet UILabel *staticFourteenLabel;
 
 - (void)setDetailItem:(id)newDetailItem;
@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *subjectSlot;
 @property (weak, nonatomic) IBOutlet UILabel *subjectAttended;
 @property (weak, nonatomic) IBOutlet UILabel *subjectConducted;
+
+@property (weak, nonatomic) IBOutlet UIView *progressFrame;
 
 - (IBAction)missPlus:(id)sender;
 - (IBAction)missMinus:(id)sender;

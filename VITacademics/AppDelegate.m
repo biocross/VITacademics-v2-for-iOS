@@ -17,7 +17,7 @@
     
     UIFont *newFont = [UIFont fontWithName:@"MuseoSans-300" size:14];
     [[UILabel appearance] setFont:newFont];
-    self.window.tintColor = [UIColor colorWithRed:0.905 green:0.298 blue:0.133 alpha:1];
+    //self.window.tintColor = [UIColor colorWithRed:0.905 green:0.298 blue:0.133 alpha:1];
     
     
     [Parse setApplicationId:@"vtpDFHGacMwZIpMtpDaFuu0ToBol9b9nQM9VD57N"

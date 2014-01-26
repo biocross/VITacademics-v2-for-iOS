@@ -120,9 +120,10 @@
 
 
 -(void)refreshAttendance:(id)sender{
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"CaptchaViewNav"];
     [self presentViewController:vc animated:YES completion:NULL];
+     */
     [(UIRefreshControl *)sender endRefreshing];
     
 }
@@ -132,8 +133,6 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
         [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Incorrect captcha/credentials"];
-        
-        
         
     });
     
@@ -168,19 +167,19 @@
     {
         NSLog(@"New user clicked on Okay, now opening Settings.");
         
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"SettingsViewNav"];
         [self presentViewController:vc animated:YES completion:NULL];
         
     }
     else if([title isEqualToString:@"Refresh"]){
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"CaptchaViewNav"];
         [self presentViewController:vc animated:YES completion:NULL];
     }
     
     else if([title isEqualToString:@"Yup"]){
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"CaptchaViewNav"];
         [self presentViewController:vc animated:YES completion:NULL];
     }
@@ -280,13 +279,16 @@
         cell.percentage.text = [displayPercentage stringByAppendingString:@"%"];
         
         if(displayPercentageInteger < 75){
-            cell.percentage.textColor = [UIColor redColor];
+            //rgb(231, 76, 60)
+            cell.percentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
         }
         else if (displayPercentageInteger > 75 && displayPercentageInteger < 80){
             cell.percentage.textColor = [UIColor orangeColor];
         }
         else{
-            cell.percentage.textColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
+            //rgb(46, 204, 113)
+            //cell.percentage.textColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
+            cell.percentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
         }
         
     }

@@ -12,6 +12,16 @@
 #import "CurrentClassTableViewCell.h"
 #import "UpcomingClassCell.h"
 
+
+#warning Bugs
+/*
+ Bugs / TODO:
+ - Last Updated Label in detail View is sometime colored, and sometimes not.
+ - Resign First Reponder in the settings screen when user click "Verify!"
+ - Slot in Today View is getting truncated if it's more than one slot long - Labs!
+ 
+ 
+ */
 @interface TodayViewController (){
     TimeTable *ofToday;
     NSDictionary *currentClass;

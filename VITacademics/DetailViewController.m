@@ -9,7 +9,10 @@
 #import "DetailViewController.h"
 #import "Subject.h"
 #import "CSNotificationView.h"
-#import "PNChart.h"
+#import "DPMeterView.h"
+#import "UIBezierPath+BasicShapes.h"
+#import "PNColor.h"
+#define   DEGREES_TO_RADIANS(degrees)  ((3.14159265359 * degrees)/ 180)
 
 
 @interface DetailViewController ()
@@ -52,16 +55,37 @@
         self.subjectAttended.text = [NSString stringWithFormat:@"%ld",(long)_subject.attendedClasses];
         self.subjectConducted.text = [NSString stringWithFormat:@"%ld",(long)_subject.conductedClasses];
         
+        self.progressView = [[DPMeterView alloc] init];
+        [self.progressView setFrame:self.progressFrame.frame];
+        [self.progressView setMeterType:DPMeterTypeLinearVertical];
+        [self.progressView setShape:[self createArcPath].CGPath];
+        [self.progressView setProgressTintColor:PNFreshGreen];
+        
+        [self.progressView startGravity];
+        [self.progressView setTrackTintColor:[UIColor colorWithRed:0.9254 green:0.9411 blue:0.9450 alpha:1]];
+        [self.view addSubview:self.progressView];
+
         [self recalculateAttendance];
     }
     
 }
 
+- (UIBezierPath *)createArcPath
+{
+    UIBezierPath *aPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(60, 60)
+                                                         radius:50
+                                                     startAngle:0
+                                                       endAngle:DEGREES_TO_RADIANS(359)
+                                                      clockwise:YES];
+    return aPath;
+}
+
+
+
 - (void)recalculateAttendance{
     float calculatedPercentage =(float) [self.subjectAttended.text intValue] / [self.subjectConducted.text intValue];
     float displayPercentageInteger = ceil(calculatedPercentage * 100);
     //NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
-    
     
     
     
@@ -75,27 +99,21 @@
         }
         self.lastUpdatedLabel.text = [_subject.subjectDetails objectAtIndex:length - 2];
     }
-    
-    if(calculatedPercentage > 0){
-        self.circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:displayPercentageInteger]];
-    }
-    else{
-        self.circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 75.0, SCREEN_WIDTH, 100.0) andTotal:[NSNumber numberWithInt:100] andCurrent:[NSNumber numberWithFloat:0]];
-    }
-    self.circleChart.backgroundColor = [UIColor clearColor];
+
     
     if(displayPercentageInteger >= 80){
-        [self.circleChart setStrokeColor:PNFreshGreen];
+        [self.progressView setProgressTintColor:[UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1]];
     }
     else if(displayPercentageInteger >= 75 && displayPercentageInteger < 80){
-        [self.circleChart setStrokeColor:[UIColor orangeColor]];
+        [self.progressView setProgressTintColor:[UIColor orangeColor]];
     }
     else{
-        [self.circleChart setStrokeColor:PNRed];
+        [self.progressView setProgressTintColor:[UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1]];
     }
-    
-    [self.circleChart strokeChart];
-    [self.view addSubview:self.circleChart];
+
+    displayPercentageInteger = displayPercentageInteger/100;
+    [self.progressView setProgress:displayPercentageInteger animated:YES];
+
     
     if(self.subject.subjectCode){
         self.title = self.subject.subjectCode;
@@ -270,6 +288,23 @@
     
 }
 
+
+
+/*
+    UIView *checkView = [self viewWithImageName:@"check"];
+    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+    
+    UIView *crossView = [self viewWithImageName:@"cross"];
+    UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
+    
+    UIView *clockView = [self viewWithImageName:@"clock"];
+    UIColor *yellowColor = [UIColor colorWithRed:254.0 / 255.0 green:217.0 / 255.0 blue:56.0 / 255.0 alpha:1.0];
+    
+    UIView *listView = [self viewWithImageName:@"list"];
+    UIColor *brownColor = [UIColor colorWithRed:206.0 / 255.0 green:149.0 / 255.0 blue:98.0 / 255.0 alpha:1.0];
+    
+    // Setting the default inactive state color to the tableView background color
+*/
 
 
 @end

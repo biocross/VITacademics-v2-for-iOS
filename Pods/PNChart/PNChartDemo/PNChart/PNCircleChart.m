@@ -55,6 +55,7 @@
     
     UICountingLabel *gradeLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 0, 55.0, 50.0)];
     [gradeLabel setTextAlignment:NSTextAlignmentCenter];
+    [gradeLabel setBackgroundColor:[UIColor whiteColor]];
     [gradeLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
     [gradeLabel setTextColor: PNDeepGrey];
     [gradeLabel setCenter:CGPointMake(self.center.x,self.center.y)];
