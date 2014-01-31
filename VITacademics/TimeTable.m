@@ -21,16 +21,21 @@
     
     
     NSError *e = nil;
-    NSString *newString = [TimeTableString stringByReplacingOccurrencesOfString:@"valid%" withString:@""];
-    NSData *ttDataFromString = [newString dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &e];
+    //NSString *newString = [TimeTableString stringByReplacingOccurrencesOfString:@"valid%" withString:@""];
+    NSData *ttDataFromString = [TimeTableString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &e];
+    
+    //NSLog(@"%@", [jsonArray description]);
+    
+    NSArray *subjects = [jsonArray valueForKey:@"subjects"];
+    NSLog(@"%@", [subjects description]);
     
     if (!jsonArray) {
         NSLog(@"Error parsing JSON: %@", e);
     }
     else{
         NSLog(@"TimeTable Parsed!");
-        for(NSDictionary *item in jsonArray){
+        for(NSDictionary *item in subjects){
             [self parseSubjectAndAddToTT: item];
         }
     }
@@ -369,11 +374,11 @@
         [timeSlots addObject:components];
     }
     
-    NSDateComponents *components1 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+    /*NSDateComponents *components1 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
     [components1 setHour:12];
     [components1 setMinute:0];
     [components1 setSecond:0];
-    [timeSlots addObject:components1];
+    [timeSlots addObject:components1];*/
     
     
     for(int i=0; i<5; i++){
@@ -390,6 +395,8 @@
     [components2 setSecond:0];
     [timeSlots addObject:components2];
     
+    
+    NSLog(@"%@", [timeSlots description]);
     return timeSlots;
 }
 

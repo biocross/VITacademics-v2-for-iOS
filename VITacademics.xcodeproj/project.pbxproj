@@ -46,6 +46,8 @@
 		3518D1C41854F85000EFC1AF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C31854F85000EFC1AF /* Security.framework */; };
 		3518D1C81854F85800EFC1AF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */; };
 		3518D1CA1854F97000EFC1AF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C91854F97000EFC1AF /* FacebookSDK.framework */; };
+		3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518E96B189B9981001F32A8 /* CaptchaViewController.m */; };
+		3518E96F189B9F56001F32A8 /* SubjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518E96E189B9F56001F32A8 /* SubjectDetailsViewController.m */; };
 		35204C5918586CC20005319B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35204C5818586CC20005319B /* SettingsViewController.m */; };
 		355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */; };
 		355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */; };
@@ -123,6 +125,10 @@
 		3518D1C31854F85000EFC1AF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3518D1C91854F97000EFC1AF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		3518E96A189B9981001F32A8 /* CaptchaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaViewController.h; sourceTree = "<group>"; };
+		3518E96B189B9981001F32A8 /* CaptchaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaViewController.m; sourceTree = "<group>"; };
+		3518E96D189B9F56001F32A8 /* SubjectDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectDetailsViewController.h; sourceTree = "<group>"; };
+		3518E96E189B9F56001F32A8 /* SubjectDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectDetailsViewController.m; sourceTree = "<group>"; };
 		35204C5718586CC20005319B /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		35204C5818586CC20005319B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		355F9629188D1BBB00BB0945 /* iPhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneTableViewCell.h; sourceTree = "<group>"; };
@@ -272,6 +278,10 @@
 				35155D8018781A8100513E05 /* SettingsTabViewController.m */,
 				35D2181B188FDBF5000E5BEC /* DetailViewController.h */,
 				35D2181C188FDBF5000E5BEC /* DetailViewController.m */,
+				3518E96A189B9981001F32A8 /* CaptchaViewController.h */,
+				3518E96B189B9981001F32A8 /* CaptchaViewController.m */,
+				3518E96D189B9F56001F32A8 /* SubjectDetailsViewController.h */,
+				3518E96E189B9F56001F32A8 /* SubjectDetailsViewController.m */,
 				35B954F5188C11BD00389DA6 /* Model */,
 				35128E7F18683C6000DBC06D /* User Interface */,
 				35A751F6185B9BEA009FC74D /* Tutorial */,
@@ -523,9 +533,11 @@
 			files = (
 				35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */,
 				35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */,
+				3518E96F189B9F56001F32A8 /* SubjectDetailsViewController.m in Sources */,
 				3518D1651854583000EFC1AF /* AppDelegate.m in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
+				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,
 				35B954F4188C11B800389DA6 /* Subjects.m in Sources */,

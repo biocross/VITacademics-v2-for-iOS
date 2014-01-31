@@ -35,6 +35,16 @@
     }
 
     
+    if(self.navigationController){
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:(@selector(cancel))];
+        
+        
+    }
+    
+}
+
+- (void)cancel{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,7 +88,8 @@
     //show progress
     _buttonOutlet.enabled = NO;
     [_buttonOutlet setTitle:@"Verifying..." forState:UIControlStateNormal];
-    
+    [_dateOfBirth resignFirstResponder];
+    [_registrationNumber resignFirstResponder];
     
     //verify captcha in the background
 

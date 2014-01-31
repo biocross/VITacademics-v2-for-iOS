@@ -7,6 +7,7 @@
 //
 
 #import "SettingsTabViewController.h"
+#import "SettingsViewController.h"
 
 @interface SettingsTabViewController ()
 
@@ -45,6 +46,15 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.section == 0){
+        SettingsViewController *secondStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutThird"];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:secondStep];
+        [self.navigationController presentViewController:nav animated:YES completion:nil];
+    }
+    
+    
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

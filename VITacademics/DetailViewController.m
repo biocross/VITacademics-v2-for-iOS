@@ -12,6 +12,8 @@
 #import "DPMeterView.h"
 #import "UIBezierPath+BasicShapes.h"
 #import "PNColor.h"
+#import "SubjectDetailsViewController.h"
+
 #define   DEGREES_TO_RADIANS(degrees)  ((3.14159265359 * degrees)/ 180)
 
 
@@ -307,4 +309,21 @@
 */
 
 
+- (IBAction)detailsButtonPressed:(id)sender {
+    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    DetailViewController *detailViewController = [sb instantiateViewControllerWithIdentifier:@"SubjectDetails"];
+    [self.navigationController pushViewController:detailViewController animated:YES];*/
+    
+    if([_subject.subjectDetails count] > 0){
+        SubjectDetailsViewController *forThisSubject = [[SubjectDetailsViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:forThisSubject];
+        [self presentViewController:nav animated:YES completion:nil];
+        //[forThisSubject setDetailsArray:_subject.subjectDetails];
+        forThisSubject.detailsArray = _subject.subjectDetails;
+    }
+    else{
+            [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Not Uploaded Yet"];
+        
+    }
+}
 @end

@@ -19,6 +19,8 @@
     [[UILabel appearance] setFont:newFont];
     //self.window.tintColor = [UIColor colorWithRed:0.905 green:0.298 blue:0.133 alpha:1];
     
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:                                                        [UIFont fontWithName:@"MuseoSans-300" size:18], NSFontAttributeName, nil]];
+    
     
     [Parse setApplicationId:@"vtpDFHGacMwZIpMtpDaFuu0ToBol9b9nQM9VD57N"
                   clientKey:@"OCKn8dB6wqeGqvSdYbXHgYe9mDGFb2yukyDHT3Fs"];

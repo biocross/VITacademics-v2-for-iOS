@@ -104,7 +104,7 @@
 }
 
 -(NSString *)loadTimeTableWithRegistrationNumber:(NSString *)registrationNumber andDateOfBirth:(NSString *)dateOfBirth{
-    NSString *buildingUrl = [NSString stringWithFormat:@"http://vitacademicsrel.appspot.com/tt/%@/%@", registrationNumber, dateOfBirth];
+    NSString *buildingUrl = [NSString stringWithFormat:@"http://vitacademicstokensystem.appspot.com/gettimetable/%@/%@", registrationNumber, dateOfBirth];
     NSURL *url = [NSURL URLWithString:buildingUrl];
     NSError *error = nil;
     NSString *text = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];

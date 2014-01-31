@@ -120,10 +120,10 @@
 
 
 -(void)refreshAttendance:(id)sender{
-    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"CaptchaViewNav"];
     [self presentViewController:vc animated:YES completion:NULL];
-     */
+    
     [(UIRefreshControl *)sender endRefreshing];
     
 }

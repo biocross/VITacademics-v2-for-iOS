@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSArray *subjectMarks;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
 
+- (IBAction)detailsButtonPressed:(id)sender;
 
 @property (strong) DPMeterView *progressView;
 @property (weak, nonatomic) IBOutlet UILabel *staticFourteenLabel;
