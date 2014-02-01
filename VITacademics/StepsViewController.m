@@ -30,11 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    PulsingHaloLayer *halo = [PulsingHaloLayer layer];
-    halo.position = self.sampleProfilePhoto.center;
-    [self.view.layer insertSublayer:halo below:self.sampleProfilePhoto.layer];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -146,7 +141,6 @@
     
     //Contacting Backend
     PFUser *currentUser = [PFUser currentUser];
-    
     if (currentUser) {
         if([PFFacebookUtils isLinkedWithUser:currentUser]){
             currentUser[@"facebookName"] = name;

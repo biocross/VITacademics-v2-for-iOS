@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_JBChartView 1
 #define COCOAPODS_VERSION_PATCH_JBChartView 3
 
+// M13ProgressSuite
+#define COCOAPODS_POD_AVAILABLE_M13ProgressSuite
+#define COCOAPODS_VERSION_MAJOR_M13ProgressSuite 1
+#define COCOAPODS_VERSION_MINOR_M13ProgressSuite 0
+#define COCOAPODS_VERSION_PATCH_M13ProgressSuite 0
+
 // NSDate+TimeAgo
 #define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
 #define COCOAPODS_VERSION_MAJOR_NSDate_TimeAgo 1

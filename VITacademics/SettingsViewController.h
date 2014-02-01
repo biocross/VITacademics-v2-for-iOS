@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonOutlet;
 @property UIDatePicker *myPicker;
 
+@property (strong) StepsViewController *sender;
+
 @end

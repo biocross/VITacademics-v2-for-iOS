@@ -65,7 +65,14 @@
 }
 
 -(void)pickFriend:(id)sender{
-    PFUser *currentUser = [PFUser currentUser];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ShareView"];
+    [self presentViewController:vc animated:YES completion:NULL];
+    
+    
+    /*
+     PFUser *currentUser = [PFUser currentUser];
     NSMutableDictionary* params =   [NSMutableDictionary dictionaryWithObjectsAndKeys:nil];
     
     [FBWebDialogs presentRequestsDialogModallyWithSession:nil
@@ -87,6 +94,9 @@
                                                           }
                                                       }}
                                               friendCache:nil];
+     */
+    
+    
 }
 
 

@@ -62,6 +62,7 @@
 		35A751F5185B9608009FC74D /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F4185B9608009FC74D /* TabViewController.m */; };
 		35B954F3188C11B800389DA6 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B954F0188C11B800389DA6 /* Subject.m */; };
 		35B954F4188C11B800389DA6 /* Subjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B954F2188C11B800389DA6 /* Subjects.m */; };
+		35BC32DD189D950400B2999D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC32DC189D950400B2999D /* ShareViewController.m */; };
 		35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D20BE71864FF46001139C9 /* UpcomingClassCell.m */; };
 		35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */; };
 		35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2181C188FDBF5000E5BEC /* DetailViewController.m */; };
@@ -154,6 +155,8 @@
 		35B954F0188C11B800389DA6 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		35B954F1188C11B800389DA6 /* Subjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subjects.h; sourceTree = "<group>"; };
 		35B954F2188C11B800389DA6 /* Subjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subjects.m; sourceTree = "<group>"; };
+		35BC32DB189D950400B2999D /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		35BC32DC189D950400B2999D /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		35D20BE61864FF46001139C9 /* UpcomingClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingClassCell.h; sourceTree = "<group>"; };
 		35D20BE71864FF46001139C9 /* UpcomingClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingClassCell.m; sourceTree = "<group>"; };
 		35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingClassCell.xib; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				3518E96B189B9981001F32A8 /* CaptchaViewController.m */,
 				3518E96D189B9F56001F32A8 /* SubjectDetailsViewController.h */,
 				3518E96E189B9F56001F32A8 /* SubjectDetailsViewController.m */,
+				35BC32DB189D950400B2999D /* ShareViewController.h */,
+				35BC32DC189D950400B2999D /* ShareViewController.m */,
 				35B954F5188C11BD00389DA6 /* Model */,
 				35128E7F18683C6000DBC06D /* User Interface */,
 				35A751F6185B9BEA009FC74D /* Tutorial */,
@@ -535,6 +540,7 @@
 				35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */,
 				3518E96F189B9F56001F32A8 /* SubjectDetailsViewController.m in Sources */,
 				3518D1651854583000EFC1AF /* AppDelegate.m in Sources */,
+				35BC32DD189D950400B2999D /* ShareViewController.m in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
 				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
@@ -618,11 +624,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -635,7 +641,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -658,18 +664,18 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;

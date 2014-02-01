@@ -45,13 +45,15 @@
     SettingsViewController *secondStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutThird"];
     secondStep.step.title = @"Credentials";
     
-    UIViewController *thirdStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutSecond"];
-    thirdStep.step.title = @"Facebook";
+    //UIViewController *thirdStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutSecond"];
+    //thirdStep.step.title = @"Facebook";
     
     StepsViewController *fourthStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutFourth"];
     fourthStep.step.title = @"Good To Go!";
     
-    return @[firstStep, secondStep, thirdStep, fourthStep];
+    secondStep.sender = fourthStep;
+    
+    return @[firstStep, secondStep, fourthStep];
 }
 
 - (void)finishedAllSteps {
