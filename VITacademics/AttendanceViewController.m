@@ -11,15 +11,16 @@
 #import "Subject.h"
 #import "DetailViewController.h"
 #import "VITxAPI.h"
-//#import "CaptchaViewController.h"
 #import "iPhoneTableViewCell.h"
 #import "NSDate+TimeAgo.h"
+#import "DataManager.h"
 
 @interface AttendanceViewController () {
     NSMutableArray *_objects;
     NSMutableArray *MTheorySubjects;
     NSMutableArray *MLabSubjects;
     NSArray *marksArray;
+    NSMutableArray *refreshedArray;
     
     
 }
@@ -73,7 +74,8 @@
     if([preferences stringForKey:@"registrationNumber"]){
         if([preferences stringForKey:[preferences stringForKey:@"registrationNumber"]]){
             //NSLog(@"Loading attendance from cache! Yay!");
-            self.attendanceCacheString = [preferences stringForKey:[preferences stringForKey:@"registrationNumber"]];
+            
+            //self.attendanceCacheString = [preferences stringForKey:[preferences stringForKey:@"registrationNumber"]];
             NSString *marksKey = [NSString stringWithFormat:@"MarksOf%@", [preferences objectForKey:@"registrationNumber"]];
             self.marksCacheString = [preferences objectForKey:marksKey];
             [self completedProcess];
@@ -397,7 +399,7 @@
             [self.notificationController setVisible:NO animated:YES completion:nil];
             
             
-            self.attendanceCacheString = result;
+            //self.attendanceCacheString = result;
             self.marksCacheString = marks;
             
             [preferences removeObjectForKey:[preferences objectForKey:@"registrationNumber"]];
@@ -417,37 +419,11 @@
 
 -(void)completedProcess{
     
-    
-    NSError *e = nil;
-    NSString *newString = [self.attendanceCacheString stringByReplacingOccurrencesOfString:@"valid%" withString:@""];
-    NSData *attendanceDataFromString = [newString dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: attendanceDataFromString options: NSJSONReadingMutableContainers error: &e];
-    
-    if (!jsonArray) {
-        NSLog(@"Error parsing JSON: %@", e);
-        if([newString isEqualToString:@"networkerror"]){
-            UIAlertView *errorMessage = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"There was a problem connecting to the internet. Please check your Data/Wi-Fi connection and try again." delegate:self cancelButtonTitle:@"Okay." otherButtonTitles: nil];
-            [errorMessage show];
-            
-        }
-        else if([newString isEqualToString:@"timedout"] || [newString isEqualToString:@"captchaerror"]){
-            UIAlertView *errorMessage = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Something went wrong. Please try again. If this keeps on happening, please let us know via the \"Help\" section." delegate:self cancelButtonTitle:@"Okay." otherButtonTitles: nil];
-            [errorMessage show];
-        }
-    }//end of if
-    else {
-        NSMutableArray *refreshedArray = [[NSMutableArray alloc] init];
-        for(NSDictionary *item in jsonArray) {
-            
-            Subject *x = [[Subject alloc] initWithSubject:[item valueForKey:@"code"] title:[item valueForKey:@"title"] slot:[item valueForKey:@"slot"] attended:[[item valueForKey:@"attended"] integerValue] conducted:[[item valueForKey:@"conducted"] integerValue] number:[[item valueForKey:@"sl_no"] integerValue] type:[item valueForKey:@"type"] details:[item valueForKey:@"details"] classNumber:[item valueForKey:@"classnbr"]];
-            
-            [refreshedArray addObject:x];
-            
-        } //end of for
+        DataManager *sharedManager = [DataManager sharedManager];
+        refreshedArray = [sharedManager parseWithAttendanceString];
         [self.subjects setArray:refreshedArray];
         [self.tableView reloadData];
-        
-        
+    
         NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
         if([preferences objectForKey:@"lastUpdated"]){
             NSDate *lastUpdated = [preferences objectForKey:@"lastUpdated"];
@@ -457,8 +433,7 @@
             double delayInSeconds = 0.05f;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                
-                
+           
                 
                 [CSNotificationView showInViewController:self tintColor:[UIColor redColor] image:[UIImage imageNamed:@"CSNotificationView_checkmarkIcon"] message:cardMessage duration:2.5f];
             });
@@ -468,9 +443,6 @@
         [self processMarks];
         
     } //end of else
-    
-    
-}
 
 - (void)processMarks{
     

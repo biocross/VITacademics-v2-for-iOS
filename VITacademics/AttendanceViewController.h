@@ -28,7 +28,7 @@
 - (void)completedProcess;
 - (void)processMarks;
 
-@property NSString *attendanceCacheString;
+//@property NSString *attendanceCacheString;
 @property NSString *marksCacheString;
 @property CSNotificationView *notificationController;
 

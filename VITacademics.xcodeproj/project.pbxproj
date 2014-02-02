@@ -66,6 +66,7 @@
 		35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D20BE71864FF46001139C9 /* UpcomingClassCell.m */; };
 		35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */; };
 		35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2181C188FDBF5000E5BEC /* DetailViewController.m */; };
+		35D4A319189E51F400F23A28 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4A318189E51F400F23A28 /* DataManager.m */; };
 		F05DA906B6EC44E6B2253C4C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E84647C95C14A498AD2419D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +163,8 @@
 		35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingClassCell.xib; sourceTree = "<group>"; };
 		35D2181B188FDBF5000E5BEC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		35D2181C188FDBF5000E5BEC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		35D4A317189E51F400F23A28 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		35D4A318189E51F400F23A28 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		48D705E98F504EBB9C77839A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		4E84647C95C14A498AD2419D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -277,6 +280,8 @@
 				35A751F4185B9608009FC74D /* TabViewController.m */,
 				355F962E188D1E8700BB0945 /* AttendanceViewController.h */,
 				355F962F188D1E8700BB0945 /* AttendanceViewController.m */,
+				35D4A317189E51F400F23A28 /* DataManager.h */,
+				35D4A318189E51F400F23A28 /* DataManager.m */,
 				35155D7F18781A8100513E05 /* SettingsTabViewController.h */,
 				35155D8018781A8100513E05 /* SettingsTabViewController.m */,
 				35D2181B188FDBF5000E5BEC /* DetailViewController.h */,
@@ -545,6 +550,7 @@
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
 				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,
+				35D4A319189E51F400F23A28 /* DataManager.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,
 				35B954F4188C11B800389DA6 /* Subjects.m in Sources */,
 				35B954F3188C11B800389DA6 /* Subject.m in Sources */,

@@ -11,6 +11,8 @@
 #import "RMStepsController.h"
 #import "CurrentClassTableViewCell.h"
 #import "UpcomingClassCell.h"
+#import "Subject.h"
+
 
 
 #warning Bugs
@@ -22,6 +24,7 @@
  - Set 1990 date in date picker
  - Remove the string from Setting View saying facebook thingy
  - [CRITICAL] Now view shows classes on weekends also!
+ - [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
   
  
  - I can actually set Change Credentials to reset the app.
@@ -29,6 +32,7 @@
 @interface TodayViewController (){
     TimeTable *ofToday;
     NSDictionary *currentClass;
+    NSMutableArray *attendanceArray;
 }
 
 @end
@@ -50,6 +54,9 @@
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
+    
+    
+    
     if([preferences objectForKey:@"registrationNumber"]){
         
         NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [preferences objectForKey:@"registrationNumber"]];
@@ -70,6 +77,13 @@
         self.timeSlots = [ofToday getTimeSlotArray];
         
         [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+    
+        
+        //Attendance:
+        if([preferences stringForKey:[preferences stringForKey:@"registrationNumber"]]){
+            DataManager *sharedManager = [DataManager sharedManager];
+            attendanceArray = [sharedManager parseWithAttendanceString];
+        }
     }
     
     
@@ -279,8 +293,8 @@
         UIFont *greyedFont = [UIFont fontWithName:@"MuseoSans-300" size:13];
         [cell.greyedText setFont:greyedFont];
         
-        //UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:23];
-        [cell.subjectPercentage setFont:greyedFont];
+        UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:23];
+        [cell.subjectPercentage setFont:percentageFont];
         cell.subjectPercentage.text = @"attendance not yet available";
         
         NSDateComponents *rightNow = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
@@ -300,6 +314,38 @@
             cell.subjectStartingIn.text = [NSString stringWithFormat:@"Begins at %d %@", time, suffix];
             cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.203 green:0.286 blue:0.386 alpha:1];
         }
+        
+        //Attendance Part:
+        int indexOfMatchedSubject = -1;
+        int i = 0;
+        for(Subject *item in attendanceArray){
+            if([item.classNumber isEqualToString:[self.legibleTimeTable[indexPath.row] objectForKey:@"cnum"]]){
+                indexOfMatchedSubject = i;
+                break;
+            }
+            i += 1;
+        }
+        
+        Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
+        
+        float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
+        float displayPercentageInteger = ceil(calculatedPercentage * 100);
+        NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
+        cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
+        
+        if(displayPercentageInteger < 75){
+            cell.subjectPercentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
+        }
+        else if (displayPercentageInteger > 75 && displayPercentageInteger < 80){
+            cell.subjectPercentage.textColor = [UIColor orangeColor];
+        }
+        else{
+            cell.subjectPercentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+        }
+        
+        
+        
+        
         return cell;
     }
     
