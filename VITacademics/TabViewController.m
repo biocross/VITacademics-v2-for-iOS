@@ -33,7 +33,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     if([preferences objectForKey:@"registrationNumber"]){
-        [self setSelectedIndex:2];
+        //[self setSelectedIndex:2];
     }
     else{
         

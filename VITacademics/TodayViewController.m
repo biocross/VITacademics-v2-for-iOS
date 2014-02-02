@@ -25,6 +25,7 @@
  - Remove the string from Setting View saying facebook thingy
  - [CRITICAL] Now view shows classes on weekends also!
  - [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
+ - [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
   
  
  - I can actually set Change Credentials to reset the app.
@@ -284,18 +285,16 @@
         UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
         [cell.subjectTitle setFont:titleFont];
         
-        UIFont *venueFont = [UIFont fontWithName:@"MuseoSans-300" size:19];
+        UIFont *venueFont = [UIFont fontWithName:@"MuseoSans-300" size:20];
         [cell.subjectVenue setFont:venueFont];
         
-        UIFont *slotFont = [UIFont fontWithName:@"MuseoSans-300" size:13];
+        UIFont *slotFont = [UIFont fontWithName:@"MuseoSans-300" size:18];
         [cell.subjectSlot setFont:slotFont];
         
         UIFont *greyedFont = [UIFont fontWithName:@"MuseoSans-300" size:13];
         [cell.greyedText setFont:greyedFont];
         
-        UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:23];
-        [cell.subjectPercentage setFont:percentageFont];
-        cell.subjectPercentage.text = @"attendance not yet available";
+        
         
         NSDateComponents *rightNow = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
         
@@ -326,21 +325,31 @@
             i += 1;
         }
         
-        Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
-        
-        float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
-        float displayPercentageInteger = ceil(calculatedPercentage * 100);
-        NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
-        cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
-        
-        if(displayPercentageInteger < 75){
-            cell.subjectPercentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
-        }
-        else if (displayPercentageInteger > 75 && displayPercentageInteger < 80){
-            cell.subjectPercentage.textColor = [UIColor orangeColor];
+        if(indexOfMatchedSubject != -1){
+            Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
+            
+            float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
+            float displayPercentageInteger = ceil(calculatedPercentage * 100);
+            NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
+            cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
+            
+            
+            if(displayPercentageInteger < 75){
+                cell.subjectPercentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
+            }
+            else if (displayPercentageInteger > 75 && displayPercentageInteger < 80){
+                cell.subjectPercentage.textColor = [UIColor orangeColor];
+            }
+            else{
+                cell.subjectPercentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+            }
+            
+            UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:18];
+            [cell.subjectPercentage setFont:percentageFont];
         }
         else{
-            cell.subjectPercentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+            [cell.subjectPercentage setFont:greyedFont];
+            cell.subjectPercentage.text = @"attendance not yet available";
         }
         
         

@@ -49,7 +49,7 @@
     //thirdStep.step.title = @"Facebook";
     
     StepsViewController *fourthStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutFourth"];
-    fourthStep.step.title = @"Good To Go!";
+    fourthStep.step.title = @"Finalizing";
     
     secondStep.sender = fourthStep;
     
