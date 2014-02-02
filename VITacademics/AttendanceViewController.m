@@ -392,7 +392,7 @@
         NSString *result = [attendanceManager loadAttendanceWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
         NSString *marks = [attendanceManager loadMarksWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
         dispatch_async(dispatch_get_main_queue(), ^{
-            //update table here!
+            //update table here!"
             //[alert dismissWithClickedButtonIndex:0 animated:YES];
             [self.notificationController setVisible:NO animated:YES completion:nil];
             

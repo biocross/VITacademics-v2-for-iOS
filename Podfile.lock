@@ -7,6 +7,7 @@ PODS:
   - PNChart (0.3.1)
   - PulsingHalo (0.0.1)
   - RMStepsController (0.9)
+  - RSBarcodes (0.0.3)
 
 DEPENDENCIES:
   - CSNotificationView (~> 0.3.3)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - PNChart (~> 0.3.1)
   - PulsingHalo
   - RMStepsController (~> 0.9)
+  - RSBarcodes (~> 0.0.3)
 
 SPEC CHECKSUMS:
   CSNotificationView: f14352657afe7255be9fb2446eb99d5914b97b5d
@@ -27,5 +29,6 @@ SPEC CHECKSUMS:
   PNChart: 2538e83bfda6809f2c50e95151edbc86f8425879
   PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
   RMStepsController: f44a6cc217e5b1fc77df5dad201bbd7f6cf293f9
+  RSBarcodes: dcc8cab02286d11b3661b85b674a13452ee5f861
 
 COCOAPODS: 0.29.0

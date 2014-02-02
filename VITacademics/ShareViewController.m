@@ -26,7 +26,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    UIFont *PINFont = [UIFont fontWithName:@"MuseoSans-300" size:27];
+    [_token setFont:PINFont];
+    
+    UIFont *subtitleFont = [UIFont fontWithName:@"MuseoSans-300" size:12];
+    [_subtitle1 setFont:subtitleFont];
+    [_subtitle2 setFont:subtitleFont];
+    [_subtitle3 setFont:subtitleFont];
+    [_tokenValidity setFont:subtitleFont];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,5 +48,11 @@
 
 - (IBAction)cancelButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)addWithPINpressed:(id)sender {
+}
+
+- (IBAction)addManuallyPressed:(id)sender {
 }
 @end

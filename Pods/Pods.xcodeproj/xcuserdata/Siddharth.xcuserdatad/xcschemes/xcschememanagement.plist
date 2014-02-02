@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RSBarcodes.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07B9F5CAC9C24AE7A316F91A</key>
+		<key>0DAB2E07E6FA443691FB89CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>117195020A9249B3888EEC73</key>
+		<key>4D9E277BB85245BFA8578A7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60C73DDFEFDC491BB76622FD</key>
+		<key>52EB4151538A4D0F8804D253</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AE7DB334C8B47F59AEECCE1</key>
+		<key>828349C5D4594517837C74A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B307E3D9934642658D108277</key>
+		<key>98554C5FFB714D19AFBD317D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA897ED886CF4CBB8103A37F</key>
+		<key>992D03E7762E4D7A962E9E69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF71F14D36C84CC8918B5E97</key>
+		<key>A286549B4B2545128E229895</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D67B33C717364980A048F3EA</key>
+		<key>B8A4AC038A594F10BD0C6080</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E8B259C4032B48698D9BC68F</key>
+		<key>BAFB781DC01D46E88D4A0385</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F05FA1597F2B4B8189D8008C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

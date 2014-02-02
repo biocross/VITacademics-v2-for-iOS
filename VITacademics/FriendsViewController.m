@@ -67,7 +67,7 @@
 -(void)pickFriend:(id)sender{
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ShareView"];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ShareViewNav"];
     [self presentViewController:vc animated:YES completion:NULL];
     
     
