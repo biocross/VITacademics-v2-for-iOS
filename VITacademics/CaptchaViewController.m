@@ -57,7 +57,19 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if(indexPath.row == 2){
-        [self beginCaptchaVerification];
+
+            [_captchaText resignFirstResponder];
+            
+            if([_captchaText.text length] == 6){
+                [self beginCaptchaVerification];
+            }
+            else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Please enter exactly 6 characters" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                [alert show];
+                [_captchaImage becomeFirstResponder];
+            }
+            
+        
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];

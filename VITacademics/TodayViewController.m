@@ -26,7 +26,7 @@
  - Remove the string from Setting View saying facebook thingy
  - [CRITICAL] Now view shows classes on weekends also!
  - [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
- - [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
+ - [FIXED] [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
  - [CRITICAL] Add full check of all JSON strings in Appdelegate to avoid "Data parameteR" crashes.
  - Make Upcoming classes also reactive cells.
   
@@ -80,8 +80,6 @@
                 [self.legibleTimeTable addObject:self.todaysTimeTable[i]];
             }
         }
-        
-        NSLog(@"%@", self.todaysTimeTable);
         
         
         for (int i=0 ; i < [self.legibleTimeTable count] ; i++){
@@ -340,7 +338,6 @@
             if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
                 if([self.legibleTimeTable[indexPath.row] isEqualToDictionary:self.todaysTimeTable[i]]){
                     index = i;
-                    NSLog(@"Index of the subject %@ was found to be %d", [self.todaysTimeTable[i] objectForKey:@"title"], index);
                     break;
                 }
             }

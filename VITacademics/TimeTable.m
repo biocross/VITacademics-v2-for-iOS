@@ -33,7 +33,6 @@
         NSLog(@"Error parsing JSON: %@", e);
     }
     else{
-        NSLog(@"TimeTable Parsed!");
         for(NSDictionary *item in subjects){
             [self parseSubjectAndAddToTT: item];
         }
@@ -92,19 +91,19 @@
     
     
     if(currentHour >= 14 && currentMinute <50){
-        currentClass = self.todaysTimeTable[5];
-    }
-    if(currentHour >= 15 && currentMinute <50){
         currentClass = self.todaysTimeTable[6];
     }
-    if(currentHour >= 16 && currentMinute <50){
+    if(currentHour >= 15 && currentMinute <50){
         currentClass = self.todaysTimeTable[7];
     }
-    if(currentHour >= 17 && currentMinute <50){
+    if(currentHour >= 16 && currentMinute <50){
         currentClass = self.todaysTimeTable[8];
     }
-    if(currentHour >= 18 && currentMinute <50){
+    if(currentHour >= 17 && currentMinute <50){
         currentClass = self.todaysTimeTable[9];
+    }
+    if(currentHour >= 18 && currentMinute <50){
+        currentClass = self.todaysTimeTable[10];
     }
     
     
