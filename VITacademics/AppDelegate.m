@@ -27,10 +27,22 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
     
-     /*//ResetCode:
-    NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
-    [new removeObjectForKey:@"registrationNumber"];
-    [new removeObjectForKey:@"dateOfBirth"];*/
+    
+    //Failsafe:
+    NSUserDefaults *temp = [NSUserDefaults standardUserDefaults];
+   
+    NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [temp objectForKey:@"registrationNumber"]];
+    
+    
+    if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
+        NSLog(@"All Systems OK");
+    }
+    else{
+        NSLog(@"Error Found in starting, resetting App.");
+        NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+        [new removeObjectForKey:@"registrationNumber"];
+        [new removeObjectForKey:@"dateOfBirth"];
+    }
     
     return YES;
 }

@@ -405,6 +405,7 @@
                         <outlet property="captchaImage" destination="OSM-lk-Bae" id="Fy7-iH-cig"/>
                         <outlet property="captchaText" destination="p0R-RL-LpO" id="pq2-iK-RyY"/>
                         <outlet property="progressDot" destination="6vQ-3d-9W2" id="gdN-pQ-KpO"/>
+                        <outlet property="tableView" destination="2dc-n7-FlS" id="25g-JX-W3y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFG-H1-0d1" userLabel="First Responder" sceneMemberID="firstResponder"/>

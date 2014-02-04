@@ -284,7 +284,7 @@
             //rgb(231, 76, 60)
             cell.percentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
         }
-        else if (displayPercentageInteger > 75 && displayPercentageInteger < 80){
+        else if (displayPercentageInteger >= 75 && displayPercentageInteger < 80){
             cell.percentage.textColor = [UIColor orangeColor];
         }
         else{
@@ -307,7 +307,7 @@
         if(displayPercentageInteger < 75){
             cell.percentage.textColor = [UIColor redColor];
         }
-        else if (displayPercentageInteger > 75 && displayPercentageInteger < 80){
+        else if (displayPercentageInteger >= 75 && displayPercentageInteger < 80){
             cell.percentage.textColor = [UIColor orangeColor];
         }
         else{

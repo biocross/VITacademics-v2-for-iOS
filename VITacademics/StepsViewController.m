@@ -30,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.seven.titleLabel.textColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
 }
 
 - (void)didReceiveMemoryWarning

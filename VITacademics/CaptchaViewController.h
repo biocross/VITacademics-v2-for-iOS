@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressDot;
 @property CSNotificationView *notificationController;
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

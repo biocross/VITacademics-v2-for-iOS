@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
     
+    
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
     if([preferences stringForKey:@"dateOfBirth"]){

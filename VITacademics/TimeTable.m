@@ -28,7 +28,6 @@
     //NSLog(@"%@", [jsonArray description]);
     
     NSArray *subjects = [jsonArray valueForKey:@"subjects"];
-    NSLog(@"%@", [subjects description]);
     
     if (!jsonArray) {
         NSLog(@"Error parsing JSON: %@", e);
@@ -180,7 +179,7 @@
                 skippyBoy = 0;
             }
             if([slot rangeOfString:@"2"].location != NSNotFound){
-                skippyBoy = 5;
+                skippyBoy = 6;
             }
             
             [_monday replaceObjectAtIndex:skippyBoy+0 withObject:subject];
@@ -197,7 +196,7 @@
                 skippyBoy = 0;
             }
             if([slot rangeOfString:@"2"].location != NSNotFound){
-                skippyBoy = 5;
+                skippyBoy = 6;
             }
             
             [_tuesday replaceObjectAtIndex:skippyBoy+0 withObject:subject];
@@ -205,7 +204,7 @@
             
             
             if(hasTutorial){
-                [_tuesday replaceObjectAtIndex:skippyBoy+3 withObject:subject];
+                [_wednesday replaceObjectAtIndex:skippyBoy+3 withObject:subject];
             }
         }
         
@@ -214,7 +213,7 @@
                 skippyBoy = 0;
             }
             if([slot rangeOfString:@"2"].location != NSNotFound){
-                skippyBoy = 5;
+                skippyBoy = 6;
             }
             
             [_monday replaceObjectAtIndex:skippyBoy+2 withObject:subject];
@@ -232,7 +231,7 @@
                 skippyBoy = 0;
             }
             if([slot rangeOfString:@"2"].location != NSNotFound){
-                skippyBoy = 5;
+                skippyBoy = 6;
             }
             
             [_tuesday replaceObjectAtIndex:skippyBoy+2 withObject:subject];
@@ -250,7 +249,7 @@
                 skippyBoy = 0;
             }
             if([slot rangeOfString:@"2"].location != NSNotFound){
-                skippyBoy = 5;
+                skippyBoy = 6;
             }
             
             [_monday replaceObjectAtIndex:skippyBoy+3 withObject:subject];
@@ -268,7 +267,7 @@
                 skippyBoy = 0;
             }
             if([slot rangeOfString:@"2"].location != NSNotFound){
-                skippyBoy = 5;
+                skippyBoy = 6;
             }
             
             [_monday replaceObjectAtIndex:skippyBoy+1 withObject:subject];
@@ -287,7 +286,7 @@
                 skippyBoy = 0;
             }
             if([slot rangeOfString:@"2"].location != NSNotFound){
-                skippyBoy = 5;
+                skippyBoy = 6;
             }
             
             [_tuesday replaceObjectAtIndex:skippyBoy+1 withObject:subject];
@@ -325,7 +324,7 @@
     
     int skippyBoy = 0;
     if(slot > 30){
-        skippyBoy = 5;
+        skippyBoy = 6;
         slot = slot - 30;
     }
     
@@ -374,9 +373,12 @@
         [timeSlots addObject:components];
     }
     
-
-    
-    
+    NSDateComponents *components1 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+    [components1 setHour:12];
+    [components1 setMinute:0];
+    [components1 setSecond:0];
+    [timeSlots addObject:components1];
+   
     for(int i=0; i<5; i++){
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
         [components setHour:14+i];
@@ -390,7 +392,6 @@
     [components2 setMinute:0];
     [components2 setSecond:0];
     [timeSlots addObject:components2];
-    
     
     return timeSlots;
 }

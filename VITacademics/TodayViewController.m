@@ -22,10 +22,13 @@
  - [FIXED] Resign First Reponder in the settings screen when user click "Verify!"
  - [FIXED] Slot in Today View is getting truncated if it's more than one slot long - Labs!
  - Set 1990 date in date picker
+ - Go Button on keyboard is not working - CaptchaViewController
  - Remove the string from Setting View saying facebook thingy
  - [CRITICAL] Now view shows classes on weekends also!
  - [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
  - [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
+ - [CRITICAL] Add full check of all JSON strings in Appdelegate to avoid "Data parameteR" crashes.
+ - Make Upcoming classes also reactive cells.
   
  
  - I can actually set Change Credentials to reset the app.
@@ -68,6 +71,9 @@
         
         self.legibleTimeTable = [[NSMutableArray alloc] init];
         
+        NSMutableArray *newArray = [[NSMutableArray alloc] init];
+        
+        
         NSInteger length = [self.todaysTimeTable count];
         for(int i = 0 ; i<length ; i++){
             if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
@@ -75,6 +81,20 @@
             }
         }
         
+        NSLog(@"%@", self.todaysTimeTable);
+        
+        
+        for (int i=0 ; i < [self.legibleTimeTable count] ; i++){
+            if(i!= [self.legibleTimeTable count]-1 && [self.legibleTimeTable[i] isEqualToDictionary:self.legibleTimeTable[i+1]]){
+                }
+            else{
+                [newArray addObject:self.legibleTimeTable[i]];
+            }
+        }
+ 
+        self.legibleTimeTable = newArray;
+        
+    
         self.timeSlots = [ofToday getTimeSlotArray];
         
         [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
@@ -82,8 +102,17 @@
         
         //Attendance:
         if([preferences stringForKey:[preferences stringForKey:@"registrationNumber"]]){
-            DataManager *sharedManager = [DataManager sharedManager];
-            attendanceArray = [sharedManager parseWithAttendanceString];
+            
+            @try {
+                DataManager *sharedManager = [DataManager sharedManager];
+                attendanceArray = [sharedManager parseWithAttendanceString];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"Error at 1: %@", [exception description]);
+            }
+
+            
+            
         }
     }
     
@@ -248,6 +277,48 @@
         
         UIFont *calculatedFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
         [cell.calculatedLabels setFont:calculatedFont];
+            
+        
+            
+        
+            @try {
+                int indexOfMatchedSubject = -1;
+                int i = 0;
+                for(Subject *item in attendanceArray){
+                    if([item.classNumber isEqualToString:[self.legibleTimeTable[indexPath.row] objectForKey:@"cnum"]]){
+                        indexOfMatchedSubject = i;
+                        break;
+                    }
+                    i += 1;
+                }
+                
+                if(indexOfMatchedSubject != -1){
+                    Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
+                    
+                    float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
+                    float displayPercentageInteger = ceil(calculatedPercentage * 100);
+                    NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
+                    cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
+                    
+                    
+                    if(displayPercentageInteger < 75){
+                        cell.subjectPercentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
+                    }
+                    else if (displayPercentageInteger >= 75 && displayPercentageInteger < 80){
+                        cell.subjectPercentage.textColor = [UIColor orangeColor];
+                    }
+                    else{
+                        cell.subjectPercentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+                    }
+                    
+                }
+            }
+            @catch (NSException *exception) {
+                NSLog(@"Error at 2: %@", [exception description]);
+            }
+
+            
+        
         
         return cell;
         
@@ -269,6 +340,7 @@
             if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
                 if([self.legibleTimeTable[indexPath.row] isEqualToDictionary:self.todaysTimeTable[i]]){
                     index = i;
+                    NSLog(@"Index of the subject %@ was found to be %d", [self.todaysTimeTable[i] objectForKey:@"title"], index);
                     break;
                 }
             }
@@ -310,47 +382,56 @@
                 suffix = @"PM";
                 time = time - 12;
             }
+            if(time == 12){
+                suffix = @"PM";
+            }
             cell.subjectStartingIn.text = [NSString stringWithFormat:@"Begins at %d %@", time, suffix];
             cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.203 green:0.286 blue:0.386 alpha:1];
         }
-        
-        //Attendance Part:
-        int indexOfMatchedSubject = -1;
-        int i = 0;
-        for(Subject *item in attendanceArray){
-            if([item.classNumber isEqualToString:[self.legibleTimeTable[indexPath.row] objectForKey:@"cnum"]]){
-                indexOfMatchedSubject = i;
-                break;
+        @try {
+            //Attendance Part:
+            int indexOfMatchedSubject = -1;
+            int i = 0;
+            for(Subject *item in attendanceArray){
+                if([item.classNumber isEqualToString:[self.legibleTimeTable[indexPath.row] objectForKey:@"cnum"]]){
+                    indexOfMatchedSubject = i;
+                    break;
+                }
+                i += 1;
             }
-            i += 1;
-        }
-        
-        if(indexOfMatchedSubject != -1){
-            Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
             
-            float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
-            float displayPercentageInteger = ceil(calculatedPercentage * 100);
-            NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
-            cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
-            
-            
-            if(displayPercentageInteger < 75){
-                cell.subjectPercentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
-            }
-            else if (displayPercentageInteger > 75 && displayPercentageInteger < 80){
-                cell.subjectPercentage.textColor = [UIColor orangeColor];
+            if(indexOfMatchedSubject != -1){
+                Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
+                
+                float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
+                float displayPercentageInteger = ceil(calculatedPercentage * 100);
+                NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
+                cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
+                
+                
+                if(displayPercentageInteger < 75){
+                    cell.subjectPercentage.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
+                }
+                else if (displayPercentageInteger >= 75 && displayPercentageInteger < 80){
+                    cell.subjectPercentage.textColor = [UIColor orangeColor];
+                }
+                else{
+                    cell.subjectPercentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+                }
+                
+                UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:18];
+                [cell.subjectPercentage setFont:percentageFont];
             }
             else{
-                cell.subjectPercentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+                [cell.subjectPercentage setFont:greyedFont];
+                cell.subjectPercentage.text = @"attendance not yet available";
             }
-            
-            UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:18];
-            [cell.subjectPercentage setFont:percentageFont];
         }
-        else{
-            [cell.subjectPercentage setFont:greyedFont];
-            cell.subjectPercentage.text = @"attendance not yet available";
+        @catch (NSException *exception) {
+            NSLog(@"Error at 3: %@", [exception description]);
         }
+
+        
         
         
         

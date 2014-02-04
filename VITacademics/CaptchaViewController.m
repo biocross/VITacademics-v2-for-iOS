@@ -54,6 +54,15 @@
     });//end of GCD
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.row == 2){
+        [self beginCaptchaVerification];
+    }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)captchaText {
     

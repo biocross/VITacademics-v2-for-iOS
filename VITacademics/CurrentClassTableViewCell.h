@@ -17,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *greyedText;
 @property (weak, nonatomic) IBOutlet UILabel *ifYou;
 @property (weak, nonatomic) IBOutlet UILabel *calculatedLabels;
+@property (weak, nonatomic) IBOutlet UILabel *missToday;
+@property (weak, nonatomic) IBOutlet UILabel *attendToday;
 
 @end
