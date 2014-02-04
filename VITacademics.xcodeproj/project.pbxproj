@@ -54,6 +54,12 @@
 		355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962F188D1E8700BB0945 /* AttendanceViewController.m */; };
 		35668E1B188EFC7E005DBD9D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 35668E1A188EFC7E005DBD9D /* settings.png */; };
 		356802AD1859118E00C41D69 /* VITxAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 356802AC1859118E00C41D69 /* VITxAPI.m */; };
+		35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C5C18A113FE009F09C8 /* Default-568h@2x.png */; };
+		35961C6318A14E71009F09C8 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C5E18A14E71009F09C8 /* 58.png */; };
+		35961C6418A14E71009F09C8 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C5F18A14E71009F09C8 /* 80.png */; };
+		35961C6518A14E71009F09C8 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C6018A14E71009F09C8 /* 120.png */; };
+		35961C6618A14E71009F09C8 /* 960x640.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C6118A14E71009F09C8 /* 960x640.png */; };
+		35961C6718A14E71009F09C8 /* 1136x640.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C6218A14E71009F09C8 /* 1136x640.png */; };
 		359C60BE185CD25000FB36B2 /* CurrentClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C60BD185CD25000FB36B2 /* CurrentClassTableViewCell.m */; };
 		359C60C0185CD27200FB36B2 /* CurrentClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 359C60BF185CD27200FB36B2 /* CurrentClassTableViewCell.xib */; };
 		359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359EDB99185DBA1600D14248 /* FriendsViewController.m */; };
@@ -141,6 +147,12 @@
 		35668E1A188EFC7E005DBD9D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		356802AB1859118E00C41D69 /* VITxAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VITxAPI.h; sourceTree = "<group>"; };
 		356802AC1859118E00C41D69 /* VITxAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VITxAPI.m; sourceTree = "<group>"; };
+		35961C5C18A113FE009F09C8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		35961C5E18A14E71009F09C8 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
+		35961C5F18A14E71009F09C8 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
+		35961C6018A14E71009F09C8 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
+		35961C6118A14E71009F09C8 /* 960x640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 960x640.png; sourceTree = "<group>"; };
+		35961C6218A14E71009F09C8 /* 1136x640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1136x640.png; sourceTree = "<group>"; };
 		359C60BC185CD25000FB36B2 /* CurrentClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentClassTableViewCell.h; sourceTree = "<group>"; };
 		359C60BD185CD25000FB36B2 /* CurrentClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentClassTableViewCell.m; sourceTree = "<group>"; };
 		359C60BF185CD27200FB36B2 /* CurrentClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentClassTableViewCell.xib; sourceTree = "<group>"; };
@@ -227,6 +239,7 @@
 		3518D1481854583000EFC1AF = {
 			isa = PBXGroup;
 			children = (
+				35961C5C18A113FE009F09C8 /* Default-568h@2x.png */,
 				3518D15A1854583000EFC1AF /* VITacademics */,
 				3518D17C1854583000EFC1AF /* VITacademicsTests */,
 				3518D1531854583000EFC1AF /* Frameworks */,
@@ -305,6 +318,11 @@
 		3518D15B1854583000EFC1AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35961C5E18A14E71009F09C8 /* 58.png */,
+				35961C5F18A14E71009F09C8 /* 80.png */,
+				35961C6018A14E71009F09C8 /* 120.png */,
+				35961C6118A14E71009F09C8 /* 960x640.png */,
+				35961C6218A14E71009F09C8 /* 1136x640.png */,
 				3518D19A1854633100EFC1AF /* Fonts */,
 				3518D15C1854583000EFC1AF /* VITacademics-Info.plist */,
 				3518D15D1854583000EFC1AF /* InfoPlist.strings */,
@@ -472,15 +490,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3518D1AB1854633B00EFC1AF /* MuseoSans-300.otf in Resources */,
+				35961C6318A14E71009F09C8 /* 58.png in Resources */,
 				3518D1AA1854633B00EFC1AF /* MuseoSans-100Italic.otf in Resources */,
 				355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */,
 				3518D1AC1854633B00EFC1AF /* MuseoSans-300Italic.otf in Resources */,
 				3518D1A61854633B00EFC1AF /* MuseoSans_500.otf in Resources */,
+				35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */,
+				35961C6418A14E71009F09C8 /* 80.png in Resources */,
 				3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */,
 				35668E1B188EFC7E005DBD9D /* settings.png in Resources */,
 				359C60C0185CD27200FB36B2 /* CurrentClassTableViewCell.xib in Resources */,
+				35961C6718A14E71009F09C8 /* 1136x640.png in Resources */,
 				3518D16B1854583000EFC1AF /* Main_iPad.storyboard in Resources */,
 				35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */,
+				35961C6518A14E71009F09C8 /* 120.png in Resources */,
 				3518D1AE1854633B00EFC1AF /* MuseoSans-900Italic.otf in Resources */,
 				3518D1A51854633B00EFC1AF /* MuseoSans_500_Italic.otf in Resources */,
 				3518D1701854583000EFC1AF /* Images.xcassets in Resources */,
@@ -490,6 +513,7 @@
 				3518D1A71854633B00EFC1AF /* MuseoSans_700.otf in Resources */,
 				35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */,
 				3518D1A91854633B00EFC1AF /* MuseoSans-100.otf in Resources */,
+				35961C6618A14E71009F09C8 /* 960x640.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,8 +722,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48D705E98F504EBB9C77839A /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -721,8 +743,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48D705E98F504EBB9C77839A /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

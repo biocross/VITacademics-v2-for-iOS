@@ -21,15 +21,16 @@
  - [FIXED] [was due to no upload] Last Updated Label in detail View is sometime colored, and sometimes not.
  - [FIXED] Resign First Reponder in the settings screen when user click "Verify!"
  - [FIXED] Slot in Today View is getting truncated if it's more than one slot long - Labs!
+ - [FIXED] Remove the string from Setting View saying facebook thingy
+ - [FIXED] [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
+ - [FIXED] [CRITICAL] Add full check of all JSON strings in AppDelegate to avoid "Data parameteR" crashes.
+ 
  - Set 1990 date in date picker
  - Go Button on keyboard is not working - CaptchaViewController
- - Remove the string from Setting View saying facebook thingy
  - [CRITICAL] Now view shows classes on weekends also!
  - [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
- - [FIXED] [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
- - [CRITICAL] Add full check of all JSON strings in Appdelegate to avoid "Data parameteR" crashes.
  - Make Upcoming classes also reactive cells.
-  
+
  
  - I can actually set Change Credentials to reset the app.
  */
@@ -73,7 +74,6 @@
         
         NSMutableArray *newArray = [[NSMutableArray alloc] init];
         
-        
         NSInteger length = [self.todaysTimeTable count];
         for(int i = 0 ; i<length ; i++){
             if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
@@ -91,7 +91,6 @@
         }
  
         self.legibleTimeTable = newArray;
-        
     
         self.timeSlots = [ofToday getTimeSlotArray];
         
@@ -121,13 +120,22 @@
      name:@"reloadTimeTable"
      object:nil];
 
-    //self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)[self.todaysTimeTable count]];
+    [self parentViewController].tabBarItem.badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)[self.legibleTimeTable count]];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshTable:) forControlEvents:UIControlEventValueChanged];
+    [self setRefreshControl:refreshControl];
     
 }
 
--(void)refreshTable{
+- (void)refreshTable:(id)sender{
+    [self.tableView reloadData];
+    [(UIRefreshControl *)sender endRefreshing];
+}
+
+- (void)refreshTable{
     NSIndexSet *new = [[NSIndexSet alloc] initWithIndex:0];
     [self.tableView reloadSections:new withRowAnimation:UITableViewRowAnimationFade];
+   
 }
 
 -(void)reloadSelf{
@@ -307,6 +315,40 @@
                     }
                     else{
                         cell.subjectPercentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+                    }
+                    
+                    //Miss Today
+                    float calculatedPercentageMiss = (float) matchedSubject.attendedClasses / (matchedSubject.conductedClasses + 1);
+                    float displayPercentageIntegerMiss = ceil(calculatedPercentageMiss * 100);
+                    NSString *displayPercentageMiss = [NSString stringWithFormat:@"%1.0f",displayPercentageIntegerMiss];
+                    cell.missToday.text = [displayPercentageMiss stringByAppendingString:@"%"];
+                    
+                    
+                    if(displayPercentageIntegerMiss < 75){
+                        cell.missToday.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
+                    }
+                    else if (displayPercentageIntegerMiss >= 75 && displayPercentageIntegerMiss < 80){
+                        cell.missToday.textColor = [UIColor orangeColor];
+                    }
+                    else{
+                        cell.missToday.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+                    }
+                    
+                    //Attend Today
+                    float calculatedPercentageAttend = (float) (matchedSubject.attendedClasses + 1) / (matchedSubject.conductedClasses + 1);
+                    float displayPercentageIntegerAttend = ceil(calculatedPercentageAttend * 100);
+                    NSString *displayPercentageAttend = [NSString stringWithFormat:@"%1.0f",displayPercentageIntegerAttend];
+                    cell.attendToday.text = [displayPercentageAttend stringByAppendingString:@"%"];
+                    
+                    
+                    if(displayPercentageIntegerAttend < 75){
+                        cell.attendToday.textColor = [UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1];
+                    }
+                    else if (displayPercentageIntegerAttend >= 75 && displayPercentageIntegerAttend < 80){
+                        cell.attendToday.textColor = [UIColor orangeColor];
+                    }
+                    else{
+                        cell.attendToday.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
                     }
                     
                 }

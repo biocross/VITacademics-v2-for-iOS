@@ -36,7 +36,7 @@
                             <tableViewSection headerTitle="Settings" id="Wrx-vf-qig">
                                 <cells/>
                             </tableViewSection>
-                            <tableViewSection headerTitle="SIGN IN TO VITACADEMICS" footerTitle="Please enter credentials for the same person who logged in with facebook." id="gUh-vI-OPy">
+                            <tableViewSection headerTitle="SIGN IN TO VITACADEMICS" footerTitle="" id="gUh-vI-OPy">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3IT-PC-uij">
                                         <rect key="frame" x="0.0" y="103" width="320" height="44"/>
@@ -934,7 +934,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xlb-Ix-lbB">
-                        <barButtonItem key="rightBarButtonItem" title="Details" style="plain" id="bI1-Ll-XwC">
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="bI1-Ll-XwC">
                             <connections>
                                 <action selector="detailsButtonPressed:" destination="3os-dq-ZTD" id="heX-yr-Ncu"/>
                             </connections>

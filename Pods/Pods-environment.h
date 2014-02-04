@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_CSNotificationView 3
 #define COCOAPODS_VERSION_PATCH_CSNotificationView 3
 
+// Colours
+#define COCOAPODS_POD_AVAILABLE_Colours
+#define COCOAPODS_VERSION_MAJOR_Colours 4
+#define COCOAPODS_VERSION_MINOR_Colours 1
+#define COCOAPODS_VERSION_PATCH_Colours 0
+
 // DPMeterView
 #define COCOAPODS_POD_AVAILABLE_DPMeterView
 #define COCOAPODS_VERSION_MAJOR_DPMeterView 0
