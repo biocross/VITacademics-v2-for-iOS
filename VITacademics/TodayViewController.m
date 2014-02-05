@@ -29,10 +29,12 @@
  - Go Button on keyboard is not working - CaptchaViewController
  - [CRITICAL] Now view shows classes on weekends also!
  - [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
- - Make Upcoming classes also reactive cells.
+ - [FIXED - Partially - Pull to refresh] Make Upcoming classes also reactive cells.
 
  
+ - [ADD] Analytics, Helpshift, Crittercism
  - I can actually set Change Credentials to reset the app.
+ 
  */
 @interface TodayViewController (){
     TimeTable *ofToday;
@@ -58,9 +60,6 @@
     [super viewDidLoad];
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    
-    
-    
     
     if([preferences objectForKey:@"registrationNumber"]){
         
