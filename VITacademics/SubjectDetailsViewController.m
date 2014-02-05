@@ -47,10 +47,12 @@
         }
     }
     
+    /*
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
                                                                                style:UIBarButtonSystemItemDone
                                                                              target:self   action:@selector(dismissView)];
-    self.navigationItem.title = @"Attendance Details";
+     */
+    self.navigationItem.title = @"Details";
     [self.tableView setAllowsSelection:NO];
     
     
@@ -64,6 +66,8 @@
            value:@"Subject Details"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
      */
+    
+    
     
 }
 
@@ -115,6 +119,9 @@
         [cell.textLabel setTextColor:[UIColor redColor]];
     }
     
+    UIFont *newFont = [UIFont fontWithName:@"MuseoSans-300" size:14];
+    [cell.textLabel setFont:newFont];
+    [cell.detailTextLabel setFont:newFont];
    
     
     return cell;

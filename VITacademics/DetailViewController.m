@@ -69,7 +69,7 @@
         
         self.subjectPercentage = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         [self.subjectPercentage setTextAlignment:NSTextAlignmentCenter];
-        self.subjectPercentage.textColor = [UIColor darkGrayColor];
+        self.subjectPercentage.textColor = [UIColor whiteColor];
         [self.subjectPercentage setCenter:self.progressView.center];
         [self.view addSubview:self.subjectPercentage];
 
@@ -329,9 +329,7 @@
     
     if([_subject.subjectDetails count] > 0){
         SubjectDetailsViewController *forThisSubject = [[SubjectDetailsViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:forThisSubject];
-        [self presentViewController:nav animated:YES completion:nil];
-        //[forThisSubject setDetailsArray:_subject.subjectDetails];
+        [self.navigationController pushViewController:forThisSubject animated:YES];
         forThisSubject.detailsArray = _subject.subjectDetails;
     }
     else{
