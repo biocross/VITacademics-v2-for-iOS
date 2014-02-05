@@ -232,7 +232,7 @@
     int height = 183;
 
     if(indexPath.section == 1){
-        height = 91;
+        height = 79;
     }
     
     return height;
@@ -290,15 +290,18 @@
                 int indexOfMatchedSubject = -1;
                 int i = 0;
                 for(Subject *item in attendanceArray){
-                    if([item.classNumber isEqualToString:[self.legibleTimeTable[indexPath.row] objectForKey:@"cnum"]]){
+                    if([item.classNumber isEqualToString:[currentClass objectForKey:@"cnum"]]){
                         indexOfMatchedSubject = i;
                         break;
                     }
                     i += 1;
                 }
                 
+                //NSLog(@"Matched Index: %d", indexOfMatchedSubject);
+                
                 if(indexOfMatchedSubject != -1){
                     Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
+
                     
                     float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
                     float displayPercentageInteger = ceil(calculatedPercentage * 100);
@@ -426,6 +429,21 @@
             cell.subjectStartingIn.text = [NSString stringWithFormat:@"Begins at %d %@", time, suffix];
             cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.203 green:0.286 blue:0.386 alpha:1];
         }
+        
+        @try {
+            if([self.legibleTimeTable[indexPath.row] isEqualToDictionary:currentClass]){
+                cell.subjectStartingIn.text = @"in progress";
+                cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Exception in writing 'in progress': %@", [exception description]);
+        }
+
+        
+        
+        
+        
         @try {
             //Attendance Part:
             int indexOfMatchedSubject = -1;
