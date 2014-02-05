@@ -15,14 +15,14 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "CaptchaViewController.h"
+#import "DetailViewController.h"
 #import "Subjects.h"
 #import "CSNotificationView.h"
 
 
 @interface AttendanceViewController : UITableViewController <UIAlertViewDelegate>
 
-//@property (strong, nonatomic) DetailViewController *detailViewController;
+@property (strong, nonatomic) DetailViewController *detailViewController;
 
 - (void)startLoadingAttendance:(id)sender;
 - (void)completedProcess;

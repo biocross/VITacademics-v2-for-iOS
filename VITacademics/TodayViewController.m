@@ -24,6 +24,8 @@
  - [FIXED] Remove the string from Setting View saying facebook thingy
  - [FIXED] [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
  - [FIXED] [CRITICAL] Add full check of all JSON strings in AppDelegate to avoid "Data parameteR" crashes.
+ - viewDidAppear
+ - ADD NETWORK ERROR IMAGE
  
  - Set 1990 date in date picker
  - Go Button on keyboard is not working - CaptchaViewController
@@ -53,6 +55,12 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad
@@ -93,7 +101,9 @@
     
         self.timeSlots = [ofToday getTimeSlotArray];
         
-        [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+        
+        
+        [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
     
         
         //Attendance:

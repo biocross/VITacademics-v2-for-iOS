@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *subjectSlot;
 @property (weak, nonatomic) IBOutlet UILabel *subjectAttended;
 @property (weak, nonatomic) IBOutlet UILabel *subjectConducted;
+@property UILabel *subjectPercentage;
 
 @property (weak, nonatomic) IBOutlet UIView *progressFrame;
 

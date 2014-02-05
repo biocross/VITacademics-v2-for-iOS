@@ -66,6 +66,12 @@
         [self.progressView startGravity];
         [self.progressView setTrackTintColor:[UIColor colorWithRed:0.9254 green:0.9411 blue:0.9450 alpha:1]];
         [self.view addSubview:self.progressView];
+        
+        self.subjectPercentage = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        [self.subjectPercentage setTextAlignment:NSTextAlignmentCenter];
+        self.subjectPercentage.textColor = [UIColor darkGrayColor];
+        [self.subjectPercentage setCenter:self.progressView.center];
+        [self.view addSubview:self.subjectPercentage];
 
         [self recalculateAttendance];
     }
@@ -87,7 +93,7 @@
 - (void)recalculateAttendance{
     float calculatedPercentage =(float) [self.subjectAttended.text intValue] / [self.subjectConducted.text intValue];
     float displayPercentageInteger = ceil(calculatedPercentage * 100);
-    //NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
+    NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
     
     
     
@@ -124,7 +130,6 @@
       self.title = @"Subject Details";
     }
     
-    
     UIFont *codeFont = [UIFont fontWithName:@"MuseoSans-300" size:11];
     [self.lastUpdatedLabel setFont:codeFont];
     [self.staticElevenLabel setFont:codeFont];
@@ -140,6 +145,14 @@
     [self.subjectAttended  setFont:thirteenFont];
     [self.subjectConducted setFont:thirteenFont];
     [self.staticFourteenLabel setFont:thirteenFont];
+    
+    
+    self.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
+
+    
+    UIFont *subjectPerFont = [UIFont fontWithName:@"MuseoSans-300" size:20];
+    [self.subjectPercentage setFont:subjectPerFont];
+    
     
     
 }

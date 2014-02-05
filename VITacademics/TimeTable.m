@@ -88,8 +88,9 @@
     if(currentHour >= 12 && currentMinute <50){
         currentClass = self.todaysTimeTable[4];
     }
-    
-    
+    if(currentHour >= 13 && currentMinute <30){
+        currentClass = self.todaysTimeTable[5];
+    }
     if(currentHour >= 14 && currentMinute <50){
         currentClass = self.todaysTimeTable[6];
     }
@@ -104,6 +105,9 @@
     }
     if(currentHour >= 18 && currentMinute <50){
         currentClass = self.todaysTimeTable[10];
+    }
+    if(currentHour >= 19 && currentMinute <30){
+        currentClass = self.todaysTimeTable[11];
     }
     
     
@@ -373,7 +377,7 @@
     }
     
     NSDateComponents *components1 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
-    [components1 setHour:12];
+    [components1 setHour:13];
     [components1 setMinute:0];
     [components1 setSecond:0];
     [timeSlots addObject:components1];
@@ -387,7 +391,7 @@
     }
     
     NSDateComponents *components2 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
-    [components2 setHour:18];
+    [components2 setHour:19];
     [components2 setMinute:0];
     [components2 setSecond:0];
     [timeSlots addObject:components2];
