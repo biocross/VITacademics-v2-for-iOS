@@ -841,41 +841,65 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMF-AE-y7Q">
-                                <rect key="frame" x="3" y="368" width="82" height="50"/>
+                                <rect key="frame" x="19" y="368" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="-">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="attendMinus:" destination="3os-dq-ZTD" eventType="touchUpInside" id="l4y-l5-6H5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2g-LA-bBo">
-                                <rect key="frame" x="-1" y="433" width="90" height="50"/>
+                                <rect key="frame" x="19" y="433" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="-">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="missMinus:" destination="3os-dq-ZTD" eventType="touchUpInside" id="4C4-qU-SOL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QN0-wN-hJH">
-                                <rect key="frame" x="230" y="433" width="90" height="50"/>
+                                <rect key="frame" x="250" y="433" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="missPlus:" destination="3os-dq-ZTD" eventType="touchUpInside" id="cUC-Mh-lqp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9N-w1-Odi">
-                                <rect key="frame" x="234" y="368" width="82" height="50"/>
+                                <rect key="frame" x="250" y="368" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="attendPlus:" destination="3os-dq-ZTD" eventType="touchUpInside" id="4oj-Nc-sWB"/>
                                 </connections>
@@ -952,6 +976,10 @@
                         <outlet property="subjectName" destination="6ro-Zj-GCU" id="Z6H-rL-KfV"/>
                         <outlet property="subjectSlot" destination="9B2-Xg-L2e" id="Yhd-fm-orB"/>
                         <outlet property="subjectType" destination="nj2-Jm-8Fu" id="W4E-cY-V9e"/>
+                        <outletCollection property="roundButton" destination="r9N-w1-Odi" id="mkQ-2a-9LH"/>
+                        <outletCollection property="roundButton" destination="QN0-wN-hJH" id="av1-ef-e7a"/>
+                        <outletCollection property="roundButton" destination="Y2g-LA-bBo" id="Iwe-R6-g3J"/>
+                        <outletCollection property="roundButton" destination="zMF-AE-y7Q" id="RQb-BA-CKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBo-KA-FJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>

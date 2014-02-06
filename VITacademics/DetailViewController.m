@@ -72,6 +72,20 @@
         self.subjectPercentage.textColor = [UIColor whiteColor];
         [self.subjectPercentage setCenter:self.progressView.center];
         [self.view addSubview:self.subjectPercentage];
+        
+        
+        for(UIButton *item in self.roundButton){
+            
+            if([item.titleLabel.text isEqualToString:@"+"]){
+                [item.layer setBorderColor:[[UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1] CGColor]];
+            }
+            else{
+                [item.layer setBorderColor:[[UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1] CGColor]];
+            }
+            
+            [item.layer setBorderWidth:1];
+            
+        }
 
         [self recalculateAttendance];
     }
