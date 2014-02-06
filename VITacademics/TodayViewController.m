@@ -24,14 +24,16 @@
  - [FIXED] Remove the string from Setting View saying facebook thingy
  - [FIXED] [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
  - [FIXED] [CRITICAL] Add full check of all JSON strings in AppDelegate to avoid "Data parameteR" crashes.
+ - [FIXED] [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
+ - [FIXED - Partially - Pull to refresh] Make Upcoming classes also reactive cells.
+ 
  - viewDidAppear
  - ADD NETWORK ERROR IMAGE
- 
  - Set 1990 date in date picker
  - Go Button on keyboard is not working - CaptchaViewController
- - [CRITICAL] Now view shows classes on weekends also!
- - [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
- - [FIXED - Partially - Pull to refresh] Make Upcoming classes also reactive cells.
+ - [FIXED] [CRITICAL] Now view shows classes on weekends also!
+ 
+ 
 
  
  - [ADD] Analytics, Helpshift, Crittercism
@@ -75,7 +77,6 @@
         
         ofToday = [[TimeTable alloc] initWithTTString:[preferences objectForKey:ttKey]];
         self.todaysTimeTable = [ofToday getTodaysTimeTable];
-        currentClass = [[ofToday getCurrentClass] isKindOfClass:[NSDictionary class]] ? [ofToday getCurrentClass] : 0;
         
         self.legibleTimeTable = [[NSMutableArray alloc] init];
         
@@ -98,11 +99,8 @@
         }
  
         self.legibleTimeTable = newArray;
-    
         self.timeSlots = [ofToday getTimeSlotArray];
-        
-        
-        
+      
         [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
     
         
@@ -131,12 +129,12 @@
 
     [self parentViewController].tabBarItem.badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)[self.legibleTimeTable count]];
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(refreshTable:) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(refreshTableView:) forControlEvents:UIControlEventValueChanged];
     [self setRefreshControl:refreshControl];
     
 }
 
-- (void)refreshTable:(id)sender{
+- (void)refreshTableView:(id)sender{
     [self.tableView reloadData];
     [(UIRefreshControl *)sender endRefreshing];
 }

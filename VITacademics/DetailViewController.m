@@ -323,9 +323,6 @@
 
 
 - (IBAction)detailsButtonPressed:(id)sender {
-    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    DetailViewController *detailViewController = [sb instantiateViewControllerWithIdentifier:@"SubjectDetails"];
-    [self.navigationController pushViewController:detailViewController animated:YES];*/
     
     if([_subject.subjectDetails count] > 0){
         SubjectDetailsViewController *forThisSubject = [[SubjectDetailsViewController alloc] init];
@@ -333,7 +330,7 @@
         forThisSubject.detailsArray = _subject.subjectDetails;
     }
     else{
-            [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Not Uploaded Yet"];
+        [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Not Uploaded Yet"];
         
     }
 }

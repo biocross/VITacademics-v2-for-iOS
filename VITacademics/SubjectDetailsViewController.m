@@ -55,11 +55,6 @@
     self.navigationItem.title = @"Details";
     [self.tableView setAllowsSelection:NO];
     
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Marks" style:UIBarButtonItemStyleDone target:self action:@selector(showMarksOniPad)];
-    }
-    
     /*
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName
@@ -75,16 +70,6 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)showMarksOniPad{
-    NSIndexPath *selectedRowIndex = self.selectedRow;
-    [self dismissViewControllerAnimated:YES completion:^(void){
-        NSDictionary* dict = [NSDictionary dictionaryWithObject:selectedRowIndex forKey:@"indexPath"];
-        NSNotification *notification = [[NSNotification alloc] initWithName:@"MarksOniPad" object:self userInfo:dict];
-        [[NSNotificationCenter defaultCenter] postNotification:notification];
-    }];
-    
-    
-}
 
 - (void)didReceiveMemoryWarning
 {

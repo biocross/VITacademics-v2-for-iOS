@@ -52,7 +52,6 @@
 		355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */; };
 		355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */; };
 		355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962F188D1E8700BB0945 /* AttendanceViewController.m */; };
-		35668E1B188EFC7E005DBD9D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 35668E1A188EFC7E005DBD9D /* settings.png */; };
 		356802AD1859118E00C41D69 /* VITxAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 356802AC1859118E00C41D69 /* VITxAPI.m */; };
 		35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C5C18A113FE009F09C8 /* Default-568h@2x.png */; };
 		35961C6318A14E71009F09C8 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C5E18A14E71009F09C8 /* 58.png */; };
@@ -144,7 +143,6 @@
 		355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhoneCellNib.xib; sourceTree = "<group>"; };
 		355F962E188D1E8700BB0945 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
 		355F962F188D1E8700BB0945 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
-		35668E1A188EFC7E005DBD9D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		356802AB1859118E00C41D69 /* VITxAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VITxAPI.h; sourceTree = "<group>"; };
 		356802AC1859118E00C41D69 /* VITxAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VITxAPI.m; sourceTree = "<group>"; };
 		35961C5C18A113FE009F09C8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -387,7 +385,6 @@
 				356802AC1859118E00C41D69 /* VITxAPI.m */,
 				35A751F0185B91E6009FC74D /* TimeTable.h */,
 				35A751F1185B91E6009FC74D /* TimeTable.m */,
-				35668E1A188EFC7E005DBD9D /* settings.png */,
 			);
 			name = APIs;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 				35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */,
 				35961C6418A14E71009F09C8 /* 80.png in Resources */,
 				3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */,
-				35668E1B188EFC7E005DBD9D /* settings.png in Resources */,
 				359C60C0185CD27200FB36B2 /* CurrentClassTableViewCell.xib in Resources */,
 				35961C6718A14E71009F09C8 /* 1136x640.png in Resources */,
 				3518D16B1854583000EFC1AF /* Main_iPad.storyboard in Resources */,

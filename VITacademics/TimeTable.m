@@ -73,42 +73,67 @@
     
     id currentClass;
     
-    if(currentHour >= 8 && currentMinute <50){
-        currentClass = self.todaysTimeTable[0];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *todaysDay = [dateFormatter stringFromDate:[NSDate date]];
+    
+    BOOL weekend = NO;
+    
+    if([todaysDay isEqualToString:@"Monday"]){
     }
-    if(currentHour >= 9 && currentMinute <50){
-        currentClass = self.todaysTimeTable[1];
+    else if([todaysDay isEqualToString:@"Tuesday"]){
     }
-    if(currentHour >= 10 && currentMinute <50){
-        currentClass = self.todaysTimeTable[2];
+    else if([todaysDay isEqualToString:@"Wednesday"]){
     }
-    if(currentHour >= 11 && currentMinute <50){
-        currentClass = self.todaysTimeTable[3];
+    else if([todaysDay isEqualToString:@"Thursday"]){
+        
     }
-    if(currentHour >= 12 && currentMinute <50){
-        currentClass = self.todaysTimeTable[4];
+    else if([todaysDay isEqualToString:@"Friday"]){
     }
-    if(currentHour >= 13 && currentMinute <30){
-        currentClass = self.todaysTimeTable[5];
+    else{
+        weekend = YES;
     }
-    if(currentHour >= 14 && currentMinute <50){
-        currentClass = self.todaysTimeTable[6];
+    
+    
+    if(!weekend){
+        if(currentHour >= 8 && currentMinute <50){
+            currentClass = self.todaysTimeTable[0];
+        }
+        if(currentHour >= 9 && currentMinute <50){
+            currentClass = self.todaysTimeTable[1];
+        }
+        if(currentHour >= 10 && currentMinute <50){
+            currentClass = self.todaysTimeTable[2];
+        }
+        if(currentHour >= 11 && currentMinute <50){
+            currentClass = self.todaysTimeTable[3];
+        }
+        if(currentHour >= 12 && currentMinute <50){
+            currentClass = self.todaysTimeTable[4];
+        }
+        if(currentHour >= 13 && currentMinute <30){
+            currentClass = self.todaysTimeTable[5];
+        }
+        if(currentHour >= 14 && currentMinute <50){
+            currentClass = self.todaysTimeTable[6];
+        }
+        if(currentHour >= 15 && currentMinute <50){
+            currentClass = self.todaysTimeTable[7];
+        }
+        if(currentHour >= 16 && currentMinute <50){
+            currentClass = self.todaysTimeTable[8];
+        }
+        if(currentHour >= 17 && currentMinute <50){
+            currentClass = self.todaysTimeTable[9];
+        }
+        if(currentHour >= 18 && currentMinute <50){
+            currentClass = self.todaysTimeTable[10];
+        }
+        if(currentHour >= 19 && currentMinute <30){
+            currentClass = self.todaysTimeTable[11];
+        }
     }
-    if(currentHour >= 15 && currentMinute <50){
-        currentClass = self.todaysTimeTable[7];
-    }
-    if(currentHour >= 16 && currentMinute <50){
-        currentClass = self.todaysTimeTable[8];
-    }
-    if(currentHour >= 17 && currentMinute <50){
-        currentClass = self.todaysTimeTable[9];
-    }
-    if(currentHour >= 18 && currentMinute <50){
-        currentClass = self.todaysTimeTable[10];
-    }
-    if(currentHour >= 19 && currentMinute <30){
-        currentClass = self.todaysTimeTable[11];
-    }
+    
     
     
     return currentClass;

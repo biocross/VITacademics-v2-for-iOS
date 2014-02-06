@@ -962,7 +962,7 @@
         <scene sceneID="04h-fr-irf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XNT-ys-zvR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="h3j-R0-ivS"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="h3j-R0-ivS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hnq-sC-z1c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1215,7 +1215,7 @@
         <image name="Layers" width="27" height="22"/>
         <image name="LogInFB" width="222" height="30"/>
         <image name="Mobile_Signal" width="26" height="23"/>
-        <image name="settings.png" width="54" height="44"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
