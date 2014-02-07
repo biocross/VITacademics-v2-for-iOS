@@ -325,7 +325,7 @@
         <!--Captcha View Controller - Captcha-->
         <scene sceneID="Y95-ee-5cZ">
             <objects>
-                <tableViewController id="HKy-cR-Ci8" customClass="CaptchaViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CaptchaView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HKy-cR-Ci8" customClass="CaptchaViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2dc-n7-FlS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -548,25 +548,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ob4-Eh-6zb">
-                                <rect key="frame" x="113" y="85" width="94" height="77"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="9h4-5V-MhA"/>
-                                    <constraint firstAttribute="height" constant="77" id="CMf-o5-oYf"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just a moment..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="eQ2-U0-luh">
-                                <rect key="frame" x="0.0" y="164" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="UAK-Nm-kFu"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="WVY-Xa-gIm"/>
-                                    <constraint firstAttribute="width" constant="320" id="y70-v4-2cS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-C7-lgU">
                                 <rect key="frame" x="0.0" y="222" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -619,19 +600,19 @@
                                     <action selector="startUsingVITacademics:" destination="ZJ6-hu-EWX" eventType="touchUpInside" id="tXx-Sf-9bL"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bV-H7-RbN">
+                                <rect key="frame" x="95" y="79" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ob4-Eh-6zb" firstAttribute="top" secondItem="Fia-uf-NIt" secondAttribute="bottom" constant="65" id="6sw-p4-JcX"/>
-                            <constraint firstItem="ob4-Eh-6zb" firstAttribute="leading" secondItem="1CH-KM-ofI" secondAttribute="leading" constant="113" id="nc1-83-sv7"/>
-                            <constraint firstItem="eQ2-U0-luh" firstAttribute="top" secondItem="ob4-Eh-6zb" secondAttribute="bottom" constant="2" id="q2y-zg-fTp"/>
-                            <constraint firstItem="eQ2-U0-luh" firstAttribute="leading" secondItem="1CH-KM-ofI" secondAttribute="leading" id="qWc-On-Dkd"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="five" destination="vYJ-VR-Naa" id="pgD-7P-9VH"/>
                         <outlet property="four" destination="tJj-R7-kec" id="Qbh-1n-oHk"/>
                         <outlet property="one" destination="SIo-C7-lgU" id="tmj-de-2iT"/>
+                        <outlet property="progressFrame" destination="1bV-H7-RbN" id="ET6-Yc-iJM"/>
                         <outlet property="seven" destination="B0b-re-c89" id="Vtw-yD-TdJ"/>
                         <outlet property="six" destination="cRJ-56-jig" id="rUe-bf-ahU"/>
                         <outlet property="three" destination="04g-1x-mle" id="6sp-p6-YGc"/>
@@ -1185,6 +1166,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gju-Uh-8PF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJX-4c-JVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="CaptchaViewNav" automaticallyAdjustsScrollViewInsets="NO" id="mSq-ic-RFE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vvb-4s-ftb">
@@ -1196,7 +1178,6 @@
                         <segue destination="HKy-cR-Ci8" kind="relationship" relationship="rootViewController" id="we9-Ht-ruv"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gJX-4c-JVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="-1242"/>
         </scene>

@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    self.seven.titleLabel.textColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
+    //self.seven.textColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +128,8 @@
 
 
 -(void)finalSetup{
+    
+        
     VITxAPI *attendanceManager = [[VITxAPI alloc] init];
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *registrationNumber = [preferences objectForKey:@"registrationNumber"];
@@ -192,7 +194,6 @@
         
     });//end of GCD
     
-    
     //Loading Marks
     
     //Creating Binding on Parse
@@ -210,7 +211,9 @@
     else{
         [self.four setTitle:@"Facebook Not Connected" forState:UIControlStateNormal];
         self.four.enabled = NO;
+        
     }
+    
     
     
     

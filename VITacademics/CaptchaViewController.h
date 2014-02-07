@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CaptchaViewController : UITableViewController
+@interface CaptchaViewController : UITableViewController <UITextFieldDelegate>
 
 
 - (IBAction)cancelrefresh:(id)sender;

@@ -29,6 +29,7 @@
     [super viewDidLoad];
     
     _captchaText.returnKeyType = UIReturnKeyGo;
+    _captchaText.delegate = self;
     [self startLoadingCaptcha];
 
 }

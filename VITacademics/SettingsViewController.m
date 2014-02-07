@@ -20,25 +20,8 @@
 {
     [super viewDidLoad];
     
-    
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    
-    if([preferences stringForKey:@"dateOfBirth"]){
-        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"ddMMYYYY"];;
-        NSDate *anyDate = [dateFormat dateFromString:[preferences stringForKey:@"dateOfBirth"]];
-        @try{
-            [self.myPicker setDate:anyDate];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"%@", [exception description]);
-        }
-    }
-
-    
     if(self.navigationController){
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:(@selector(cancel))];
-     
     }
     
 }
@@ -67,7 +50,6 @@
 
 - (void)pickerChanged:(id)sender
 {
-    NSLog(@"value: %@",[sender date]);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"ddMMYYYY"];
     _dateOfBirth.text = [dateFormatter stringFromDate:[self.myPicker date]];

@@ -22,20 +22,17 @@
  - [FIXED] Resign First Reponder in the settings screen when user click "Verify!"
  - [FIXED] Slot in Today View is getting truncated if it's more than one slot long - Labs!
  - [FIXED] Remove the string from Setting View saying facebook thingy
- - [FIXED] [PROBLEM] Submit button in CaptchaView shoudl work on CellTouch
+ - [FIXED] [PROBLEM] Submit button in CaptchaView should work on CellTouch
  - [FIXED] [CRITICAL] Add full check of all JSON strings in AppDelegate to avoid "Data parameteR" crashes.
  - [FIXED] [CRITICAL] Add PercentageAttendance Label to Detail View OMG!
  - [FIXED - Partially - Pull to refresh] Make Upcoming classes also reactive cells.
- 
- - viewDidAppear
- - ADD NETWORK ERROR IMAGE
- - Set 1990 date in date picker
- - Go Button on keyboard is not working - CaptchaViewController
  - [FIXED] [CRITICAL] Now view shows classes on weekends also!
- 
- 
+ - [FIXED] Go Button on keyboard is not working - CaptchaViewController
+ - [FIXED] ADD NETWORK ERROR IMAGE
 
  
+ - viewDidAppear
+ - Add PusingHalo on currentClass
  - [ADD] Analytics, Helpshift, Crittercism
  - I can actually set Change Credentials to reset the app.
  

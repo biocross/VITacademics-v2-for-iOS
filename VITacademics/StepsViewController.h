@@ -10,6 +10,7 @@
 
 @interface StepsViewController : UIViewController <NSURLConnectionDelegate, UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *progressFrame;
 - (IBAction)letsBegin:(id)sender;
 -(IBAction)loginWithFacebook:(id)sender;
 -(void)extractUserInfo;
