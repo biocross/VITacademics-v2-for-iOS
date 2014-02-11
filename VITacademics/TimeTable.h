@@ -22,6 +22,7 @@
 
 -(id)getCurrentClass;
 -(NSMutableArray *)getTodaysTimeTable;
+- (BOOL)todayIsAWeekend;
 
 @property (retain) NSMutableArray *monday;
 @property (retain) NSMutableArray *tuesday;

@@ -74,6 +74,7 @@
 		35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */; };
 		35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2181C188FDBF5000E5BEC /* DetailViewController.m */; };
 		35D4A319189E51F400F23A28 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4A318189E51F400F23A28 /* DataManager.m */; };
+		35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */; };
 		F05DA906B6EC44E6B2253C4C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E84647C95C14A498AD2419D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -179,6 +180,7 @@
 		35D2181C188FDBF5000E5BEC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		35D4A317189E51F400F23A28 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		35D4A318189E51F400F23A28 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsComingSoonCell.xib; sourceTree = "<group>"; };
 		48D705E98F504EBB9C77839A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		4E84647C95C14A498AD2419D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -228,6 +230,7 @@
 				359C60BD185CD25000FB36B2 /* CurrentClassTableViewCell.m */,
 				359C60BF185CD27200FB36B2 /* CurrentClassTableViewCell.xib */,
 				35D20BE61864FF46001139C9 /* UpcomingClassCell.h */,
+				35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */,
 				35D20BE71864FF46001139C9 /* UpcomingClassCell.m */,
 				35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */,
 				35128E80186844E500DBC06D /* NoClassRightNow.xib */,
@@ -500,6 +503,7 @@
 				3518D1A61854633B00EFC1AF /* MuseoSans_500.otf in Resources */,
 				35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */,
 				35A32CB618A4B3DF00898607 /* captchaError.png in Resources */,
+				35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */,
 				35961C6418A14E71009F09C8 /* 80.png in Resources */,
 				3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */,
 				3595264518A400F400A4767B /* loadingImage.png in Resources */,

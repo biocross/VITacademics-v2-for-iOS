@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MRActivityIndicatorView.h"
 
 @interface StepsViewController : UIViewController <NSURLConnectionDelegate, UITextFieldDelegate>
 
@@ -23,6 +24,8 @@
 - (IBAction)skipFacebook:(id)sender;
 
 
+@property (weak, nonatomic) IBOutlet MRActivityIndicatorView *activityIndicator;
+
 @property (strong, nonatomic) IBOutlet UIButton *one;
 @property (weak, nonatomic) IBOutlet UIButton *two;
 @property (weak, nonatomic) IBOutlet UIButton *three;
@@ -33,7 +36,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *logginInLabel;
 
 @end

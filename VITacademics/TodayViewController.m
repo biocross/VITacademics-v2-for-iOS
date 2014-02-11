@@ -34,6 +34,7 @@
  - viewDidAppear
  - Add PusingHalo on currentClass
  - [ADD] Analytics, Helpshift, Crittercism
+ - shows Class finished on weekends
  - I can actually set Change Credentials to reset the app.
  
  */
@@ -419,9 +420,44 @@
         NSString *suffix = @"AM";
         int time = [self.timeSlots[index] hour];
         
-        if([rightNow hour] > time /*&& [rightNow minute] > 50*/){
-            cell.subjectStartingIn.text = @"class finished";
-            cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.203 green:0.286 blue:0.386 alpha:1];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"EEEE"];
+        NSString *todaysDay = [dateFormatter stringFromDate:[NSDate date]];
+        
+        BOOL weekend = NO;
+        
+        if([todaysDay isEqualToString:@"Monday"]){
+        }
+        else if([todaysDay isEqualToString:@"Tuesday"]){
+        }
+        else if([todaysDay isEqualToString:@"Wednesday"]){
+        }
+        else if([todaysDay isEqualToString:@"Thursday"]){
+            
+        }
+        else if([todaysDay isEqualToString:@"Friday"]){
+        }
+        else{
+            weekend = YES;
+        }
+        
+        
+        if(!weekend){
+            if([rightNow hour] > time /*&& [rightNow minute] > 50*/){
+                cell.subjectStartingIn.text = @"class finished";
+                cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.203 green:0.286 blue:0.386 alpha:1];
+            }
+            else{
+                if(time > 12){
+                    suffix = @"PM";
+                    time = time - 12;
+                }
+                if(time == 12){
+                    suffix = @"PM";
+                }
+                cell.subjectStartingIn.text = [NSString stringWithFormat:@"Begins at %d %@", time, suffix];
+                cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.203 green:0.286 blue:0.386 alpha:1];
+            }
         }
         else{
             if(time > 12){

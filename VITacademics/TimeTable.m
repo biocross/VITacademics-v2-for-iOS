@@ -65,14 +65,7 @@
     NSLog(@"Here's monday \n %@", [_monday description]);
 }
 
--(id)getCurrentClass{
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
-    NSInteger currentHour = [components hour];
-    NSInteger currentMinute = [components minute];
-    
-    
-    id currentClass;
-    
+- (BOOL)todayIsAWeekend{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     NSString *todaysDay = [dateFormatter stringFromDate:[NSDate date]];
@@ -94,8 +87,19 @@
         weekend = YES;
     }
     
+    return weekend;
+
+}
+
+-(id)getCurrentClass{
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+    NSInteger currentHour = [components hour];
+    NSInteger currentMinute = [components minute];
     
-    if(!weekend){
+    
+    id currentClass;
+    
+    if(![self todayIsAWeekend]){
         if(currentHour >= 8 && currentMinute <50){
             currentClass = self.todaysTimeTable[0];
         }

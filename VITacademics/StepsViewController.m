@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "PulsingHaloLayer.h"
 #import "VITxAPI.h"
+#import "MRActivityIndicatorView.h"
 
 @interface StepsViewController ()
 
@@ -129,6 +130,7 @@
 
 -(void)finalSetup{
     
+    [self.activityIndicator startAnimating];
         
     VITxAPI *attendanceManager = [[VITxAPI alloc] init];
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
@@ -236,16 +238,17 @@
                     self.six.enabled = NO;
                     self.seven.enabled = YES;
                     NSLog(@"Finished Everything");
+                    [self.activityIndicator stopAnimating];
+                    UIImageView *icon = [[UIImageView alloc] initWithFrame:self.activityIndicator.frame];
+                    [icon setImage:[UIImage imageNamed:@"loadingImage.png"]];
+                    [self.view addSubview:icon];
+                    NSLog(@"added image");
                 }
                 else{
                     NSLog(@"Problem saving timetable to server");
                     NSLog(@"%@", [error localizedDescription]);
                     self.six.enabled = NO;
                     self.seven.enabled = YES;
-                    UIAlertView *new = [[UIAlertView alloc] initWithTitle:@"Done" message:@"Everything finished" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                    
-                    [new show];
-                    
                     
                 }
             }];

@@ -97,7 +97,7 @@
 
 - (IBAction)cancelrefresh:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)beginCaptchaVerification{
@@ -142,7 +142,6 @@
             else if([result isEqualToString:@"networkerror"]){
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"networkError" object:nil userInfo:nil];
             }
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             [self.navigationController popViewControllerAnimated:YES];
             
         });
