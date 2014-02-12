@@ -56,8 +56,8 @@
 
 // RMStepsController
 #define COCOAPODS_POD_AVAILABLE_RMStepsController
-#define COCOAPODS_VERSION_MAJOR_RMStepsController 0
-#define COCOAPODS_VERSION_MINOR_RMStepsController 9
+#define COCOAPODS_VERSION_MAJOR_RMStepsController 1
+#define COCOAPODS_VERSION_MINOR_RMStepsController 0
 #define COCOAPODS_VERSION_PATCH_RMStepsController 0
 
 // RSBarcodes

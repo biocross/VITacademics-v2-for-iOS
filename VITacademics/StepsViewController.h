@@ -23,6 +23,7 @@
 -(void)finalSetup;
 - (IBAction)skipFacebook:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *startingImage;
 
 @property (weak, nonatomic) IBOutlet MRActivityIndicatorView *activityIndicator;
 

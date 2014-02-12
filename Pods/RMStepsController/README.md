@@ -13,10 +13,18 @@ This is an iOS control for guiding users through a process step-by-step
 ### Navigation Controller
 ![Navigation Controller](http://cooperrs.github.io/RMStepsController/Images/Screen3.png)
 
+[Animated version](http://cooperrs.github.io/RMStepsController/Images/Screen3-animated.gif)
+
 ##Installation
 ###Manual
 1. Check out the project
 2. Add all files in `RMStepsController` folder to Xcode
+
+###CocoaPods
+```ruby
+platform :ios, '7.0'
+pod "RMStepsController", "~> 1.0.0"
+```
 
 ##Usage
 ###Basic
@@ -72,6 +80,12 @@ Works with:
 * ARC (You can turn it on and off on a per file basis)
 
 May also work with previous Xcode and iOS SDK versions. But it will at least need a system capable of Autolayout (and I think it will look awful on iOS 6 ;)...)
+
+## Credits
+Resources:
+* Joshua Gourneau (GIF of the control in action)
+
+I want to thank everyone who has contributed code and/or time to this project!
 
 ## License (MIT License)
 Copyright (c) 2013 Roland Moers

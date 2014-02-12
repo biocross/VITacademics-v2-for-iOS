@@ -7,7 +7,7 @@ PODS:
   - NSDate+TimeAgo (1.0.2)
   - PNChart (0.3.1)
   - PulsingHalo (0.0.1)
-  - RMStepsController (0.9)
+  - RMStepsController (1.0.0)
   - RSBarcodes (0.0.3)
 
 DEPENDENCIES:
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - NSDate+TimeAgo
   - PNChart (~> 0.3.1)
   - PulsingHalo
-  - RMStepsController (~> 0.9)
+  - RMStepsController (~> 1.0.0)
   - RSBarcodes (~> 0.0.3)
 
 SPEC CHECKSUMS:
@@ -31,7 +31,7 @@ SPEC CHECKSUMS:
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   PNChart: 2538e83bfda6809f2c50e95151edbc86f8425879
   PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
-  RMStepsController: f44a6cc217e5b1fc77df5dad201bbd7f6cf293f9
+  RMStepsController: bd30e3eb7bead3a3b93d34d912dc24ba0d1256fc
   RSBarcodes: dcc8cab02286d11b3661b85b674a13452ee5f861
 
 COCOAPODS: 0.29.0

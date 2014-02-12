@@ -146,6 +146,10 @@
                                     <action selector="letsBegin:" destination="5b4-6F-Mh2" eventType="touchUpInside" id="vSZ-RU-lx7"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="IvX-01-pDE">
+                                <rect key="frame" x="125" y="151" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -153,6 +157,9 @@
                             <constraint firstItem="UJK-Rq-Ta0" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" id="yA5-as-Vzk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startingImage" destination="IvX-01-pDE" id="Ned-3Q-ebW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jL0-vf-6SH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1114,6 +1121,7 @@
         <image name="Layers" width="27" height="22"/>
         <image name="LogInFB" width="222" height="30"/>
         <image name="Mobile_Signal" width="26" height="23"/>
+        <image name="loadingImage.png" width="130" height="130"/>
         <image name="settings" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

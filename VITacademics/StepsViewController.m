@@ -32,6 +32,14 @@
 {
     [super viewDidLoad];
     
+    PulsingHaloLayer *halo = [PulsingHaloLayer layer];
+    //halo.position = CGPointMake(35, 31);
+    //halo.position = CGPointMake(self.startingImage.frame.origin.x + 35, self.startingImage.frame.origin.y + 31);
+    halo.position = CGPointMake(self.view.center.x, self.view.frame.size.height);
+    halo.radius = 200;
+    [self.view.layer addSublayer:halo];
+    
+    
     //self.seven.textColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
 }
 
