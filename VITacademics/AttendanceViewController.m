@@ -75,7 +75,6 @@
         if([preferences stringForKey:[preferences stringForKey:@"registrationNumber"]]){
             //NSLog(@"Loading attendance from cache! Yay!");
             
-            //self.attendanceCacheString = [preferences stringForKey:[preferences stringForKey:@"registrationNumber"]];
             NSString *marksKey = [NSString stringWithFormat:@"MarksOf%@", [preferences objectForKey:@"registrationNumber"]];
             self.marksCacheString = [preferences objectForKey:marksKey];
             [self completedProcess];
@@ -325,7 +324,6 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
     return NO;
 }
 

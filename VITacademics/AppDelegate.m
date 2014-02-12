@@ -44,7 +44,18 @@
         [new removeObjectForKey:@"dateOfBirth"];
     }
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(resetApp)
+     name:@"masterReset"
+     object:nil];
+    
     return YES;
+}
+
+-(void)resetApp{
+    NSLog(@"Recieved reset signal in AppDelegate");
+    [self application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:nil];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

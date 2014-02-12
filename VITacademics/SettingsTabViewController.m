@@ -48,9 +48,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if(indexPath.section == 0){
-        SettingsViewController *secondStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutThird"];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:secondStep];
-        [self.navigationController presentViewController:nav animated:YES completion:nil];
+        
+        //Purge Code:
+        NSLog(@"Resetting App.");
+        NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+        [new removeObjectForKey:[new stringForKey:@"registrationNumber"]];
+        [new removeObjectForKey:@"registrationNumber"];
+        NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [new objectForKey:@"registrationNumber"]];
+        [new removeObjectForKey:ttKey];
+        [new removeObjectForKey:@"dateOfBirth"];
+        
+        [self.tabBarController viewDidLoad];
     }
     
     

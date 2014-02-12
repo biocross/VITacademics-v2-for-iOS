@@ -28,21 +28,28 @@
 {
     [super viewDidLoad];
     
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+        if([preferences objectForKey:@"registrationNumber"]){
+            //[self setSelectedIndex:2];
+        }
+        else{
+            
+            NSLog(@"%@", [preferences objectForKey:@"registrationNumber"]);
+            
+            RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
+            [self presentViewController:firstStep animated:YES completion:nil];
+            
+        }
+    });
+    
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    if([preferences objectForKey:@"registrationNumber"]){
-        //[self setSelectedIndex:2];
-    }
-    else{
-        
-        NSLog(@"%@", [preferences objectForKey:@"registrationNumber"]);
-        
-         RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
-        [self presentViewController:firstStep animated:YES completion:nil];
-        
-    }
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -29,12 +29,11 @@
  - [FIXED] [CRITICAL] Now view shows classes on weekends also!
  - [FIXED] Go Button on keyboard is not working - CaptchaViewController
  - [FIXED] ADD NETWORK ERROR IMAGE
+ - [FIXED] shows Class finished on weekends
 
  
  - viewDidAppear
- - Add PusingHalo on currentClass
  - [ADD] Analytics, Helpshift, Crittercism
- - shows Class finished on weekends
  - I can actually set Change Credentials to reset the app.
  
  */
