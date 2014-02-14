@@ -58,6 +58,11 @@
 		3526826118ACAAD80082D518 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3526826018ACAAD80082D518 /* AdSupport.framework */; };
 		35470D6018ACA6EC004546DB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35470D5F18ACA6EC004546DB /* CoreText.framework */; };
 		35470D6218ACA6F5004546DB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35470D6118ACA6F5004546DB /* CoreTelephony.framework */; };
+		354B0B2C18AE0719003D403B /* 1536x2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 354B0B2718AE0719003D403B /* 1536x2048.png */; };
+		354B0B2D18AE0719003D403B /* 768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 354B0B2818AE0719003D403B /* 768x1024.png */; };
+		354B0B2E18AE0719003D403B /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 354B0B2918AE0719003D403B /* 40.png */; };
+		354B0B2F18AE0719003D403B /* 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 354B0B2A18AE0719003D403B /* 76.png */; };
+		354B0B3018AE0719003D403B /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 354B0B2B18AE0719003D403B /* 152.png */; };
 		355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */; };
 		355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */; };
 		355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962F188D1E8700BB0945 /* AttendanceViewController.m */; };
@@ -169,6 +174,11 @@
 		3526826018ACAAD80082D518 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		35470D5F18ACA6EC004546DB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		35470D6118ACA6F5004546DB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		354B0B2718AE0719003D403B /* 1536x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1536x2048.png; sourceTree = "<group>"; };
+		354B0B2818AE0719003D403B /* 768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 768x1024.png; sourceTree = "<group>"; };
+		354B0B2918AE0719003D403B /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		354B0B2A18AE0719003D403B /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 76.png; sourceTree = "<group>"; };
+		354B0B2B18AE0719003D403B /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152.png; sourceTree = "<group>"; };
 		355F9629188D1BBB00BB0945 /* iPhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneTableViewCell.h; sourceTree = "<group>"; };
 		355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneTableViewCell.m; sourceTree = "<group>"; };
 		355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhoneCellNib.xib; sourceTree = "<group>"; };
@@ -335,6 +345,7 @@
 		3518D15A1854583000EFC1AF /* VITacademics */ = {
 			isa = PBXGroup;
 			children = (
+				354B0B2618ADF474003D403B /* iPad */,
 				3518D1631854583000EFC1AF /* AppDelegate.h */,
 				3518D1641854583000EFC1AF /* AppDelegate.m */,
 				35A751ED185B90AF009FC74D /* TodayViewController.h */,
@@ -371,6 +382,11 @@
 			isa = PBXGroup;
 			children = (
 				35A32CB518A4B3DF00898607 /* captchaError.png */,
+				354B0B2718AE0719003D403B /* 1536x2048.png */,
+				354B0B2818AE0719003D403B /* 768x1024.png */,
+				354B0B2918AE0719003D403B /* 40.png */,
+				354B0B2A18AE0719003D403B /* 76.png */,
+				354B0B2B18AE0719003D403B /* 152.png */,
 				3595264418A400F400A4767B /* loadingImage.png */,
 				35961C5E18A14E71009F09C8 /* 58.png */,
 				35961C5F18A14E71009F09C8 /* 80.png */,
@@ -431,6 +447,13 @@
 				3526825318ACA8DD0082D518 /* libCrittercism_v4_3_1.a */,
 			);
 			path = CrittercismSDK;
+			sourceTree = "<group>";
+		};
+		354B0B2618ADF474003D403B /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		3562D5F518ACFE1600C1146D /* Analytics */ = {
@@ -582,15 +605,20 @@
 				3518D1AA1854633B00EFC1AF /* MuseoSans-100Italic.otf in Resources */,
 				355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */,
 				3518D1AC1854633B00EFC1AF /* MuseoSans-300Italic.otf in Resources */,
+				354B0B2E18AE0719003D403B /* 40.png in Resources */,
+				354B0B2F18AE0719003D403B /* 76.png in Resources */,
+				354B0B2D18AE0719003D403B /* 768x1024.png in Resources */,
 				3518D1A61854633B00EFC1AF /* MuseoSans_500.otf in Resources */,
 				35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */,
 				35A32CB618A4B3DF00898607 /* captchaError.png in Resources */,
 				35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */,
 				35961C6418A14E71009F09C8 /* 80.png in Resources */,
+				354B0B2C18AE0719003D403B /* 1536x2048.png in Resources */,
 				3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */,
 				3595264518A400F400A4767B /* loadingImage.png in Resources */,
 				359C60C0185CD27200FB36B2 /* CurrentClassTableViewCell.xib in Resources */,
 				3526825418ACA8DD0082D518 /* dsym_upload.sh in Resources */,
+				354B0B3018AE0719003D403B /* 152.png in Resources */,
 				35961C6718A14E71009F09C8 /* 1136x640.png in Resources */,
 				3518D16B1854583000EFC1AF /* Main_iPad.storyboard in Resources */,
 				35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */,
@@ -830,7 +858,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -856,7 +884,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
