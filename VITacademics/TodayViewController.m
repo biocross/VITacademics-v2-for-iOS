@@ -15,7 +15,7 @@
 
 
 
-#warning Bugs
+
 /*
  Bugs / TODO:
  - [FIXED] [was due to no upload] Last Updated Label in detail View is sometime colored, and sometimes not.
@@ -30,12 +30,10 @@
  - [FIXED] Go Button on keyboard is not working - CaptchaViewController
  - [FIXED] ADD NETWORK ERROR IMAGE
  - [FIXED] shows Class finished on weekends
-
- 
- - viewDidAppear
- - [ADD] Analytics, Helpshift, Crittercism
- - I can actually set Change Credentials to reset the app.
- 
+ - [FIXED] I can actually set Change Credentials to reset the app.
+ - [FIXED] viewDidAppear
+ - [FIXED][ADD] Analytics, Helpshift, Crittercism
+ - [FIXED] disable share button in friends
  */
 @interface TodayViewController (){
     TimeTable *ofToday;

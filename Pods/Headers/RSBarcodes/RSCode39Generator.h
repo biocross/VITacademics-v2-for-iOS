@@ -1,1 +1,0 @@
-../../RSBarcodes/RSBarcodes/RSCode39Generator.h

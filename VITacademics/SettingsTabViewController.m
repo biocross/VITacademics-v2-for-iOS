@@ -49,7 +49,47 @@
     
     if(indexPath.section == 0){
         
-        //Purge Code:
+        UIAlertView *betaAcess = [[UIAlertView alloc] initWithTitle:@"Reset" message:@"This will reset VITacademics to the way it was when you installed it.\n\n For now, this is the only way to change credentials in the app." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Reset", nil];
+        [betaAcess show];
+        
+    }
+    
+    if(indexPath.section == 1){
+        
+        if(indexPath.row == 0){
+            if([MFMailComposeViewController canSendMail]) {
+                MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
+                mailCont.mailComposeDelegate = self;
+                [mailCont setToRecipients:[NSArray arrayWithObject:@"sids.1992@gmail.com"]];
+                [mailCont setSubject:@"VITacademics iOS Bug Report"];
+                [mailCont setMessageBody:[@"Please report your problem here" stringByAppendingString:@"."] isHTML:NO];
+                [self presentViewController:mailCont animated:YES completion:nil];
+            }
+        }
+    }
+    if(indexPath.row == 1){
+        NSString *message = @"https://itunes.apple.com/in/app/vitacademics/id727796987?mt=8";
+        //UIImage *imageToShare = [UIImage imageNamed:@"test.jpg"];
+        NSArray *postItems = @[message]; //add image here if you want
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc]
+                                                initWithActivityItems:postItems
+                                                applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+    
+    
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"Reset"]){
         NSLog(@"Resetting App.");
         NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
         [new removeObjectForKey:[new stringForKey:@"registrationNumber"]];
@@ -61,9 +101,6 @@
         [self.tabBarController viewDidLoad];
     }
     
-    
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /*

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "GAI.h"
 
 @implementation AppDelegate
 
@@ -25,12 +26,36 @@
     [Parse setApplicationId:@"vtpDFHGacMwZIpMtpDaFuu0ToBol9b9nQM9VD57N"
                   clientKey:@"OCKn8dB6wqeGqvSdYbXHgYe9mDGFb2yukyDHT3Fs"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    [PFFacebookUtils initializeFacebook];
+    //[PFFacebookUtils initializeFacebook];
+    
+    
+    [Crittercism enableWithAppID:@"526e47368b2e337b2700000a" andDelegate:self andURLFilters:nil disableInstrumentation:NO];
+    [Crittercism setAsyncBreadcrumbMode:YES];
+    [Crittercism leaveBreadcrumb:@"<breadcrumb>"];
+    
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 30;
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-38195928-4"];
+    NSLog(@"%@", [tracker debugDescription]);
     
     
     //Failsafe:
     NSUserDefaults *temp = [NSUserDefaults standardUserDefaults];
-   
+    
+    
+    /*
+    if([temp objectForKey:@"firstRun"]){
+        NSLog(@"This is not the first Run");
+    }
+    else{
+        NSLog(@"firstRun Detected: Resetting Old Data");
+        NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+        [new removeObjectForKey:[new stringForKey:@"registrationNumber"]];
+        [new removeObjectForKey:@"registrationNumber"];
+        [new removeObjectForKey:@"dateOfBirth"];
+    }*/
+    
     NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [temp objectForKey:@"registrationNumber"]];
     
     
@@ -44,19 +69,9 @@
         [new removeObjectForKey:@"dateOfBirth"];
     }
     
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(resetApp)
-     name:@"masterReset"
-     object:nil];
-    
     return YES;
 }
 
--(void)resetApp{
-    NSLog(@"Recieved reset signal in AppDelegate");
-    [self application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:nil];
-}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

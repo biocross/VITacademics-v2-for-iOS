@@ -12,23 +12,11 @@
 #define COCOAPODS_VERSION_MINOR_CSNotificationView 3
 #define COCOAPODS_VERSION_PATCH_CSNotificationView 3
 
-// Colours
-#define COCOAPODS_POD_AVAILABLE_Colours
-#define COCOAPODS_VERSION_MAJOR_Colours 4
-#define COCOAPODS_VERSION_MINOR_Colours 1
-#define COCOAPODS_VERSION_PATCH_Colours 0
-
 // DPMeterView
 #define COCOAPODS_POD_AVAILABLE_DPMeterView
 #define COCOAPODS_VERSION_MAJOR_DPMeterView 0
 #define COCOAPODS_VERSION_MINOR_DPMeterView 0
 #define COCOAPODS_VERSION_PATCH_DPMeterView 1
-
-// JBChartView
-#define COCOAPODS_POD_AVAILABLE_JBChartView
-#define COCOAPODS_VERSION_MAJOR_JBChartView 1
-#define COCOAPODS_VERSION_MINOR_JBChartView 1
-#define COCOAPODS_VERSION_PATCH_JBChartView 3
 
 // MRProgress
 #define COCOAPODS_POD_AVAILABLE_MRProgress
@@ -59,10 +47,4 @@
 #define COCOAPODS_VERSION_MAJOR_RMStepsController 1
 #define COCOAPODS_VERSION_MINOR_RMStepsController 0
 #define COCOAPODS_VERSION_PATCH_RMStepsController 0
-
-// RSBarcodes
-#define COCOAPODS_POD_AVAILABLE_RSBarcodes
-#define COCOAPODS_VERSION_MAJOR_RSBarcodes 0
-#define COCOAPODS_VERSION_MINOR_RSBarcodes 0
-#define COCOAPODS_VERSION_PATCH_RSBarcodes 3
 

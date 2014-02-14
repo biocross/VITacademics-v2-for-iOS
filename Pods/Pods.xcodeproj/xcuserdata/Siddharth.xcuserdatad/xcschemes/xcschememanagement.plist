@@ -9,17 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Colours.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-DPMeterView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-JBChartView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,11 +39,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RSBarcodes.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,57 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4FBCB2CEF49843F3811B60CA</key>
+		<key>13A0A6C60478471DB444D87F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D0B0BD409E54BC59D009126</key>
+		<key>301ECD70AE954F508F67970B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>612142EE83A948B8B3D309D0</key>
+		<key>43767DF384FC417D9FC57B2F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B54E89741644C1E90F3F7FE</key>
+		<key>4C2AEC5E677640B28F010F72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7702298A9BC148B193C75166</key>
+		<key>5B3029DF24614A26AEC2793E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92B61BB6D9F94ACC822A0C48</key>
+		<key>888217B968C14F1888C70884</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9FE456CE52A549C7A3DED543</key>
+		<key>936BE5AE92A540CEB594A108</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A41BFCC30CDB4D23B18692DF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B81BADA1070844CF95A1C21C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B879DF2C86354AED90D5AC8C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F3D3B000E0A84D1287679FD5</key>
+		<key>B863A154B702409FA708E561</key>
 		<dict>
 			<key>primary</key>
 			<true/>

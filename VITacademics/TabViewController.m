@@ -35,9 +35,6 @@
             //[self setSelectedIndex:2];
         }
         else{
-            
-            NSLog(@"%@", [preferences objectForKey:@"registrationNumber"]);
-            
             RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
             [self presentViewController:firstStep animated:YES completion:nil];
             

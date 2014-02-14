@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface SettingsTabViewController : UITableViewController
+@interface SettingsTabViewController : UITableViewController <MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 
 @end

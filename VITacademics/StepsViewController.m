@@ -32,11 +32,12 @@
 {
     [super viewDidLoad];
     
+    
     PulsingHaloLayer *halo = [PulsingHaloLayer layer];
     //halo.position = CGPointMake(35, 31);
     //halo.position = CGPointMake(self.startingImage.frame.origin.x + 35, self.startingImage.frame.origin.y + 31);
     halo.position = CGPointMake(self.view.center.x, self.view.frame.size.height);
-    halo.radius = 200;
+    halo.radius = 120;
     [self.view.layer addSublayer:halo];
     
     
