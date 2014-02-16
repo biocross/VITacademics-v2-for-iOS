@@ -36,6 +36,7 @@
         }
         else{
             RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
+            firstStep.modalPresentationStyle = UIModalPresentationFormSheet;
             [self presentViewController:firstStep animated:YES completion:nil];
             
         }
