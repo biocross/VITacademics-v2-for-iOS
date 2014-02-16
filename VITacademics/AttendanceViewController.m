@@ -331,8 +331,8 @@
 {
     
      NSIndexPath *selectedRowIndex = indexPath;
-     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-     DetailViewController *detailViewController = [sb instantiateViewControllerWithIdentifier:@"DetailsView"];
+     //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+     DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsView"];
      [self.navigationController pushViewController:detailViewController animated:YES];
      
      if(selectedRowIndex.section == 0){

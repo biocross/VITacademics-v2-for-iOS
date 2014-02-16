@@ -13,17 +13,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="R7f-Vi-AgX">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="R7f-Vi-AgX">
                         <rect key="frame" x="128" y="35" width="64" height="64"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="33G-kU-1Cg"/>
+                            <constraint firstAttribute="width" constant="64" id="N59-cR-egP"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="no class right now!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R84-pq-IcC">
-                        <rect key="frame" x="95" y="134" width="145" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="no class right now!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R84-pq-IcC">
+                        <rect key="frame" x="20" y="134" width="280" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="R84-pq-IcC" firstAttribute="leading" secondItem="xWn-wg-dOM" secondAttribute="leading" constant="20" id="2YJ-v6-mb6"/>
+                    <constraint firstAttribute="trailing" secondItem="R84-pq-IcC" secondAttribute="trailing" constant="20" id="EU7-Rq-A2E"/>
+                    <constraint firstItem="R7f-Vi-AgX" firstAttribute="centerX" secondItem="R84-pq-IcC" secondAttribute="centerX" id="IoT-fN-sek"/>
+                    <constraint firstItem="R84-pq-IcC" firstAttribute="top" secondItem="R7f-Vi-AgX" secondAttribute="bottom" constant="35" id="Ssp-qi-My6"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>
