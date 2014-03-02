@@ -45,6 +45,10 @@
     }        
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 
 - (void)configureView
 {
@@ -73,7 +77,6 @@
         [self.subjectPercentage setCenter:self.progressView.center];
         [self.view addSubview:self.subjectPercentage];
         
-        
         for(UIButton *item in self.roundButton){
             
             if([item.titleLabel.text isEqualToString:@"+"]){
@@ -86,7 +89,7 @@
             [item.layer setBorderWidth:1];
             
         }
-
+        [self.shakeToResetLabel setFont:[UIFont fontWithName:@"MuseoSans-300" size:10]];
         [self recalculateAttendance];
     }
     
@@ -102,7 +105,27 @@
     return aPath;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+     [self becomeFirstResponder];
+}
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        // User was shaking the device. Post a notification named "shake."
+        [self resetCalculations];
+    }
+}
+
+-(void)resetCalculations{
+    self.subjectAttended.text = [NSString stringWithFormat:@"%ld",  (long)_subject.attendedClasses];
+    self.subjectConducted.text = [NSString stringWithFormat:@"%ld", (long)_subject.conductedClasses];
+    
+    self.attendLabel.text = @"0";
+    self.missLabel.text = @"0";
+    
+    [self recalculateAttendance];
+}
 
 - (void)recalculateAttendance{
     float calculatedPercentage =(float) [self.subjectAttended.text intValue] / [self.subjectConducted.text intValue];
@@ -168,6 +191,12 @@
     [self.subjectPercentage setFont:subjectPerFont];
     
     
+    if([self.missLabel.text integerValue] != 0 || [self.attendLabel.text integerValue] != 0){
+        self.shakeToResetLabel.alpha = 1;
+    }
+    else{
+        self.shakeToResetLabel.alpha = 0;
+    }
     
 }
 

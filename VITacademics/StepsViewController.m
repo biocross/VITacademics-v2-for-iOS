@@ -239,6 +239,11 @@
             [preferences removeObjectForKey:ttKey];
             [preferences setObject:timetable forKey:ttKey];
             
+            
+            
+            
+            
+            
             self.five.enabled = NO;
             currentUser[@"timeTable"] = timetable;
             [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

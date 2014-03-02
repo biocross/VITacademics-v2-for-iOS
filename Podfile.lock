@@ -1,4 +1,5 @@
 PODS:
+  - Appirater (2.0.2)
   - CSNotificationView (0.3.3)
   - DPMeterView (0.0.1)
   - MRProgress (0.3.1)
@@ -8,6 +9,7 @@ PODS:
   - RMStepsController (1.0.0)
 
 DEPENDENCIES:
+  - Appirater
   - CSNotificationView (~> 0.3.3)
   - DPMeterView (= 0.0.1)
   - MRProgress (~> 0.3)
@@ -17,6 +19,7 @@ DEPENDENCIES:
   - RMStepsController (~> 1.0.0)
 
 SPEC CHECKSUMS:
+  Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
   CSNotificationView: f14352657afe7255be9fb2446eb99d5914b97b5d
   DPMeterView: 0cfa41936a00d60938cdfd8a298ce399bc1bbd53
   MRProgress: 741d8849f3d6e71cf254b32ea8c0bc0b2a122136

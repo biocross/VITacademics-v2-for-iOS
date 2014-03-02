@@ -108,14 +108,33 @@
     NSURL *url = [NSURL URLWithString:buildingUrl];
     NSError *error = nil;
     NSString *text = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];
+    NSString *final;
     
     if(!text){
-        NSLog(@"Error = %@", error);
-        return @"networkerror";
+        NSLog(@"Error in fetching timetable [VITxAPI] = %@", error);
+        //return @"networkerror";
+#warning errorProne
+        //final - @"networkerror"
+        final = [self loadTimeTableWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
     }
     else{
-        return text;
+        NSError *e = nil;
+        NSData *ttDataFromString = [text dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &e];
+        
+        if (!jsonArray) {
+            NSLog(@"Error parsing JSON: %@", e);
+            NSLog(@"Inception1");
+            final = [self loadTimeTableWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
+        }
+        else{
+            final = text;
+        }
+        
+        
     }
+    
+    return final;
 }
 
 @end

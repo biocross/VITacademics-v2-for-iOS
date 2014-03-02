@@ -194,8 +194,16 @@
     BOOL isLab = NO;
     
     if([slot rangeOfString:@"L"].location != NSNotFound){
-        isLab = YES;
+        if([slot rangeOfString:@"+"].location != NSNotFound){
+           isLab = YES;
+        }
+        else{
+            NSLog(@"Subject with slot %@ not added to TT", slot);
+        }
+        
     }
+    
+    
     
     if(!isLab){
         //Subject is not a lab, proceeding with theory parsing:

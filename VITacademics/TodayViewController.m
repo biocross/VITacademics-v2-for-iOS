@@ -19,7 +19,7 @@
 /*
  Bugs / TODO:
  - [FIXED] [was due to no upload] Last Updated Label in detail View is sometime colored, and sometimes not.
- - [FIXED] Resign First Reponder in the settings screen when user click "Verify!"
+ - [FIXED] Resign First Responder in the settings screen when user clicks "Verify!"
  - [FIXED] Slot in Today View is getting truncated if it's more than one slot long - Labs!
  - [FIXED] Remove the string from Setting View saying facebook thingy
  - [FIXED] [PROBLEM] Submit button in CaptchaView should work on CellTouch
@@ -34,6 +34,14 @@
  - [FIXED] viewDidAppear
  - [FIXED][ADD] Analytics, Helpshift, Crittercism
  - [FIXED] disable share button in friends
+ 
+ 
+ - Shake to Reset, Swipe for Marks.
+ - error 500 handling
+ - dateOfBirth Picker resign first responder
+ - Marks View
+ - ENABLE CANCEL IN THW WIZARD
+ 
  */
 @interface TodayViewController (){
     TimeTable *ofToday;

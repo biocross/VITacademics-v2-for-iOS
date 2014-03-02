@@ -12,6 +12,7 @@
 #import "DPMeterView.h"
 
 @interface DetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *shakeToResetLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *staticElevenLabel;
 @property (strong, nonatomic) id detailItem;
