@@ -24,6 +24,7 @@
 
 @property (strong) DPMeterView *progressView;
 @property (weak, nonatomic) IBOutlet UILabel *staticFourteenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *swipeLabel;
 
 - (void)setDetailItem:(id)newDetailItem;
 - (void)recalculateAttendance;

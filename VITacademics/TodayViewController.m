@@ -34,13 +34,13 @@
  - [FIXED] viewDidAppear
  - [FIXED][ADD] Analytics, Helpshift, Crittercism
  - [FIXED] disable share button in friends
+ - [FIXED] Marks View
+ - [FIXED] Shake to Reset, Swipe for Marks.
+ - Added Rating Dailog - Appirater
+ - [FIXED] dateOfBirth Picker resign first responder
  
- 
- - Shake to Reset, Swipe for Marks.
  - error 500 handling
- - dateOfBirth Picker resign first responder
- - Marks View
- - ENABLE CANCEL IN THW WIZARD
+ - ENABLE CANCEL IN THE WIZARD
  
  */
 @interface TodayViewController (){

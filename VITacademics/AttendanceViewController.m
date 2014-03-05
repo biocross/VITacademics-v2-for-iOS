@@ -14,6 +14,7 @@
 #import "iPhoneTableViewCell.h"
 #import "NSDate+TimeAgo.h"
 #import "DataManager.h"
+#import "RootForPageViewController.h"
 
 @interface AttendanceViewController () {
     NSMutableArray *_objects;
@@ -308,7 +309,7 @@
             cell.percentage.textColor = [UIColor orangeColor];
         }
         else{
-            cell.percentage.textColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
+            cell.percentage.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
         }
     }//end of sections clause
     return cell;
@@ -332,7 +333,7 @@
     
      NSIndexPath *selectedRowIndex = indexPath;
      //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
-     DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsView"];
+     RootForPageViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rootForPageView"];
      [self.navigationController pushViewController:detailViewController animated:YES];
      
      if(selectedRowIndex.section == 0){

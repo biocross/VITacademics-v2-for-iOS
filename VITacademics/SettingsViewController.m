@@ -57,6 +57,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    [_dateOfBirth resignFirstResponder];
     return YES;
     
 }
@@ -145,9 +146,11 @@
                     // Hooray! Let them use the app now.
                     [_buttonOutlet setTitle:@"Verified." forState:UIControlStateNormal];
                     [self.stepsController showNextStep];
+                    [self.sender finalSetup];
                 } else {
                     NSString *errorString = [error userInfo][@"error"];
                     NSLog(@"%@", errorString);
+                    NSLog(@"some shit happened here");
                     // Show the errorString somewhere and let the user try again.
                     
                 }

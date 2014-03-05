@@ -54,7 +54,7 @@
 {
     // Update the user interface for the detail item.
     if (self.subject) {
-        self.title = @"";
+        //self.title = @"";
         self.subjectName.text = _subject.subjectTitle;
         self.subjectSlot.text = _subject.subjectSlot;
         self.subjectType.text = _subject.subjectType;
@@ -90,6 +90,7 @@
             
         }
         [self.shakeToResetLabel setFont:[UIFont fontWithName:@"MuseoSans-300" size:10]];
+        [self.swipeLabel setFont:[UIFont fontWithName:@"MuseoSans-300" size:10]];
         [self recalculateAttendance];
     }
     
@@ -158,14 +159,6 @@
 
     displayPercentageInteger = displayPercentageInteger/100;
     [self.progressView setProgress:displayPercentageInteger animated:YES];
-
-    
-    if(self.subject.subjectCode){
-        self.title = self.subject.subjectCode;
-    }
-    else{
-      self.title = @"Subject Details";
-    }
     
     UIFont *codeFont = [UIFont fontWithName:@"MuseoSans-300" size:11];
     [self.lastUpdatedLabel setFont:codeFont];

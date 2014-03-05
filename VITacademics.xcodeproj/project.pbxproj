@@ -10,6 +10,7 @@
 		3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3510174E18661DC7005F4101 /* StoreKit.framework */; };
 		35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35128E80186844E500DBC06D /* NoClassRightNow.xib */; };
 		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
+		35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35157EB818C6F78500C51FA3 /* MarksViewController.m */; };
 		3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
 		3518D1571854583000EFC1AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1561854583000EFC1AF /* CoreGraphics.framework */; };
 		3518D1591854583000EFC1AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1581854583000EFC1AF /* UIKit.framework */; };
@@ -79,6 +80,8 @@
 		35A32CB618A4B3DF00898607 /* captchaError.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A32CB518A4B3DF00898607 /* captchaError.png */; };
 		35A6547618BA89C500095B72 /* libCrittercism_v4_3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547518BA89C500095B72 /* libCrittercism_v4_3_0.a */; };
 		35A6547A18BA8A7800095B72 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */; };
+		35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
+		35A6A2C118C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
 		35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751EE185B90AF009FC74D /* TodayViewController.m */; };
 		35A751F2185B91E6009FC74D /* TimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F1185B91E6009FC74D /* TimeTable.m */; };
 		35A751F5185B9608009FC74D /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F4185B9608009FC74D /* TabViewController.m */; };
@@ -108,6 +111,8 @@
 		35128E80186844E500DBC06D /* NoClassRightNow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoClassRightNow.xib; path = ../NoClassRightNow.xib; sourceTree = "<group>"; };
 		35155D7F18781A8100513E05 /* SettingsTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTabViewController.h; sourceTree = "<group>"; };
 		35155D8018781A8100513E05 /* SettingsTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTabViewController.m; sourceTree = "<group>"; };
+		35157EB718C6F78500C51FA3 /* MarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarksViewController.h; sourceTree = "<group>"; };
+		35157EB818C6F78500C51FA3 /* MarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarksViewController.m; sourceTree = "<group>"; };
 		3518D1511854583000EFC1AF /* VITacademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VITacademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3518D1541854583000EFC1AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3518D1561854583000EFC1AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -200,6 +205,8 @@
 		35A6547418BA89C500095B72 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
 		35A6547518BA89C500095B72 /* libCrittercism_v4_3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_0.a; sourceTree = "<group>"; };
 		35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		35A6A2BE18C4A956004BC6C5 /* RootForPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootForPageViewController.h; sourceTree = "<group>"; };
+		35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootForPageViewController.m; sourceTree = "<group>"; };
 		35A751ED185B90AF009FC74D /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		35A751EE185B90AF009FC74D /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		35A751F0185B91E6009FC74D /* TimeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTable.h; sourceTree = "<group>"; };
@@ -346,6 +353,8 @@
 			isa = PBXGroup;
 			children = (
 				354B0B2618ADF474003D403B /* iPad */,
+				35A6A2BE18C4A956004BC6C5 /* RootForPageViewController.h */,
+				35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */,
 				3518D1631854583000EFC1AF /* AppDelegate.h */,
 				3518D1641854583000EFC1AF /* AppDelegate.m */,
 				35A751ED185B90AF009FC74D /* TodayViewController.h */,
@@ -368,6 +377,8 @@
 				3518E96E189B9F56001F32A8 /* SubjectDetailsViewController.m */,
 				35BC32DB189D950400B2999D /* ShareViewController.h */,
 				35BC32DC189D950400B2999D /* ShareViewController.m */,
+				35157EB718C6F78500C51FA3 /* MarksViewController.h */,
+				35157EB818C6F78500C51FA3 /* MarksViewController.m */,
 				35B954F5188C11BD00389DA6 /* Model */,
 				35128E7F18683C6000DBC06D /* User Interface */,
 				35A751F6185B9BEA009FC74D /* Tutorial */,
@@ -700,10 +711,12 @@
 				3518D1611854583000EFC1AF /* main.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
 				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
+				35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */,
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,
 				35D4A319189E51F400F23A28 /* DataManager.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,
 				35B954F4188C11B800389DA6 /* Subjects.m in Sources */,
+				35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */,
 				35B954F3188C11B800389DA6 /* Subject.m in Sources */,
 				35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */,
 				355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */,
@@ -722,6 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3518D1831854583000EFC1AF /* VITacademicsTests.m in Sources */,
+				35A6A2C118C4A956004BC6C5 /* RootForPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

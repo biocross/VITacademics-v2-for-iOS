@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "GAI.h"
+#import "Appirater.h"
 
 @implementation AppDelegate
 
@@ -69,8 +70,49 @@
         [new removeObjectForKey:@"dateOfBirth"];
     }
     
+    /*
+    @try {
+        if([self isValidJSON:[temp objectForKey:ttKey]]){
+            NSLog(@"TimeTable looks good.");
+        }
+        else{
+            NSLog(@"Error Found in TimeTable, resetting App.");
+            NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+            [new removeObjectForKey:@"registrationNumber"];
+            [new removeObjectForKey:@"dateOfBirth"];
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Error is TT Check");
+    }
+    */
+    
+    
+    [Appirater setAppId:@"727796987"];
+    [Appirater setDaysUntilPrompt:6];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
+    
     return YES;
 }
+
+/*
+-(BOOL)isValidJSON:(NSString *)jsonThingy{
+    NSError *e = nil;
+    NSData *ttDataFromString = [jsonThingy dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &e];
+    
+    if (!jsonArray) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+ */
 
 							
 - (void)applicationWillResignActive:(UIApplication *)application
