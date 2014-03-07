@@ -14,6 +14,26 @@
 
 @implementation RootForPageViewController
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        // User was shaking the device. Post a notification named "shake."
+        
+        @try {
+            [self.detailsView resetCalculations];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"error in handling shake");
+        }
+        
+        
+    }
+}
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -58,7 +78,7 @@
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     //self.index = 0;
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height - 120);
+    self.pageViewController.view.frame = CGRectMake(0, 65, self.view.frame.size.width, self.view.frame.size.height - 120);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];

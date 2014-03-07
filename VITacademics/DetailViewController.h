@@ -28,6 +28,7 @@
 
 - (void)setDetailItem:(id)newDetailItem;
 - (void)recalculateAttendance;
+- (void)resetCalculations;
 
 @property (weak, nonatomic) IBOutlet UILabel *subjectName;
 @property (weak, nonatomic) IBOutlet UILabel *subjectType;

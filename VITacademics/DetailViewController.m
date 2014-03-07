@@ -45,11 +45,6 @@
     }        
 }
 
-- (BOOL)canBecomeFirstResponder {
-    return YES;
-}
-
-
 - (void)configureView
 {
     // Update the user interface for the detail item.
@@ -110,13 +105,7 @@
      [self becomeFirstResponder];
 }
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    if (motion == UIEventSubtypeMotionShake)
-    {
-        // User was shaking the device. Post a notification named "shake."
-        [self resetCalculations];
-    }
-}
+
 
 -(void)resetCalculations{
     self.subjectAttended.text = [NSString stringWithFormat:@"%ld",  (long)_subject.attendedClasses];
