@@ -50,7 +50,6 @@
     //[catBarChart setStrokeColors:@[PNGreen,PNGreen,PNRed]];
     [catBarChart strokeChart];
     
-    catBarChart.showLabel = NO;
     
     [self.view addSubview:catBarChart];
     
