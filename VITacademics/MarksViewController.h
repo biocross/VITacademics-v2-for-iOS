@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MarksViewController : UITableViewController
+@interface MarksViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *marksArray;
 

@@ -7,6 +7,7 @@
 //
 
 #import "MarksViewController.h"
+#import "PNChart.h"
 
 @interface MarksViewController ()
 
@@ -14,26 +15,44 @@
 
 @implementation MarksViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"MarksCell"];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                                              style:UIBarButtonSystemItemDone
-                                                                             target:self   action:@selector(dismissView)];
-    self.navigationItem.title = @"Marks";
-    [self.tableView setAllowsSelection:NO];
+    float cat1Marks = [self.marksArray[6]  isEqual: @""] ? 0 : [self.marksArray[6] floatValue];
+    cat1Marks = (cat1Marks/50)*15;
+    float cat2Marks = [self.marksArray[8]  isEqual: @""] ? 0 : [self.marksArray[8] floatValue];
+    cat2Marks = (cat2Marks/50)*15;
+    float quiz1Marks = [self.marksArray[10]  isEqual: @""] ? 0 : [self.marksArray[10] floatValue];
+    float quiz2Marks = [self.marksArray[12]  isEqual: @""] ? 0 : [self.marksArray[12] floatValue];
+    float quiz3Marks = [self.marksArray[14]  isEqual: @""] ? 0 : [self.marksArray[12] floatValue];
+    float assignmentMarks = [self.marksArray[16]  isEqual: @""] ? 0 : [self.marksArray[16] floatValue];
+    
+    float totalInternals = cat1Marks + cat2Marks + quiz1Marks + quiz2Marks + quiz3Marks + assignmentMarks;
+    
+    PNBarChart * barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150.0)];
+    barChart.backgroundColor = [UIColor clearColor];
+    [barChart setXLabels:@[@"Quiz 1",@"Quiz 2",@"Quiz 3", @"Assignment"]];
+    [barChart setYValues:@[[NSNumber numberWithFloat:quiz1Marks], [NSNumber numberWithFloat:quiz2Marks], [NSNumber numberWithFloat:quiz3Marks], [NSNumber numberWithFloat:assignmentMarks]]];
+    [barChart setYValueMax:5];
+    //[barChart setStrokeColors:@[PNGreen,PNGreen,PNRed,PNGreen]];
+    [barChart strokeChart];
+    
+    [self.view addSubview:barChart];
+    
+    PNBarChart * catBarChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 150.0, SCREEN_WIDTH, 200.0)];
+    catBarChart.backgroundColor = [UIColor clearColor];
+    [catBarChart setXLabels:@[@"CAT I",@"CAT II",@"Total"]];
+    [catBarChart setYValues:@[[NSNumber numberWithFloat:cat1Marks], [NSNumber numberWithFloat:cat2Marks], [NSNumber numberWithFloat:totalInternals]]];
+    [catBarChart setYValueMax:50];
+    //[catBarChart setStrokeColors:@[PNGreen,PNGreen,PNRed]];
+    [catBarChart strokeChart];
+    
+    catBarChart.showLabel = NO;
+    
+    [self.view addSubview:catBarChart];
     
 }
 
@@ -48,44 +67,7 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 4;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    NSString *returnString = @"Others";
-    
-    if(section == 0)
-        returnString = @"CAT";
-    if(section == 1)
-        returnString = @"Quiz";
-    if(section == 2)
-        returnString = @"Assignment";
-    if(section == 3)
-        returnString = @"Total Internals";
-    
-    return returnString;
-    
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    int noOfRows = 0;
-    
-    if(section == 0)
-        noOfRows = 2;
-    if(section == 1)
-        noOfRows = 3;
-    if(section == 2)
-        noOfRows = 1;
-    if(section == 3)
-        noOfRows = 1;
-    
-    return noOfRows;
-}
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
@@ -144,6 +126,9 @@
     
     
     return cell;
-}
+}*/
+
+
+
 
 @end
