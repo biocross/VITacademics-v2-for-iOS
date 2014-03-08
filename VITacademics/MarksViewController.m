@@ -27,7 +27,7 @@
     cat2Marks = (cat2Marks/50)*15;
     float quiz1Marks = [self.marksArray[10]  isEqual: @""] ? 0 : [self.marksArray[10] floatValue];
     float quiz2Marks = [self.marksArray[12]  isEqual: @""] ? 0 : [self.marksArray[12] floatValue];
-    float quiz3Marks = [self.marksArray[14]  isEqual: @""] ? 0 : [self.marksArray[12] floatValue];
+    float quiz3Marks = [self.marksArray[14]  isEqual: @""] ? 0 : [self.marksArray[14] floatValue];
     float assignmentMarks = [self.marksArray[16]  isEqual: @""] ? 0 : [self.marksArray[16] floatValue];
     
     float totalInternals = cat1Marks + cat2Marks + quiz1Marks + quiz2Marks + quiz3Marks + assignmentMarks;
@@ -50,8 +50,21 @@
     //[catBarChart setStrokeColors:@[PNGreen,PNGreen,PNRed]];
     [catBarChart strokeChart];
     
-    
     [self.view addSubview:catBarChart];
+    
+    UILabel *smallMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, 330, SCREEN_WIDTH, 100)];
+    smallMarks.text = [NSString stringWithFormat:@"Quiz I: %@/5   Quiz II: %@/5   Quiz III: %@/5   Assignment: %@/5", self.marksArray[10], self.marksArray[12], self.marksArray[14], self.marksArray[16]];
+    [smallMarks setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:smallMarks];
+    
+    UILabel *bigMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, 360, SCREEN_WIDTH, 100)];
+    bigMarks.text = [NSString stringWithFormat:@"CAT I: %@/50   CAT II: %@/50   Total: %1.0f/50", self.marksArray[6], self.marksArray[8], totalInternals];
+    [bigMarks setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:bigMarks];
+    
+    [smallMarks setFont:[UIFont fontWithName:@"MuseoSans-300" size:12]];
+    [bigMarks setFont:[UIFont fontWithName:@"MuseoSans-300" size:14]];
+    
     
 }
 
