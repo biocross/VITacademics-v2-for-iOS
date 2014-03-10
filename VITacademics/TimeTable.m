@@ -97,7 +97,7 @@
     NSInteger currentHour = [components hour];
     NSInteger currentMinute = [components minute];
     
-    /*
+    id currentClass;
     NSArray *timeSlots = [self getTimeSlotArray];
     
     for(int i=0; i<23 ; i++){
@@ -106,29 +106,36 @@
         NSInteger initialMinute = [timeSlots[i] minute];
         
         NSInteger finalHour = [timeSlots[i+1] hour];
-        NSInteger finalMinute = [timeSlots[i+1] minute];
+        //NSInteger finalMinute = [timeSlots[i+1] minute];
         
-        
-        if(!i%2){
-            //even - it's a gap
-            if(currentHour == initialHour && currentMinute > initialMinute && currentHour < finalHour && currentMinute < finalMinute){
-                NSLog(@"It's a gap right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
-                break;
-            }
+        if(![self todayIsAWeekend]){
             
-        }
-        else{
-            //it's a class
-            if(currentHour == initialHour && currentMinute > initialMinute && currentHour < finalHour && currentMinute < finalMinute){
-                NSLog(@"It's a class right now: %@", [timeSlots[i] description]);
-                break;
+            if(!i%2){
+                //even - it's a gap
+                if(currentHour == initialHour && currentMinute > initialMinute && currentHour < finalHour /*&& currentMinute < finalMinute*/){
+                    NSLog(@"It's a gap right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
+                    break;
+                }
+                
             }
-        }
-    }*/
+            else{
+                //it's a class
+                if(currentHour == initialHour && currentMinute > initialMinute /*&& currentHour < finalHour && currentMinute < finalMinute*/){
+                    NSLog(@"It's a class right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
+                    return self.todaysTimeTable[((i-1)/2)];
+                    break;
+                }
+            }
+        
+        
+        } //end of !weekend
+        
+        
+    }
     
     
-    id currentClass;
     
+    /*
     if(![self todayIsAWeekend]){
         
         
@@ -169,7 +176,7 @@
             currentClass = self.todaysTimeTable[11];
         }
     }
-    
+    */
     
     
     return currentClass;
@@ -560,7 +567,6 @@
     [components setSecond:0];
     [timeSlots addObject:[components copy]];
 
-    NSLog(@"%@", [timeSlots description]);
     return timeSlots;
 }
 

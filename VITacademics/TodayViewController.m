@@ -46,6 +46,7 @@
 @interface TodayViewController (){
     TimeTable *ofToday;
     NSDictionary *currentClass;
+    NSDictionary *tempClass;
     NSMutableArray *attendanceArray;
 }
 
@@ -150,6 +151,7 @@
     @catch (NSException *exception) {
         NSLog(@"%@", [exception description]);
     }
+    
     
     if(currentClass){
         NSIndexSet *new = [[NSIndexSet alloc] initWithIndex:0];
@@ -268,36 +270,33 @@
         
     
         if(currentClass){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CurrentClassTableViewCell" owner:self options:nil];
-        CurrentClassTableViewCell *cell = [nib objectAtIndex:0];
-        cell.subjectTitle.text = [currentClass objectForKey:@"title"];
-        cell.subjectSlot.text = [currentClass objectForKey:@"slot"];
-        cell.subjectVenue.text = [currentClass objectForKey:@"venue"];
-        cell.subjectFaculty.text = [currentClass objectForKey:@"faculty"];
-        
-        UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:21];
-        [cell.subjectTitle setFont:titleFont];
-        [cell.subjectVenue setFont:titleFont];
-        
-        UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:37];
-        [cell.subjectPercentage setFont:percentageFont];
-        [cell.ifYou setAlpha:0.4];
-        
-        UIFont *greyedFont = [UIFont fontWithName:@"MuseoSans-300" size:13];
-        [cell.greyedText setFont:greyedFont];
-        
-        UIFont *facultyFont = [UIFont fontWithName:@"MuseoSans-300" size:16];
-        [cell.subjectFaculty setFont:facultyFont];
-        
-        UIFont *ifYouFont = [UIFont fontWithName:@"MuseoSans-300" size:30];
-        [cell.ifYou setFont:ifYouFont];
-        
-        UIFont *calculatedFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
-        [cell.calculatedLabels setFont:calculatedFont];
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CurrentClassTableViewCell" owner:self options:nil];
+            CurrentClassTableViewCell *cell = [nib objectAtIndex:0];
+            cell.subjectTitle.text = [currentClass objectForKey:@"title"];
+            cell.subjectSlot.text = [currentClass objectForKey:@"slot"];
+            cell.subjectVenue.text = [currentClass objectForKey:@"venue"];
+            cell.subjectFaculty.text = [currentClass objectForKey:@"faculty"];
             
-        
+            UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:21];
+            [cell.subjectTitle setFont:titleFont];
+            [cell.subjectVenue setFont:titleFont];
             
-        
+            UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:37];
+            [cell.subjectPercentage setFont:percentageFont];
+            [cell.ifYou setAlpha:0.4];
+            
+            UIFont *greyedFont = [UIFont fontWithName:@"MuseoSans-300" size:13];
+            [cell.greyedText setFont:greyedFont];
+            
+            UIFont *facultyFont = [UIFont fontWithName:@"MuseoSans-300" size:16];
+            [cell.subjectFaculty setFont:facultyFont];
+            
+            UIFont *ifYouFont = [UIFont fontWithName:@"MuseoSans-300" size:30];
+            [cell.ifYou setFont:ifYouFont];
+            
+            UIFont *calculatedFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
+            [cell.calculatedLabels setFont:calculatedFont];
+            
             @try {
                 int indexOfMatchedSubject = -1;
                 int i = 0;
