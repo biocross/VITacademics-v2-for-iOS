@@ -113,8 +113,7 @@
     if(!text){
         NSLog(@"Error in fetching timetable [VITxAPI] = %@", error);
         //return @"networkerror";
-#warning errorProne
-        //final - @"networkerror"
+        //final = @"networkerror"
         final = [self loadTimeTableWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
     }
     else{

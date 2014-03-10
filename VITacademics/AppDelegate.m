@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "GAI.h"
 #import "Appirater.h"
+#import "Pigeon.h"
 
 @implementation AppDelegate
 
@@ -44,6 +45,8 @@
     //Failsafe:
     NSUserDefaults *temp = [NSUserDefaults standardUserDefaults];
     
+    [[Pigeon sharedInstance] enableLocalNotification];
+    [[Pigeon sharedInstance] startWithAppleId:@"727796987"];
     
     /*
     if([temp objectForKey:@"firstRun"]){
@@ -145,6 +148,11 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return [PFFacebookUtils handleOpenURL:url];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    [[Pigeon sharedInstance] openInAppStore];
 }
 
 @end

@@ -104,7 +104,7 @@
         self.legibleTimeTable = newArray;
         self.timeSlots = [ofToday getTimeSlotArray];
       
-        [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
     
         
         //Attendance:
@@ -143,8 +143,19 @@
 }
 
 - (void)refreshTable{
-    NSIndexSet *new = [[NSIndexSet alloc] initWithIndex:0];
-    [self.tableView reloadSections:new withRowAnimation:UITableViewRowAnimationFade];
+    NSLog(@"refreshing table");
+    @try {
+        currentClass = [[ofToday getCurrentClass] isKindOfClass:[NSDictionary class]] ? [ofToday getCurrentClass] : 0;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@", [exception description]);
+    }
+    
+    if(currentClass){
+        NSIndexSet *new = [[NSIndexSet alloc] initWithIndex:0];
+        [self.tableView reloadSections:new withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
    
 }
 
@@ -254,16 +265,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0){
-    
-    
-        @try {
-            currentClass = [[ofToday getCurrentClass] isKindOfClass:[NSDictionary class]] ? [ofToday getCurrentClass] : 0;
-        }
-        @catch (NSException *exception) {
-            NSLog(@"%@", [exception description]);
-        }
-
-        
         
     
         if(currentClass){

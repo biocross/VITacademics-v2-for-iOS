@@ -66,6 +66,8 @@
 		355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */; };
 		355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962F188D1E8700BB0945 /* AttendanceViewController.m */; };
 		356802AD1859118E00C41D69 /* VITxAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 356802AC1859118E00C41D69 /* VITxAPI.m */; };
+		3584E3F218CDE3530004CF20 /* Pigeon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3584E3EF18CDE3530004CF20 /* Pigeon.bundle */; };
+		3584E3F318CDE3530004CF20 /* Pigeon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584E3F118CDE3530004CF20 /* Pigeon.m */; };
 		3595264518A400F400A4767B /* loadingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3595264418A400F400A4767B /* loadingImage.png */; };
 		35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C5C18A113FE009F09C8 /* Default-568h@2x.png */; };
 		35961C6318A14E71009F09C8 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 35961C5E18A14E71009F09C8 /* 58.png */; };
@@ -186,6 +188,9 @@
 		355F962F188D1E8700BB0945 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
 		356802AB1859118E00C41D69 /* VITxAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VITxAPI.h; sourceTree = "<group>"; };
 		356802AC1859118E00C41D69 /* VITxAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VITxAPI.m; sourceTree = "<group>"; };
+		3584E3EF18CDE3530004CF20 /* Pigeon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Pigeon.bundle; sourceTree = "<group>"; };
+		3584E3F018CDE3530004CF20 /* Pigeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pigeon.h; sourceTree = "<group>"; };
+		3584E3F118CDE3530004CF20 /* Pigeon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pigeon.m; sourceTree = "<group>"; };
 		3595264418A400F400A4767B /* loadingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingImage.png; sourceTree = "<group>"; };
 		35961C5C18A113FE009F09C8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		35961C5E18A14E71009F09C8 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
@@ -321,6 +326,9 @@
 		3518D1531854583000EFC1AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3584E3EF18CDE3530004CF20 /* Pigeon.bundle */,
+				3584E3F018CDE3530004CF20 /* Pigeon.h */,
+				3584E3F118CDE3530004CF20 /* Pigeon.m */,
 				359D2CAD18AD0168007565C1 /* MessageUI.framework */,
 				3526826018ACAAD80082D518 /* AdSupport.framework */,
 				3526825E18ACAACE0082D518 /* CoreData.framework */,
@@ -620,6 +628,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3584E3F218CDE3530004CF20 /* Pigeon.bundle in Resources */,
 				3518D1AB1854633B00EFC1AF /* MuseoSans-300.otf in Resources */,
 				35961C6318A14E71009F09C8 /* 58.png in Resources */,
 				3518D1AA1854633B00EFC1AF /* MuseoSans-100Italic.otf in Resources */,
@@ -715,6 +724,7 @@
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,
 				35D4A319189E51F400F23A28 /* DataManager.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,
+				3584E3F318CDE3530004CF20 /* Pigeon.m in Sources */,
 				35B954F4188C11B800389DA6 /* Subjects.m in Sources */,
 				35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */,
 				35B954F3188C11B800389DA6 /* Subject.m in Sources */,

@@ -9,7 +9,10 @@
 #import "MarksViewController.h"
 #import "PNChart.h"
 
-@interface MarksViewController ()
+@interface MarksViewController (){
+    PNBarChart *barChart;
+    PNBarChart *catBarChart;
+}
 
 @end
 
@@ -32,23 +35,22 @@
     
     float totalInternals = cat1Marks + cat2Marks + quiz1Marks + quiz2Marks + quiz3Marks + assignmentMarks;
     
-    PNBarChart * barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150.0)];
+    barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150.0)];
     barChart.backgroundColor = [UIColor clearColor];
     [barChart setXLabels:@[@"Quiz 1",@"Quiz 2",@"Quiz 3", @"Assignment"]];
     [barChart setYValues:@[[NSNumber numberWithFloat:quiz1Marks], [NSNumber numberWithFloat:quiz2Marks], [NSNumber numberWithFloat:quiz3Marks], [NSNumber numberWithFloat:assignmentMarks]]];
     [barChart setYValueMax:5];
     //[barChart setStrokeColors:@[PNGreen,PNGreen,PNRed,PNGreen]];
-    [barChart strokeChart];
+    
     
     [self.view addSubview:barChart];
     
-    PNBarChart * catBarChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 150.0, SCREEN_WIDTH, 200.0)];
+    catBarChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 150.0, SCREEN_WIDTH, 200.0)];
     catBarChart.backgroundColor = [UIColor clearColor];
     [catBarChart setXLabels:@[@"CAT I",@"CAT II",@"Total"]];
     [catBarChart setYValues:@[[NSNumber numberWithFloat:cat1Marks], [NSNumber numberWithFloat:cat2Marks], [NSNumber numberWithFloat:totalInternals]]];
     [catBarChart setYValueMax:50];
     //[catBarChart setStrokeColors:@[PNGreen,PNGreen,PNRed]];
-    [catBarChart strokeChart];
     
     [self.view addSubview:catBarChart];
     
@@ -65,9 +67,16 @@
     [smallMarks setFont:[UIFont fontWithName:@"MuseoSans-300" size:12]];
     [bigMarks setFont:[UIFont fontWithName:@"MuseoSans-300" size:14]];
     
+    [barChart strokeChart];
+    [catBarChart strokeChart];
     
 }
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    [barChart strokeChart];
+    [catBarChart strokeChart];
+}
 -(void)dismissView{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }

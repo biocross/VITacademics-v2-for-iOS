@@ -91,15 +91,47 @@
 
 }
 
+
 -(id)getCurrentClass{
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
     NSInteger currentHour = [components hour];
     NSInteger currentMinute = [components minute];
     
+    /*
+    NSArray *timeSlots = [self getTimeSlotArray];
+    
+    for(int i=0; i<23 ; i++){
+        
+        NSInteger initialHour = [timeSlots[i] hour];
+        NSInteger initialMinute = [timeSlots[i] minute];
+        
+        NSInteger finalHour = [timeSlots[i+1] hour];
+        NSInteger finalMinute = [timeSlots[i+1] minute];
+        
+        
+        if(!i%2){
+            //even - it's a gap
+            if(currentHour == initialHour && currentMinute > initialMinute && currentHour < finalHour && currentMinute < finalMinute){
+                NSLog(@"It's a gap right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
+                break;
+            }
+            
+        }
+        else{
+            //it's a class
+            if(currentHour == initialHour && currentMinute > initialMinute && currentHour < finalHour && currentMinute < finalMinute){
+                NSLog(@"It's a class right now: %@", [timeSlots[i] description]);
+                break;
+            }
+        }
+    }*/
+    
     
     id currentClass;
     
     if(![self todayIsAWeekend]){
+        
+        
         if(currentHour >= 8 && currentMinute <50){
             currentClass = self.todaysTimeTable[0];
         }
@@ -405,34 +437,130 @@
 -(NSMutableArray *)getTimeSlotArray{
     NSMutableArray *timeSlots = [[NSMutableArray alloc] init];
     
-    for(int i=0; i<5; i++){
-        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
-        [components setHour:8+i];
-        [components setMinute:0];
-        [components setSecond:0];
-        [timeSlots addObject:components];
-    }
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
+    [components setHour:7];
+    [components setMinute:30];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
     
-    NSDateComponents *components1 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
-    [components1 setHour:13];
-    [components1 setMinute:0];
-    [components1 setSecond:0];
-    [timeSlots addObject:components1];
-   
-    for(int i=0; i<5; i++){
-        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
-        [components setHour:14+i];
-        [components setMinute:0];
-        [components setSecond:0];
-        [timeSlots addObject:components];
-    }
+
+    [components setHour:8];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
     
-    NSDateComponents *components2 = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
-    [components2 setHour:19];
-    [components2 setMinute:0];
-    [components2 setSecond:0];
-    [timeSlots addObject:components2];
+    [components setHour:8];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
     
+    [components setHour:9];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:9];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:10];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:10];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:11];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:11];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:12];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:12];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:13];
+    [components setMinute:30];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    //Afternoon Begins
+    [components setHour:13];
+    [components setMinute:30];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:14];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:14];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:15];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:15];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:16];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:16];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:17];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:17];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:18];
+    [components setMinute:00];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:18];
+    [components setMinute:50];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+    
+    [components setHour:19];
+    [components setMinute:30];
+    [components setSecond:0];
+    [timeSlots addObject:[components copy]];
+
+    NSLog(@"%@", [timeSlots description]);
     return timeSlots;
 }
 
