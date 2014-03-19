@@ -12,6 +12,8 @@
 #import "CurrentClassTableViewCell.h"
 #import "UpcomingClassCell.h"
 #import "Subject.h"
+#import "SFRoundProgressCounterView.h"
+
 
 
 
@@ -36,8 +38,11 @@
  - [FIXED] disable share button in friends
  - [FIXED] Marks View
  - [FIXED] Shake to Reset, Swipe for Marks.
- - Added Rating Dailog - Appirater
+ - [FIXED] Added Rating Dailog - Appirater
  - [FIXED] dateOfBirth Picker resign first responder
+ 
+ 
+ - [FIXED] a bug in today upcoming class for showning "in xx time".
  
  - error 500 handling
  - ENABLE CANCEL IN THE WIZARD
@@ -105,7 +110,7 @@
         self.legibleTimeTable = newArray;
         self.timeSlots = [ofToday getTimeSlotArray];
       
-        [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:50.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
     
         
         //Attendance:
@@ -253,7 +258,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    int height = 183;
+    int height = 290;
 
     if(indexPath.section == 1){
         height = 79;
@@ -296,6 +301,14 @@
             
             UIFont *calculatedFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
             [cell.calculatedLabels setFont:calculatedFont];
+            
+            NSNumber* singleValue = [NSNumber numberWithLong:20000];
+            cell.timeView.intervals = @[singleValue];
+            
+            cell.timeView.outerCircleThickness = [NSNumber numberWithFloat:3.0];
+            cell.timeView.innerCircleThickness = [NSNumber numberWithFloat:1.0];
+            cell.timeView.circleDistance = [NSNumber numberWithFloat:6.0];
+            [cell.timeView start];
             
             @try {
                 int indexOfMatchedSubject = -1;
@@ -423,7 +436,8 @@
         NSDateComponents *rightNow = [[NSCalendar currentCalendar] components:NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:[NSDate date]];
         
         NSString *suffix = @"AM";
-        int time = [self.timeSlots[index] hour];
+        int time = [self.timeSlots[(2*index)+1] hour];
+        
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"EEEE"];

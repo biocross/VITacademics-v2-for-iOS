@@ -1,5 +1,7 @@
 #PNChart
 
+[![Build Status](https://travis-ci.org/kevinzhow/PNChart.png?branch=master)](https://travis-ci.org/kevinzhow/PNChart)
+
 A simple and beautiful chart lib with **animation** used in [Piner](https://itunes.apple.com/us/app/piner/id637706410) and [CoinsMan](https://itunes.apple.com/us/app/coinsman/id772163893) for iOS
 
 [![](https://dl.dropboxusercontent.com/u/1599662/pnchart.gif)](https://dl.dropboxusercontent.com/u/1599662/pnchart.gif)
@@ -24,7 +26,7 @@ You will need LLVM 3.0 or later in order to build PNChart.
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add PNChart to your project.
 
-1. Add a pod entry for PNChart to your Podfile `pod 'PNChart', '~> 0.2.2'`
+1. Add a pod entry for PNChart to your Podfile `pod 'PNChart', '~> 0.3.2'`
 2. Install the pod(s) by running `pod install`.
 3. Include PNChart wherever you need it with `#import "PNChart.h"`.
 

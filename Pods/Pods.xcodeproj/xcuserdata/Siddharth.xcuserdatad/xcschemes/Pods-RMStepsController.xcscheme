@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "74D1B9154CA84791A5214D2B"
+               BlueprintIdentifier = "39F45C5589584009B30E6C12"
                BuildableName = "libPods-RMStepsController.a"
                BlueprintName = "Pods-RMStepsController"
                ReferencedContainer = "container:Pods.xcodeproj">

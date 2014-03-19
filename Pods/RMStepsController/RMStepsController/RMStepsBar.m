@@ -502,7 +502,8 @@
 
 - (void)cancelButtonTapped:(id)sender {
     NSLog(@"Cencel tapped");
-    //[self.delegate stepsBarDidSelectCancelButton:self];
+#warning  CHangeThis!
+    [self.delegate stepsBarDidSelectCancelButton:self];
 }
 
 - (void)recognizedTap:(UIGestureRecognizer *)recognizer {

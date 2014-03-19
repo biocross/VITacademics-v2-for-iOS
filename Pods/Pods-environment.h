@@ -27,8 +27,68 @@
 // MRProgress
 #define COCOAPODS_POD_AVAILABLE_MRProgress
 #define COCOAPODS_VERSION_MAJOR_MRProgress 0
-#define COCOAPODS_VERSION_MINOR_MRProgress 3
+#define COCOAPODS_VERSION_MINOR_MRProgress 4
 #define COCOAPODS_VERSION_PATCH_MRProgress 1
+
+// MRProgress/ActivityIndicator
+#define COCOAPODS_POD_AVAILABLE_MRProgress_ActivityIndicator
+#define COCOAPODS_VERSION_MAJOR_MRProgress_ActivityIndicator 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_ActivityIndicator 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_ActivityIndicator 1
+
+// MRProgress/Blur
+#define COCOAPODS_POD_AVAILABLE_MRProgress_Blur
+#define COCOAPODS_VERSION_MAJOR_MRProgress_Blur 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_Blur 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_Blur 1
+
+// MRProgress/Circular
+#define COCOAPODS_POD_AVAILABLE_MRProgress_Circular
+#define COCOAPODS_VERSION_MAJOR_MRProgress_Circular 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_Circular 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_Circular 1
+
+// MRProgress/Helper
+#define COCOAPODS_POD_AVAILABLE_MRProgress_Helper
+#define COCOAPODS_VERSION_MAJOR_MRProgress_Helper 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_Helper 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_Helper 1
+
+// MRProgress/Icons
+#define COCOAPODS_POD_AVAILABLE_MRProgress_Icons
+#define COCOAPODS_VERSION_MAJOR_MRProgress_Icons 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_Icons 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_Icons 1
+
+// MRProgress/MessageInterceptor
+#define COCOAPODS_POD_AVAILABLE_MRProgress_MessageInterceptor
+#define COCOAPODS_VERSION_MAJOR_MRProgress_MessageInterceptor 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_MessageInterceptor 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_MessageInterceptor 1
+
+// MRProgress/NavigationBarProgress
+#define COCOAPODS_POD_AVAILABLE_MRProgress_NavigationBarProgress
+#define COCOAPODS_VERSION_MAJOR_MRProgress_NavigationBarProgress 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_NavigationBarProgress 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_NavigationBarProgress 1
+
+// MRProgress/Overlay
+#define COCOAPODS_POD_AVAILABLE_MRProgress_Overlay
+#define COCOAPODS_VERSION_MAJOR_MRProgress_Overlay 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_Overlay 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_Overlay 1
+
+// MRProgress/Stopable
+#define COCOAPODS_POD_AVAILABLE_MRProgress_Stopable
+#define COCOAPODS_VERSION_MAJOR_MRProgress_Stopable 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_Stopable 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_Stopable 1
+
+// MRProgress/WeakProxy
+#define COCOAPODS_POD_AVAILABLE_MRProgress_WeakProxy
+#define COCOAPODS_VERSION_MAJOR_MRProgress_WeakProxy 0
+#define COCOAPODS_VERSION_MINOR_MRProgress_WeakProxy 4
+#define COCOAPODS_VERSION_PATCH_MRProgress_WeakProxy 1
 
 // NSDate+TimeAgo
 #define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
@@ -40,7 +100,7 @@
 #define COCOAPODS_POD_AVAILABLE_PNChart
 #define COCOAPODS_VERSION_MAJOR_PNChart 0
 #define COCOAPODS_VERSION_MINOR_PNChart 3
-#define COCOAPODS_VERSION_PATCH_PNChart 1
+#define COCOAPODS_VERSION_PATCH_PNChart 3
 
 // PulsingHalo
 #define COCOAPODS_POD_AVAILABLE_PulsingHalo
@@ -53,4 +113,22 @@
 #define COCOAPODS_VERSION_MAJOR_RMStepsController 1
 #define COCOAPODS_VERSION_MINOR_RMStepsController 0
 #define COCOAPODS_VERSION_PATCH_RMStepsController 0
+
+// SFRoundProgressCounterView
+#define COCOAPODS_POD_AVAILABLE_SFRoundProgressCounterView
+#define COCOAPODS_VERSION_MAJOR_SFRoundProgressCounterView 0
+#define COCOAPODS_VERSION_MINOR_SFRoundProgressCounterView 0
+#define COCOAPODS_VERSION_PATCH_SFRoundProgressCounterView 3
+
+// TTTAttributedLabel
+#define COCOAPODS_POD_AVAILABLE_TTTAttributedLabel
+#define COCOAPODS_VERSION_MAJOR_TTTAttributedLabel 1
+#define COCOAPODS_VERSION_MINOR_TTTAttributedLabel 7
+#define COCOAPODS_VERSION_PATCH_TTTAttributedLabel 5
+
+// UICountingLabel
+#define COCOAPODS_POD_AVAILABLE_UICountingLabel
+#define COCOAPODS_VERSION_MAJOR_UICountingLabel 1
+#define COCOAPODS_VERSION_MINOR_UICountingLabel 0
+#define COCOAPODS_VERSION_PATCH_UICountingLabel 0
 

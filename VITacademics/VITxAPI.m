@@ -60,7 +60,8 @@
     NSURL * url= [NSURL URLWithString:finalURL];
     
     NSError *error = nil;
-    NSData * data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+    NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+    
     
     if (!data){
         NSLog(@"Failed to load the captcha.");

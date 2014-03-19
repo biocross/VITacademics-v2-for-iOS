@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "265B749A6EBD42DBBD9E0511"
+               BlueprintIdentifier = "C111E4576D7E441B8D9768B1"
                BuildableName = "libPods-PulsingHalo.a"
                BlueprintName = "Pods-PulsingHalo"
                ReferencedContainer = "container:Pods.xcodeproj">

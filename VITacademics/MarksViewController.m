@@ -25,15 +25,15 @@
     [super viewDidLoad];
     
     float cat1Marks = [self.marksArray[6]  isEqual: @""] ? 0 : [self.marksArray[6] floatValue];
-    cat1Marks = (cat1Marks/50)*15;
+    float cat1Marks15 = (cat1Marks/50)*15;
     float cat2Marks = [self.marksArray[8]  isEqual: @""] ? 0 : [self.marksArray[8] floatValue];
-    cat2Marks = (cat2Marks/50)*15;
+    float cat2Marks15 = (cat2Marks/50)*15;
     float quiz1Marks = [self.marksArray[10]  isEqual: @""] ? 0 : [self.marksArray[10] floatValue];
     float quiz2Marks = [self.marksArray[12]  isEqual: @""] ? 0 : [self.marksArray[12] floatValue];
     float quiz3Marks = [self.marksArray[14]  isEqual: @""] ? 0 : [self.marksArray[14] floatValue];
     float assignmentMarks = [self.marksArray[16]  isEqual: @""] ? 0 : [self.marksArray[16] floatValue];
     
-    float totalInternals = cat1Marks + cat2Marks + quiz1Marks + quiz2Marks + quiz3Marks + assignmentMarks;
+    float totalInternals = cat1Marks15 + cat2Marks15 + quiz1Marks + quiz2Marks + quiz3Marks + assignmentMarks;
     
     barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150.0)];
     barChart.backgroundColor = [UIColor clearColor];
