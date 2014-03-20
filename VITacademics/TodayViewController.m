@@ -42,9 +42,12 @@
  - [FIXED] dateOfBirth Picker resign first responder
  
  
+ - add days to details view (like thursday etc)
+ - recreate captcha view controller 
+ 
  - [FIXED] a bug in today upcoming class for showning "in xx time".
  
- - error 500 handling
+ - error 500 handling (do it using a status poll?)
  - ENABLE CANCEL IN THE WIZARD
  
  */
