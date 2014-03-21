@@ -203,12 +203,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="VITacademics" id="Ud1-UD-0bU">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="GT5-bs-DSl"/>
-                        <barButtonItem key="rightBarButtonItem" title="Timetable" id="LOo-xN-MIb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Timetable" id="LOo-xN-MIb">
+                            <connections>
+                                <segue destination="LpF-9f-j63" kind="modal" id="WDu-Di-RdO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXy-GQ-saf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="115"/>
+            <point key="canvasLocation" x="814" y="105"/>
         </scene>
         <!--Settings Tab View Controller - Settings-->
         <scene sceneID="Oex-TU-sUh">
@@ -417,7 +421,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrc-1J-ZDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2305" y="99"/>
+            <point key="canvasLocation" x="3306" y="105"/>
         </scene>
         <!--Tab View Controller - VITacademics-->
         <scene sceneID="bju-iE-ayg">
@@ -638,7 +642,62 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZk-df-ld6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="115"/>
+            <point key="canvasLocation" x="444" y="105"/>
+        </scene>
+        <!--Page Container Time Table View Controller - Time Table-->
+        <scene sceneID="Og2-Lt-UDi">
+            <objects>
+                <viewController id="w2u-35-8JJ" customClass="PageContainerTimeTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iVV-4k-sxu"/>
+                        <viewControllerLayoutGuide type="bottom" id="EGs-LP-OdP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WXz-uH-Mob">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Time Table" id="9fb-fe-Kqs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVL-rP-YuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="105"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="OFW-iD-g2B">
+            <objects>
+                <pageViewController storyboardIdentifier="TimeTablePager" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oXs-uX-FUl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtS-T5-eNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="105"/>
+        </scene>
+        <!--Full Time Table Table View Controller-->
+        <scene sceneID="Lmd-n8-MOq">
+            <objects>
+                <tableViewController storyboardIdentifier="FullTimeTableTableViewController" id="Vx9-3M-CWK" customClass="FullTimeTableTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QDx-yx-Cox">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rT2-Fz-CZl">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rT2-Fz-CZl" id="FjR-Uw-WBQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vx9-3M-CWK" id="Swb-oC-Jjk"/>
+                            <outlet property="delegate" destination="Vx9-3M-CWK" id="2BL-y8-SzN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oeq-eq-cfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2443" y="104"/>
         </scene>
         <!--Navigation Controller - Friends-->
         <scene sceneID="dIa-oy-X9C">
@@ -657,7 +716,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBD-3Z-srA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="99"/>
+            <point key="canvasLocation" x="2933" y="105"/>
         </scene>
         <!--Attendance View Controller - Courses-->
         <scene sceneID="EgD-qZ-JT4">
@@ -1158,6 +1217,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLQ-Po-A2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2290" y="-580"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PGP-eR-EGQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LpF-9f-j63" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6KZ-c2-gnx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w2u-35-8JJ" kind="relationship" relationship="rootViewController" id="3L8-KR-1Gb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhh-2o-fwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="105"/>
         </scene>
     </scenes>
     <resources>
