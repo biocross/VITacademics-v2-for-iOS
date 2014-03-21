@@ -99,6 +99,7 @@
         
         NSMutableArray *newArray = [[NSMutableArray alloc] init];
         
+        //DataSource Creation
         NSInteger length = [self.todaysTimeTable count];
         for(int i = 0 ; i<length ; i++){
             if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
@@ -106,6 +107,7 @@
             }
         }
         
+        //Duplicate Removal
         for (int i=0 ; i < [self.legibleTimeTable count] ; i++){
             if(i!= [self.legibleTimeTable count]-1 && [self.legibleTimeTable[i] isEqualToDictionary:self.legibleTimeTable[i+1]]){
                 }
@@ -128,7 +130,7 @@
                 attendanceArray = [sharedManager parseWithAttendanceString];
             }
             @catch (NSException *exception) {
-                NSLog(@"Error at 1: %@", [exception description]);
+                NSLog(@"Error in Getting Attendance from DataManager %@", [exception description]);
             }
 
             
@@ -144,6 +146,7 @@
      object:nil];
 
     [self parentViewController].tabBarItem.badgeValue = [NSString stringWithFormat:@"%lu", (unsigned long)[self.legibleTimeTable count]];
+    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshTableView:) forControlEvents:UIControlEventValueChanged];
     [self setRefreshControl:refreshControl];

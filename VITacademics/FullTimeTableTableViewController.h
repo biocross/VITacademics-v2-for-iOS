@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TimeTable.h"
 
 @interface FullTimeTableTableViewController : UITableViewController
 
 @property (nonatomic) NSInteger day;
+@property TimeTable *ofToday;
+@property NSArray *timeSlots;
+@property NSMutableArray *legibleTimeTable;
 
 @end
