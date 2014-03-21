@@ -112,16 +112,16 @@
             
             if(!i%2){
                 //even - it's a gap
-                if(currentHour == initialHour && currentMinute > initialMinute && currentHour < finalHour /*&& currentMinute < finalMinute*/){
-                    NSLog(@"It's a gap right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
+                if(currentHour == initialHour && currentMinute > initialMinute && currentHour < finalHour ){
+                    //NSLog(@"It's a gap right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
                     break;
                 }
                 
             }
             else{
                 //it's a class
-                if(currentHour == initialHour && currentMinute > initialMinute /*&& currentHour < finalHour && currentMinute < finalMinute*/){
-                    NSLog(@"It's a class right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
+                if(currentHour == initialHour && currentMinute > initialMinute ){
+                    //NSLog(@"It's a class right now between %@ and %@", [timeSlots[i] description], [timeSlots[i+1] description]);
                     return self.todaysTimeTable[((i-1)/2)];
                     break;
                 }

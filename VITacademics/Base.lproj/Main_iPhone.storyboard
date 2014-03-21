@@ -201,7 +201,10 @@
                             <outlet property="delegate" destination="uLw-PD-njc" id="AgP-Wz-6y5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="VITacademics" id="Ud1-UD-0bU"/>
+                    <navigationItem key="navigationItem" title="VITacademics" id="Ud1-UD-0bU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="GT5-bs-DSl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Timetable" id="LOo-xN-MIb"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXy-GQ-saf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -414,7 +417,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrc-1J-ZDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="115"/>
+            <point key="canvasLocation" x="2305" y="99"/>
         </scene>
         <!--Tab View Controller - VITacademics-->
         <scene sceneID="bju-iE-ayg">
@@ -654,7 +657,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBD-3Z-srA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189" y="115"/>
+            <point key="canvasLocation" x="1932" y="99"/>
         </scene>
         <!--Attendance View Controller - Courses-->
         <scene sceneID="EgD-qZ-JT4">

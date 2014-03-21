@@ -40,13 +40,19 @@
  - [FIXED] Shake to Reset, Swipe for Marks.
  - [FIXED] Added Rating Dailog - Appirater
  - [FIXED] dateOfBirth Picker resign first responder
- 
- 
- - add days to details view (like thursday etc)
- - recreate captcha view controller 
- 
  - [FIXED] a bug in today upcoming class for showning "in xx time".
  
+ [CRITICAL]
+ - Fix iPad Crash
+ 
+ [IMPORTANT]
+ - Full Swipeable timeTable
+ - Notifications System
+ - New Captcha View Controller
+ 
+ 
+ [LOW PRIORITY]
+ - add days to details view (like thursday etc)
  - error 500 handling (do it using a status poll?)
  - ENABLE CANCEL IN THE WIZARD
  
@@ -54,7 +60,6 @@
 @interface TodayViewController (){
     TimeTable *ofToday;
     NSDictionary *currentClass;
-    NSDictionary *tempClass;
     NSMutableArray *attendanceArray;
 }
 
@@ -101,7 +106,6 @@
             }
         }
         
-        
         for (int i=0 ; i < [self.legibleTimeTable count] ; i++){
             if(i!= [self.legibleTimeTable count]-1 && [self.legibleTimeTable[i] isEqualToDictionary:self.legibleTimeTable[i+1]]){
                 }
@@ -113,7 +117,7 @@
         self.legibleTimeTable = newArray;
         self.timeSlots = [ofToday getTimeSlotArray];
       
-        [NSTimer scheduledTimerWithTimeInterval:50.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
     
         
         //Attendance:
@@ -164,9 +168,8 @@
     if(currentClass){
         NSIndexSet *new = [[NSIndexSet alloc] initWithIndex:0];
         [self.tableView reloadSections:new withRowAnimation:UITableViewRowAnimationFade];
+        
     }
-    
-   
 }
 
 -(void)reloadSelf{
