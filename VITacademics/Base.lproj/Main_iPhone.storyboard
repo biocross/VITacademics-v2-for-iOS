@@ -202,8 +202,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="VITacademics" id="Ud1-UD-0bU">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="GT5-bs-DSl"/>
-                        <barButtonItem key="rightBarButtonItem" title="Timetable" id="LOo-xN-MIb">
+                        <barButtonItem key="leftBarButtonItem" image="13-target.png" id="GT5-bs-DSl"/>
+                        <barButtonItem key="rightBarButtonItem" image="83-calendar.png" id="LOo-xN-MIb">
                             <connections>
                                 <segue destination="LpF-9f-j63" kind="modal" id="WDu-Di-RdO"/>
                             </connections>
@@ -1238,6 +1238,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="13-target.png" width="28" height="28"/>
+        <image name="83-calendar.png" width="23" height="25"/>
         <image name="Chart_Up" width="25" height="21"/>
         <image name="Contact" width="50" height="50"/>
         <image name="Layers" width="27" height="22"/>

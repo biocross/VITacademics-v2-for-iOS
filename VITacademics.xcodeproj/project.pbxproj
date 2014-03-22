@@ -11,6 +11,8 @@
 		35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35128E80186844E500DBC06D /* NoClassRightNow.xib */; };
 		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
 		35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35157EB818C6F78500C51FA3 /* MarksViewController.m */; };
+		35167C9718DE014800B81229 /* 13-target.png in Resources */ = {isa = PBXBuildFile; fileRef = 35167C9618DE014800B81229 /* 13-target.png */; };
+		35167C9918DE020500B81229 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 35167C9818DE020500B81229 /* 83-calendar.png */; };
 		3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
 		3518D1571854583000EFC1AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1561854583000EFC1AF /* CoreGraphics.framework */; };
 		3518D1591854583000EFC1AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1581854583000EFC1AF /* UIKit.framework */; };
@@ -118,6 +120,8 @@
 		35155D8018781A8100513E05 /* SettingsTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTabViewController.m; sourceTree = "<group>"; };
 		35157EB718C6F78500C51FA3 /* MarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarksViewController.h; sourceTree = "<group>"; };
 		35157EB818C6F78500C51FA3 /* MarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarksViewController.m; sourceTree = "<group>"; };
+		35167C9618DE014800B81229 /* 13-target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13-target.png"; sourceTree = "<group>"; };
+		35167C9818DE020500B81229 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
 		3518D1511854583000EFC1AF /* VITacademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VITacademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3518D1541854583000EFC1AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3518D1561854583000EFC1AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -407,6 +411,8 @@
 		3518D15B1854583000EFC1AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35167C9618DE014800B81229 /* 13-target.png */,
+				35167C9818DE020500B81229 /* 83-calendar.png */,
 				35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */,
 				35A6547818BA89DA00095B72 /* Icons LI */,
 				35A6547718BA89CE00095B72 /* Crittercism */,
@@ -650,6 +656,7 @@
 				354B0B2D18AE0719003D403B /* 768x1024.png in Resources */,
 				3518D1A61854633B00EFC1AF /* MuseoSans_500.otf in Resources */,
 				35961C5D18A113FE009F09C8 /* Default-568h@2x.png in Resources */,
+				35167C9918DE020500B81229 /* 83-calendar.png in Resources */,
 				35A32CB618A4B3DF00898607 /* captchaError.png in Resources */,
 				35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */,
 				35961C6418A14E71009F09C8 /* 80.png in Resources */,
@@ -665,6 +672,7 @@
 				3518D1AE1854633B00EFC1AF /* MuseoSans-900Italic.otf in Resources */,
 				3518D1A51854633B00EFC1AF /* MuseoSans_500_Italic.otf in Resources */,
 				3518D1701854583000EFC1AF /* Images.xcassets in Resources */,
+				35167C9718DE014800B81229 /* 13-target.png in Resources */,
 				3518D1681854583000EFC1AF /* Main_iPhone.storyboard in Resources */,
 				3518D15F1854583000EFC1AF /* InfoPlist.strings in Resources */,
 				3518D1A81854633B00EFC1AF /* MuseoSans_900.otf in Resources */,
