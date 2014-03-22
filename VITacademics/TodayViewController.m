@@ -119,7 +119,7 @@
         self.legibleTimeTable = newArray;
         self.timeSlots = [ofToday getTimeSlotArray];
       
-        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
     
         
         //Attendance:

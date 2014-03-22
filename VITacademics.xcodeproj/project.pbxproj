@@ -367,13 +367,9 @@
 		3518D15A1854583000EFC1AF /* VITacademics */ = {
 			isa = PBXGroup;
 			children = (
-				35E2968F18DBF70A005074EA /* PageContainerTimeTableViewController.h */,
-				35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */,
-				354B0B2618ADF474003D403B /* iPad */,
+				35A99EFC18DD54050060141E /* TimeTableUI */,
 				35A6A2BE18C4A956004BC6C5 /* RootForPageViewController.h */,
 				35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */,
-				35DD77BB18DBF36D0037333B /* FullTimeTableTableViewController.h */,
-				35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */,
 				3518D1631854583000EFC1AF /* AppDelegate.h */,
 				3518D1641854583000EFC1AF /* AppDelegate.m */,
 				35A751ED185B90AF009FC74D /* TodayViewController.h */,
@@ -458,13 +454,6 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		354B0B2618ADF474003D403B /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		3562D5F518ACFE1600C1146D /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +520,17 @@
 				35A751F1185B91E6009FC74D /* TimeTable.m */,
 			);
 			name = APIs;
+			sourceTree = "<group>";
+		};
+		35A99EFC18DD54050060141E /* TimeTableUI */ = {
+			isa = PBXGroup;
+			children = (
+				35E2968F18DBF70A005074EA /* PageContainerTimeTableViewController.h */,
+				35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */,
+				35DD77BB18DBF36D0037333B /* FullTimeTableTableViewController.h */,
+				35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */,
+			);
+			name = TimeTableUI;
 			sourceTree = "<group>";
 		};
 		35B954F5188C11BD00389DA6 /* Model */ = {

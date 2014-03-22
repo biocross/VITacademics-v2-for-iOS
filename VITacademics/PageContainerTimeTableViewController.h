@@ -12,5 +12,4 @@
 
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic) NSInteger currentlyDisplayedDay;
-
 @end

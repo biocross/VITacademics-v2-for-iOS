@@ -30,7 +30,16 @@
     CGRect pageFrame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height - 70);
     self.pageViewController.view.frame = pageFrame;
     [self.view addSubview:self.pageViewController.view];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                              style:UIBarButtonSystemItemDone
+                                                                             target:self   action:@selector(dismissView)];
 }
+
+-(void)dismissView{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
