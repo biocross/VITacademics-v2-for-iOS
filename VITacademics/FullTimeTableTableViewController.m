@@ -38,6 +38,7 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     if(!self.day){
         self.parentViewController.parentViewController.title = @"Monday";
     }
