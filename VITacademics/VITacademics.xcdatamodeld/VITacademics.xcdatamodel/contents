@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Attendance" representedClassName="Attendance" syncable="YES">
+        <attribute name="attendanceDetails" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="attended" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="conducted" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="percentage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="attendance" inverseEntity="Subject" syncable="YES"/>
+    </entity>
+    <entity name="Marks" representedClassName="Marks" syncable="YES">
+        <attribute name="assignment" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cat1" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cat2" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="quiz1" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="quiz2" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="quiz3" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="marks" inverseEntity="Subject" syncable="YES"/>
+    </entity>
+    <entity name="Subject" representedClassName="Subject" syncable="YES">
+        <attribute name="classNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="faculty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notification" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="slot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="venue" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attendance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attendance" inverseName="subject" inverseEntity="Attendance" syncable="YES"/>
+        <relationship name="marks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Marks" inverseName="subject" inverseEntity="Marks" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Attendance" positionX="54" positionY="90" width="128" height="118"/>
+        <element name="Marks" positionX="-279" positionY="63" width="128" height="148"/>
+        <element name="Subject" positionX="-119" positionY="9" width="128" height="193"/>
+    </elements>
+</model>

@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSMutableArray *refreshedArray;
 
 + (id)sharedManager;
-- (NSMutableArray *)parseWithAttendanceString;
+- (void)parseAttendanceString;
+@property NSManagedObjectContext *context;
 
 @end

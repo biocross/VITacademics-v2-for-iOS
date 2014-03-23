@@ -7,8 +7,9 @@
 //
 
 #import "DataManager.h"
-#import "Subjects.h"
-#import "Subject.h"
+#import "Subject+Operations.h"
+#import "Attendance+Operations.h"
+#import "Marks+Operations.h"
 
 @implementation DataManager
 
@@ -30,13 +31,12 @@
 }
 
 
-- (NSMutableArray *)parseWithAttendanceString{
+- (void)parseAttendanceString{
     NSError *e = nil;
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *newString = [[preferences stringForKey:[preferences stringForKey:@"registrationNumber"]] stringByReplacingOccurrencesOfString:@"valid%" withString:@""];
     NSData *attendanceDataFromString = [newString dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: attendanceDataFromString options: NSJSONReadingMutableContainers error: &e];
-    NSMutableArray *refreshedArray = [[NSMutableArray alloc] init];
     if (!jsonArray) {
         NSLog(@"Error parsing JSON: %@", e);
         if([newString isEqualToString:@"networkerror"]){
@@ -52,15 +52,21 @@
     else {
         
         for(NSDictionary *item in jsonArray) {
-            
-            Subject *x = [[Subject alloc] initWithSubject:[item valueForKey:@"code"] title:[item valueForKey:@"title"] slot:[item valueForKey:@"slot"] attended:[[item valueForKey:@"attended"] integerValue] conducted:[[item valueForKey:@"conducted"] integerValue] number:[[item valueForKey:@"sl_no"] integerValue] type:[item valueForKey:@"type"] details:[item valueForKey:@"details"] classNumber:[item valueForKey:@"classnbr"]];
-            
-            [refreshedArray addObject:x];
+
+            [Subject insertSubjectWithTitle:[item valueForKey:@"title"]
+                                   WithCode:[item valueForKey:@"code"]
+                            WithClassNumber:[item valueForKey:@"cnum"]
+                                WithFaculty:[item valueForKey:@"faculty"]
+                                   WithSlot:[item valueForKey:@"slot"] 
+                                  WithVenue:[item valueForKey:@"venue"]
+                    WithNotificationEnabled:YES
+                              WithAttendace:nil
+                                  WithMarks:nil
+                                WithContext:self.context];
             
         } //end of for
     }
 
-    return refreshedArray;
 }
 
 

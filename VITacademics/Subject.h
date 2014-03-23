@@ -1,27 +1,27 @@
 //
 //  Subject.h
-//  Test2
+//  VITacademics
 //
-//  Created by Siddharth Gupta on 5/7/13.
-//  Copyright (c) 2013 Siddharth Gupta. All rights reserved.
+//  Created by Siddharth on 23/03/14.
+//  Copyright (c) 2014 Siddharth Gupta. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Subject : NSObject
+@class Attendance, Marks;
 
-@property (nonatomic) NSInteger subjectNumber;
-@property (copy, nonatomic) NSString *subjectTitle;
-@property (copy, nonatomic) NSString *subjectCode;
-@property (copy, nonatomic) NSString *subjectSlot;
-@property (nonatomic) NSInteger conductedClasses;
-@property (nonatomic) NSInteger attendedClasses;
-@property (copy, nonatomic) NSString *subjectType;
-@property (nonatomic) NSArray *subjectDetails;
-@property (nonatomic) NSString *classNumber;
+@interface Subject : NSManagedObject
 
--(id)initWithSubject:(NSString *)subjectCode title:(NSString *)subjectTitle slot:(NSString *)subjectSlot attended:(NSInteger)attendedClasses conducted:(NSInteger)conductedClasses number:(NSInteger)subjectNumber type:(NSString *)subjectType details:(NSArray *)subjectDetails classNumber:(NSString *)classNumber;
-
-
+@property (nonatomic, retain) NSString * classNumber;
+@property (nonatomic, retain) NSString * slot;
+@property (nonatomic, retain) NSString * code;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * venue;
+@property (nonatomic, retain) NSString * faculty;
+@property BOOL *notification;
+@property (nonatomic, retain) Marks *marks;
+@property (nonatomic, retain) Attendance *attendance;
 
 @end

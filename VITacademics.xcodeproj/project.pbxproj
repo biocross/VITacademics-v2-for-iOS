@@ -11,6 +11,10 @@
 		35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35128E80186844E500DBC06D /* NoClassRightNow.xib */; };
 		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
 		35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35157EB818C6F78500C51FA3 /* MarksViewController.m */; };
+		351674C818DF2BD8002AC961 /* VITacademics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 351674C618DF2BD8002AC961 /* VITacademics.xcdatamodeld */; };
+		351674E018DF2BD8002AC961 /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 351674DF18DF2BD8002AC961 /* Marks.m */; };
+		351674E318DF2BD8002AC961 /* Attendance.m in Sources */ = {isa = PBXBuildFile; fileRef = 351674E218DF2BD8002AC961 /* Attendance.m */; };
+		351674E618DF2BD8002AC961 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 351674E518DF2BD8002AC961 /* Subject.m */; };
 		35167C9718DE014800B81229 /* 13-target.png in Resources */ = {isa = PBXBuildFile; fileRef = 35167C9618DE014800B81229 /* 13-target.png */; };
 		35167C9918DE020500B81229 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 35167C9818DE020500B81229 /* 83-calendar.png */; };
 		3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
@@ -89,9 +93,10 @@
 		35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751EE185B90AF009FC74D /* TodayViewController.m */; };
 		35A751F2185B91E6009FC74D /* TimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F1185B91E6009FC74D /* TimeTable.m */; };
 		35A751F5185B9608009FC74D /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F4185B9608009FC74D /* TabViewController.m */; };
-		35B954F3188C11B800389DA6 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B954F0188C11B800389DA6 /* Subject.m */; };
-		35B954F4188C11B800389DA6 /* Subjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B954F2188C11B800389DA6 /* Subjects.m */; };
 		35BC32DD189D950400B2999D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC32DC189D950400B2999D /* ShareViewController.m */; };
+		35C9DF2F18DEE39D000E1260 /* Subject+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */; };
+		35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF3118DEE672000E1260 /* Attendance+Operations.m */; };
+		35C9DF3518DEED1D000E1260 /* Marks+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF3418DEED1D000E1260 /* Marks+Operations.m */; };
 		35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D20BE71864FF46001139C9 /* UpcomingClassCell.m */; };
 		35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */; };
 		35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2181C188FDBF5000E5BEC /* DetailViewController.m */; };
@@ -120,6 +125,13 @@
 		35155D8018781A8100513E05 /* SettingsTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTabViewController.m; sourceTree = "<group>"; };
 		35157EB718C6F78500C51FA3 /* MarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarksViewController.h; sourceTree = "<group>"; };
 		35157EB818C6F78500C51FA3 /* MarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarksViewController.m; sourceTree = "<group>"; };
+		351674C718DF2BD8002AC961 /* VITacademics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VITacademics.xcdatamodel; sourceTree = "<group>"; };
+		351674DE18DF2BD8002AC961 /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
+		351674DF18DF2BD8002AC961 /* Marks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marks.m; sourceTree = "<group>"; };
+		351674E118DF2BD8002AC961 /* Attendance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendance.h; sourceTree = "<group>"; };
+		351674E218DF2BD8002AC961 /* Attendance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendance.m; sourceTree = "<group>"; };
+		351674E418DF2BD8002AC961 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		351674E518DF2BD8002AC961 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		35167C9618DE014800B81229 /* 13-target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13-target.png"; sourceTree = "<group>"; };
 		35167C9818DE020500B81229 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
 		3518D1511854583000EFC1AF /* VITacademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VITacademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,12 +237,14 @@
 		35A751F1185B91E6009FC74D /* TimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeTable.m; sourceTree = "<group>"; };
 		35A751F3185B9608009FC74D /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		35A751F4185B9608009FC74D /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
-		35B954EF188C11B800389DA6 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		35B954F0188C11B800389DA6 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
-		35B954F1188C11B800389DA6 /* Subjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subjects.h; sourceTree = "<group>"; };
-		35B954F2188C11B800389DA6 /* Subjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subjects.m; sourceTree = "<group>"; };
 		35BC32DB189D950400B2999D /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		35BC32DC189D950400B2999D /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		35C9DF2D18DEE39D000E1260 /* Subject+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subject+Operations.h"; sourceTree = "<group>"; };
+		35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subject+Operations.m"; sourceTree = "<group>"; };
+		35C9DF3018DEE672000E1260 /* Attendance+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Attendance+Operations.h"; sourceTree = "<group>"; };
+		35C9DF3118DEE672000E1260 /* Attendance+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Attendance+Operations.m"; sourceTree = "<group>"; };
+		35C9DF3318DEED1D000E1260 /* Marks+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Marks+Operations.h"; sourceTree = "<group>"; };
+		35C9DF3418DEED1D000E1260 /* Marks+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Marks+Operations.m"; sourceTree = "<group>"; };
 		35D20BE61864FF46001139C9 /* UpcomingClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingClassCell.h; sourceTree = "<group>"; };
 		35D20BE71864FF46001139C9 /* UpcomingClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingClassCell.m; sourceTree = "<group>"; };
 		35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingClassCell.xib; sourceTree = "<group>"; };
@@ -566,10 +580,19 @@
 		35B954F5188C11BD00389DA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				35B954EF188C11B800389DA6 /* Subject.h */,
-				35B954F0188C11B800389DA6 /* Subject.m */,
-				35B954F1188C11B800389DA6 /* Subjects.h */,
-				35B954F2188C11B800389DA6 /* Subjects.m */,
+				351674C618DF2BD8002AC961 /* VITacademics.xcdatamodeld */,
+				351674E418DF2BD8002AC961 /* Subject.h */,
+				351674E518DF2BD8002AC961 /* Subject.m */,
+				35C9DF2D18DEE39D000E1260 /* Subject+Operations.h */,
+				35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */,
+				35C9DF3018DEE672000E1260 /* Attendance+Operations.h */,
+				35C9DF3118DEE672000E1260 /* Attendance+Operations.m */,
+				351674E118DF2BD8002AC961 /* Attendance.h */,
+				351674E218DF2BD8002AC961 /* Attendance.m */,
+				351674DE18DF2BD8002AC961 /* Marks.h */,
+				351674DF18DF2BD8002AC961 /* Marks.m */,
+				35C9DF3318DEED1D000E1260 /* Marks+Operations.h */,
+				35C9DF3418DEED1D000E1260 /* Marks+Operations.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -755,6 +778,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351674E018DF2BD8002AC961 /* Marks.m in Sources */,
 				35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */,
 				35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */,
 				35DD77BD18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */,
@@ -762,6 +786,7 @@
 				3518D1651854583000EFC1AF /* AppDelegate.m in Sources */,
 				35BC32DD189D950400B2999D /* ShareViewController.m in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
+				35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
 				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
 				35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */,
@@ -769,14 +794,17 @@
 				35D4A319189E51F400F23A28 /* DataManager.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,
 				3584E3F318CDE3530004CF20 /* Pigeon.m in Sources */,
-				35B954F4188C11B800389DA6 /* Subjects.m in Sources */,
 				35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */,
-				35B954F3188C11B800389DA6 /* Subject.m in Sources */,
+				35C9DF2F18DEE39D000E1260 /* Subject+Operations.m in Sources */,
 				35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */,
+				351674C818DF2BD8002AC961 /* VITacademics.xcdatamodeld in Sources */,
+				351674E618DF2BD8002AC961 /* Subject.m in Sources */,
+				351674E318DF2BD8002AC961 /* Attendance.m in Sources */,
 				355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */,
 				35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */,
 				359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */,
 				355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */,
+				35C9DF3518DEED1D000E1260 /* Marks+Operations.m in Sources */,
 				3518D1B41854CF7600EFC1AF /* StepsViewController.m in Sources */,
 				356802AD1859118E00C41D69 /* VITxAPI.m in Sources */,
 				359C60BE185CD25000FB36B2 /* CurrentClassTableViewCell.m in Sources */,
@@ -1038,6 +1066,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		351674C618DF2BD8002AC961 /* VITacademics.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				351674C718DF2BD8002AC961 /* VITacademics.xcdatamodel */,
+			);
+			currentVersion = 351674C718DF2BD8002AC961 /* VITacademics.xcdatamodel */;
+			path = VITacademics.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3518D1491854583000EFC1AF /* Project object */;
 }
