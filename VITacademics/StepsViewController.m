@@ -257,6 +257,7 @@
                     [icon setImage:[UIImage imageNamed:@"loadingImage.png"]];
                     [self.view addSubview:icon];
                     NSLog(@"added image");
+                    [[DataManager sharedManager] initializeDataSources];
                 }
                 else{
                     NSLog(@"Problem saving timetable to server");
@@ -264,6 +265,7 @@
                     self.six.enabled = NO;
                     self.seven.enabled = YES;
                     
+                    [[DataManager sharedManager] initializeDataSources];
                 }
             }];
             

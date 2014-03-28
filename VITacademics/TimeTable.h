@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Subject.h"
 
 @interface TimeTable : NSObject
 
-@property NSMutableArray *subjects;
+@property NSArray *subjects;
 
 - (void)printArrays;
 - (id)initWithTTString:(NSString *)TimeTableString;
-- (void)parseSubjectAndAddToTT:(NSDictionary *)subject;
+- (void)parseSubjectAndAddToTT:(Subject *)subject;
 - (NSString *)extractSlotNumber:(NSString *)originalString;
 - (int)getEndRange:(NSString *)originalString;
-- (void)addLabSlotsToTT:(int)slot subject:(NSDictionary *)subject;
+- (void)addLabSlotsToTT:(int)slot subject:(Subject *)subject;
 -(NSMutableArray *)getTimeSlotArray;
 
 -(id)getCurrentClass;
@@ -30,6 +31,7 @@
 @property (retain) NSMutableArray *thursday;
 @property (retain) NSMutableArray *friday;
 @property (retain) NSMutableArray *todaysTimeTable;
+
 
 
 @end

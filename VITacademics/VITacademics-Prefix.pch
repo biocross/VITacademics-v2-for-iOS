@@ -16,4 +16,7 @@
     #import <Parse/Parse.h>
 #import "CSNotificationView.h"
 #import "DataManager.h"
+#import "Subject.h"
+#import "Attendance.h"
+#import "Marks.h"
 #endif

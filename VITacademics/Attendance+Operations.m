@@ -17,7 +17,7 @@
                                       WithAttended:(NSInteger) attended
                                        WithContext:(NSManagedObjectContext *) context
 {
-    Attendance *oldAttendance,*attendance = [NSEntityDescription insertNewObjectForEntityForName:@"Attendance" inManagedObjectContext:context];
+    Attendance *oldAttendance, *attendance = [NSEntityDescription insertNewObjectForEntityForName:@"Attendance" inManagedObjectContext:context];
     attendance.attendanceDetails = details;
     attendance.conducted = [NSNumber numberWithInt:conducted];
     attendance.attended = [NSNumber numberWithInt:attended];

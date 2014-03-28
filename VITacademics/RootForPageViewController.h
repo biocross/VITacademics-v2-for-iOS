@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Subjects.h"
 #import "DetailViewController.h"
 #import "MarksViewController.h"
 #import "SubjectDetailsViewController.h"
@@ -16,7 +15,7 @@
 @interface RootForPageViewController : UIViewController
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (strong, nonatomic) Subjects *subject;
+@property (strong, nonatomic) Subject *subject;
 @property (strong, nonatomic) NSArray *subjectMarks;
 @property (nonatomic) NSInteger index;
 @property DetailViewController *detailsView;

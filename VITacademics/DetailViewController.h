@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Subject.h"
-#import "Subjects.h"
 #import "DPMeterView.h"
 
 @interface DetailViewController : UIViewController
@@ -16,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *staticElevenLabel;
 @property (strong, nonatomic) id detailItem;
-@property (strong, nonatomic) Subjects *subject;
+@property (strong, nonatomic) Subject *subject;
 @property (strong, nonatomic) NSArray *subjectMarks;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
 

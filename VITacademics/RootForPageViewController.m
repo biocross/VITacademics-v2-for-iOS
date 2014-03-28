@@ -44,7 +44,10 @@
     self.detailsView.subject = self.subject;
     
     //Details
-    if([_subject.subjectDetails count] > 0){
+    
+    
+    
+    if([_subject.attendance.attendanceDetails count] > 0){
         self.subjectDetailsView = [[SubjectDetailsViewController alloc] init];
         self.subjectDetailsView.detailsArray = _subject.subjectDetails;
         

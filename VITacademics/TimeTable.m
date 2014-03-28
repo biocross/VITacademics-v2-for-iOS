@@ -7,6 +7,7 @@
 //
 
 #import "TimeTable.h"
+#import "DataManager.h"
 
 @interface TimeTable () {
 }
@@ -18,10 +19,11 @@
 -(id)initWithTTString: (NSString *)TimeTableString{
     
     [self initArrays];
-    
-    
+
+    self.subjects = [[NSArray alloc] init];
+    self.subjects = [[DataManager sharedManager] getAllSubjects];
+    /*
     NSError *e = nil;
-    //NSString *newString = [TimeTableString stringByReplacingOccurrencesOfString:@"valid%" withString:@""];
     NSData *ttDataFromString = [TimeTableString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &e];
     
@@ -36,6 +38,10 @@
         for(NSDictionary *item in subjects){
             [self parseSubjectAndAddToTT: item];
         }
+    }*/
+    
+    for (Subject *subject in self.subjects){
+        [self parseSubjectAndAddToTT: subject];
     }
     
     return self;
@@ -227,8 +233,8 @@
 
 
 
--(void)parseSubjectAndAddToTT:(NSDictionary *)subject{
-    NSString *slot = [subject objectForKey:@"slot"];
+-(void)parseSubjectAndAddToTT:(Subject *)subject{
+    NSString *slot = subject.slot;
     BOOL hasTutorial = NO;
     BOOL isLab = NO;
     
@@ -399,7 +405,7 @@
   
 }
 
--(void)addLabSlotsToTT:(int)slot subject:(NSDictionary *)subject{
+-(void)addLabSlotsToTT:(int)slot subject:(Subject *)subject{
     
     int skippyBoy = 0;
     if(slot > 30){

@@ -46,6 +46,7 @@
  - Fix iPad Crash
  
  [IMPORTANT]
+ - Check server status - See iOS Documentaion from response.code
  - Full Swipeable timeTable
  - Notifications System
  - New Captcha View Controller
@@ -55,11 +56,12 @@
  - add days to details view (like thursday etc)
  - error 500 handling (do it using a status poll?)
  - ENABLE CANCEL IN THE WIZARD
+ - Remove timeTable string from today - TimeTable.h call.
  
  */
 @interface TodayViewController (){
     TimeTable *ofToday;
-    NSDictionary *currentClass;
+    Subject *currentClass;
     NSMutableArray *attendanceArray;
 }
 
@@ -123,6 +125,7 @@
     
         
         //Attendance:
+        /*
         if([preferences stringForKey:[preferences stringForKey:@"registrationNumber"]]){
             
             @try {
@@ -135,7 +138,8 @@
 
             
             
-        }
+        }*/
+        
     }
     
     
@@ -286,10 +290,10 @@
         if(currentClass){
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CurrentClassTableViewCell" owner:self options:nil];
             CurrentClassTableViewCell *cell = [nib objectAtIndex:0];
-            cell.subjectTitle.text = [currentClass objectForKey:@"title"];
-            cell.subjectSlot.text = [currentClass objectForKey:@"slot"];
-            cell.subjectVenue.text = [currentClass objectForKey:@"venue"];
-            cell.subjectFaculty.text = [currentClass objectForKey:@"faculty"];
+            cell.subjectTitle.text = currentClass.title;
+            cell.subjectSlot.text = currentClass.slot;
+            cell.subjectVenue.text = currentClass.venue;
+            cell.subjectFaculty.text = currentClass.faculty;
             
             UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:21];
             [cell.subjectTitle setFont:titleFont];
@@ -320,23 +324,8 @@
             [cell.timeView start];
             
             @try {
-                int indexOfMatchedSubject = -1;
-                int i = 0;
-                for(Subject *item in attendanceArray){
-                    if([item.classNumber isEqualToString:[currentClass objectForKey:@"cnum"]]){
-                        indexOfMatchedSubject = i;
-                        break;
-                    }
-                    i += 1;
-                }
-                
-                //NSLog(@"Matched Index: %d", indexOfMatchedSubject);
-                
-                if(indexOfMatchedSubject != -1){
-                    Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
-
                     
-                    float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
+                    float calculatedPercentage = (float) [currentClass.attendance.attended floatValue] / [currentClass.attendance.conducted floatValue];
                     float displayPercentageInteger = ceil(calculatedPercentage * 100);
                     NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
                     cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
@@ -353,7 +342,7 @@
                     }
                     
                     //Miss Today
-                    float calculatedPercentageMiss = (float) matchedSubject.attendedClasses / (matchedSubject.conductedClasses + 1);
+                    float calculatedPercentageMiss = (float) [currentClass.attendance.attended floatValue] / ([currentClass.attendance.conducted floatValue] + 1);
                     float displayPercentageIntegerMiss = ceil(calculatedPercentageMiss * 100);
                     NSString *displayPercentageMiss = [NSString stringWithFormat:@"%1.0f",displayPercentageIntegerMiss];
                     cell.missToday.text = [displayPercentageMiss stringByAppendingString:@"%"];
@@ -370,7 +359,7 @@
                     }
                     
                     //Attend Today
-                    float calculatedPercentageAttend = (float) (matchedSubject.attendedClasses + 1) / (matchedSubject.conductedClasses + 1);
+                    float calculatedPercentageAttend = (float) ([currentClass.attendance.attended floatValue] + 1) / ([currentClass.attendance.conducted floatValue] + 1);
                     float displayPercentageIntegerAttend = ceil(calculatedPercentageAttend * 100);
                     NSString *displayPercentageAttend = [NSString stringWithFormat:@"%1.0f",displayPercentageIntegerAttend];
                     cell.attendToday.text = [displayPercentageAttend stringByAppendingString:@"%"];
@@ -386,7 +375,7 @@
                         cell.attendToday.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
                     }
                     
-                }
+                
             }
             @catch (NSException *exception) {
                 NSLog(@"Error at 2: %@", [exception description]);
@@ -424,9 +413,12 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UpcomingClassCell" owner:self options:nil];
         UpcomingClassCell *cell = [nib objectAtIndex:0];
         
-        cell.subjectTitle.text = [self.legibleTimeTable[indexPath.row] objectForKey:@"title"];
-        cell.subjectVenue.text = [self.legibleTimeTable[indexPath.row] objectForKey:@"venue"];
-        cell.subjectSlot.text = [self.legibleTimeTable[indexPath.row] objectForKey:@"slot"];
+        Subject *theSubject =  self.legibleTimeTable[indexPath.row];
+        
+        
+        cell.subjectTitle.text = theSubject.title;
+        cell.subjectVenue.text = theSubject.venue;
+        cell.subjectSlot.text = theSubject.slot;
         
         UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
         [cell.subjectTitle setFont:titleFont];
@@ -500,7 +492,7 @@
         }
         
         @try {
-            if([self.legibleTimeTable[indexPath.row] isEqualToDictionary:currentClass]){
+            if([self.legibleTimeTable[indexPath.row] isEqual:currentClass]){
                 cell.subjectStartingIn.text = @"in progress";
                 cell.subjectStartingIn.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
             }
@@ -515,20 +507,8 @@
         
         @try {
             //Attendance Part:
-            int indexOfMatchedSubject = -1;
-            int i = 0;
-            for(Subject *item in attendanceArray){
-                if([item.classNumber isEqualToString:[self.legibleTimeTable[indexPath.row] objectForKey:@"cnum"]]){
-                    indexOfMatchedSubject = i;
-                    break;
-                }
-                i += 1;
-            }
             
-            if(indexOfMatchedSubject != -1){
-                Subject *matchedSubject = attendanceArray[indexOfMatchedSubject];
-                
-                float calculatedPercentage = (float) matchedSubject.attendedClasses / matchedSubject.conductedClasses;
+                float calculatedPercentage = (float) [theSubject.attendance.attended floatValue] / [theSubject.attendance.conducted floatValue];
                 float displayPercentageInteger = ceil(calculatedPercentage * 100);
                 NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
                 cell.subjectPercentage.text = [displayPercentage stringByAppendingString:@"%"];
@@ -547,11 +527,11 @@
                 UIFont *percentageFont = [UIFont fontWithName:@"MuseoSans-300" size:18];
                 [cell.subjectPercentage setFont:percentageFont];
             }
-            else{
+            /*else{
                 [cell.subjectPercentage setFont:greyedFont];
                 cell.subjectPercentage.text = @"attendance not yet available";
-            }
-        }
+            }*/
+
         @catch (NSException *exception) {
             NSLog(@"Error at 3: %@", [exception description]);
         }
