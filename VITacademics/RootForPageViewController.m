@@ -45,11 +45,12 @@
     
     //Details
     
+    NSData *newdata = [NSData dataWithData:_subject.attendance.attendanceDetails];
+    NSMutableArray *detailsArray = [NSMutableArray arrayWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:newdata]];
     
-    
-    if([_subject.attendance.attendanceDetails count] > 0){
+    if([detailsArray count] > 0){
         self.subjectDetailsView = [[SubjectDetailsViewController alloc] init];
-        self.subjectDetailsView.detailsArray = _subject.subjectDetails;
+        self.subjectDetailsView.detailsArray = detailsArray;
         
     }
     else{
@@ -68,8 +69,8 @@
         [self.marksView setMarksArray:self.subjectMarks];
     }
     
-    if(self.subject.subjectCode){
-        self.title = self.subject.subjectCode;
+    if(self.subject.code){
+        self.title = self.subject.code;
     }
     else{
         self.title = @"Subject Details";

@@ -16,7 +16,6 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
-#import "Subjects.h"
 #import "CSNotificationView.h"
 
 
@@ -33,8 +32,8 @@
 @property CSNotificationView *notificationController;
 
 
-@property (nonatomic, strong) Subjects *theorySubjects;
-@property (nonatomic, strong) Subjects *labSubjects;
+@property (nonatomic, strong) NSMutableArray *theorySubjects;
+@property (nonatomic, strong) NSMutableArray *labSubjects;
 
 
 @end

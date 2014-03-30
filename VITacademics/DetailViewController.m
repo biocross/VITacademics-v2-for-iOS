@@ -50,11 +50,11 @@
     // Update the user interface for the detail item.
     if (self.subject) {
         //self.title = @"";
-        self.subjectName.text = _subject.subjectTitle;
-        self.subjectSlot.text = _subject.subjectSlot;
-        self.subjectType.text = _subject.subjectType;
-        self.subjectAttended.text = [NSString stringWithFormat:@"%ld",(long)_subject.attendedClasses];
-        self.subjectConducted.text = [NSString stringWithFormat:@"%ld",(long)_subject.conductedClasses];
+        self.subjectName.text = self.subject.title;
+        self.subjectSlot.text = self.subject.slot;
+        self.subjectType.text = self.subject.type;
+        self.subjectAttended.text = [NSString stringWithFormat:@"%ld",(long) [self.subject.attendance.attended intValue]];
+        self.subjectConducted.text = [NSString stringWithFormat:@"%ld",(long)[self.subject.attendance.conducted intValue]];
         
         self.progressView = [[DPMeterView alloc] init];
         [self.progressView setFrame:self.progressFrame.frame];
@@ -108,8 +108,8 @@
 
 
 -(void)resetCalculations{
-    self.subjectAttended.text = [NSString stringWithFormat:@"%ld",  (long)_subject.attendedClasses];
-    self.subjectConducted.text = [NSString stringWithFormat:@"%ld", (long)_subject.conductedClasses];
+    self.subjectAttended.text = [NSString stringWithFormat:@"%ld",  (long)[self.subject.attendance.attended intValue]];
+    self.subjectConducted.text = [NSString stringWithFormat:@"%ld", (long)[self.subject.attendance.conducted intValue]];
     
     self.attendLabel.text = @"0";
     self.missLabel.text = @"0";
@@ -123,7 +123,7 @@
     NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
     
     
-    
+    /*
     int length = [_subject.subjectDetails count];
     if(length != 0){
         if([[_subject.subjectDetails lastObject] isEqualToString:@"Absent"]){
@@ -133,7 +133,7 @@
             [self.lastUpdatedLabel setTextColor:[UIColor colorWithRed:0.05 green:0.52 blue:0.99 alpha:1]];
         }
         self.lastUpdatedLabel.text = [_subject.subjectDetails objectAtIndex:length - 2];
-    }
+    }*/
 
     
     if(displayPercentageInteger >= 80){
@@ -348,7 +348,7 @@
 
 
 - (IBAction)detailsButtonPressed:(id)sender {
-    
+    /*
     if([_subject.subjectDetails count] > 0){
         SubjectDetailsViewController *forThisSubject = [[SubjectDetailsViewController alloc] init];
         [self.navigationController pushViewController:forThisSubject animated:YES];
@@ -358,5 +358,6 @@
         [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Not Uploaded Yet"];
         
     }
+     */
 }
 @end

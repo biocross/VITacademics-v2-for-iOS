@@ -7,7 +7,6 @@
 //
 
 #import "AttendanceViewController.h"
-#import "Subjects.h"
 #import "Subject.h"
 #import "DetailViewController.h"
 #import "VITxAPI.h"
@@ -17,7 +16,6 @@
 #import "RootForPageViewController.h"
 
 @interface AttendanceViewController () {
-    NSMutableArray *_objects;
     NSMutableArray *MTheorySubjects;
     NSMutableArray *MLabSubjects;
     NSArray *marksArray;
@@ -25,19 +23,19 @@
     
     
 }
-@property (strong, nonatomic) Subjects *subjects;
+@property (strong, nonatomic) NSArray *subjects;
 @end
 
 @implementation AttendanceViewController
 
-
+/*
 -(Subjects *)subjects {
     if(! _subjects){
         _subjects = [[Subjects alloc] init];
     }
     return _subjects;
 }
-
+*/
 
 
 
@@ -91,6 +89,8 @@
             [message show];
         }
     }
+    
+    self.subjects = [[DataManager sharedManager] getAllSubjects];
     
     
 #pragma mark - Observers
@@ -217,17 +217,17 @@
     MTheorySubjects = [[NSMutableArray alloc] init];
     MLabSubjects = [[NSMutableArray alloc] init];
     
-    for(int i = 0; i < subjectsLength; i++){
-        if ([_subjects[i].subjectType rangeOfString:@"Theory"].location != NSNotFound){
-            [MTheorySubjects addObject:_subjects[i]];
+    for(Subject *subject in self.subjects){
+        if ([subject.title rangeOfString:@"Theory"].location != NSNotFound){
+            [MTheorySubjects addObject:subject];
         }
-        else if([_subjects[i].subjectType rangeOfString:@"Lab"].location != NSNotFound){
-            [MLabSubjects addObject:_subjects[i]];
+        else if([subject.type rangeOfString:@"Lab"].location != NSNotFound){
+            [MLabSubjects addObject:subject];
         }
     }
     
-    self.theorySubjects = [[Subjects alloc] init];
-    self.labSubjects = [[Subjects alloc] init];
+    self.theorySubjects = [[NSMutableArray alloc] init];
+    self.labSubjects = [[NSMutableArray alloc] init];
     
     [self.theorySubjects setArray:MTheorySubjects];
     [self.labSubjects setArray:MLabSubjects];
@@ -269,11 +269,13 @@
     iPhoneTableViewCell *cell = [nib objectAtIndex:0];
     
     if(indexPath.section == 0){
-        cell.subjectTitle.text = self.theorySubjects[indexPath.row].subjectTitle;
-        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", self.theorySubjects[indexPath.row].subjectType, self.theorySubjects[indexPath.row].subjectSlot];
+        
+        Subject *subjectAtRow = self.theorySubjects[indexPath.row];
+        cell.subjectTitle.text = subjectAtRow.title;
+        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", subjectAtRow.type, subjectAtRow.slot];
         [cell.subjectTypeAndSlot setTextColor:[UIColor grayColor]];
         
-        float calculatedPercentage = (float) self.theorySubjects[indexPath.row].attendedClasses / self.theorySubjects[indexPath.row].conductedClasses;
+        float calculatedPercentage = (float) [subjectAtRow.attendance.attended intValue] / [subjectAtRow.attendance.conducted intValue];
         float displayPercentageInteger = ceil(calculatedPercentage * 100);
         NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
         cell.percentage.text = [displayPercentage stringByAppendingString:@"%"];
@@ -293,11 +295,12 @@
         
     }
     else{
-        cell.subjectTitle.text = self.labSubjects[indexPath.row].subjectTitle;
-        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", self.labSubjects[indexPath.row].subjectType, self.labSubjects[indexPath.row].subjectSlot];
+        Subject *labSubjectAtRow = self.labSubjects[indexPath.row];
+        cell.subjectTitle.text = labSubjectAtRow.title;
+        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", labSubjectAtRow.type, labSubjectAtRow.slot];
         [cell.subjectTypeAndSlot setTextColor:[UIColor grayColor]];
         
-        float calculatedPercentage =(float) self.labSubjects[indexPath.row].attendedClasses / self.labSubjects[indexPath.row].conductedClasses;
+        float calculatedPercentage =(float) [labSubjectAtRow.attendance.attended intValue] / [labSubjectAtRow.attendance.attended intValue];
         float displayPercentageInteger = ceil(calculatedPercentage * 100);
         NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
         cell.percentage.text = [displayPercentage stringByAppendingString:@"%"];
@@ -330,7 +333,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    /*
      NSIndexPath *selectedRowIndex = indexPath;
      //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
      RootForPageViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rootForPageView"];
@@ -361,7 +364,7 @@
          detailViewController.subject = self.labSubjects[selectedRowIndex.row];
          detailViewController.subjectMarks = [[NSArray alloc] init];
      }
-    
+    */
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
@@ -417,8 +420,8 @@
 -(void)completedProcess{
     
         DataManager *sharedManager = [DataManager sharedManager];
-        refreshedArray = [sharedManager parseWithAttendanceString];
-        [self.subjects setArray:refreshedArray];
+        [sharedManager parseAttendanceString];
+        self.subjects = [sharedManager getAllSubjects];
         [self.tableView reloadData];
     
         NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
