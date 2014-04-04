@@ -30,9 +30,10 @@
     subject.faculty = faculty;
     subject.slot = slot;
     subject.venue = venue;
-    subject.notification = notificationToggle;
+    //subject.notification = notificationToggle;
     subject.marks = marks;
     subject.attendance = attendance;
+    NSLog(@"Saved in Subject Operations: %@", subject.title);
 }
 
 @end

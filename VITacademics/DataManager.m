@@ -87,7 +87,8 @@
         for(NSDictionary *item in jsonArray)
         {
             NSData *subjectDetails = [NSKeyedArchiver archivedDataWithRootObject:[item valueForKey:@"details"]];
-            [Attendance insertAttendanceForSubjectWithClassNumber:[item valueForKey:@"classnbr"] WithDetails:subjectDetails WithConducted:[item valueForKey:@"conducted"] WithAttended:[item valueForKey:@"attended"] WithContext:self.context];
+            
+            [Attendance insertAttendanceForSubjectWithClassNumber:[item valueForKey:@"classnbr"] WithDetails:subjectDetails WithConducted:[[item valueForKey:@"conducted"] integerValue] WithAttended:[[item valueForKey:@"attended"] integerValue] WithType:[item valueForKey:@"type"] WithContext:self.context];
             
             /*
             unarchiver code:
@@ -111,7 +112,9 @@
     
     NSArray *marksArray = jsonArray[0];
     for(NSArray *item in marksArray){
-        [Marks insertMarksForSubjectWithClassNumber:item[1] withCAT1:[item[6] floatValue] withCAT2:[item[8] floatValue] withQuiz1:[item[10] floatValue] withQuiz2:[item[12] floatValue] withQuiz3:[item[14] floatValue] withAssignment:[item[16] floatValue] withContext:self.context];
+        if([item count] > 16){
+           [Marks insertMarksForSubjectWithClassNumber:item[1] withCAT1:[item[6] floatValue] withCAT2:[item[8] floatValue] withQuiz1:[item[10] floatValue] withQuiz2:[item[12] floatValue] withQuiz3:[item[14] floatValue] withAssignment:[item[16] floatValue] withContext:self.context];
+        }
     }
     
     

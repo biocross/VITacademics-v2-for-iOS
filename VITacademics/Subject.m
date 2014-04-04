@@ -2,7 +2,7 @@
 //  Subject.m
 //  VITacademics
 //
-//  Created by Siddharth on 23/03/14.
+//  Created by Siddharth on 02/04/14.
 //  Copyright (c) 2014 Siddharth Gupta. All rights reserved.
 //
 
@@ -14,14 +14,13 @@
 @implementation Subject
 
 @dynamic classNumber;
-@dynamic slot;
 @dynamic code;
-@dynamic title;
-@dynamic type;
-@dynamic venue;
 @dynamic faculty;
 @dynamic notification;
-@dynamic marks;
+@dynamic slot;
+@dynamic title;
+@dynamic venue;
 @dynamic attendance;
+@dynamic marks;
 
 @end

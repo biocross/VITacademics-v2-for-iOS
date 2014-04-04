@@ -30,7 +30,7 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     //[PFFacebookUtils initializeFacebook];
     
-    
+    /*
     [Crittercism enableWithAppID:@"526e47368b2e337b2700000a" andDelegate:self andURLFilters:nil disableInstrumentation:NO];
     [Crittercism setAsyncBreadcrumbMode:YES];
     [Crittercism leaveBreadcrumb:@"<breadcrumb>"];
@@ -43,11 +43,11 @@
     
     
     //Failsafe:
-    NSUserDefaults *temp = [NSUserDefaults standardUserDefaults];
+    
     
     [[Pigeon sharedInstance] enableLocalNotification];
     [[Pigeon sharedInstance] startWithAppleId:@"727796987"];
-
+     */
     
     /*
     if([temp objectForKey:@"firstRun"]){
@@ -60,19 +60,62 @@
         [new removeObjectForKey:@"registrationNumber"];
         [new removeObjectForKey:@"dateOfBirth"];
     }*/
-    
+    NSUserDefaults *temp = [NSUserDefaults standardUserDefaults];
     NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [temp objectForKey:@"registrationNumber"]];
     
     
-    if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
-        NSLog(@"All Systems OK");
-        [[DataManager sharedManager] initializeDataSources];
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"database"];
+    UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+    DataManager *dataManager = [DataManager sharedManager];
+    if([[NSFileManager defaultManager] fileExistsAtPath:url.path])
+    {
+        [document openWithCompletionHandler:^(BOOL success) {
+            dataManager.context = document.managedObjectContext;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ManagedObjectSet" object:document.managedObjectContext];
+            if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
+                NSLog(@"All Systems OK");
+                [[DataManager sharedManager] initializeDataSources];
+            }
+            else{
+                NSLog(@"Error Found in starting, resetting App.");
+                NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+                [new removeObjectForKey:@"registrationNumber"];
+                [new removeObjectForKey:@"dateOfBirth"];
+            }
+        }];
     }
-    else{
-        NSLog(@"Error Found in starting, resetting App.");
-        NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
-        [new removeObjectForKey:@"registrationNumber"];
-        [new removeObjectForKey:@"dateOfBirth"];
+    else if(![[NSFileManager defaultManager] fileExistsAtPath:url.path])
+    {
+        [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+            dataManager.context = document.managedObjectContext;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ManagedObjectSet" object:document.managedObjectContext];
+            if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
+                NSLog(@"All Systems OK");
+                [[DataManager sharedManager] initializeDataSources];
+            }
+            else{
+                NSLog(@"Error Found in starting, resetting App.");
+                NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+                [new removeObjectForKey:@"registrationNumber"];
+                [new removeObjectForKey:@"dateOfBirth"];
+            }
+        }];
+    }
+    else
+    {
+        dataManager.context = document.managedObjectContext;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ManagedObjectSet" object:document.managedObjectContext];
+        if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
+            NSLog(@"All Systems OK");
+            [[DataManager sharedManager] initializeDataSources];
+        }
+        else{
+            NSLog(@"Error Found in starting, resetting App.");
+            NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+            [new removeObjectForKey:@"registrationNumber"];
+            [new removeObjectForKey:@"dateOfBirth"];
+        }
     }
     
     /*

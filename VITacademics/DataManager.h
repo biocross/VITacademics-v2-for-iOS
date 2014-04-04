@@ -17,8 +17,8 @@
 - (void)parseTTString;
 - (void)parseMarksString;
 - (void)parseAttendanceString;
--(NSArray *)getAllSubjects;
--(int)initializeDataSources;
+- (NSArray *)getAllSubjects;
+- (int)initializeDataSources;
 @property NSManagedObjectContext *context;
 
 @end

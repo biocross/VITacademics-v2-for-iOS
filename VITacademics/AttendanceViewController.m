@@ -74,9 +74,9 @@
         if([preferences stringForKey:[preferences stringForKey:@"registrationNumber"]]){
             //NSLog(@"Loading attendance from cache! Yay!");
             
-            NSString *marksKey = [NSString stringWithFormat:@"MarksOf%@", [preferences objectForKey:@"registrationNumber"]];
-            self.marksCacheString = [preferences objectForKey:marksKey];
-            [self completedProcess];
+            //NSString *marksKey = [NSString stringWithFormat:@"MarksOf%@", [preferences objectForKey:@"registrationNumber"]];
+            //self.marksCacheString = [preferences objectForKey:marksKey];
+            //[self completedProcess];
         }
         else{
             NSLog(@"Attendance is not cached currently for this user");
@@ -211,17 +211,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    int subjectsLength = [_subjects count];
+    //int subjectsLength = [_subjects count];
     
     //Sort the subjects:
     MTheorySubjects = [[NSMutableArray alloc] init];
     MLabSubjects = [[NSMutableArray alloc] init];
     
     for(Subject *subject in self.subjects){
-        if ([subject.title rangeOfString:@"Theory"].location != NSNotFound){
+        if ([subject.attendance.type rangeOfString:@"Theory"].location != NSNotFound){
             [MTheorySubjects addObject:subject];
         }
-        else if([subject.type rangeOfString:@"Lab"].location != NSNotFound){
+        else if([subject.attendance.type rangeOfString:@"Lab"].location != NSNotFound){
             [MLabSubjects addObject:subject];
         }
     }
@@ -272,7 +272,7 @@
         
         Subject *subjectAtRow = self.theorySubjects[indexPath.row];
         cell.subjectTitle.text = subjectAtRow.title;
-        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", subjectAtRow.type, subjectAtRow.slot];
+        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", subjectAtRow.attendance.type, subjectAtRow.slot];
         [cell.subjectTypeAndSlot setTextColor:[UIColor grayColor]];
         
         float calculatedPercentage = (float) [subjectAtRow.attendance.attended intValue] / [subjectAtRow.attendance.conducted intValue];
@@ -297,10 +297,10 @@
     else{
         Subject *labSubjectAtRow = self.labSubjects[indexPath.row];
         cell.subjectTitle.text = labSubjectAtRow.title;
-        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", labSubjectAtRow.type, labSubjectAtRow.slot];
+        cell.subjectTypeAndSlot.text = [NSString stringWithFormat:@"%@ - %@", labSubjectAtRow.attendance.type, labSubjectAtRow.slot];
         [cell.subjectTypeAndSlot setTextColor:[UIColor grayColor]];
         
-        float calculatedPercentage =(float) [labSubjectAtRow.attendance.attended intValue] / [labSubjectAtRow.attendance.attended intValue];
+        float calculatedPercentage =(float) [labSubjectAtRow.attendance.attended intValue] / [labSubjectAtRow.attendance.conducted intValue];
         float displayPercentageInteger = ceil(calculatedPercentage * 100);
         NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
         cell.percentage.text = [displayPercentage stringByAppendingString:@"%"];

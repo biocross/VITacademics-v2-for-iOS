@@ -52,7 +52,7 @@
         //self.title = @"";
         self.subjectName.text = self.subject.title;
         self.subjectSlot.text = self.subject.slot;
-        self.subjectType.text = self.subject.type;
+        self.subjectType.text = self.subject.attendance.type;
         self.subjectAttended.text = [NSString stringWithFormat:@"%ld",(long) [self.subject.attendance.attended intValue]];
         self.subjectConducted.text = [NSString stringWithFormat:@"%ld",(long)[self.subject.attendance.conducted intValue]];
         

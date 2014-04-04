@@ -34,7 +34,7 @@
     NSArray *allSubjects = [context executeFetchRequest:request error:nil];
     for(Subject *subject in allSubjects)
     {
-        if(subject.classNumber == classNumber)
+        if([subject.classNumber isEqualToString:classNumber])
         {
             oldMarks = subject.marks;
             subject.marks = marks;

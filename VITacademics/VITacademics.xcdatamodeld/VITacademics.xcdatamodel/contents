@@ -5,6 +5,7 @@
         <attribute name="attended" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="conducted" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="percentage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="attendance" inverseEntity="Subject" syncable="YES"/>
     </entity>
     <entity name="Marks" representedClassName="Marks" syncable="YES">
@@ -23,14 +24,13 @@
         <attribute name="notification" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="slot" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="venue" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="attendance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attendance" inverseName="subject" inverseEntity="Attendance" syncable="YES"/>
         <relationship name="marks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Marks" inverseName="subject" inverseEntity="Marks" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Attendance" positionX="54" positionY="90" width="128" height="118"/>
+        <element name="Attendance" positionX="54" positionY="90" width="128" height="135"/>
         <element name="Marks" positionX="-279" positionY="63" width="128" height="148"/>
-        <element name="Subject" positionX="-119" positionY="9" width="128" height="193"/>
+        <element name="Subject" positionX="-119" positionY="9" width="128" height="180"/>
     </elements>
 </model>

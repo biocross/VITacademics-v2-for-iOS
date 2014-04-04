@@ -12,9 +12,6 @@
 		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
 		35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35157EB818C6F78500C51FA3 /* MarksViewController.m */; };
 		351674C818DF2BD8002AC961 /* VITacademics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 351674C618DF2BD8002AC961 /* VITacademics.xcdatamodeld */; };
-		351674E018DF2BD8002AC961 /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 351674DF18DF2BD8002AC961 /* Marks.m */; };
-		351674E318DF2BD8002AC961 /* Attendance.m in Sources */ = {isa = PBXBuildFile; fileRef = 351674E218DF2BD8002AC961 /* Attendance.m */; };
-		351674E618DF2BD8002AC961 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 351674E518DF2BD8002AC961 /* Subject.m */; };
 		35167C9718DE014800B81229 /* 13-target.png in Resources */ = {isa = PBXBuildFile; fileRef = 35167C9618DE014800B81229 /* 13-target.png */; };
 		35167C9918DE020500B81229 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 35167C9818DE020500B81229 /* 83-calendar.png */; };
 		3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1541854583000EFC1AF /* Foundation.framework */; };
@@ -22,7 +19,6 @@
 		3518D1591854583000EFC1AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1581854583000EFC1AF /* UIKit.framework */; };
 		3518D15F1854583000EFC1AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3518D15D1854583000EFC1AF /* InfoPlist.strings */; };
 		3518D1611854583000EFC1AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D1601854583000EFC1AF /* main.m */; };
-		3518D1651854583000EFC1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D1641854583000EFC1AF /* AppDelegate.m */; };
 		3518D1681854583000EFC1AF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1661854583000EFC1AF /* Main_iPhone.storyboard */; };
 		3518D16B1854583000EFC1AF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1691854583000EFC1AF /* Main_iPad.storyboard */; };
 		3518D1701854583000EFC1AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3518D16F1854583000EFC1AF /* Images.xcassets */; };
@@ -100,11 +96,15 @@
 		35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D20BE71864FF46001139C9 /* UpcomingClassCell.m */; };
 		35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */; };
 		35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2181C188FDBF5000E5BEC /* DetailViewController.m */; };
+		35D27AA018E885B300D56196 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D27A9F18E885B300D56196 /* AppDelegate.m */; };
 		35D4A319189E51F400F23A28 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4A318189E51F400F23A28 /* DataManager.m */; };
 		35DD77BD18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
 		35DD77BE18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
 		35E2969118DBF70A005074EA /* PageContainerTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */; };
 		35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */; };
+		35EFF80B18EC2381009DCD5E /* Attendance.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF80A18EC2381009DCD5E /* Attendance.m */; };
+		35EFF80E18EC2381009DCD5E /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF80D18EC2381009DCD5E /* Marks.m */; };
+		35EFF81118EC2381009DCD5E /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF81018EC2381009DCD5E /* Subject.m */; };
 		F05DA906B6EC44E6B2253C4C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E84647C95C14A498AD2419D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -126,12 +126,6 @@
 		35157EB718C6F78500C51FA3 /* MarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarksViewController.h; sourceTree = "<group>"; };
 		35157EB818C6F78500C51FA3 /* MarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarksViewController.m; sourceTree = "<group>"; };
 		351674C718DF2BD8002AC961 /* VITacademics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VITacademics.xcdatamodel; sourceTree = "<group>"; };
-		351674DE18DF2BD8002AC961 /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
-		351674DF18DF2BD8002AC961 /* Marks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marks.m; sourceTree = "<group>"; };
-		351674E118DF2BD8002AC961 /* Attendance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendance.h; sourceTree = "<group>"; };
-		351674E218DF2BD8002AC961 /* Attendance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendance.m; sourceTree = "<group>"; };
-		351674E418DF2BD8002AC961 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		351674E518DF2BD8002AC961 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		35167C9618DE014800B81229 /* 13-target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13-target.png"; sourceTree = "<group>"; };
 		35167C9818DE020500B81229 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
 		3518D1511854583000EFC1AF /* VITacademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VITacademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,8 +136,6 @@
 		3518D15E1854583000EFC1AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3518D1601854583000EFC1AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3518D1621854583000EFC1AF /* VITacademics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VITacademics-Prefix.pch"; sourceTree = "<group>"; };
-		3518D1631854583000EFC1AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3518D1641854583000EFC1AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3518D1671854583000EFC1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		3518D16A1854583000EFC1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		3518D16F1854583000EFC1AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -250,6 +242,8 @@
 		35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpcomingClassCell.xib; sourceTree = "<group>"; };
 		35D2181B188FDBF5000E5BEC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		35D2181C188FDBF5000E5BEC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		35D27A9E18E885B300D56196 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		35D27A9F18E885B300D56196 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		35D4A317189E51F400F23A28 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		35D4A318189E51F400F23A28 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		35DD77BB18DBF36D0037333B /* FullTimeTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullTimeTableTableViewController.h; sourceTree = "<group>"; };
@@ -257,6 +251,12 @@
 		35E2968F18DBF70A005074EA /* PageContainerTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContainerTimeTableViewController.h; sourceTree = "<group>"; };
 		35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContainerTimeTableViewController.m; sourceTree = "<group>"; };
 		35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsComingSoonCell.xib; sourceTree = "<group>"; };
+		35EFF80918EC2381009DCD5E /* Attendance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendance.h; sourceTree = "<group>"; };
+		35EFF80A18EC2381009DCD5E /* Attendance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendance.m; sourceTree = "<group>"; };
+		35EFF80C18EC2381009DCD5E /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
+		35EFF80D18EC2381009DCD5E /* Marks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marks.m; sourceTree = "<group>"; };
+		35EFF80F18EC2381009DCD5E /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		35EFF81018EC2381009DCD5E /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		48D705E98F504EBB9C77839A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		4E84647C95C14A498AD2419D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -533,8 +533,8 @@
 		35B8193818DE713D003FBB72 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				3518D1631854583000EFC1AF /* AppDelegate.h */,
-				3518D1641854583000EFC1AF /* AppDelegate.m */,
+				35D27A9E18E885B300D56196 /* AppDelegate.h */,
+				35D27A9F18E885B300D56196 /* AppDelegate.m */,
 				35A751F3185B9608009FC74D /* TabViewController.h */,
 				35A751F4185B9608009FC74D /* TabViewController.m */,
 				35D4A317189E51F400F23A28 /* DataManager.h */,
@@ -580,17 +580,17 @@
 		35B954F5188C11BD00389DA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				35EFF80918EC2381009DCD5E /* Attendance.h */,
+				35EFF80F18EC2381009DCD5E /* Subject.h */,
+				35EFF81018EC2381009DCD5E /* Subject.m */,
+				35EFF80C18EC2381009DCD5E /* Marks.h */,
+				35EFF80D18EC2381009DCD5E /* Marks.m */,
+				35EFF80A18EC2381009DCD5E /* Attendance.m */,
 				351674C618DF2BD8002AC961 /* VITacademics.xcdatamodeld */,
-				351674E418DF2BD8002AC961 /* Subject.h */,
-				351674E518DF2BD8002AC961 /* Subject.m */,
 				35C9DF2D18DEE39D000E1260 /* Subject+Operations.h */,
 				35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */,
 				35C9DF3018DEE672000E1260 /* Attendance+Operations.h */,
 				35C9DF3118DEE672000E1260 /* Attendance+Operations.m */,
-				351674E118DF2BD8002AC961 /* Attendance.h */,
-				351674E218DF2BD8002AC961 /* Attendance.m */,
-				351674DE18DF2BD8002AC961 /* Marks.h */,
-				351674DF18DF2BD8002AC961 /* Marks.m */,
 				35C9DF3318DEED1D000E1260 /* Marks+Operations.h */,
 				35C9DF3418DEED1D000E1260 /* Marks+Operations.m */,
 			);
@@ -778,12 +778,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				351674E018DF2BD8002AC961 /* Marks.m in Sources */,
+				35EFF80E18EC2381009DCD5E /* Marks.m in Sources */,
 				35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */,
 				35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */,
 				35DD77BD18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */,
+				35D27AA018E885B300D56196 /* AppDelegate.m in Sources */,
 				3518E96F189B9F56001F32A8 /* SubjectDetailsViewController.m in Sources */,
-				3518D1651854583000EFC1AF /* AppDelegate.m in Sources */,
 				35BC32DD189D950400B2999D /* ShareViewController.m in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
 				35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */,
@@ -798,8 +798,7 @@
 				35C9DF2F18DEE39D000E1260 /* Subject+Operations.m in Sources */,
 				35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */,
 				351674C818DF2BD8002AC961 /* VITacademics.xcdatamodeld in Sources */,
-				351674E618DF2BD8002AC961 /* Subject.m in Sources */,
-				351674E318DF2BD8002AC961 /* Attendance.m in Sources */,
+				35EFF81118EC2381009DCD5E /* Subject.m in Sources */,
 				355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */,
 				35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */,
 				359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */,
@@ -809,6 +808,7 @@
 				356802AD1859118E00C41D69 /* VITxAPI.m in Sources */,
 				359C60BE185CD25000FB36B2 /* CurrentClassTableViewCell.m in Sources */,
 				3518D19918545FE500EFC1AF /* InitView.m in Sources */,
+				35EFF80B18EC2381009DCD5E /* Attendance.m in Sources */,
 				35E2969118DBF70A005074EA /* PageContainerTimeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

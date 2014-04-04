@@ -14,6 +14,7 @@
                                                WithDetails:(NSData *)details
                                              WithConducted:(NSInteger) conducted
                                               WithAttended:(NSInteger) attended
+                                                  WithType:(NSString *) type
                                                WithContext:(NSManagedObjectContext *) context;
 
 @end

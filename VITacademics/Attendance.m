@@ -2,7 +2,7 @@
 //  Attendance.m
 //  VITacademics
 //
-//  Created by Siddharth on 23/03/14.
+//  Created by Siddharth on 02/04/14.
 //  Copyright (c) 2014 Siddharth Gupta. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 
 @implementation Attendance
 
-@dynamic conducted;
-@dynamic attended;
 @dynamic attendanceDetails;
+@dynamic attended;
+@dynamic conducted;
 @dynamic percentage;
+@dynamic type;
 @dynamic subject;
 
 @end

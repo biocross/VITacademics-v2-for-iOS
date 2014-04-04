@@ -2,7 +2,7 @@
 //  Marks.m
 //  VITacademics
 //
-//  Created by Siddharth on 23/03/14.
+//  Created by Siddharth on 02/04/14.
 //  Copyright (c) 2014 Siddharth Gupta. All rights reserved.
 //
 
@@ -12,12 +12,12 @@
 
 @implementation Marks
 
+@dynamic assignment;
 @dynamic cat1;
 @dynamic cat2;
 @dynamic quiz1;
 @dynamic quiz2;
 @dynamic quiz3;
-@dynamic assignment;
 @dynamic subject;
 
 @end
