@@ -33,6 +33,7 @@
         NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
         if([preferences objectForKey:@"registrationNumber"]){
             //[self setSelectedIndex:2];
+            
         }
         else{
             RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];

@@ -7,7 +7,6 @@
 //
 
 #import "TimeTable.h"
-#import "DataManager.h"
 
 @interface TimeTable () {
 }
@@ -22,6 +21,7 @@
 
     self.subjects = [[NSArray alloc] init];
     self.subjects = [[DataManager sharedManager] getAllSubjects];
+    NSLog(@"Hello from TTT");
     /*
     NSError *e = nil;
     NSData *ttDataFromString = [TimeTableString dataUsingEncoding:NSUTF8StringEncoding];
@@ -42,6 +42,7 @@
     
     for (Subject *subject in self.subjects){
         [self parseSubjectAndAddToTT: subject];
+        NSLog(@"Now working on %@ ", subject.title);
     }
     
     return self;

@@ -92,53 +92,13 @@
     
     if([preferences objectForKey:@"registrationNumber"]){
         
-        NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [preferences objectForKey:@"registrationNumber"]];
+        //NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [preferences objectForKey:@"registrationNumber"]];
         
-        ofToday = [[TimeTable alloc] initWithTTString:[preferences objectForKey:ttKey]];
-        self.todaysTimeTable = [ofToday getTodaysTimeTable];
+        [self initData];
         
-        self.legibleTimeTable = [[NSMutableArray alloc] init];
-        
-        NSMutableArray *newArray = [[NSMutableArray alloc] init];
-        
-        //DataSource Creation
-        NSInteger length = [self.todaysTimeTable count];
-        for(int i = 0 ; i<length ; i++){
-            if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
-                [self.legibleTimeTable addObject:self.todaysTimeTable[i]];
-            }
-        }
-        
-        //Duplicate Removal
-        for (int i=0 ; i < [self.legibleTimeTable count] ; i++){
-            if(i!= [self.legibleTimeTable count]-1 && [self.legibleTimeTable[i] isEqualToDictionary:self.legibleTimeTable[i+1]]){
-                }
-            else{
-                [newArray addObject:self.legibleTimeTable[i]];
-            }
-        }
- 
-        self.legibleTimeTable = newArray;
-        self.timeSlots = [ofToday getTimeSlotArray];
       
         [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
-    
-        
-        //Attendance:
-        /*
-        if([preferences stringForKey:[preferences stringForKey:@"registrationNumber"]]){
-            
-            @try {
-                DataManager *sharedManager = [DataManager sharedManager];
-                attendanceArray = [sharedManager parseWithAttendanceString];
-            }
-            @catch (NSException *exception) {
-                NSLog(@"Error in Getting Attendance from DataManager %@", [exception description]);
-            }
 
-            
-            
-        }*/
         
     }
     
@@ -155,6 +115,37 @@
     [refreshControl addTarget:self action:@selector(refreshTableView:) forControlEvents:UIControlEventValueChanged];
     [self setRefreshControl:refreshControl];
     
+}
+
+-(void)initData{
+    ofToday = [[TimeTable alloc] initWithTTString:@""];
+    self.todaysTimeTable = [ofToday getTodaysTimeTable];
+    //NSLog(@"This is it: %@", [self.todaysTimeTable description]);
+    
+    self.legibleTimeTable = [[NSMutableArray alloc] init];
+    
+    
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    
+    //DataSource Creation
+    NSInteger length = [self.todaysTimeTable count];
+    for(int i = 0 ; i<length ; i++){
+        if([self.todaysTimeTable[i] isKindOfClass:[Subject class]]){
+            [self.legibleTimeTable addObject:self.todaysTimeTable[i]];
+        }
+    }
+    
+    //Duplicate Removal
+    for (int i=0 ; i < [self.legibleTimeTable count] ; i++){
+        if(i!= [self.legibleTimeTable count]-1 && [self.legibleTimeTable[i] isEqual:self.legibleTimeTable[i+1]]){
+        }
+        else{
+            [newArray addObject:self.legibleTimeTable[i]];
+        }
+    }
+    
+    self.legibleTimeTable = newArray;
+    self.timeSlots = [ofToday getTimeSlotArray];
 }
 
 - (void)refreshTableView:(id)sender{
@@ -401,8 +392,8 @@
         //find the index of the subject
         int index = 0;
         for(int i=0; i<12; i++){
-            if([self.todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
-                if([self.legibleTimeTable[indexPath.row] isEqualToDictionary:self.todaysTimeTable[i]]){
+            if([self.todaysTimeTable[i] isKindOfClass:[Subject class]]){
+                if([self.legibleTimeTable[indexPath.row] isEqual:self.todaysTimeTable[i]]){
                     index = i;
                     break;
                 }

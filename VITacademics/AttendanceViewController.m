@@ -12,7 +12,6 @@
 #import "VITxAPI.h"
 #import "iPhoneTableViewCell.h"
 #import "NSDate+TimeAgo.h"
-#import "DataManager.h"
 #import "RootForPageViewController.h"
 
 @interface AttendanceViewController () {

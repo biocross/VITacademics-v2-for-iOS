@@ -97,7 +97,7 @@
 		35D20BEA1864FF66001139C9 /* UpcomingClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D20BE91864FF66001139C9 /* UpcomingClassCell.xib */; };
 		35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D2181C188FDBF5000E5BEC /* DetailViewController.m */; };
 		35D27AA018E885B300D56196 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D27A9F18E885B300D56196 /* AppDelegate.m */; };
-		35D4A319189E51F400F23A28 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4A318189E51F400F23A28 /* DataManager.m */; };
+		35D4A319189E51F400F23A28 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4A318189E51F400F23A28 /* DataController.m */; };
 		35DD77BD18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
 		35DD77BE18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
 		35E2969118DBF70A005074EA /* PageContainerTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */; };
@@ -244,8 +244,8 @@
 		35D2181C188FDBF5000E5BEC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		35D27A9E18E885B300D56196 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35D27A9F18E885B300D56196 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		35D4A317189E51F400F23A28 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
-		35D4A318189E51F400F23A28 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		35D4A317189E51F400F23A28 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		35D4A318189E51F400F23A28 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		35DD77BB18DBF36D0037333B /* FullTimeTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullTimeTableTableViewController.h; sourceTree = "<group>"; };
 		35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullTimeTableTableViewController.m; sourceTree = "<group>"; };
 		35E2968F18DBF70A005074EA /* PageContainerTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContainerTimeTableViewController.h; sourceTree = "<group>"; };
@@ -537,8 +537,8 @@
 				35D27A9F18E885B300D56196 /* AppDelegate.m */,
 				35A751F3185B9608009FC74D /* TabViewController.h */,
 				35A751F4185B9608009FC74D /* TabViewController.m */,
-				35D4A317189E51F400F23A28 /* DataManager.h */,
-				35D4A318189E51F400F23A28 /* DataManager.m */,
+				35D4A317189E51F400F23A28 /* DataController.h */,
+				35D4A318189E51F400F23A28 /* DataController.m */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -791,7 +791,7 @@
 				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
 				35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */,
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,
-				35D4A319189E51F400F23A28 /* DataManager.m in Sources */,
+				35D4A319189E51F400F23A28 /* DataController.m in Sources */,
 				35204C5918586CC20005319B /* SettingsViewController.m in Sources */,
 				3584E3F318CDE3530004CF20 /* Pigeon.m in Sources */,
 				35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Siddharth Gupta. All rights reserved.
 //
 
-#import "DataManager.h"
+#import "DataController.h"
 #import "Subject+Operations.h"
 #import "Attendance+Operations.h"
 #import "Marks+Operations.h"
@@ -122,31 +122,37 @@
 
 -(NSArray *)getAllSubjects{
     //NSMutableArray *returnArray;
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Subject"];
-    request.predicate = nil;
-    request.sortDescriptors = nil;
+    if(![self.allSubjects count]){
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Subject"];
+        request.predicate = nil;
+        request.sortDescriptors = nil;
+        
+        self.allSubjects = [self.context executeFetchRequest:request error:nil];
+        /*for(Subject *subject in allSubjects)
+         {
+         [returnArray addObject:subject];
+         }*/
+    }
     
-    NSArray *allSubjects = [self.context executeFetchRequest:request error:nil];
-    /*for(Subject *subject in allSubjects)
-    {
-        [returnArray addObject:subject];
-    }*/
-    if([allSubjects count] > 0){
-      return allSubjects;
+    if([self.allSubjects count] > 0){
+        return self.allSubjects;
     }
     else{
-        return nil;
+        [self initializeDataSources];
+        return self.allSubjects;
     }
+    
     
 }
 
 -(int)initializeDataSources{
+    
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Subject"];
     request.predicate = nil;
     request.sortDescriptors = nil;
-    NSArray *allSubjects = [self.context executeFetchRequest:request error:nil];
+    self.allSubjects = [self.context executeFetchRequest:request error:nil];
     
-    if([allSubjects count] < 1){
+    if([self.allSubjects count] < 1){
         [self parseTTString];
         [self parseAttendanceString];
         [self parseMarksString];
@@ -156,6 +162,10 @@
         return 0;
     }
     
+}
+
+-(void)invalidateCurrentData{
+    self.allSubjects = nil;
 }
 
 

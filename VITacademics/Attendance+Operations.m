@@ -29,10 +29,10 @@
     NSArray *allSubjects = [context executeFetchRequest:request error:nil];
     for(Subject *subject in allSubjects)
     {
-        NSLog(@"Checking for subject %@ %@ %@", subject.title, subject.classNumber, classNumber);
+        //NSLog(@"Checking for subject %@ %@ %@", subject.title, subject.classNumber, classNumber);
         if([subject.classNumber isEqualToString:classNumber])
         {
-            NSLog(@"Matched subject %@ %@ %@", subject.title, subject.classNumber, classNumber);
+            //NSLog(@"Matched subject %@ %@ %@", subject.title, subject.classNumber, classNumber);
             oldAttendance = subject.attendance;
             subject.attendance = attendance;
         }
