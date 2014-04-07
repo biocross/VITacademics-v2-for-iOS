@@ -332,25 +332,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-     NSIndexPath *selectedRowIndex = indexPath;
-     //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+    
      RootForPageViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rootForPageView"];
      [self.navigationController pushViewController:detailViewController animated:YES];
-     
-     if(selectedRowIndex.section == 0){
-         int indexOfMatchedSubject = -1;
-         int i = 0;
-         for(NSArray *item in marksArray){
-             if([item[1] isEqualToString:self.theorySubjects[selectedRowIndex.row].classNumber]){
-             indexOfMatchedSubject = i;
-                 break;
-             }
-             i += 1;
-         }
-     
-     detailViewController.subject = self.theorySubjects[selectedRowIndex.row];
-     
+    
+    if(indexPath.section == 0){
+        detailViewController.subject = self.theorySubjects[indexPath.row];
+    }
+    else{
+        detailViewController.subject = self.labSubjects[indexPath.row];
+    }
+    /*
      if(indexOfMatchedSubject < [marksArray count] && indexOfMatchedSubject != -1){
          detailViewController.subjectMarks = marksArray[indexOfMatchedSubject];
      }
@@ -362,8 +354,8 @@
      else{
          detailViewController.subject = self.labSubjects[selectedRowIndex.row];
          detailViewController.subjectMarks = [[NSArray alloc] init];
-     }
-    */
+     }*/
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }

@@ -7,7 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "Subject.h"
 #import "CSNotificationView.h"
 #import "DPMeterView.h"
 #import "UIBezierPath+BasicShapes.h"
@@ -37,7 +36,6 @@
         _subject = newDetailItem;
     
         [self configureView];
-    
     
 
     if (self.masterPopoverController != nil) {

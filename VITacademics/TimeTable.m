@@ -21,28 +21,10 @@
 
     self.subjects = [[NSArray alloc] init];
     self.subjects = [[DataManager sharedManager] getAllSubjects];
-    NSLog(@"Hello from TTT");
-    /*
-    NSError *e = nil;
-    NSData *ttDataFromString = [TimeTableString dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &e];
-    
-    //NSLog(@"%@", [jsonArray description]);
-    
-    NSArray *subjects = [jsonArray valueForKey:@"subjects"];
-    
-    if (!jsonArray) {
-        NSLog(@"Error parsing JSON: %@", e);
-    }
-    else{
-        for(NSDictionary *item in subjects){
-            [self parseSubjectAndAddToTT: item];
-        }
-    }*/
     
     for (Subject *subject in self.subjects){
         [self parseSubjectAndAddToTT: subject];
-        NSLog(@"Now working on %@ ", subject.title);
+        //NSLog(@"Now working on %@ ", subject.title);
     }
     
     return self;

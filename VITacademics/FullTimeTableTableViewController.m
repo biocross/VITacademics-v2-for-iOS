@@ -26,8 +26,7 @@
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     if([preferences objectForKey:@"registrationNumber"]){
         
-        NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [preferences objectForKey:@"registrationNumber"]];
-        _ofToday = [[TimeTable alloc] initWithTTString:[preferences objectForKey:ttKey]];
+        _ofToday = [[TimeTable alloc] initWithTTString:@""];
         _timeSlots = [self.ofToday getTimeSlotArray];
     }
     
@@ -100,14 +99,14 @@
     //DataSource Creation
     NSInteger length = [todaysTimeTable count];
     for(int i = 0 ; i<length ; i++){
-        if([todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
+        if([todaysTimeTable[i] isKindOfClass:[Subject class]]){
             [self.legibleTimeTable addObject:todaysTimeTable[i]];
         }
     }
     
     //Duplicate Removal
     for (int i=0 ; i < [self.legibleTimeTable count] ; i++){
-        if(i!= [self.legibleTimeTable count]-1 && [self.legibleTimeTable[i] isEqualToDictionary:self.legibleTimeTable[i+1]]){
+        if(i!= [self.legibleTimeTable count]-1 && [self.legibleTimeTable[i] isEqual:self.legibleTimeTable[i+1]]){
         }
         else{
             [newArray addObject:self.legibleTimeTable[i]];
@@ -152,9 +151,11 @@
     
     else{
     
-        cell.subjectTitle.text = [self.legibleTimeTable[indexPath.row] objectForKey:@"title"];
-        cell.subjectVenue.text = [self.legibleTimeTable[indexPath.row] objectForKey:@"venue"];
-        cell.subjectSlot.text = [self.legibleTimeTable[indexPath.row] objectForKey:@"slot"];
+        Subject *current = self.legibleTimeTable[indexPath.row];
+        
+        cell.subjectTitle.text = current.title;
+        cell.subjectVenue.text = current.venue;
+        cell.subjectSlot.text = current.slot;
         
         UIFont *titleFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
         [cell.subjectTitle setFont:titleFont];
@@ -170,8 +171,8 @@
         
         int index = 0;
         for(int i=0; i<12; i++){
-            if([todaysTimeTable[i] isKindOfClass:[NSDictionary class]]){
-                if([self.legibleTimeTable[indexPath.row] isEqualToDictionary:todaysTimeTable[i]]){
+            if([todaysTimeTable[i] isKindOfClass:[Subject class]]){
+                if([self.legibleTimeTable[indexPath.row] isEqual:todaysTimeTable[i]]){
                     index = i;
                     break;
                 }
