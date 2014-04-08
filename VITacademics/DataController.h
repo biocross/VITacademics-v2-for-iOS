@@ -18,7 +18,7 @@
 - (void)parseMarksString;
 - (void)parseAttendanceString;
 - (NSArray *)getAllSubjects;
-- (int)initializeDataSources;
+- (void)initializeDataSources;
 - (void)invalidateCurrentData;
 @property NSManagedObjectContext *context;
 @property (strong) NSArray *allSubjects;

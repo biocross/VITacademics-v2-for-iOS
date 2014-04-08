@@ -145,27 +145,26 @@
     
 }
 
--(int)initializeDataSources{
-    
+-(void)initializeDataSources{
+
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Subject"];
     request.predicate = nil;
     request.sortDescriptors = nil;
     self.allSubjects = [self.context executeFetchRequest:request error:nil];
     
     if([self.allSubjects count] < 1){
+        NSLog(@"Had to Re-Parse from Strings");
         [self parseTTString];
         [self parseAttendanceString];
         [self parseMarksString];
-        return 1;
     }
-    else{
-        return 0;
-    }
+
     
 }
 
 -(void)invalidateCurrentData{
     self.allSubjects = nil;
+
 }
 
 

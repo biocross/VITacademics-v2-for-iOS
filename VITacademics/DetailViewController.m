@@ -54,6 +54,20 @@
         self.subjectAttended.text = [NSString stringWithFormat:@"%ld",(long) [self.subject.attendance.attended intValue]];
         self.subjectConducted.text = [NSString stringWithFormat:@"%ld",(long)[self.subject.attendance.conducted intValue]];
         
+        NSData *newdata = [NSData dataWithData:_subject.attendance.attendanceDetails];
+        NSMutableArray *detailsArray = [NSMutableArray arrayWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:newdata]];
+        
+        int length = [detailsArray count];
+        if(length != 0){
+            if([[detailsArray lastObject] isEqualToString:@"Absent"]){
+                [self.lastUpdatedLabel setTextColor:[UIColor redColor]];
+            }
+            else{
+                [self.lastUpdatedLabel setTextColor:[UIColor colorWithRed:0.05 green:0.52 blue:0.99 alpha:1]];
+            }
+            self.lastUpdatedLabel.text = [detailsArray objectAtIndex:length - 2];
+        }
+        
         self.progressView = [[DPMeterView alloc] init];
         [self.progressView setFrame:self.progressFrame.frame];
         [self.progressView setMeterType:DPMeterTypeLinearVertical];
@@ -119,20 +133,6 @@
     float calculatedPercentage =(float) [self.subjectAttended.text intValue] / [self.subjectConducted.text intValue];
     float displayPercentageInteger = ceil(calculatedPercentage * 100);
     NSString *displayPercentage = [NSString stringWithFormat:@"%1.0f",displayPercentageInteger];
-    
-    
-    /*
-    int length = [_subject.subjectDetails count];
-    if(length != 0){
-        if([[_subject.subjectDetails lastObject] isEqualToString:@"Absent"]){
-            [self.lastUpdatedLabel setTextColor:[UIColor redColor]];
-        }
-        else{
-            [self.lastUpdatedLabel setTextColor:[UIColor colorWithRed:0.05 green:0.52 blue:0.99 alpha:1]];
-        }
-        self.lastUpdatedLabel.text = [_subject.subjectDetails objectAtIndex:length - 2];
-    }*/
-
     
     if(displayPercentageInteger >= 80){
         [self.progressView setProgressTintColor:[UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1]];
@@ -282,80 +282,5 @@
     }
 }
 
-- (IBAction)subjectDetailsButton:(id)sender {
-    
-    /*
-    if([_subject.subjectDetails count] > 0){
-        SubjectDetailsViewController *forThisSubject = [[SubjectDetailsViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:forThisSubject];
-        [self presentViewController:nav animated:YES completion:nil];
-        [forThisSubject setDetailsArray:_subject.subjectDetails];
-        [forThisSubject viewDidLoad];
-    }
-    else{
-        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1){
-            [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Not Uploaded Yet"];
-        }
-        
-        else{
-            [SVProgressHUD showErrorWithStatus:@"Not Uploaded Yet"];
-        }
-    }
-    
-    */
 
-    
-}
-
-- (IBAction)marksButton:(id)sender {
-    /*
-    if([self.subjectMarks count] < 16){
-        
-        
-            [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"PBL/Lab not supported (yet)"];
-        
-    }
-    else{
-        MarksViewController *forThisSubject = [[MarksViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:forThisSubject];
-        [self presentViewController:nav animated:YES completion:nil];
-        [forThisSubject setMarksArray:self.subjectMarks];
-    }
-    
-    */
-    
-}
-
-
-
-/*
-    UIView *checkView = [self viewWithImageName:@"check"];
-    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
-    
-    UIView *crossView = [self viewWithImageName:@"cross"];
-    UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
-    
-    UIView *clockView = [self viewWithImageName:@"clock"];
-    UIColor *yellowColor = [UIColor colorWithRed:254.0 / 255.0 green:217.0 / 255.0 blue:56.0 / 255.0 alpha:1.0];
-    
-    UIView *listView = [self viewWithImageName:@"list"];
-    UIColor *brownColor = [UIColor colorWithRed:206.0 / 255.0 green:149.0 / 255.0 blue:98.0 / 255.0 alpha:1.0];
-    
-    // Setting the default inactive state color to the tableView background color
-*/
-
-
-- (IBAction)detailsButtonPressed:(id)sender {
-    /*
-    if([_subject.subjectDetails count] > 0){
-        SubjectDetailsViewController *forThisSubject = [[SubjectDetailsViewController alloc] init];
-        [self.navigationController pushViewController:forThisSubject animated:YES];
-        forThisSubject.detailsArray = _subject.subjectDetails;
-    }
-    else{
-        [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Not Uploaded Yet"];
-        
-    }
-     */
-}
 @end

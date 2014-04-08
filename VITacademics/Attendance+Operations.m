@@ -37,6 +37,16 @@
             subject.attendance = attendance;
         }
     }
+    
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save Attendance! %@ %@", error, [error localizedDescription]);
+    }
+    else{
+    }
+    
+    
     return oldAttendance;
 }
 

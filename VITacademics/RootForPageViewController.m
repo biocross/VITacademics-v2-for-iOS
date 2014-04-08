@@ -59,15 +59,17 @@
     }
     
     //Marks
-    if([self.subjectMarks count] < 16){
-        
-        //[CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"PBL/Lab not supported (yet)"];
-        
-    }
-    else{
+    
+    @try {
         self.marksView = [[MarksViewController alloc] init];
-        [self.marksView setMarksArray:self.subjectMarks];
+        [self.marksView setSubject:_subject];
     }
+    @catch (NSException *exception) {
+        NSLog(@"Marks Init Error: %@", [exception description]);
+    }
+    
+    
+
     
     if(self.subject.code){
         self.title = self.subject.code;

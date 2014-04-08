@@ -40,6 +40,16 @@
             subject.marks = marks;
         }
     }
+    
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save Marks! %@ %@", error, [error localizedDescription]);
+    }
+    else{
+    }
+    
+    
     return oldMarks;
     
     

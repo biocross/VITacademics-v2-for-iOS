@@ -71,7 +71,6 @@
     
     if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
         NSLog(@"All Systems OK");
-        [[DataManager sharedManager] initializeDataSources];
     }
     else{
         NSLog(@"Error Found in starting, resetting App.");

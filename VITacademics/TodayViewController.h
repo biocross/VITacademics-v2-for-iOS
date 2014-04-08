@@ -16,4 +16,5 @@
 @property NSMutableArray *legibleTimeTable;
 @property NSMutableArray *timeSlots;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *notificationButtonPressed;
 @end

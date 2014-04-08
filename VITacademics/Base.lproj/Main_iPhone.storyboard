@@ -209,6 +209,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notificationButtonPressed" destination="GT5-bs-DSl" id="CLF-UI-1Lw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXy-GQ-saf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

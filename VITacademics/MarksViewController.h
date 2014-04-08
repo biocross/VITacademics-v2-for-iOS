@@ -10,7 +10,7 @@
 
 @interface MarksViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *marksArray;
+@property (nonatomic, strong) Subject *subject;
 
 
 @end

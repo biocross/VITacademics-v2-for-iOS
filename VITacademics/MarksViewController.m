@@ -24,14 +24,14 @@
 {
     [super viewDidLoad];
     
-    float cat1Marks = [self.marksArray[6]  isEqual: @""] ? 0 : [self.marksArray[6] floatValue];
+    float cat1Marks = [self.subject.marks.cat1  isEqual: @""] ? 0 : [self.subject.marks.cat1 floatValue];
     float cat1Marks15 = (cat1Marks/50)*15;
-    float cat2Marks = [self.marksArray[8]  isEqual: @""] ? 0 : [self.marksArray[8] floatValue];
+    float cat2Marks = [self.subject.marks.cat2 isEqual: @""] ? 0 : [self.subject.marks.cat2 floatValue];
     float cat2Marks15 = (cat2Marks/50)*15;
-    float quiz1Marks = [self.marksArray[10]  isEqual: @""] ? 0 : [self.marksArray[10] floatValue];
-    float quiz2Marks = [self.marksArray[12]  isEqual: @""] ? 0 : [self.marksArray[12] floatValue];
-    float quiz3Marks = [self.marksArray[14]  isEqual: @""] ? 0 : [self.marksArray[14] floatValue];
-    float assignmentMarks = [self.marksArray[16]  isEqual: @""] ? 0 : [self.marksArray[16] floatValue];
+    float quiz1Marks = [self.subject.marks.quiz1 isEqual: @""] ? 0 : [self.subject.marks.quiz1 floatValue];
+    float quiz2Marks = [self.subject.marks.quiz2  isEqual: @""] ? 0 : [self.subject.marks.quiz2 floatValue];
+    float quiz3Marks = [self.subject.marks.quiz3 isEqual: @""] ? 0 : [self.subject.marks.quiz3 floatValue];
+    float assignmentMarks = [self.subject.marks.assignment isEqual: @""] ? 0 : [self.subject.marks.assignment floatValue];
     
     float totalInternals = cat1Marks15 + cat2Marks15 + quiz1Marks + quiz2Marks + quiz3Marks + assignmentMarks;
     
@@ -55,12 +55,12 @@
     [self.view addSubview:catBarChart];
     
     UILabel *smallMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, 330, SCREEN_WIDTH, 100)];
-    smallMarks.text = [NSString stringWithFormat:@"Quiz I: %@/5   Quiz II: %@/5   Quiz III: %@/5   Assignment: %@/5", self.marksArray[10], self.marksArray[12], self.marksArray[14], self.marksArray[16]];
+    smallMarks.text = [NSString stringWithFormat:@"Quiz I: %1.0f/5   Quiz II: %1.0f/5   Quiz III: %1.0f/5   Assignment: %1.0f/5", quiz1Marks, quiz2Marks, quiz3Marks, assignmentMarks];
     [smallMarks setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:smallMarks];
     
     UILabel *bigMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, 360, SCREEN_WIDTH, 100)];
-    bigMarks.text = [NSString stringWithFormat:@"CAT I: %@/50   CAT II: %@/50   Total: %1.0f/50", self.marksArray[6], self.marksArray[8], totalInternals];
+    bigMarks.text = [NSString stringWithFormat:@"CAT I: %1.0f/50   CAT II: %1.0f/50   Total: %1.0f/50", cat1Marks, cat2Marks, totalInternals];
     [bigMarks setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:bigMarks];
     

@@ -50,6 +50,8 @@
  - Full Swipeable timeTable
  - Notifications System
  - New Captcha View Controller
+ - Remove Transparency from cell to increase performance
+ - Switch to new dateTools Library
  
  
  [LOW PRIORITY]

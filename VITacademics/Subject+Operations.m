@@ -33,7 +33,17 @@
     //subject.notification = notificationToggle;
     subject.marks = marks;
     subject.attendance = attendance;
-    NSLog(@"Saved in Subject Operations: %@", subject.title);
+    
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    else{
+       NSLog(@"Saved in Subject Operations: %@", subject.title);
+    }
+    
+    
 }
 
 @end

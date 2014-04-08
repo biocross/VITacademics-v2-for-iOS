@@ -16,7 +16,6 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) Subject *subject;
-@property (strong, nonatomic) NSArray *subjectMarks;
 @property (nonatomic) NSInteger index;
 @property DetailViewController *detailsView;
 @property SubjectDetailsViewController *subjectDetailsView;
