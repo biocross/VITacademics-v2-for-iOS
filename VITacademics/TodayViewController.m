@@ -13,6 +13,8 @@
 #import "UpcomingClassCell.h"
 #import "Subject.h"
 #import "SFRoundProgressCounterView.h"
+#import <EventKit/EventKit.h>
+#import "NotificationViewController.h"
 
 
 
@@ -93,15 +95,8 @@
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
     if([preferences objectForKey:@"registrationNumber"]){
-        
-        //NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [preferences objectForKey:@"registrationNumber"]];
-        
         [self initData];
-        
-      
         [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
-
-        
     }
     
     
@@ -125,7 +120,6 @@
     //NSLog(@"This is it: %@", [self.todaysTimeTable description]);
     
     self.legibleTimeTable = [[NSMutableArray alloc] init];
-    
     
     NSMutableArray *newArray = [[NSMutableArray alloc] init];
     
@@ -367,7 +361,6 @@
                     else{
                         cell.attendToday.textColor = [UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1];
                     }
-                    
                 
             }
             @catch (NSException *exception) {
@@ -407,7 +400,6 @@
         UpcomingClassCell *cell = [nib objectAtIndex:0];
         
         Subject *theSubject =  self.legibleTimeTable[indexPath.row];
-        
         
         cell.subjectTitle.text = theSubject.title;
         cell.subjectVenue.text = theSubject.venue;
@@ -545,4 +537,16 @@
 }
 
 
+- (IBAction)notificationButtonPressed:(id)sender {
+    
+    
+    NotificationViewController *notificationController = [[NotificationViewController alloc] init];
+    UINavigationController *temp = [[UINavigationController alloc] init];
+    
+    temp.viewControllers = @[notificationController];
+    [self.navigationController presentViewController:temp animated:YES completion:nil];
+    notificationController.subjects = [[DataManager sharedManager] getAllSubjects];
+
+    
+}
 @end

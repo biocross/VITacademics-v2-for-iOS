@@ -15,6 +15,6 @@
 @property bool notificationReceived;
 @property NSMutableArray *legibleTimeTable;
 @property NSMutableArray *timeSlots;
+- (IBAction)notificationButtonPressed:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *notificationButtonPressed;
 @end

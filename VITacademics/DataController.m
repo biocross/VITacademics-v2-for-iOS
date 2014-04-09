@@ -122,16 +122,16 @@
 
 -(NSArray *)getAllSubjects{
     //NSMutableArray *returnArray;
+    if(!self.allSubjects){
+        self.allSubjects = [[NSArray alloc] init];
+    }
+    
     if(![self.allSubjects count]){
         NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Subject"];
         request.predicate = nil;
         request.sortDescriptors = nil;
         
         self.allSubjects = [self.context executeFetchRequest:request error:nil];
-        /*for(Subject *subject in allSubjects)
-         {
-         [returnArray addObject:subject];
-         }*/
     }
     
     if([self.allSubjects count] > 0){

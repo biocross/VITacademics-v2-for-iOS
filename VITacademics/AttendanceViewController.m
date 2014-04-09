@@ -342,19 +342,6 @@
     else{
         detailViewController.subject = self.labSubjects[indexPath.row];
     }
-    /*
-     if(indexOfMatchedSubject < [marksArray count] && indexOfMatchedSubject != -1){
-         detailViewController.subjectMarks = marksArray[indexOfMatchedSubject];
-     }
-     else{
-         detailViewController.subjectMarks = [[NSArray alloc] init];
-     }
-     
-     }
-     else{
-         detailViewController.subject = self.labSubjects[selectedRowIndex.row];
-         detailViewController.subjectMarks = [[NSArray alloc] init];
-     }*/
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     

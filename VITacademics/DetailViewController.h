@@ -49,7 +49,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *missLabel;
 @property (weak, nonatomic) IBOutlet UILabel *attendLabel;
 
-- (IBAction)subjectDetailsButton:(id)sender;
-- (IBAction)marksButton:(id)sender;
 
 @end

@@ -202,16 +202,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="VITacademics" id="Ud1-UD-0bU">
-                        <barButtonItem key="leftBarButtonItem" image="13-target.png" id="GT5-bs-DSl"/>
+                        <barButtonItem key="leftBarButtonItem" image="13-target.png" id="GT5-bs-DSl">
+                            <connections>
+                                <action selector="notificationButtonPressed:" destination="uLw-PD-njc" id="43b-E9-L33"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="83-calendar.png" id="LOo-xN-MIb">
                             <connections>
                                 <segue destination="LpF-9f-j63" kind="modal" id="WDu-Di-RdO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="notificationButtonPressed" destination="GT5-bs-DSl" id="CLF-UI-1Lw"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXy-GQ-saf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

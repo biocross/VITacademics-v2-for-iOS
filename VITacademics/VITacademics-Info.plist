@@ -50,9 +50,14 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.siddharth.vitacademics</string>
+		</dict>
+		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb239533019505160</string>
+				<string>vitacademics</string>
 			</array>
 		</dict>
 	</array>
