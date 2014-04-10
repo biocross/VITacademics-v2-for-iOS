@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *captchaImage;
 @property (weak, nonatomic) IBOutlet UITextField *captchaText;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressDot;
-@property CSNotificationView *notificationController;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

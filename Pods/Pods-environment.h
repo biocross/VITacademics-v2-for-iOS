@@ -12,12 +12,6 @@
 #define COCOAPODS_VERSION_MINOR_Appirater 0
 #define COCOAPODS_VERSION_PATCH_Appirater 2
 
-// CSNotificationView
-#define COCOAPODS_POD_AVAILABLE_CSNotificationView
-#define COCOAPODS_VERSION_MAJOR_CSNotificationView 0
-#define COCOAPODS_VERSION_MINOR_CSNotificationView 3
-#define COCOAPODS_VERSION_PATCH_CSNotificationView 3
-
 // DPMeterView
 #define COCOAPODS_POD_AVAILABLE_DPMeterView
 #define COCOAPODS_VERSION_MAJOR_DPMeterView 0

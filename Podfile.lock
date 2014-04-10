@@ -1,6 +1,5 @@
 PODS:
   - Appirater (2.0.2)
-  - CSNotificationView (0.3.3)
   - DateTools (1.0)
   - DPMeterView (0.0.1)
   - MRProgress (0.4.1):
@@ -47,7 +46,6 @@ PODS:
 
 DEPENDENCIES:
   - Appirater
-  - CSNotificationView (~> 0.3.3)
   - DateTools
   - DPMeterView (= 0.0.1)
   - MRProgress (~> 0.3)
@@ -59,7 +57,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
-  CSNotificationView: f14352657afe7255be9fb2446eb99d5914b97b5d
   DateTools: 6123dfa046b91a444d5fb53e67f970bfd8374057
   DPMeterView: 0cfa41936a00d60938cdfd8a298ce399bc1bbd53
   MRProgress: 6530ce71278dd7ecfb5e3c3e37df03a323690936

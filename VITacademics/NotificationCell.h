@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NotificationCell : UITableViewCell
+@interface NotificationCell : UITableViewCell 
 
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *type;
 @property (weak, nonatomic) IBOutlet UISwitch *switchValue;
+
+@property (strong) Subject *subject;
+
+-(void)initData;
 @end

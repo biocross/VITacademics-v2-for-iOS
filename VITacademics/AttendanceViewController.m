@@ -131,7 +131,7 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
-        [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Incorrect captcha/credentials"];
+        [MWKProgressIndicator showErrorMessage:@"Incorrect captcha/credentials"];
         
     });
     
@@ -142,7 +142,8 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
-        [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Network Error, Please check your internet connectivity."];
+        [MWKProgressIndicator showErrorMessage:@"Network Error"];
+
         
     });
 }
@@ -351,11 +352,9 @@
 
 - (void)startLoadingAttendance:(id)sender {
     
-    
-    
-    self.notificationController = [CSNotificationView notificationViewWithParentViewController:self tintColor:[UIColor orangeColor] image:nil message:@"Loading Attendance..."];
-    [self.notificationController setShowingActivity:YES];
-    [self.notificationController setVisible:YES animated:YES completion:nil];
+    [MWKProgressIndicator updateMessage:@"Loading Attendance..."];
+    [MWKProgressIndicator updateProgress:1.0f];
+    [MWKProgressIndicator show];
     
     
     
@@ -374,7 +373,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //update table here!"
             //[alert dismissWithClickedButtonIndex:0 animated:YES];
-            [self.notificationController setVisible:NO animated:YES completion:nil];
+            [MWKProgressIndicator dismiss];
             
             
             //self.attendanceCacheString = result;
@@ -411,9 +410,9 @@
             double delayInSeconds = 0.05f;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-           
                 
-                [CSNotificationView showInViewController:self tintColor:[UIColor redColor] image:[UIImage imageNamed:@"CSNotificationView_checkmarkIcon"] message:cardMessage duration:2.5f];
+                [MWKProgressIndicator showSuccessMessage:cardMessage];
+
             });
             
             

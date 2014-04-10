@@ -54,7 +54,7 @@
         
     }
     else{
-        [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Not Uploaded Yet"];
+        [MWKProgressIndicator showErrorMessage:@"Not Uploaded Yet"];
         
     }
     

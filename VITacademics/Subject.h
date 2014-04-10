@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * classNumber;
 @property (nonatomic, retain) NSString * code;
 @property (nonatomic, retain) NSString * faculty;
-@property (nonatomic, retain) NSNumber * notification;
+@property (nonatomic) NSNumber *notification;
 @property (nonatomic, retain) NSString * slot;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * venue;

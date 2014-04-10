@@ -110,9 +110,11 @@
     
     //show progress
     
-        self.notificationController = [CSNotificationView notificationViewWithParentViewController:self tintColor:[UIColor orangeColor] image:nil message:@"Submitting Captcha..."];
-        [self.notificationController setShowingActivity:YES];
-        [self.notificationController setVisible:YES animated:YES completion:nil];
+    
+    
+    [MWKProgressIndicator updateMessage:@"Submitting Captcha"];
+    [MWKProgressIndicator updateProgress:1.0f];
+    [MWKProgressIndicator show];
 
     
     
@@ -122,8 +124,8 @@
     dispatch_async(downloadQueue, ^{
         NSString *result = [handler verifyCaptchaWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth andCaptcha:_captchaText.text];
         dispatch_async(dispatch_get_main_queue(), ^{
-                [self.notificationController setVisible:NO animated:YES completion:nil];
-
+                //[self.notificationController setVisible:NO animated:YES completion:nil];
+            [MWKProgressIndicator dismiss];
             
             if([result rangeOfString:@"timedout"].location != NSNotFound){
                 

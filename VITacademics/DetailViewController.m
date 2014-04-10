@@ -7,7 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "CSNotificationView.h"
 #import "DPMeterView.h"
 #import "UIBezierPath+BasicShapes.h"
 #import "PNColor.h"

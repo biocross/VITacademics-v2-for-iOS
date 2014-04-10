@@ -15,8 +15,37 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        
     }
     return self;
+}
+
+-(void)switchValueDidChange{
+    
+    NSManagedObjectContext *context = [[DataManager sharedManager] context];
+    if(self.switchValue.enabled){
+        [self.subject setValue:[NSNumber numberWithInt:1] forKey:@"notification"];
+    }
+    else{
+        [self.subject setValue:[NSNumber numberWithInt:0] forKey:@"notification"];
+    }
+    
+    NSLog(@"self.switchchanged to %@", self.subject.notification);
+    
+    
+}
+
+-(void)initData{
+    self.title.text = self.subject.title;
+    self.type.text = self.subject.attendance.type;
+    //self.switchValue.enabled = self.subject.notification;
+    
+    [self.switchValue setOn:self.subject.notification animated:YES];
+    
+    [self.switchValue addTarget:self
+                         action:@selector(switchValueDidChange)
+               forControlEvents:UIControlEventValueChanged];
+
 }
 
 - (void)awakeFromNib
