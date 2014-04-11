@@ -111,11 +111,13 @@
     //show progress
     
     
-    
-    [MWKProgressIndicator updateMessage:@"Submitting Captcha"];
-    [MWKProgressIndicator updateProgress:1.0f];
-    [MWKProgressIndicator show];
-
+    double delayInSeconds = 0.05f;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [MWKProgressIndicator updateMessage:@"Submitting Captcha..."];
+        [MWKProgressIndicator show];
+    });
     
     
     
@@ -124,7 +126,6 @@
     dispatch_async(downloadQueue, ^{
         NSString *result = [handler verifyCaptchaWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth andCaptcha:_captchaText.text];
         dispatch_async(dispatch_get_main_queue(), ^{
-                //[self.notificationController setVisible:NO animated:YES completion:nil];
             [MWKProgressIndicator dismiss];
             
             if([result rangeOfString:@"timedout"].location != NSNotFound){

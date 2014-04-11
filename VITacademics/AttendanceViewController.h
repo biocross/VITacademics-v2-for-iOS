@@ -16,7 +16,6 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
-#import "CSNotificationView.h"
 
 
 @interface AttendanceViewController : UITableViewController <UIAlertViewDelegate>
@@ -29,7 +28,6 @@
 
 //@property NSString *attendanceCacheString;
 @property NSString *marksCacheString;
-@property CSNotificationView *notificationController;
 
 
 @property (nonatomic, strong) NSMutableArray *theorySubjects;

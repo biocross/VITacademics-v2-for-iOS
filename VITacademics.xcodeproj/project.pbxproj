@@ -66,6 +66,7 @@
 		354B0B3018AE0719003D403B /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 354B0B2B18AE0719003D403B /* 152.png */; };
 		355364C318F4436F001ABBAA /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355364BF18F4433C001ABBAA /* EventKit.framework */; };
 		355364C418F4436F001ABBAA /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355364C118F44346001ABBAA /* EventKitUI.framework */; };
+		3559BCDA18F7DCCC00D80CA2 /* MWKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3559BCD918F7DCCC00D80CA2 /* MWKProgressIndicator.m */; };
 		355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */; };
 		355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */; };
 		355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962F188D1E8700BB0945 /* AttendanceViewController.m */; };
@@ -107,7 +108,6 @@
 		35DD77BE18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
 		35E2969118DBF70A005074EA /* PageContainerTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */; };
 		35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */; };
-		35E9B8ED18F70CD90079EC11 /* MWKProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E9B8EC18F70CD90079EC11 /* MWKProgressIndicator.m */; };
 		35EFF80B18EC2381009DCD5E /* Attendance.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF80A18EC2381009DCD5E /* Attendance.m */; };
 		35EFF80E18EC2381009DCD5E /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF80D18EC2381009DCD5E /* Marks.m */; };
 		35EFF81118EC2381009DCD5E /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF81018EC2381009DCD5E /* Subject.m */; };
@@ -200,6 +200,8 @@
 		354B0B2B18AE0719003D403B /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152.png; sourceTree = "<group>"; };
 		355364BF18F4433C001ABBAA /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		355364C118F44346001ABBAA /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		3559BCD818F7DCCC00D80CA2 /* MWKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWKProgressIndicator.h; sourceTree = "<group>"; };
+		3559BCD918F7DCCC00D80CA2 /* MWKProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWKProgressIndicator.m; sourceTree = "<group>"; };
 		355F9629188D1BBB00BB0945 /* iPhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneTableViewCell.h; sourceTree = "<group>"; };
 		355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneTableViewCell.m; sourceTree = "<group>"; };
 		355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhoneCellNib.xib; sourceTree = "<group>"; };
@@ -264,8 +266,6 @@
 		35E2968F18DBF70A005074EA /* PageContainerTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContainerTimeTableViewController.h; sourceTree = "<group>"; };
 		35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContainerTimeTableViewController.m; sourceTree = "<group>"; };
 		35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsComingSoonCell.xib; sourceTree = "<group>"; };
-		35E9B8EB18F70CD90079EC11 /* MWKProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWKProgressIndicator.h; sourceTree = "<group>"; };
-		35E9B8EC18F70CD90079EC11 /* MWKProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWKProgressIndicator.m; sourceTree = "<group>"; };
 		35EFF80918EC2381009DCD5E /* Attendance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendance.h; sourceTree = "<group>"; };
 		35EFF80A18EC2381009DCD5E /* Attendance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendance.m; sourceTree = "<group>"; };
 		35EFF80C18EC2381009DCD5E /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
@@ -424,8 +424,6 @@
 		3518D15B1854583000EFC1AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				35E9B8EB18F70CD90079EC11 /* MWKProgressIndicator.h */,
-				35E9B8EC18F70CD90079EC11 /* MWKProgressIndicator.m */,
 				35167C9618DE014800B81229 /* 13-target.png */,
 				35167C9818DE020500B81229 /* 83-calendar.png */,
 				35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */,
@@ -436,6 +434,8 @@
 				3518D15D1854583000EFC1AF /* InfoPlist.strings */,
 				3518D1601854583000EFC1AF /* main.m */,
 				3518D1621854583000EFC1AF /* VITacademics-Prefix.pch */,
+				3559BCD818F7DCCC00D80CA2 /* MWKProgressIndicator.h */,
+				3559BCD918F7DCCC00D80CA2 /* MWKProgressIndicator.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -815,7 +815,7 @@
 				3518D1611854583000EFC1AF /* main.m in Sources */,
 				35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
-				35E9B8ED18F70CD90079EC11 /* MWKProgressIndicator.m in Sources */,
+				3559BCDA18F7DCCC00D80CA2 /* MWKProgressIndicator.m in Sources */,
 				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
 				35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */,
 				35A751F2185B91E6009FC74D /* TimeTable.m in Sources */,

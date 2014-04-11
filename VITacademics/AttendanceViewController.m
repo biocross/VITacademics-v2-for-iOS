@@ -192,7 +192,7 @@
     
     else if([title isEqualToString:@"Not Now"]){
         
-        [CSNotificationView showInViewController:self style:CSNotificationViewStyleError message:@"Some other time, then :)"];
+        [MWKProgressIndicator showSuccessMessage:@"Some other time, then :)"];
         
         
     }
@@ -352,9 +352,15 @@
 
 - (void)startLoadingAttendance:(id)sender {
     
-    [MWKProgressIndicator updateMessage:@"Loading Attendance..."];
-    [MWKProgressIndicator updateProgress:1.0f];
-    [MWKProgressIndicator show];
+    double delayInSeconds = 0.05f;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [MWKProgressIndicator updateMessage:@"Loading Attendance..."];
+        [MWKProgressIndicator show];
+    });
+    
+    
     
     
     

@@ -38,7 +38,7 @@
     self = [super init];
     if (!self) return nil;
     
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor orangeColor];
     self.frame = CGRectMake(0, -MWKProgressIndicatorHeight, [UIScreen mainScreen].bounds.size.width, MWKProgressIndicatorHeight);
     [[[[[UIApplication sharedApplication] keyWindow] subviews] firstObject] addSubview:self];
     
@@ -51,9 +51,10 @@
     
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, statusBarHeight, self.bounds.size.width, MWKProgressIndicatorHeight - statusBarHeight)];
     [_titleLabel setBackgroundColor:[UIColor clearColor]];
-    [_titleLabel setTextColor:[UIColor blackColor]];
+    [_titleLabel setTextColor:[UIColor darkGrayColor]];
     [_titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [_titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:20]];
+    //[_titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:20]];
+    [_titleLabel setFont:[UIFont fontWithName:@"MuseoSans-300" size:20]];
     [_titleLabel setText:@"Loading..."];
     [self addSubview:_titleLabel];
     
@@ -165,12 +166,12 @@
 
 + (void)showErrorMessage:(NSString *)errorMessage
 {
-    [[MWKProgressIndicator sharedIndicator] showWithColor:[UIColor redColor] duration:2 message:errorMessage];
+    [[MWKProgressIndicator sharedIndicator] showWithColor:[UIColor colorWithRed:0.9058 green:0.2980 blue:0.2352 alpha:1] duration:3 message:errorMessage];
 }
 
 + (void)showSuccessMessage:(NSString *)successMessage
 {
-    [[MWKProgressIndicator sharedIndicator] showWithColor:[UIColor greenColor] duration:2 message:successMessage];
+    [[MWKProgressIndicator sharedIndicator] showWithColor:[UIColor colorWithRed:0.1803 green:0.8 blue:0.4431 alpha:1] duration:3 message:successMessage];
 }
 
 - (void)showWithColor:(UIColor *)color duration:(float)duration message:(NSString *)message
