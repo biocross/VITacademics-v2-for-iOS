@@ -23,14 +23,24 @@
 -(void)switchValueDidChange{
     
     NSManagedObjectContext *context = [[DataManager sharedManager] context];
-    if(self.switchValue.enabled){
+    if(self.switchValue.isOn){
         [self.subject setValue:[NSNumber numberWithInt:1] forKey:@"notification"];
     }
     else{
         [self.subject setValue:[NSNumber numberWithInt:0] forKey:@"notification"];
     }
     
-    NSLog(@"self.switchchanged to %@", self.subject.notification);
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    else{
+        NSLog(@"self.switchchanged to %@", self.subject.notification);
+    }
+    
+    
+    
     
     
 }
@@ -40,7 +50,8 @@
     self.type.text = self.subject.attendance.type;
     //self.switchValue.enabled = self.subject.notification;
     
-    [self.switchValue setOn:self.subject.notification animated:YES];
+    [self.switchValue setOn:[self.subject.notification intValue] animated:YES];
+    
     
     [self.switchValue addTarget:self
                          action:@selector(switchValueDidChange)

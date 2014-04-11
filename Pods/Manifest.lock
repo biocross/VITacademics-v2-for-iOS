@@ -1,40 +1,8 @@
 PODS:
   - Appirater (2.0.2)
-  - DateTools (1.0)
+  - DateTools (1.1.0)
   - DPMeterView (0.0.1)
-  - MRProgress (0.4.1):
-    - MRProgress/ActivityIndicator
-    - MRProgress/Blur
-    - MRProgress/Circular
-    - MRProgress/Helper
-    - MRProgress/Icons
-    - MRProgress/MessageInterceptor
-    - MRProgress/NavigationBarProgress
-    - MRProgress/Overlay
-    - MRProgress/Stopable
-    - MRProgress/WeakProxy
-  - MRProgress/ActivityIndicator (0.4.1):
-    - MRProgress/Stopable
-  - MRProgress/Blur (0.4.1):
-    - MRProgress/Helper
-  - MRProgress/Circular (0.4.1):
-    - MRProgress/Helper
-    - MRProgress/Stopable
-  - MRProgress/Helper (0.4.1)
-  - MRProgress/Icons (0.4.1)
-  - MRProgress/MessageInterceptor (0.4.1)
-  - MRProgress/NavigationBarProgress (0.4.1):
-    - MRProgress/MessageInterceptor
-  - MRProgress/Overlay (0.4.1):
-    - MRProgress/ActivityIndicator
-    - MRProgress/Blur
-    - MRProgress/Circular
-    - MRProgress/Helper
-    - MRProgress/Icons
-  - MRProgress/Stopable (0.4.1):
-    - MRProgress/Helper
-  - MRProgress/WeakProxy (0.4.1)
-  - NSDate+TimeAgo (1.0.2)
+  - NSDate+TimeAgo (1.0.3)
   - PNChart (0.3.3):
     - UICountingLabel (~> 1.0.0)
   - PulsingHalo (0.0.1)
@@ -48,7 +16,6 @@ DEPENDENCIES:
   - Appirater
   - DateTools
   - DPMeterView (= 0.0.1)
-  - MRProgress (~> 0.3)
   - NSDate+TimeAgo
   - PNChart (~> 0.3.1)
   - PulsingHalo
@@ -57,10 +24,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
-  DateTools: 6123dfa046b91a444d5fb53e67f970bfd8374057
+  DateTools: 058cc3538d02cfa6f5afdcb737fbf58adde3c765
   DPMeterView: 0cfa41936a00d60938cdfd8a298ce399bc1bbd53
-  MRProgress: 6530ce71278dd7ecfb5e3c3e37df03a323690936
-  NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
+  NSDate+TimeAgo: ca09306750ac2564418042aa10cf8365c36d2cee
   PNChart: dc66d8bb6da180223438b949aa281c8dc890590e
   PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
   RMStepsController: bd30e3eb7bead3a3b93d34d912dc24ba0d1256fc
@@ -68,4 +34,4 @@ SPEC CHECKSUMS:
   TTTAttributedLabel: 1eb635d4d844cb7abce4d839faefca2a3409950d
   UICountingLabel: bb976960c0130785a600aac592954c23eb395096
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.31.1

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MRActivityIndicatorView.h"
 
 @interface StepsViewController : UIViewController <NSURLConnectionDelegate, UITextFieldDelegate>
 
@@ -25,7 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *startingImage;
 
-@property (weak, nonatomic) IBOutlet MRActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) IBOutlet UIButton *one;
 @property (weak, nonatomic) IBOutlet UIButton *two;

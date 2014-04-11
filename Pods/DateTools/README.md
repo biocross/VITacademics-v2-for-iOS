@@ -4,13 +4,16 @@
 
 DateTools was written to streamline date and time handling in Objective-C. Classes and concepts from other languages served as an inspiration for DateTools, especially the [DateTime](http://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx) structure and [Time Period Library](Time Period Library) for .NET. Through these classes and others, DateTools removes the boilerplate required to access date components, handles more nuanced date comparisons, and serves as the foundation for entirely new concepts like Time Periods and their collections.
 
+[![Build Status](https://travis-ci.org/MatthewYork/DateTools.svg?branch=master)](https://travis-ci.org/MatthewYork/DateTools)
 
 ## Installation
 
-**Cocoapods - Pending!**
+**Cocoapods**
+
 <code>pod 'DateTools'</code>
 
 **Manual Installation**
+
 All the classes required for DateTools are located in the DateTools folder in the root of this repository. They are listed below:
 
 * <code>DateTools.h</code>
@@ -21,6 +24,10 @@ All the classes required for DateTools are located in the DateTools folder in th
 * <code>DTTimePeriodGroup.{h,m}</code>
 * <code>DTTimePeriodCollection.{h,m}</code>
 * <code>DTTimePeriodChain.{h,m}</code>
+
+The following bundle is necessary if you would like to support internationalization. You can add localizations at the `Localizations` subheading under `Info` in the `Project` menu.
+
+* <code>DateTools.bundle</code>
 
 <code>DateTools.h</code> contains the headers for all the other files. Import this if you want to link to the entire framework.
 
@@ -46,11 +53,11 @@ All the classes required for DateTools are located in the DateTools folder in th
 
 ##NSDate+DateTools
 
-One of the missions of DateTools was to make NSDate feel more complete. There are many other languages that allow direct access to information about dates from their date classes, but NSDate (sadly) does not. It safely works only in the Unix time offsets through the <code>timeIntervalSince...</code> methods for building dates and remains calendar agnostic. But that's not <i>always</i> what we want to do. Sometimes, we would like to work with dates based on their date components (like year, month, day, etc) at a more abstract level. This is where DateTools comes in.
+One of the missions of DateTools was to make NSDate feel more complete. There are many other languages that allow direct access to information about dates from their date classes, but NSDate (sadly) does not. It safely works only in the Unix time offsets through the <code>timeIntervalSince...</code> methods for building dates and remains calendar agnostic. But that's not <i>always</i> what we want to do. Sometimes, we want to work with dates based on their date components (like year, month, day, etc) at a more abstract level. This is where DateTools comes in.
 
 ####Time Ago
 
-No date library would be complete without the ability to quickly make an NSString based on how much earlier a date is than now. DateTools has you covered. These "time ago" strings come in a long a short form, with the latter closely resembling Twitter. There are many libraries that do this, so I wanted to pull it into this one.
+No date library would be complete without the ability to quickly make an NSString based on how much earlier a date is than now. DateTools has you covered. These "time ago" strings come in a long and short form, with the latter closely resembling Twitter. You can get these strings like so:
 
 ```objc
 NSDate *timeAgoDate = [NSDate dateWithTimeIntervalSinceNow:-4];
@@ -61,6 +68,45 @@ NSLog(@"Time Ago: %@", timeAgoDate.shortTimeAgoSinceNow);
 //Time Ago: 4 seconds ago
 //Time Ago: 4s
 ```
+
+Assuming you have added the localization to your project, `DateTools` currently supports the following languages: 
+
+- en (English)
+- es (Spanish)
+- zh_Hans (Chinese Simplified)
+- zh_Hant (Chinese Traditional)
+- pt (Portuguese)
+- fr (French)
+- it (Italian)
+- ru (Russian)
+- de (German)
+- nl (Dutch)
+- hu (Hungarian)
+- fi (Finnish)
+- ja (Japanese)
+- vi (Vietnamese)
+- ro (Romanian)
+- da (Danish)
+- cs (Czech)
+- nb (Norwegian)
+- lv (Latvian)
+- tr (Turkish)
+- ko (Korean)
+- bg (Bulgarian)
+- he (Hebrew)
+- ar (Arabic)
+- gre (Greek)
+- pl (Polish)
+- sv (Swedish)
+- th (Thai)
+- uk (Ukrainian)
+- is (Icelandic)
+
+If you know a language not listed here, please consider submitting a translation. [Localization codes by language](http://stackoverflow.com/questions/3040677/locale-codes-for-iphone-lproj-folders).
+
+This project is user driven (by people like you). Pull requests close faster than issues (merged or rejected).
+
+Thanks to Kevin Lawler for his work on [NSDate+TimeAgo](https://github.com/kevinlawler/NSDate-TimeAgo), which has been officially merged into this library.
 
 ####Date Components
 
@@ -75,8 +121,8 @@ unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit;
 NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:date];
 
 //Get components
-NSInteger year = calendar.year;
-NSInteger month = calendar.month;
+NSInteger year = dateComponents.year;
+NSInteger month = dateComponents.month;
 ```
 
 ...becomes this:
@@ -91,6 +137,10 @@ NSInteger day = [date dayWithCalendar:calendar];
 ```
 
 If you would like to override the default calendar that DateTools uses, simply change it in the <code>defaultCalendar</code> method of <code>NSDate+DateTools.m</code>.
+
+**Note on Performance** 
+
+It has been accurately pointed out that using the . notation getters may lead to a performance hit when using them in a UITableVeiw. This is due to a new NSCalendar instance being created every time. If this is something you are concerned about, please, use the <code>xxxWithCalendar:</code> methods to save on the repeated calendar allocations.
 
 ####Date Editing
 
@@ -111,7 +161,7 @@ NSDate *newDate = [calendar dateByAddingComponents:components toDate:date option
 
 ...becomes this:
 ```objc
-NSDate *newDate = [self.controlDate dateByAddingYears:1];
+NSDate *newDate = [date dateByAddingYears:1];
 ```
 
 Subtraction of date components is also fully supported through the <code>dateBySubtractingYears</code>
@@ -147,12 +197,12 @@ NSInteger yearsApart = [firstDate yearsFrom:secondDate];
 ```
 Methods for comparison in this category include:
 * <code>yearsFrom:</code>, <code>yearsUntil</code>, <code>yearsAgo</code>, <code>yearsEarlierThan:</code>, <code>yearsLaterThan:</code>
-* <code>monthsFrom:</code>, <code>monthsUntil</code>, <code>monthsAgo</code>, <code>monthsEarlierThan:,</code> <code>monthsLaterThan:</code>
+* <code>monthsFrom:</code>, <code>monthsUntil</code>, <code>monthsAgo</code>, <code>monthsEarlierThan:</code>, <code>monthsLaterThan:</code>
 * <code>weeksFrom:</code>, <code>weeksUntil</code>, <code>weeksAgo</code>, <code>weeksEarlierThan:</code>, <code>weeksLaterThan:</code>
 * <code>daysFrom:</code>, <code>daysUntil</code>, <code>daysAgo</code>, <code>daysEarlierThan:</code>, <code>daysLaterThan:</code>
 * <code>hoursFrom:</code>, <code>hoursUntil</code>, <code>hoursAgo</code>, <code>hoursEarlierThan:</code>, <code>hoursLaterThan:</code>
-* <code>minutesFrom:</code>, <code>minutesUntil</code>, <code>minutesAgo</code>, <code>minutesEarlierThan:, <code>minutesLaterThan:</code>
-* <code>secondsFrom:</code>, <code>secondsUntil</code>, <code>secondsAgo,</code> <code>secondsEarlierThan:, <code>secondsLaterThan:</code>
+* <code>minutesFrom:</code>, <code>minutesUntil</code>, <code>minutesAgo</code>, <code>minutesEarlierThan:</code>, <code>minutesLaterThan:</code>
+* <code>secondsFrom:</code>, <code>secondsUntil</code>, <code>secondsAgo</code>, <code>secondsEarlierThan:</code>, <code>secondsLaterThan:</code>
 
 ####Formatted Date Strings
 
@@ -204,7 +254,7 @@ This doubles a time period of duration 1 minute to duration 2 minutes. The end d
 
 ####Relationships
 
-There may come a need, say when you are making a scheduling app, when it might be good to know how two time periods relate to one another. Are they the same? Is one inside of another? All these questions and may be asked using the relationship methods of DTTimePeriod.
+There may come a need, say when you are making a scheduling app, when it might be good to know how two time periods relate to one another. Are they the same? Is one inside of another? All these questions may be asked using the relationship methods of DTTimePeriod.
 
 **The Basics**
 
@@ -225,6 +275,8 @@ You can also check for the official relationship (like those shown in the chart)
 All of the possible relationships have been enumerated in the DTTimePeriodRelation enum. 
 
 **For a better grasp on how time periods relate to one another, check out the "Time Periods" tab in the example application. Here you can slide a few time periods around and watch their relationships change.**
+
+![TimePeriods](https://raw.githubusercontent.com/MatthewYork/Resources/master/DateTools/TimePeriodsDemo.gif)
 
 ##Time Period Groups
 
@@ -298,11 +350,16 @@ Like collections, chains have an equality check and the ability to be shifted ea
 All methods and variables have been documented and are available for option+click inspection, just like the SDK classes. This includes an explanation of the methods as well as what their input and output parameters are for. Please raise an issue if you ever feel documentation is confusing or misleading and we will get it fixed up!
 
 ##Unit Tests
+
 Unit tests were performed on all the major classes in the library for quality assurance. You can find theses under the "Tests" folder at the top of the library. There are over 300 test cases in all!
 
 If you ever find a test case that is incomplete, please open an issue so we can get it fixed.
 
+Continuous integration testing is performed by Travis CI: [![Build Status](https://travis-ci.org/MatthewYork/DateTools.svg?branch=master)](https://travis-ci.org/MatthewYork/DateTools)
+
 ##Credits
+
+Thanks to [Kevin Lawler](https://github.com/kevinlawler) for his initial work on NSDate+TimeAgo. It laid the foundation for DateTools' timeAgo methods. You can find this great project [here](https://github.com/kevinlawler/NSDate-TimeAgo).
 
 Many thanks to the .NET team for their DateTime class and a major thank you to [Jani Giannoudis](http://www.codeproject.com/Members/Jani-Giannoudis) for his work on ITimePeriod.
 

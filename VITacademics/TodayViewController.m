@@ -43,17 +43,21 @@
  - [FIXED] Added Rating Dailog - Appirater
  - [FIXED] dateOfBirth Picker resign first responder
  - [FIXED] a bug in today upcoming class for showning "in xx time".
+ - [CANCELLED] New Captcha View Controller
+ - [FIXED] Full Swipeable timeTable
+ 
  
  [CRITICAL]
  - Fix iPad Crash
  
  [IMPORTANT]
- - Check server status - See iOS Documentaion from response.code
- - Full Swipeable timeTable
+ - Check server status - See iOS Documentaion for response.code
  - Notifications System
- - New Captcha View Controller
  - Remove Transparency from cell to increase performance
  - Switch to new dateTools Library
+ - Fix Notification Model Type (Bool, NSNumber, or what?)
+ - Set Default notifications as YES to all
+ - Add New Progress Bar Integration in the finalSetup
  
  
  [LOW PRIORITY]
@@ -61,6 +65,7 @@
  - error 500 handling (do it using a status poll?)
  - ENABLE CANCEL IN THE WIZARD
  - Remove timeTable string from today - TimeTable.h call.
+ - Add enable all, disable all toggle in NotificationView
  
  */
 @interface TodayViewController (){

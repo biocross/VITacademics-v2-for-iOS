@@ -11,7 +11,6 @@
 #import <Parse/Parse.h>
 #import "PulsingHaloLayer.h"
 #import "VITxAPI.h"
-#import "MRActivityIndicatorView.h"
 
 @interface StepsViewController ()
 
@@ -58,7 +57,7 @@
 -(IBAction)loginWithFacebook:(id)sender{
     
     NSArray *permissionsArray = @[@"user_about_me", @"email"];
-    [_activityIndicator startAnimating];
+    //[_activityIndicator startAnimating];
     [_logginInLabel setAlpha:1];
     
     PFUser *user = [PFUser currentUser];
@@ -107,7 +106,7 @@
             [urlConnection start];
             
             [_logginInLabel setText:@"Done!"];
-            [_activityIndicator stopAnimating];
+            //[_activityIndicator stopAnimating];
             
             [self.stepsController showNextStep];
             [self finalSetup];
@@ -139,7 +138,7 @@
 
 -(void)finalSetup{
     
-    [self.activityIndicator startAnimating];
+    //[self.activityIndicator startAnimating];
         
     VITxAPI *attendanceManager = [[VITxAPI alloc] init];
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
@@ -252,10 +251,10 @@
                     self.six.enabled = NO;
                     self.seven.enabled = YES;
                     NSLog(@"Finished Everything");
-                    [self.activityIndicator stopAnimating];
-                    UIImageView *icon = [[UIImageView alloc] initWithFrame:self.activityIndicator.frame];
+                    //[self.activityIndicator stopAnimating];
+                    /*UIImageView *icon = [[UIImageView alloc] initWithFrame:self.activityIndicator.frame];
                     [icon setImage:[UIImage imageNamed:@"loadingImage.png"]];
-                    [self.view addSubview:icon];
+                    [self.view addSubview:icon];*/
                     NSLog(@"added image");
                     [[DataManager sharedManager] initializeDataSources];
                 }
