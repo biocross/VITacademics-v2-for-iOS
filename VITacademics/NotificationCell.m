@@ -7,6 +7,8 @@
 //
 
 #import "NotificationCell.h"
+#import "TimeTable.h"
+
 
 @implementation NotificationCell
 
@@ -41,6 +43,24 @@
     
     
     
+    TimeTable *ttObject = [[TimeTable alloc] initWithTTString:@""];
+    NSArray *timeSlotArray = [[NSArray alloc] init];
+    timeSlotArray = [ttObject getTimeSlotArray];
+    
+    int indexOfMatchedSubject = -1;
+    int i = 0;
+    for(id item in ttObject.monday){
+        if([item isKindOfClass:[Subject class]]){
+            indexOfMatchedSubject = i;
+            break;
+        }
+        i += 1;
+    }
+    
+    if(indexOfMatchedSubject > 0){
+        
+    }
+
     
     
 }

@@ -19,4 +19,5 @@
 #import "Attendance.h"
 #import "Marks.h"
 #import "MWKProgressIndicator.h"
+#import "DateTools.h"
 #endif

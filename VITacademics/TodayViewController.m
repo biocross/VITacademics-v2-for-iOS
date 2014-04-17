@@ -122,10 +122,7 @@
 -(void)initData{
     ofToday = [[TimeTable alloc] initWithTTString:@""];
     self.todaysTimeTable = [ofToday getTodaysTimeTable];
-    //NSLog(@"This is it: %@", [self.todaysTimeTable description]);
-    
     self.legibleTimeTable = [[NSMutableArray alloc] init];
-    
     NSMutableArray *newArray = [[NSMutableArray alloc] init];
     
     //DataSource Creation
@@ -544,14 +541,15 @@
 
 - (IBAction)notificationButtonPressed:(id)sender {
     
-    
+    // Abandoning Notifcation until I find a better solution.
+    /*
     NotificationViewController *notificationController = [[NotificationViewController alloc] init];
     UINavigationController *temp = [[UINavigationController alloc] init];
     
     temp.viewControllers = @[notificationController];
     [self.navigationController presentViewController:temp animated:YES completion:nil];
     notificationController.subjects = [[DataManager sharedManager] getAllSubjects];
-
+     */
     
 }
 @end

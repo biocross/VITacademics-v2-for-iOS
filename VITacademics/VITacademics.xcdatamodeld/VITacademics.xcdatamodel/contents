@@ -29,8 +29,8 @@
         <relationship name="marks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Marks" inverseName="subject" inverseEntity="Marks" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Attendance" positionX="54" positionY="90" width="128" height="135"/>
-        <element name="Marks" positionX="-279" positionY="63" width="128" height="148"/>
+        <element name="Attendance" positionX="126" positionY="108" width="128" height="135"/>
+        <element name="Marks" positionX="-324" positionY="77" width="128" height="148"/>
         <element name="Subject" positionX="-119" positionY="9" width="128" height="180"/>
     </elements>
 </model>

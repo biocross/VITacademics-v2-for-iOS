@@ -202,11 +202,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="VITacademics" id="Ud1-UD-0bU">
-                        <barButtonItem key="leftBarButtonItem" image="13-target.png" id="GT5-bs-DSl">
-                            <connections>
-                                <action selector="notificationButtonPressed:" destination="uLw-PD-njc" id="43b-E9-L33"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="83-calendar.png" id="LOo-xN-MIb">
                             <connections>
                                 <segue destination="LpF-9f-j63" kind="modal" id="WDu-Di-RdO"/>
@@ -580,7 +575,7 @@
                                     <action selector="startUsingVITacademics:" destination="ZJ6-hu-EWX" eventType="touchUpInside" id="tXx-Sf-9bL"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2s-jy-1lq" customClass="MRActivityIndicatorView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2s-jy-1lq" customClass="UIImageView">
                                 <rect key="frame" x="114" y="98" width="93" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -589,7 +584,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="Y2s-jy-1lq" id="3vU-OU-hcf"/>
                         <outlet property="five" destination="vYJ-VR-Naa" id="pgD-7P-9VH"/>
                         <outlet property="four" destination="tJj-R7-kec" id="Qbh-1n-oHk"/>
                         <outlet property="one" destination="SIo-C7-lgU" id="tmj-de-2iT"/>
@@ -1242,7 +1236,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="13-target.png" width="28" height="28"/>
         <image name="83-calendar.png" width="23" height="25"/>
         <image name="Chart_Up" width="25" height="21"/>
         <image name="Contact" width="50" height="50"/>
