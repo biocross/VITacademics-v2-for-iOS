@@ -49,6 +49,7 @@
  
  [CRITICAL]
  - Fix iPad Crash
+ - Clear CoreData on "Reset VITacademics"
  
  [IMPORTANT]
  - Check server status - See iOS Documentaion for response.code
@@ -58,6 +59,7 @@
  - Fix Notification Model Type (Bool, NSNumber, or what?)
  - Set Default notifications as YES to all
  - Add New Progress Bar Integration in the finalSetup
+ - Fix Misalignment in DetailsViewController
  
  
  [LOW PRIORITY]

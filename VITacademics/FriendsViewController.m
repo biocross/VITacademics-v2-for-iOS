@@ -33,7 +33,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,40 +71,18 @@
     return cell;
 }
 
--(void)pickFriend:(id)sender{
+- (IBAction)shareButtonPressed:(id)sender {
     
+
+    //if facebook logged in
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ShareViewNav"];
     [self presentViewController:vc animated:YES completion:NULL];
-    
-    
-    /*
-     PFUser *currentUser = [PFUser currentUser];
-    NSMutableDictionary* params =   [NSMutableDictionary dictionaryWithObjectsAndKeys:nil];
-    
-    [FBWebDialogs presentRequestsDialogModallyWithSession:nil
-                                                  message:[NSString stringWithFormat:@"%@ has just requested access to your timetable on VITacademics", currentUser[@"facebookName"]]
-                                                    title:@"TimeTable Request"
-                                               parameters:params
-                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
-                                                      if (error) {
-                                                          // Case A: Error launching the dialog or sending request.
-                                                          NSLog(@"Error sending request.");
-                                                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You need to have a working internet connection to do this." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-                                                          [alert show];
-                                                      } else {
-                                                          if (result == FBWebDialogResultDialogNotCompleted) {
-                                                              // Case B: User clicked the "x" icon
-                                                              NSLog(@"User canceled request.");
-                                                          } else {
-                                                              NSLog(@"Request Sent.");
-                                                          }
-                                                      }}
-                                              friendCache:nil];
-     */
-    
-    
 }
 
-
+- (IBAction)addFriendButtonPressed:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"AddFriendNav"];
+    [self presentViewController:vc animated:YES completion:NULL];
+}
 @end

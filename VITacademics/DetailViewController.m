@@ -281,5 +281,9 @@
     }
 }
 
+-(void)detailsButtonPressed:(id)sender{
+    
+}
+
 
 @end

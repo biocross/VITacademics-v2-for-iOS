@@ -95,6 +95,9 @@
 		35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751EE185B90AF009FC74D /* TodayViewController.m */; };
 		35A751F2185B91E6009FC74D /* TimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F1185B91E6009FC74D /* TimeTable.m */; };
 		35A751F5185B9608009FC74D /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F4185B9608009FC74D /* TabViewController.m */; };
+		35BC0D991902EBFD007CE6E4 /* Friend+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC0D981902EBFD007CE6E4 /* Friend+Operations.m */; };
+		35BC0D9C1902FC76007CE6E4 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC0D9B1902FC76007CE6E4 /* Friend.m */; };
+		35BC0D9F1902FF40007CE6E4 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC0D9E1902FF40007CE6E4 /* AddFriendViewController.m */; };
 		35BC32DD189D950400B2999D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC32DC189D950400B2999D /* ShareViewController.m */; };
 		35C9DF2F18DEE39D000E1260 /* Subject+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */; };
 		35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF3118DEE672000E1260 /* Attendance+Operations.m */; };
@@ -244,6 +247,12 @@
 		35A751F1185B91E6009FC74D /* TimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeTable.m; sourceTree = "<group>"; };
 		35A751F3185B9608009FC74D /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		35A751F4185B9608009FC74D /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		35BC0D971902EBFD007CE6E4 /* Friend+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friend+Operations.h"; sourceTree = "<group>"; };
+		35BC0D981902EBFD007CE6E4 /* Friend+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friend+Operations.m"; sourceTree = "<group>"; };
+		35BC0D9A1902FC76007CE6E4 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		35BC0D9B1902FC76007CE6E4 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		35BC0D9D1902FF40007CE6E4 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
+		35BC0D9E1902FF40007CE6E4 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		35BC32DB189D950400B2999D /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		35BC32DC189D950400B2999D /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		35C9DF2D18DEE39D000E1260 /* Subject+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subject+Operations.h"; sourceTree = "<group>"; };
@@ -599,6 +608,8 @@
 				35155D8018781A8100513E05 /* SettingsTabViewController.m */,
 				35BC32DB189D950400B2999D /* ShareViewController.h */,
 				35BC32DC189D950400B2999D /* ShareViewController.m */,
+				35BC0D9D1902FF40007CE6E4 /* AddFriendViewController.h */,
+				35BC0D9E1902FF40007CE6E4 /* AddFriendViewController.m */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -606,13 +617,17 @@
 		35B954F5188C11BD00389DA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				351674C618DF2BD8002AC961 /* VITacademics.xcdatamodeld */,
+				35BC0D9A1902FC76007CE6E4 /* Friend.h */,
+				35BC0D9B1902FC76007CE6E4 /* Friend.m */,
 				35EFF80918EC2381009DCD5E /* Attendance.h */,
+				35EFF80A18EC2381009DCD5E /* Attendance.m */,
 				35EFF80F18EC2381009DCD5E /* Subject.h */,
 				35EFF81018EC2381009DCD5E /* Subject.m */,
 				35EFF80C18EC2381009DCD5E /* Marks.h */,
 				35EFF80D18EC2381009DCD5E /* Marks.m */,
-				35EFF80A18EC2381009DCD5E /* Attendance.m */,
-				351674C618DF2BD8002AC961 /* VITacademics.xcdatamodeld */,
+				35BC0D971902EBFD007CE6E4 /* Friend+Operations.h */,
+				35BC0D981902EBFD007CE6E4 /* Friend+Operations.m */,
 				35C9DF2D18DEE39D000E1260 /* Subject+Operations.h */,
 				35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */,
 				35C9DF3018DEE672000E1260 /* Attendance+Operations.h */,
@@ -811,10 +826,13 @@
 				35DD77BD18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */,
 				35D27AA018E885B300D56196 /* AppDelegate.m in Sources */,
 				3518E96F189B9F56001F32A8 /* SubjectDetailsViewController.m in Sources */,
+				35BC0D9F1902FF40007CE6E4 /* AddFriendViewController.m in Sources */,
 				35BC32DD189D950400B2999D /* ShareViewController.m in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
 				35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
+				35BC0D991902EBFD007CE6E4 /* Friend+Operations.m in Sources */,
+				35BC0D9C1902FC76007CE6E4 /* Friend.m in Sources */,
 				3559BCDA18F7DCCC00D80CA2 /* MWKProgressIndicator.m in Sources */,
 				3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */,
 				35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */,

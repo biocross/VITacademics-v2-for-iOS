@@ -10,7 +10,9 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface FriendsViewController : UITableViewController
-- (IBAction)pickFriend:(id)sender;
+
+- (IBAction)shareButtonPressed:(id)sender;
+- (IBAction)addFriendButtonPressed:(id)sender;
 
 @property (retain, nonatomic) UISearchBar *searchBar;
 @property (retain, nonatomic) NSString *searchText;

@@ -8,6 +8,14 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="attendance" inverseEntity="Subject" syncable="YES"/>
     </entity>
+    <entity name="Friend" representedClassName="Friend" syncable="YES">
+        <attribute name="dateOfBirth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facebookID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="registrationNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timetable" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Marks" representedClassName="Marks" syncable="YES">
         <attribute name="assignment" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="cat1" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -32,5 +40,6 @@
         <element name="Attendance" positionX="126" positionY="108" width="128" height="135"/>
         <element name="Marks" positionX="-324" positionY="77" width="128" height="148"/>
         <element name="Subject" positionX="-119" positionY="9" width="128" height="180"/>
+        <element name="Friend" positionX="-119" positionY="266" width="128" height="133"/>
     </elements>
 </model>
