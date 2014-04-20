@@ -14,6 +14,7 @@
 - (IBAction)addWithPINpressed:(id)sender;
 - (IBAction)addManuallyPressed:(id)sender;
 
+- (IBAction)cancelButton:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *token;
 @property (weak, nonatomic) IBOutlet UILabel *subtitle1;

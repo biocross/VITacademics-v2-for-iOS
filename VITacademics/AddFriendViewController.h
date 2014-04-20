@@ -13,5 +13,6 @@
 - (IBAction)addManually:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *subtitle1;
 @property (weak, nonatomic) IBOutlet UILabel *subtitle2;
+- (IBAction)cancelButton:(id)sender;
 
 @end

@@ -13,7 +13,6 @@
 #import "UpcomingClassCell.h"
 #import "Subject.h"
 #import "SFRoundProgressCounterView.h"
-#import <EventKit/EventKit.h>
 #import "NotificationViewController.h"
 
 
@@ -59,7 +58,9 @@
  - Fix Notification Model Type (Bool, NSNumber, or what?)
  - Set Default notifications as YES to all
  - Add New Progress Bar Integration in the finalSetup
- - Fix Misalignment in DetailsViewController
+ - Fix Misalignment in DetailsViewController\
+ - When runs for the first time from old version, timetable is empty.
+ - Add Friends feature.
  
  
  [LOW PRIORITY]
