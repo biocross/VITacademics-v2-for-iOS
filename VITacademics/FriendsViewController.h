@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "Friend.h"
+#import "FriendsTableViewCell.h"
 
 @interface FriendsViewController : UITableViewController
 

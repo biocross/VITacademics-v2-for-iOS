@@ -27,11 +27,10 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FriendsTableViewCell"
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"FriendCell"];
     
 }
 
@@ -46,17 +45,26 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 189;
+    return 60;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if(section == 0){
+        return @"You've Added";
+    }
+    else{
+        return @"Added You";
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return 4;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -66,8 +74,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendsComingSoonCell" owner:self options:nil];
-    UITableViewCell *cell = [nib objectAtIndex:0];
+    
+    FriendsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
+    [cell initCellData];
     return cell;
 }
 

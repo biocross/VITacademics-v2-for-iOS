@@ -10,9 +10,6 @@
 
 @interface ShareViewController : UIViewController
 
-- (IBAction)cancelButtonPressed:(id)sender;
-- (IBAction)addWithPINpressed:(id)sender;
-- (IBAction)addManuallyPressed:(id)sender;
 
 - (IBAction)cancelButton:(id)sender;
 

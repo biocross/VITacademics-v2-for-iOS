@@ -69,6 +69,7 @@
  - ENABLE CANCEL IN THE WIZARD
  - Remove timeTable string from today - TimeTable.h call.
  - Add enable all, disable all toggle in NotificationView
+ - Toolbar jugaad in FriendsSubViews
  
  */
 @interface TodayViewController (){
@@ -263,7 +264,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    int height = 290;
+    int height = 183;
 
     if(indexPath.section == 1){
         height = 79;
@@ -306,14 +307,6 @@
             
             UIFont *calculatedFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
             [cell.calculatedLabels setFont:calculatedFont];
-            
-            NSNumber* singleValue = [NSNumber numberWithLong:20000];
-            cell.timeView.intervals = @[singleValue];
-            
-            cell.timeView.outerCircleThickness = [NSNumber numberWithFloat:3.0];
-            cell.timeView.innerCircleThickness = [NSNumber numberWithFloat:1.0];
-            cell.timeView.circleDistance = [NSNumber numberWithFloat:6.0];
-            [cell.timeView start];
             
             @try {
                     
