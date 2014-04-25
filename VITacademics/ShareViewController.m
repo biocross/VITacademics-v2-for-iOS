@@ -39,30 +39,71 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    if(![prefs stringForKey:@"currentPIN"]){
-        
+    if(![prefs objectForKey:@"PINObject"]){
+        dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
+        dispatch_async(downloadQueue, ^{
+            
+            [self getNewPINwithRegistrationNumber:[prefs objectForKey:@"registrationNumber"] andDateOfBirth:[prefs objectForKey:@"dateOfBirth"]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self initUI];
+                
+            });
+            
+        });//end of GCD
+
     }
     else{
-        [self initUI];
+        if([[NSDate date] isEarlierThan:[self formattedExpiryDate]]){
+            [self initUI];
+        }
+        else{
+            dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
+            dispatch_async(downloadQueue, ^{
+                
+                [self getNewPINwithRegistrationNumber:[prefs objectForKey:@"registrationNumber"] andDateOfBirth:[prefs objectForKey:@"dateOfBirth"]];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self initUI];
+                    
+                });
+                
+            });//end of GCD
+        }
+        
     }
     
+}
+
+-(NSDate *)formattedExpiryDate{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSDictionary *PINObject = [prefs objectForKey:@"PINObject"];
+    NSDate *expiryDate = [dateFormatter dateFromString:[PINObject valueForKey:@"expiry"]];
+    return expiryDate;
 }
 
 -(void)initUI{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    self.token.text = [prefs stringForKey:@"currentPIN"];
+    NSDictionary *PINObject = [prefs objectForKey:@"PINObject"];
+    self.token.text = [PINObject valueForKey:@"token"];
+    self.tokenValidity.text = [NSString stringWithFormat:@"PIN valid until: %1.0f hours", [[self formattedExpiryDate] hoursUntil]];
 }
     
 
 
--(NSString *)getNewPINwithRegistrationNumber:(NSString *)registrationNumber andDateOfBirth:(NSString *)dateOfBirth{
+-(void)getNewPINwithRegistrationNumber:(NSString *)registrationNumber andDateOfBirth:(NSString *)dateOfBirth{
     NSString *url = [NSString stringWithFormat:@"http://vitacademicstokensystem.appspot.com/getnewtoken/%@/%@", registrationNumber, dateOfBirth];
     NSURL *finalUrl = [NSURL URLWithString:url];
     NSError* error = nil;
     NSString *result = [NSString stringWithContentsOfURL:finalUrl encoding:NSASCIIStringEncoding error:&error];
     
+    
     if(!result){
-        return nil;
+        NSLog(@"Result not Valid [PIN]");
     }
     else{
         NSData *ttDataFromString = [result dataUsingEncoding:NSUTF8StringEncoding];
@@ -72,13 +113,12 @@
             NSLog(@"Didnt Recive JSON at PIN");
         }
         else{
+            NSLog(@"PIN Object SET");
             NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-            [prefs setObject:[jsonArray valueForKey:@"token"] forKey:@"currentPIN"];
-            [prefs setObject:[jsonArray valueForKey:@"expiry"] forKey:@"PINExpiry"];
+            [prefs setObject:jsonArray forKey:@"PINObject"];
         }
     }
     
-    return result;
 }
 
 - (void)didReceiveMemoryWarning

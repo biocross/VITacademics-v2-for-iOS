@@ -84,9 +84,6 @@
 }
 
 -(void)extractUserInfo{
-    
-    
-    
     FBRequest *request = [FBRequest requestForMe];
     
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -111,8 +108,6 @@
                     }];
                 }
             }
-            
-                
             
             NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
             
@@ -141,7 +136,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.imageData appendData:data]; // Build the image
+    [self.imageData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

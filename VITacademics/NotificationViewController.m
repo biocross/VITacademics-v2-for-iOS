@@ -29,12 +29,6 @@
     [super viewDidLoad];
     self.title = @"Notifications";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"NotificationCell"
                                                    bundle:[NSBundle mainBundle]]
              forCellReuseIdentifier:@"NotificationCell"];
