@@ -54,70 +54,6 @@
     
 }
 
--(IBAction)loginWithFacebook:(id)sender{
-    
-    NSArray *permissionsArray = @[@"user_about_me", @"email"];
-    //[_activityIndicator startAnimating];
-    [_logginInLabel setAlpha:1];
-    
-    PFUser *user = [PFUser currentUser];
-    if (![PFFacebookUtils isLinkedWithUser:user]) {
-        [PFFacebookUtils linkUser:user permissions:permissionsArray block:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                [self extractUserInfo];
-            }
-        }];
-    }
-    
-    
-}
-
--(void)extractUserInfo{
-    FBRequest *request = [FBRequest requestForMe];
-    
-    // Send request to Facebook
-    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        if (!error) {
-            // result is a dictionary with the user's Facebook data
-            NSDictionary *userData = (NSDictionary *)result;
-            
-            NSString *facebookID = userData[@"id"];
-            NSString *name = userData[@"name"];
-            
-            NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-            
-            [preferences removeObjectForKey:@"facebookID"];
-            [preferences removeObjectForKey:@"facebookName"];
-            [preferences setObject:facebookID forKey:@"facebookID"];
-            [preferences setObject:name forKey:@"facebookName"];
-            
-            
-            // Download the user's facebook profile picture
-            self.imageData = [[NSMutableData alloc] init]; // the data will be loaded in here
-            
-            // URL should point to https://graph.facebook.com/{facebookId}/picture?type=large&return_ssl_resources=1
-            NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
-            
-            NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:pictureURL
-                                                                      cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                                  timeoutInterval:2.0f];
-            // Run network request asynchronously
-            NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
-            [urlConnection start];
-            
-            [_logginInLabel setText:@"Done!"];
-            //[_activityIndicator stopAnimating];
-            
-            [self.stepsController showNextStep];
-            [self finalSetup];
-            
-            
-        }
-    }];
-    
-    
-}
-
 - (IBAction)startUsingVITacademics:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTimeTable" object:nil];
     [self.stepsController finishedAllSteps];
@@ -125,15 +61,7 @@
 }
 
 // Called every time a chunk of the data is received
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.imageData appendData:data]; // Build the image
-}
 
-// Called when the entire image is finished downloading
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    // Set the image in the header imageView
-    self.sampleProfilePhoto.image = [UIImage imageWithData:self.imageData];
-}
 
 
 -(void)finalSetup{

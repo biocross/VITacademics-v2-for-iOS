@@ -1,9 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1
+        },
+        "capInsets" : {
+          "right" : 64,
+          "left" : 63
+        }
+      },
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "flag-1.png"
+      "filename" : "flag-1.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

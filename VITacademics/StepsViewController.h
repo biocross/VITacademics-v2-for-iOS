@@ -12,15 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *progressFrame;
 - (IBAction)letsBegin:(id)sender;
--(IBAction)loginWithFacebook:(id)sender;
 -(void)extractUserInfo;
 - (IBAction)startUsingVITacademics:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIImageView *sampleProfilePhoto;
-@property (strong) NSMutableData *imageData;
-
 -(void)finalSetup;
-- (IBAction)skipFacebook:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIImageView *startingImage;
 
@@ -32,9 +27,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *five;
 @property (weak, nonatomic) IBOutlet UIButton *six;
 @property (weak, nonatomic) IBOutlet UIButton *seven;
-
-
-@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
-@property (weak, nonatomic) IBOutlet UILabel *logginInLabel;
 
 @end

@@ -82,16 +82,37 @@
 
 - (IBAction)shareButtonPressed:(id)sender {
     
-
-    //if facebook logged in
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ShareViewNav"];
-    [self presentViewController:vc animated:YES completion:NULL];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    if([prefs objectForKey:@"facebookID"]){
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+            UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ShareViewNav"];
+            [self presentViewController:vc animated:YES completion:NULL];
+    }
+    else
+    {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"FacebookController"];
+        [self presentViewController:vc animated:YES completion:NULL];
+    }
+    
+    
 }
 
 - (IBAction)addFriendButtonPressed:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"AddFriendNav"];
-    [self presentViewController:vc animated:YES completion:NULL];
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    if([prefs objectForKey:@"facebookID"]){
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"AddFriendNav"];
+        [self presentViewController:vc animated:YES completion:NULL];
+    }
+    else
+    {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"FacebookController"];
+        [self presentViewController:vc animated:YES completion:NULL];
+    }
 }
 @end

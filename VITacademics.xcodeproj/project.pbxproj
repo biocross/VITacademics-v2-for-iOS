@@ -113,6 +113,7 @@
 		35DD77BE18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
 		35E2969118DBF70A005074EA /* PageContainerTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */; };
 		35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */; };
+		35EF94B51909151A00854E93 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF94B41909151A00854E93 /* FacebookViewController.m */; };
 		35EFF80B18EC2381009DCD5E /* Attendance.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF80A18EC2381009DCD5E /* Attendance.m */; };
 		35EFF80E18EC2381009DCD5E /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF80D18EC2381009DCD5E /* Marks.m */; };
 		35EFF81118EC2381009DCD5E /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFF81018EC2381009DCD5E /* Subject.m */; };
@@ -280,6 +281,8 @@
 		35E2968F18DBF70A005074EA /* PageContainerTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContainerTimeTableViewController.h; sourceTree = "<group>"; };
 		35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContainerTimeTableViewController.m; sourceTree = "<group>"; };
 		35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsComingSoonCell.xib; sourceTree = "<group>"; };
+		35EF94B31909151A00854E93 /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
+		35EF94B41909151A00854E93 /* FacebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookViewController.m; sourceTree = "<group>"; };
 		35EFF80918EC2381009DCD5E /* Attendance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendance.h; sourceTree = "<group>"; };
 		35EFF80A18EC2381009DCD5E /* Attendance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendance.m; sourceTree = "<group>"; };
 		35EFF80C18EC2381009DCD5E /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
@@ -618,6 +621,8 @@
 				35BC32DC189D950400B2999D /* ShareViewController.m */,
 				35BC0D9D1902FF40007CE6E4 /* AddFriendViewController.h */,
 				35BC0D9E1902FF40007CE6E4 /* AddFriendViewController.m */,
+				35EF94B31909151A00854E93 /* FacebookViewController.h */,
+				35EF94B41909151A00854E93 /* FacebookViewController.m */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				351674C818DF2BD8002AC961 /* VITacademics.xcdatamodeld in Sources */,
 				35EFF81118EC2381009DCD5E /* Subject.m in Sources */,
 				355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */,
+				35EF94B51909151A00854E93 /* FacebookViewController.m in Sources */,
 				35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */,
 				359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */,
 				355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */,

@@ -35,7 +35,7 @@
     [Parse setApplicationId:@"vtpDFHGacMwZIpMtpDaFuu0ToBol9b9nQM9VD57N"
                   clientKey:@"OCKn8dB6wqeGqvSdYbXHgYe9mDGFb2yukyDHT3Fs"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    //[PFFacebookUtils initializeFacebook];
+    [PFFacebookUtils initializeFacebook];
     
     /*
     [Crittercism enableWithAppID:@"526e47368b2e337b2700000a" andDelegate:self andURLFilters:nil disableInstrumentation:NO];

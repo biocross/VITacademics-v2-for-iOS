@@ -37,7 +37,48 @@
     [_tokenValidity setFont:subtitleFont];
     
     
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
+    if(![prefs stringForKey:@"currentPIN"]){
+        
+    }
+    else{
+        [self initUI];
+    }
+    
+}
+
+-(void)initUI{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    self.token.text = [prefs stringForKey:@"currentPIN"];
+}
+    
+
+
+-(NSString *)getNewPINwithRegistrationNumber:(NSString *)registrationNumber andDateOfBirth:(NSString *)dateOfBirth{
+    NSString *url = [NSString stringWithFormat:@"http://vitacademicstokensystem.appspot.com/getnewtoken/%@/%@", registrationNumber, dateOfBirth];
+    NSURL *finalUrl = [NSURL URLWithString:url];
+    NSError* error = nil;
+    NSString *result = [NSString stringWithContentsOfURL:finalUrl encoding:NSASCIIStringEncoding error:&error];
+    
+    if(!result){
+        return nil;
+    }
+    else{
+        NSData *ttDataFromString = [result dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &error];
+        
+        if (!jsonArray) {
+            NSLog(@"Didnt Recive JSON at PIN");
+        }
+        else{
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:[jsonArray valueForKey:@"token"] forKey:@"currentPIN"];
+            [prefs setObject:[jsonArray valueForKey:@"expiry"] forKey:@"PINExpiry"];
+        }
+    }
+    
+    return result;
 }
 
 - (void)didReceiveMemoryWarning

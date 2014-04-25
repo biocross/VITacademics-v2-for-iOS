@@ -66,15 +66,29 @@
                 [self presentViewController:mailCont animated:YES completion:nil];
             }
         }
+    
+        if(indexPath.row == 1){
+            NSString *message = @"https://itunes.apple.com/in/app/vitacademics/id727796987?mt=8";
+            //UIImage *imageToShare = [UIImage imageNamed:@"test.jpg"];
+            NSArray *postItems = @[message]; //add image here if you want
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc]
+                                                    initWithActivityItems:postItems
+                                                    applicationActivities:nil];
+            [self presentViewController:activityVC animated:YES completion:nil];
+        }
     }
-    if(indexPath.row == 1){
-        NSString *message = @"https://itunes.apple.com/in/app/vitacademics/id727796987?mt=8";
-        //UIImage *imageToShare = [UIImage imageNamed:@"test.jpg"];
-        NSArray *postItems = @[message]; //add image here if you want
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc]
-                                                initWithActivityItems:postItems
-                                                applicationActivities:nil];
-        [self presentViewController:activityVC animated:YES completion:nil];
+#warning Add Automatic detection of fb and hence enable or disable.
+    if(indexPath.section == 2){
+        [PFFacebookUtils unlinkUserInBackground:[PFUser currentUser] block:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"The user is no longer associated with their Facebook account.");
+            }
+        }];
+        
+        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+        [preferences removeObjectForKey:@"facebookID"];
+        [preferences removeObjectForKey:@"facebookName"];
+        
     }
     
     
