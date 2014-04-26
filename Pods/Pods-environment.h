@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_Appirater 0
 #define COCOAPODS_VERSION_PATCH_Appirater 2
 
+// CDZQRScanningViewController
+#define COCOAPODS_POD_AVAILABLE_CDZQRScanningViewController
+#define COCOAPODS_VERSION_MAJOR_CDZQRScanningViewController 1
+#define COCOAPODS_VERSION_MINOR_CDZQRScanningViewController 0
+#define COCOAPODS_VERSION_PATCH_CDZQRScanningViewController 7
+
 // DPMeterView
 #define COCOAPODS_POD_AVAILABLE_DPMeterView
 #define COCOAPODS_VERSION_MAJOR_DPMeterView 0
@@ -21,7 +27,7 @@
 // DateTools
 #define COCOAPODS_POD_AVAILABLE_DateTools
 #define COCOAPODS_VERSION_MAJOR_DateTools 1
-#define COCOAPODS_VERSION_MINOR_DateTools 1
+#define COCOAPODS_VERSION_MINOR_DateTools 2
 #define COCOAPODS_VERSION_PATCH_DateTools 0
 
 // NSDate+TimeAgo
@@ -52,7 +58,7 @@
 #define COCOAPODS_POD_AVAILABLE_SFRoundProgressCounterView
 #define COCOAPODS_VERSION_MAJOR_SFRoundProgressCounterView 0
 #define COCOAPODS_VERSION_MINOR_SFRoundProgressCounterView 0
-#define COCOAPODS_VERSION_PATCH_SFRoundProgressCounterView 3
+#define COCOAPODS_VERSION_PATCH_SFRoundProgressCounterView 4
 
 // TTTAttributedLabel
 #define COCOAPODS_POD_AVAILABLE_TTTAttributedLabel

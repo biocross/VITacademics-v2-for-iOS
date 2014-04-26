@@ -111,6 +111,14 @@
 		35D4A319189E51F400F23A28 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D4A318189E51F400F23A28 /* DataController.m */; };
 		35DD77BD18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
 		35DD77BE18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */; };
+		35DE51FC190BBDA3002199B7 /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51EC190BBDA3002199B7 /* bitstream.c */; };
+		35DE51FD190BBDA3002199B7 /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51EE190BBDA3002199B7 /* mask.c */; };
+		35DE51FE190BBDA3002199B7 /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51F0190BBDA3002199B7 /* qrencode.c */; };
+		35DE51FF190BBDA3002199B7 /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51F2190BBDA3002199B7 /* qrinput.c */; };
+		35DE5200190BBDA3002199B7 /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51F4190BBDA3002199B7 /* qrspec.c */; };
+		35DE5201190BBDA3002199B7 /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51F6190BBDA3002199B7 /* rscode.c */; };
+		35DE5202190BBDA3002199B7 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51F8190BBDA3002199B7 /* split.c */; };
+		35DE5203190BBDA3002199B7 /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DE51FB190BBDA3002199B7 /* UIImage+MDQRCode.m */; };
 		35E2969118DBF70A005074EA /* PageContainerTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */; };
 		35E36B3A18A9B5A0005FBFF1 /* FriendsComingSoonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */; };
 		35EF94B51909151A00854E93 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF94B41909151A00854E93 /* FacebookViewController.m */; };
@@ -278,6 +286,22 @@
 		35D4A318189E51F400F23A28 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		35DD77BB18DBF36D0037333B /* FullTimeTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullTimeTableTableViewController.h; sourceTree = "<group>"; };
 		35DD77BC18DBF36D0037333B /* FullTimeTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullTimeTableTableViewController.m; sourceTree = "<group>"; };
+		35DE51EC190BBDA3002199B7 /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		35DE51ED190BBDA3002199B7 /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		35DE51EE190BBDA3002199B7 /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		35DE51EF190BBDA3002199B7 /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		35DE51F0190BBDA3002199B7 /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		35DE51F1190BBDA3002199B7 /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		35DE51F2190BBDA3002199B7 /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		35DE51F3190BBDA3002199B7 /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		35DE51F4190BBDA3002199B7 /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		35DE51F5190BBDA3002199B7 /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		35DE51F6190BBDA3002199B7 /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		35DE51F7190BBDA3002199B7 /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		35DE51F8190BBDA3002199B7 /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		35DE51F9190BBDA3002199B7 /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		35DE51FA190BBDA3002199B7 /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
+		35DE51FB190BBDA3002199B7 /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
 		35E2968F18DBF70A005074EA /* PageContainerTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContainerTimeTableViewController.h; sourceTree = "<group>"; };
 		35E2969018DBF70A005074EA /* PageContainerTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContainerTimeTableViewController.m; sourceTree = "<group>"; };
 		35E36B3918A9B5A0005FBFF1 /* FriendsComingSoonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsComingSoonCell.xib; sourceTree = "<group>"; };
@@ -429,7 +453,7 @@
 			children = (
 				35A99EFC18DD54050060141E /* TimeTableUI */,
 				35B8193918DE7159003FBB72 /* Attendance */,
-				35B8193818DE713D003FBB72 /* Root */,
+				35B8193818DE713D003FBB72 /*   */,
 				35B8193A18DE7172003FBB72 /* Tabs */,
 				35B954F5188C11BD00389DA6 /* Model */,
 				35128E7F18683C6000DBC06D /* User Interface */,
@@ -444,6 +468,7 @@
 		3518D15B1854583000EFC1AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35DE51EA190BBDA3002199B7 /* QR */,
 				35167C9618DE014800B81229 /* 13-target.png */,
 				35167C9818DE020500B81229 /* 83-calendar.png */,
 				35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */,
@@ -574,7 +599,7 @@
 			name = TimeTableUI;
 			sourceTree = "<group>";
 		};
-		35B8193818DE713D003FBB72 /* Root */ = {
+		35B8193818DE713D003FBB72 /*   */ = {
 			isa = PBXGroup;
 			children = (
 				35D27A9E18E885B300D56196 /* AppDelegate.h */,
@@ -584,7 +609,7 @@
 				35D4A317189E51F400F23A28 /* DataController.h */,
 				35D4A318189E51F400F23A28 /* DataController.m */,
 			);
-			name = Root;
+			name = " ";
 			sourceTree = "<group>";
 		};
 		35B8193918DE7159003FBB72 /* Attendance */ = {
@@ -649,6 +674,37 @@
 				35C9DF3418DEED1D000E1260 /* Marks+Operations.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		35DE51EA190BBDA3002199B7 /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				35DE51EB190BBDA3002199B7 /* libqrencode */,
+				35DE51FA190BBDA3002199B7 /* UIImage+MDQRCode.h */,
+				35DE51FB190BBDA3002199B7 /* UIImage+MDQRCode.m */,
+			);
+			path = QR;
+			sourceTree = "<group>";
+		};
+		35DE51EB190BBDA3002199B7 /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				35DE51EC190BBDA3002199B7 /* bitstream.c */,
+				35DE51ED190BBDA3002199B7 /* bitstream.h */,
+				35DE51EE190BBDA3002199B7 /* mask.c */,
+				35DE51EF190BBDA3002199B7 /* mask.h */,
+				35DE51F0190BBDA3002199B7 /* qrencode.c */,
+				35DE51F1190BBDA3002199B7 /* qrencode.h */,
+				35DE51F2190BBDA3002199B7 /* qrinput.c */,
+				35DE51F3190BBDA3002199B7 /* qrinput.h */,
+				35DE51F4190BBDA3002199B7 /* qrspec.c */,
+				35DE51F5190BBDA3002199B7 /* qrspec.h */,
+				35DE51F6190BBDA3002199B7 /* rscode.c */,
+				35DE51F7190BBDA3002199B7 /* rscode.h */,
+				35DE51F8190BBDA3002199B7 /* split.c */,
+				35DE51F9190BBDA3002199B7 /* split.h */,
+			);
+			path = libqrencode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -840,8 +896,10 @@
 				35DD77BD18DBF36D0037333B /* FullTimeTableTableViewController.m in Sources */,
 				35D27AA018E885B300D56196 /* AppDelegate.m in Sources */,
 				3518E96F189B9F56001F32A8 /* SubjectDetailsViewController.m in Sources */,
+				35DE51FC190BBDA3002199B7 /* bitstream.c in Sources */,
 				35BC0D9F1902FF40007CE6E4 /* AddFriendViewController.m in Sources */,
 				35BC32DD189D950400B2999D /* ShareViewController.m in Sources */,
+				35DE51FF190BBDA3002199B7 /* qrinput.c in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
 				35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
@@ -856,15 +914,20 @@
 				3584E3F318CDE3530004CF20 /* Pigeon.m in Sources */,
 				35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */,
 				35C9DF2F18DEE39D000E1260 /* Subject+Operations.m in Sources */,
+				35DE5203190BBDA3002199B7 /* UIImage+MDQRCode.m in Sources */,
 				35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */,
+				35DE5201190BBDA3002199B7 /* rscode.c in Sources */,
 				357228E818F57D0C0057771F /* NotificationViewController.m in Sources */,
 				351B91E51904655A005170E0 /* FriendsTableViewCell.m in Sources */,
 				351674C818DF2BD8002AC961 /* VITacademics.xcdatamodeld in Sources */,
+				35DE5200190BBDA3002199B7 /* qrspec.c in Sources */,
+				35DE5202190BBDA3002199B7 /* split.c in Sources */,
 				35EFF81118EC2381009DCD5E /* Subject.m in Sources */,
 				355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */,
 				35EF94B51909151A00854E93 /* FacebookViewController.m in Sources */,
 				35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */,
 				359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */,
+				35DE51FE190BBDA3002199B7 /* qrencode.c in Sources */,
 				355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */,
 				35C9DF3518DEED1D000E1260 /* Marks+Operations.m in Sources */,
 				3518D1B41854CF7600EFC1AF /* StepsViewController.m in Sources */,
@@ -872,6 +935,7 @@
 				357228E518F57CA40057771F /* NotificationCell.m in Sources */,
 				359C60BE185CD25000FB36B2 /* CurrentClassTableViewCell.m in Sources */,
 				3518D19918545FE500EFC1AF /* InitView.m in Sources */,
+				35DE51FD190BBDA3002199B7 /* mask.c in Sources */,
 				35EFF80B18EC2381009DCD5E /* Attendance.m in Sources */,
 				35E2969118DBF70A005074EA /* PageContainerTimeTableViewController.m in Sources */,
 			);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89DA0DF393D74FF09196A150"
-               BuildableName = "libPods-CSNotificationView.a"
-               BlueprintName = "Pods-CSNotificationView"
+               BlueprintIdentifier = "9E3CDB8A4A814B1DBD5F5AB0"
+               BuildableName = "libPods-CDZQRScanningViewController.a"
+               BlueprintName = "Pods-CDZQRScanningViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

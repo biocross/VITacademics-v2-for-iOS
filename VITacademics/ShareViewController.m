@@ -7,6 +7,7 @@
 //
 
 #import "ShareViewController.h"
+#import "UIImage+MDQRCode.h"
 
 @interface ShareViewController ()
 
@@ -27,10 +28,10 @@
 {
     [super viewDidLoad];
     
-    UIFont *PINFont = [UIFont fontWithName:@"MuseoSans-300" size:27];
+    UIFont *PINFont = [UIFont fontWithName:@"MuseoSans-300" size:30];
     [_token setFont:PINFont];
     
-    UIFont *subtitleFont = [UIFont fontWithName:@"MuseoSans-300" size:12];
+    UIFont *subtitleFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
     [_subtitle1 setFont:subtitleFont];
     [_subtitle2 setFont:subtitleFont];
     [_subtitle3 setFont:subtitleFont];
@@ -91,6 +92,8 @@
     NSDictionary *PINObject = [prefs objectForKey:@"PINObject"];
     self.token.text = [PINObject valueForKey:@"token"];
     self.tokenValidity.text = [NSString stringWithFormat:@"PIN valid until: %1.0f hours", [[self formattedExpiryDate] hoursUntil]];
+    self.barcodeImage.image = [UIImage mdQRCodeForString:[PINObject valueForKey:@"token"] size:self.barcodeImage.bounds.size.width fillColor:[UIColor darkGrayColor]];
+    
 }
     
 

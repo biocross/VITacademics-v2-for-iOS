@@ -7,6 +7,7 @@
 //
 
 #import "AddFriendViewController.h"
+#import "CDZQRScanningViewController.h"
 
 @interface AddFriendViewController ()
 
@@ -54,6 +55,26 @@
 }
 
 - (IBAction)addManually:(id)sender {
+}
+
+- (IBAction)scanCode:(id)sender {
+    CDZQRScanningViewController *scanningVC = [CDZQRScanningViewController new];
+    UINavigationController *scanningNavVC = [[UINavigationController alloc] initWithRootViewController:scanningVC];
+    // configure the scanning view controller:
+    scanningVC.resultBlock = ^(NSString *result) {
+        NSLog(@"Scanned: %@", result);
+        [scanningNavVC dismissViewControllerAnimated:YES completion:nil];
+    };
+    scanningVC.cancelBlock = ^() {
+        [scanningNavVC dismissViewControllerAnimated:YES completion:nil];
+    };
+    scanningVC.errorBlock = ^(NSError *error) {
+        // todo: show a UIAlertView orNSLog the error
+        [scanningNavVC dismissViewControllerAnimated:YES completion:nil];
+    };
+    
+    scanningNavVC.modalPresentationStyle = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? UIModalPresentationFullScreen : UIModalPresentationFormSheet;
+    [self presentViewController:scanningNavVC animated:YES completion:nil];
 }
 
 - (IBAction)cancelButton:(id)sender {

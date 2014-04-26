@@ -19,4 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *subtitle2;
 @property (weak, nonatomic) IBOutlet UILabel *subtitle3;
 
+@property (weak, nonatomic) IBOutlet UIImageView *barcodeImage;
+@property (weak, nonatomic) IBOutlet UILabel *barcodeLabel;
 @end

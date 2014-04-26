@@ -101,6 +101,8 @@ Assuming you have added the localization to your project, `DateTools` currently 
 - th (Thai)
 - uk (Ukrainian)
 - is (Icelandic)
+- id (Indonesian)
+- ca (Catalan)
 
 If you know a language not listed here, please consider submitting a translation. [Localization codes by language](http://stackoverflow.com/questions/3040677/locale-codes-for-iphone-lproj-folders).
 
@@ -137,10 +139,6 @@ NSInteger day = [date dayWithCalendar:calendar];
 ```
 
 If you would like to override the default calendar that DateTools uses, simply change it in the <code>defaultCalendar</code> method of <code>NSDate+DateTools.m</code>.
-
-**Note on Performance** 
-
-It has been accurately pointed out that using the . notation getters may lead to a performance hit when using them in a UITableVeiw. This is due to a new NSCalendar instance being created every time. If this is something you are concerned about, please, use the <code>xxxWithCalendar:</code> methods to save on the repeated calendar allocations.
 
 ####Date Editing
 
