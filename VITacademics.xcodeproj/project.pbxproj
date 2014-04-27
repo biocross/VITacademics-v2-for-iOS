@@ -453,7 +453,7 @@
 			children = (
 				35A99EFC18DD54050060141E /* TimeTableUI */,
 				35B8193918DE7159003FBB72 /* Attendance */,
-				35B8193818DE713D003FBB72 /*   */,
+				35B8193818DE713D003FBB72 /* Root */,
 				35B8193A18DE7172003FBB72 /* Tabs */,
 				35B954F5188C11BD00389DA6 /* Model */,
 				35128E7F18683C6000DBC06D /* User Interface */,
@@ -599,7 +599,7 @@
 			name = TimeTableUI;
 			sourceTree = "<group>";
 		};
-		35B8193818DE713D003FBB72 /*   */ = {
+		35B8193818DE713D003FBB72 /* Root */ = {
 			isa = PBXGroup;
 			children = (
 				35D27A9E18E885B300D56196 /* AppDelegate.h */,
@@ -609,7 +609,7 @@
 				35D4A317189E51F400F23A28 /* DataController.h */,
 				35D4A318189E51F400F23A28 /* DataController.m */,
 			);
-			name = " ";
+			name = Root;
 			sourceTree = "<group>";
 		};
 		35B8193918DE7159003FBB72 /* Attendance */ = {

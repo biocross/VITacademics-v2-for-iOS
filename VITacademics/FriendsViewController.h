@@ -19,4 +19,5 @@
 @property (retain, nonatomic) UISearchBar *searchBar;
 @property (retain, nonatomic) NSString *searchText;
 
+@property (strong) NSArray *friends;
 @end

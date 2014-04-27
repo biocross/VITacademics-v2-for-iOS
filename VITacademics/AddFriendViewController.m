@@ -8,6 +8,8 @@
 
 #import "AddFriendViewController.h"
 #import "CDZQRScanningViewController.h"
+#import "VITxAPI.h"
+#import "Friend+Operations.h"
 
 @interface AddFriendViewController ()
 
@@ -37,25 +39,65 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)addWithPIN:(id)sender {
+    
 }
 
 - (IBAction)addManually:(id)sender {
+    
 }
+
+-(void)getCredentialsFromPIN:(NSString *)PIN{
+    
+    dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
+    dispatch_async(downloadQueue, ^{
+        
+        NSString *url = [NSString stringWithFormat:@"http://vitacademicstokensystem.appspot.com/accesstoken/%@", PIN];
+        NSURL *finalUrl = [NSURL URLWithString:url];
+        NSError* error = nil;
+        NSString *result = [NSString stringWithContentsOfURL:finalUrl encoding:NSASCIIStringEncoding error:&error];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(!result){
+                NSLog(@"Result not Valid [Creds from PIN]");
+            }
+            else{
+                NSError* error2 = nil;
+                NSData *ttDataFromString = [result dataUsingEncoding:NSUTF8StringEncoding];
+                NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: ttDataFromString options: NSJSONReadingMutableContainers error: &error2];
+                
+                if (!jsonArray) {
+                    NSLog(@"Didnt Recive JSON at CredsFromPIN");
+                }
+                else{
+                    NSLog(@"Got Creds");
+                    [self addFriendwithRegistrationNumber:[jsonArray valueForKey:@"regno"] andDateOfBirth:[jsonArray valueForKey:@"dob"]];
+                }
+            }
+        });
+        
+    });//end of GCD
+}
+
+-(void)addFriendwithRegistrationNumber:(NSString *)registrationNumber andDateOfBirth:(NSString *)dateOfBirth{
+    VITxAPI *handler = [[VITxAPI alloc] init];
+    DataManager *sharedManager = [DataManager sharedManager];
+    
+    dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
+    dispatch_async(downloadQueue, ^{
+        NSString *timeTable = [handler loadTimeTableWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(timeTable){
+                [Friend insertFriendWithName:registrationNumber withTimetable:timeTable withPicture:nil withFacebookID:@"sample" withRegistrationNumber:registrationNumber withDateOfBirth:dateOfBirth WithContext:sharedManager.context];
+            }
+        });
+        
+    });//end of GCD
+
+}
+
 
 - (IBAction)scanCode:(id)sender {
     CDZQRScanningViewController *scanningVC = [CDZQRScanningViewController new];
@@ -63,6 +105,7 @@
     // configure the scanning view controller:
     scanningVC.resultBlock = ^(NSString *result) {
         NSLog(@"Scanned: %@", result);
+        [self getCredentialsFromPIN:result];
         [scanningNavVC dismissViewControllerAnimated:YES completion:nil];
     };
     scanningVC.cancelBlock = ^() {

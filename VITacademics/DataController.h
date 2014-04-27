@@ -20,6 +20,9 @@
 - (NSArray *)getAllSubjects;
 - (void)initializeDataSources;
 - (void)invalidateCurrentData;
+-(NSArray *)getFriends;
+
+
 @property NSManagedObjectContext *context;
 @property (strong) NSArray *allSubjects;
 

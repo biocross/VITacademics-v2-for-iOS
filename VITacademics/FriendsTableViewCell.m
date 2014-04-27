@@ -26,6 +26,9 @@
     
     [self.friendname setFont:[UIFont fontWithName:@"MuseoSans-300" size:16]];
     [self.friendClassStatus setFont:[UIFont fontWithName:@"MuseoSans-300" size:14]];
+    
+    self.friendname.text = self.friend.name;
+    self.friendClassStatus.text = self.friend.registrationNumber;
 }
 
 @end

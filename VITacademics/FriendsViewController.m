@@ -32,6 +32,9 @@
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"FriendCell"];
     
+    self.friends = [[NSArray alloc] init];
+    self.friends = [[DataManager sharedManager] getFriends];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +67,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 4;
+    if(![self.friends count]){
+        NSLog(@"No Friends added yet!");
+    }
+    
+    return [self.friends count];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -76,6 +83,7 @@
 {
     
     FriendsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
+    cell.friend = self.friends[indexPath.row];
     [cell initCellData];
     return cell;
 }

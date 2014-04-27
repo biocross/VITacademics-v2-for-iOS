@@ -168,6 +168,15 @@
 }
 
 
+-(NSArray *)getFriends{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
+    request.predicate = nil;
+    request.sortDescriptors = nil;
+    
+    return [self.context executeFetchRequest:request error:nil];
+}
+
+
 
 
 @end
