@@ -19,7 +19,6 @@
 @implementation MarksViewController
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,7 +40,6 @@
     [barChart setYValues:@[[NSNumber numberWithFloat:quiz1Marks], [NSNumber numberWithFloat:quiz2Marks], [NSNumber numberWithFloat:quiz3Marks], [NSNumber numberWithFloat:assignmentMarks]]];
     [barChart setYValueMax:5];
     //[barChart setStrokeColors:@[PNGreen,PNGreen,PNRed,PNGreen]];
-    
     
     [self.view addSubview:barChart];
     

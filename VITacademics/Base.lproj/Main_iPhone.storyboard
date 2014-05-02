@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ubl-cD-Rbs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ubl-cD-Rbs">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -1086,7 +1086,7 @@
         <!--Add Friend View Controller - Add Friend-->
         <scene sceneID="Fs7-ce-vDl">
             <objects>
-                <viewController storyboardIdentifier="AddFriendNav" id="87D-LM-TVo" customClass="AddFriendViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddFriend" id="87D-LM-TVo" customClass="AddFriendViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ieb-iz-Ffp"/>
                         <viewControllerLayoutGuide type="bottom" id="Lod-rg-BTy"/>
@@ -1129,24 +1129,6 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kO6-iZ-pCf">
-                                <rect key="frame" x="0.0" y="30" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Add Friend" id="YBI-hX-dia">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="oF1-q1-Icf">
-                                            <connections>
-                                                <action selector="cancelButton:" destination="87D-LM-TVo" id="RyU-Wx-H7h"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-8P-nrZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items/>
-                            </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z95-hy-Y8t">
                                 <rect key="frame" x="122" y="212" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1168,7 +1150,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Friend" id="8o9-eh-Xaf"/>
+                    <navigationItem key="navigationItem" title="Add Friend" id="8o9-eh-Xaf">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ojs-jB-YNE">
+                            <connections>
+                                <action selector="cancelButton:" destination="87D-LM-TVo" id="JET-6H-ahZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="subtitle1" destination="AJG-XH-6zz" id="uTI-sY-ge6"/>
                         <outlet property="subtitle2" destination="Slo-iu-7SE" id="4bE-BB-s2L"/>
@@ -1176,12 +1164,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkq-ry-FoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="-572"/>
+            <point key="canvasLocation" x="1927" y="-572"/>
         </scene>
         <!--Share View Controller - Share-->
         <scene sceneID="tjk-OS-CpT">
             <objects>
-                <viewController storyboardIdentifier="ShareViewNav" title="Share" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5JQ-B4-ny6" customClass="ShareViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareView" title="Share" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5JQ-B4-ny6" customClass="ShareViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MRp-bh-DYT"/>
                         <viewControllerLayoutGuide type="bottom" id="4Ch-L1-sVJ"/>
@@ -1225,24 +1213,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-fr-5h7">
-                                <rect key="frame" x="0.0" y="30" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Share" id="IiL-3p-OE5">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="nQV-8K-3h5">
-                                            <connections>
-                                                <action selector="cancelButton:" destination="5JQ-B4-ny6" id="Vcc-BO-8BD"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LmB-zs-p2n">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items/>
-                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvb-vI-SA0">
                                 <rect key="frame" x="115" y="324" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1260,7 +1230,12 @@
                     <navigationItem key="navigationItem" title="Share" id="zcD-g4-DVf">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="00g-gV-5Er">
                             <connections>
-                                <action selector="cancelButtonPressed:" destination="5JQ-B4-ny6" id="t0X-Qw-cUF"/>
+                                <action selector="cancelButton:" destination="5JQ-B4-ny6" id="ZdO-ce-nbp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Reset PIN" id="cAJ-3v-YRP">
+                            <connections>
+                                <action selector="resetPIN:" destination="5JQ-B4-ny6" id="noJ-3e-RxF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1274,7 +1249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihy-pw-oov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2111" y="-572"/>
+            <point key="canvasLocation" x="2704" y="-572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gju-Uh-8PF">
@@ -1329,6 +1304,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhh-2o-fwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1182" y="105"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XcX-eo-Ava">
+            <objects>
+                <navigationController storyboardIdentifier="AddFriendNav" automaticallyAdjustsScrollViewInsets="NO" id="75D-CG-aBi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KsX-an-xtt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="87D-LM-TVo" kind="relationship" relationship="rootViewController" id="e1k-RM-OpB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L8D-zE-zGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="-572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HCO-jL-aL3">
+            <objects>
+                <navigationController storyboardIdentifier="ShareViewNav" automaticallyAdjustsScrollViewInsets="NO" id="WXp-6M-O5N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lfq-UK-OqB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5JQ-B4-ny6" kind="relationship" relationship="rootViewController" id="4pl-42-vrq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRO-BA-XHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2297" y="-572"/>
         </scene>
     </scenes>
     <resources>

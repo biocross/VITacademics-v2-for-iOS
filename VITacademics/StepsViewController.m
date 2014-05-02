@@ -135,22 +135,7 @@
     //Loading Marks
     
     //Creating Binding on Parse
-    if([PFFacebookUtils isLinkedWithUser:currentUser]){
-        PFObject *gameScore = [PFObject objectWithClassName:@"Bindings"];
-        gameScore[@"registrationNumber"] = registrationNumber;
-        gameScore[@"facebookID"] = [preferences objectForKey:@"facebookID"];
-        [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            self.four.enabled = NO;
-            if(!error){
-                NSLog(@"Saved Binding");
-            }
-        }];
-    }
-    else{
-        [self.four setTitle:@"Facebook Not Connected" forState:UIControlStateNormal];
-        self.four.enabled = NO;
-        
-    }
+    self.four.enabled = NO;
     
     
     

@@ -37,9 +37,12 @@
     [_subtitle3 setFont:subtitleFont];
     [_tokenValidity setFont:subtitleFont];
     
+    [self willPopulatePIN];
     
+}
+
+-(void)willPopulatePIN{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
     if(![prefs objectForKey:@"PINObject"]){
         dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
         dispatch_async(downloadQueue, ^{
@@ -52,7 +55,7 @@
             });
             
         });//end of GCD
-
+        
     }
     else{
         if([[NSDate date] isEarlierThan:[self formattedExpiryDate]]){
@@ -73,7 +76,6 @@
         }
         
     }
-    
 }
 
 -(NSDate *)formattedExpiryDate{
@@ -142,5 +144,10 @@
 
 - (IBAction)cancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)resetPIN:(id)sender {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs removeObjectForKey:@"PINObject"];
+    [self willPopulatePIN];
 }
 @end

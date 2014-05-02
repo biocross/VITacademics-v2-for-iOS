@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3504D006190D76310016DF61 /* OLDTimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3504D005190D76310016DF61 /* OLDTimeTable.m */; };
 		3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3510174E18661DC7005F4101 /* StoreKit.framework */; };
 		35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35128E80186844E500DBC06D /* NoClassRightNow.xib */; };
 		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
@@ -139,6 +140,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3504D004190D76310016DF61 /* OLDTimeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLDTimeTable.h; sourceTree = "<group>"; };
+		3504D005190D76310016DF61 /* OLDTimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLDTimeTable.m; sourceTree = "<group>"; };
 		3510174E18661DC7005F4101 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		35128E80186844E500DBC06D /* NoClassRightNow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoClassRightNow.xib; path = ../NoClassRightNow.xib; sourceTree = "<group>"; };
 		35155D7F18781A8100513E05 /* SettingsTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTabViewController.h; sourceTree = "<group>"; };
@@ -584,6 +587,8 @@
 				356802AC1859118E00C41D69 /* VITxAPI.m */,
 				35A751F0185B91E6009FC74D /* TimeTable.h */,
 				35A751F1185B91E6009FC74D /* TimeTable.m */,
+				3504D004190D76310016DF61 /* OLDTimeTable.h */,
+				3504D005190D76310016DF61 /* OLDTimeTable.m */,
 			);
 			name = APIs;
 			sourceTree = "<group>";
@@ -901,6 +906,7 @@
 				35BC32DD189D950400B2999D /* ShareViewController.m in Sources */,
 				35DE51FF190BBDA3002199B7 /* qrinput.c in Sources */,
 				3518D1611854583000EFC1AF /* main.m in Sources */,
+				3504D006190D76310016DF61 /* OLDTimeTable.m in Sources */,
 				35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */,
 				35A751F5185B9608009FC74D /* TabViewController.m in Sources */,
 				35BC0D991902EBFD007CE6E4 /* Friend+Operations.m in Sources */,

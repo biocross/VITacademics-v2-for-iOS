@@ -33,17 +33,15 @@
         NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
         if([preferences objectForKey:@"registrationNumber"]){
             //[self setSelectedIndex:2];
-            
+
         }
         else{
             RMStepsController *firstStep = [self.storyboard instantiateViewControllerWithIdentifier:@"TutNav"];
             firstStep.modalPresentationStyle = UIModalPresentationFormSheet;
             [self presentViewController:firstStep animated:YES completion:nil];
-            
+
         }
     });
-    
-    
     
 }
 
@@ -55,6 +53,7 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 @end

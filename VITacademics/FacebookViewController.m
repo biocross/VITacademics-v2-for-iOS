@@ -43,7 +43,7 @@
     //[_activityIndicator startAnimating];
     [self.loadingLabel setAlpha:1];
     [self.activityIndicator setAlpha:1];
-    [self.activityIndicator stopAnimating];
+    [self.activityIndicator startAnimating];
     
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         if (!user) {
@@ -78,7 +78,6 @@
 }
 
 -(void)hideIndicators{
-    [_activityIndicator setAlpha:0];
     [_activityIndicator stopAnimating];
     [_loadingLabel setAlpha:0];
 }
@@ -110,7 +109,6 @@
             }
             
             NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-            
             [preferences removeObjectForKey:@"facebookID"];
             [preferences removeObjectForKey:@"facebookName"];
             [preferences setObject:facebookID forKey:@"facebookID"];
@@ -125,6 +123,21 @@
                                                                   timeoutInterval:2.0f];
             NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
             [urlConnection start];
+            
+            if([PFFacebookUtils isLinkedWithUser:currentUser]){
+                PFObject *gameScore = [PFObject objectWithClassName:@"Bindings"];
+                gameScore[@"registrationNumber"] = [preferences objectForKey:@"registrationNumber"];
+                gameScore[@"facebookID"] = [preferences objectForKey:@"facebookID"];
+                [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if(!error){
+                        NSLog(@"Saved Binding");
+                    }
+                }];
+            }
+            else{
+                NSLog(@"Couldn't Create Binding");
+                
+            }
             
             [self hideIndicators];
             [self dismissViewControllerAnimated:YES completion:nil];

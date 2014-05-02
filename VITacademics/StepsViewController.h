@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *progressFrame;
 - (IBAction)letsBegin:(id)sender;
--(void)extractUserInfo;
 - (IBAction)startUsingVITacademics:(id)sender;
 
 -(void)finalSetup;

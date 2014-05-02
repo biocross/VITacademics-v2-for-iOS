@@ -21,4 +21,5 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *barcodeImage;
 @property (weak, nonatomic) IBOutlet UILabel *barcodeLabel;
+- (IBAction)resetPIN:(id)sender;
 @end

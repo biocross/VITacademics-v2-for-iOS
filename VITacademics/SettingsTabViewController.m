@@ -8,6 +8,7 @@
 
 #import "SettingsTabViewController.h"
 #import "SettingsViewController.h"
+#import "AppDelegate.h"
 
 @interface SettingsTabViewController ()
 
@@ -89,9 +90,10 @@
         [preferences removeObjectForKey:@"facebookID"];
         [preferences removeObjectForKey:@"facebookName"];
         
+        
+        
+        
     }
-    
-    
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -111,6 +113,24 @@
         NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [new objectForKey:@"registrationNumber"]];
         [new removeObjectForKey:ttKey];
         [new removeObjectForKey:@"dateOfBirth"];
+        
+        NSManagedObjectContext *context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Subject" inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        
+        NSError *error;
+        NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
+        
+        
+        for (NSManagedObject *managedObject in items) {
+            [context deleteObject:managedObject];
+            NSLog(@"%@ object deleted",context);
+        }
+        if (![context save:&error]) {
+            NSLog(@"Error deleting %@ - error:%@",context,error);
+        }
         
         [self.tabBarController viewDidLoad];
     }

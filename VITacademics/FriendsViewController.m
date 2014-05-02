@@ -35,6 +35,7 @@
     self.friends = [[NSArray alloc] init];
     self.friends = [[DataManager sharedManager] getFriends];
     
+    
 }
 
 - (void)didReceiveMemoryWarning

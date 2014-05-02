@@ -20,7 +20,6 @@
     NSArray *marksArray;
     NSMutableArray *refreshedArray;
     
-    
 }
 @property (strong, nonatomic) NSArray *subjects;
 @end
@@ -35,8 +34,6 @@
     return _subjects;
 }
 */
-
-
 
 - (void)awakeFromNib
 {

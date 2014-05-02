@@ -19,6 +19,7 @@
 
 
 
+
 /*
  Bugs / TODO:
  - [FIXED] [was due to no upload] Last Updated Label in detail View is sometime colored, and sometimes not.
@@ -44,7 +45,14 @@
  - [FIXED] a bug in today upcoming class for showning "in xx time".
  - [CANCELLED] New Captcha View Controller
  - [FIXED] Full Swipeable timeTable
- 
+ - [FIXED - added Reset PIN Option] Check PIN validity everytime Share Launches
+ - [FIXED] Toolbar jugaad in FriendsSubViews
+ - [DEFERRED] Add enable all, disable all toggle in NotificationView
+ - [FIXED] Remove timeTable string from today - TimeTable.h call.
+ - [DERERRED] Set Default notifications as YES to all
+ - [DEFERRED] Notifications System
+ - [DEFERRED] Fix Notification Model Type (Bool, NSNumber, or what?)
+
  
  [CRITICAL]
  - Fix iPad Crash
@@ -52,24 +60,18 @@
  
  [IMPORTANT]
  - Check server status - See iOS Documentaion for response.code
- - Notifications System
  - Remove Transparency from cell to increase performance
  - Switch to new dateTools Library
- - Fix Notification Model Type (Bool, NSNumber, or what?)
- - Set Default notifications as YES to all
  - Add New Progress Bar Integration in the finalSetup
- - Fix Misalignment in DetailsViewController\
+ - Fix Misalignment in DetailsViewController
  - When runs for the first time from old version, timetable is empty.
  - Add Friends feature.
+ - Add Blocked list on Parse for those who have privacy concerns.
  
  
  [LOW PRIORITY]
  - add days to details view (like thursday etc)
- - error 500 handling (do it using a status poll?)
- - ENABLE CANCEL IN THE WIZARD
- - Remove timeTable string from today - TimeTable.h call.
- - Add enable all, disable all toggle in NotificationView
- - Toolbar jugaad in FriendsSubViews
+
  
  */
 @interface TodayViewController (){
@@ -158,7 +160,7 @@
 - (void)refreshTable{
     NSLog(@"refreshing table");
     @try {
-        currentClass = [[ofToday getCurrentClass] isKindOfClass:[NSDictionary class]] ? [ofToday getCurrentClass] : 0;
+        currentClass = [[ofToday getCurrentClass] isKindOfClass:[Subject class]] ? [ofToday getCurrentClass] : 0;
     }
     @catch (NSException *exception) {
         NSLog(@"%@", [exception description]);

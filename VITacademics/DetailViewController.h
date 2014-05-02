@@ -45,7 +45,6 @@
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *roundButton;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *missLabel;
 @property (weak, nonatomic) IBOutlet UILabel *attendLabel;
 
