@@ -50,7 +50,8 @@
 }
 
 -(void)getCredentialsFromPIN:(NSString *)PIN{
-    
+    [MWKProgressIndicator updateMessage:@"Verifying PIN..."];
+    [MWKProgressIndicator show];
     dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
     dispatch_async(downloadQueue, ^{
         
@@ -73,7 +74,14 @@
                 }
                 else{
                     NSLog(@"Got Creds");
-                    [self addFriendwithRegistrationNumber:[jsonArray valueForKey:@"regno"] andDateOfBirth:[jsonArray valueForKey:@"dob"]];
+                    [MWKProgressIndicator dismiss];
+                    
+                    if([[jsonArray valueForKey:@"status"] isEqualToString:@"success"]){
+                       [self addFriendwithRegistrationNumber:[jsonArray valueForKey:@"regno"] andDateOfBirth:[jsonArray valueForKey:@"dob"]];
+                    }
+                    else{
+                        [MWKProgressIndicator showErrorMessage:@"Invalid PIN!"];
+                    }
                 }
             }
         });
@@ -85,12 +93,20 @@
     VITxAPI *handler = [[VITxAPI alloc] init];
     DataManager *sharedManager = [DataManager sharedManager];
     
+    [MWKProgressIndicator updateMessage:@"Loading Friend's TT"];
+    [MWKProgressIndicator show];
+    
     dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
     dispatch_async(downloadQueue, ^{
         NSString *timeTable = [handler loadTimeTableWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [MWKProgressIndicator dismiss];
             if(timeTable){
                 [Friend insertFriendWithName:registrationNumber withTimetable:timeTable withPicture:nil withFacebookID:@"sample" withRegistrationNumber:registrationNumber withDateOfBirth:dateOfBirth WithContext:sharedManager.context];
+                [MWKProgressIndicator showSuccessMessage:@"Friend Added!"];
+            }
+            else{
+                [MWKProgressIndicator showErrorMessage:@"Error adding friend"];
             }
         });
         
@@ -122,5 +138,34 @@
 
 - (IBAction)cancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)addFriendUsingCredentialsPressed:(id)sender {
+    if([_regNoTextField.text length] > 7){
+        if([_dobTextField.text length] == 8){
+            [self addFriendwithRegistrationNumber:_regNoTextField.text andDateOfBirth:_dobTextField.text];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check the credentials you have entered" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+            [alert show];
+        }
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check the credentials you have entered" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+    }
+}
+
+- (IBAction)addFriendUsingPINpressed:(id)sender {
+    if(_PINTextField.text){
+        [self getCredentialsFromPIN:_PINTextField.text];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

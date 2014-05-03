@@ -1103,6 +1103,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addWithPIN:" destination="87D-LM-TVo" eventType="touchUpInside" id="Zlh-jA-Iep"/>
+                                    <segue destination="2Oc-Tq-N7h" kind="push" id="X3g-TG-O0J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-bp-LSk">
@@ -1113,6 +1114,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addManually:" destination="87D-LM-TVo" eventType="touchUpInside" id="acy-9j-1Cz"/>
+                                    <segue destination="ovF-5F-5iY" kind="push" id="DLh-ic-Nu3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add your friend using the PIN that they gave you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="AJG-XH-6zz">
@@ -1164,7 +1166,117 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkq-ry-FoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="-572"/>
+            <point key="canvasLocation" x="2655" y="-572"/>
+        </scene>
+        <!--Add Friend View Controller - PIN-->
+        <scene sceneID="ZdD-cf-sL6">
+            <objects>
+                <viewController id="2Oc-Tq-N7h" customClass="AddFriendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EE8-Dy-bve"/>
+                        <viewControllerLayoutGuide type="bottom" id="sOH-qv-fIU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y2J-vt-9C8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PIN " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z57-2G-UGe">
+                                <rect key="frame" x="112" y="196" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2Oc-Tq-N7h" id="mrF-Rp-UYZ"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the PIN that your friend gave you:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="WT6-y7-JG4">
+                                <rect key="frame" x="20" y="129" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNx-Wv-s53">
+                                <rect key="frame" x="28" y="274" width="264" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Friend">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFriendUsingPINpressed:" destination="2Oc-Tq-N7h" eventType="touchUpInside" id="kld-1v-jTb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PIN" id="yG4-07-ae1"/>
+                    <connections>
+                        <outlet property="PINTextField" destination="Z57-2G-UGe" id="vbU-yO-sfI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e95-qW-aUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3375" y="-574"/>
+        </scene>
+        <!--Add Friend View Controller - Credentials-->
+        <scene sceneID="3zj-f6-ql0">
+            <objects>
+                <viewController id="ovF-5F-5iY" customClass="AddFriendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bee-Fp-dze"/>
+                        <viewControllerLayoutGuide type="bottom" id="bBR-dw-kFc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mIA-It-oa1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Registration Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOV-ac-V2v">
+                                <rect key="frame" x="20" y="186" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ovF-5F-5iY" id="FZg-s4-AFP"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth (DDMMYYYY)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYA-Y7-DUL">
+                                <rect key="frame" x="20" y="241" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ovF-5F-5iY" id="rFU-2J-Ezy"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your friend's credentials:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-vG-5M4">
+                                <rect key="frame" x="20" y="126" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6A-NU-5Ht">
+                                <rect key="frame" x="28" y="308" width="264" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Friend">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFriendUsingCredentialsPressed:" destination="ovF-5F-5iY" eventType="touchUpInside" id="0tc-HI-NAJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Credentials" id="9qz-bp-8AU"/>
+                    <connections>
+                        <outlet property="dobTextField" destination="SYA-Y7-DUL" id="bEv-hh-xSl"/>
+                        <outlet property="regNoTextField" destination="gOV-ac-V2v" id="qdg-CP-p0i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1H-ZZ-D0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3021" y="-572"/>
         </scene>
         <!--Share View Controller - Share-->
         <scene sceneID="tjk-OS-CpT">
@@ -1249,7 +1361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihy-pw-oov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704" y="-572"/>
+            <point key="canvasLocation" x="1912" y="-572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gju-Uh-8PF">
@@ -1321,7 +1433,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8D-zE-zGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="-572"/>
+            <point key="canvasLocation" x="2290" y="-572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCO-jL-aL3">
@@ -1339,7 +1451,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRO-BA-XHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2297" y="-572"/>
+            <point key="canvasLocation" x="1562" y="-572"/>
         </scene>
     </scenes>
     <resources>
