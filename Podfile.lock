@@ -1,5 +1,6 @@
 PODS:
   - Appirater (2.0.2)
+  - Canvas (0.1.1)
   - CDZQRScanningViewController (1.0.7)
   - DateTools (1.2.0)
   - DPMeterView (0.0.1)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Appirater
+  - Canvas
   - CDZQRScanningViewController
   - DateTools
   - DPMeterView (= 0.0.1)
@@ -26,6 +28,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
+  Canvas: f1911025fc9ec9c7339df6e4399c90c87ce6b631
   CDZQRScanningViewController: 8a4eff67b0b9adf54bc19fc87f7c071be368e6a3
   DateTools: 6989dcb0df9dad3ae499f5e9efbd988116586f67
   DPMeterView: 0cfa41936a00d60938cdfd8a298ce399bc1bbd53

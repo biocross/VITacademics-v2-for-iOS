@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A160C6A8A6648F29984E448"
+               BlueprintIdentifier = "175D8E85A6F4454BAE5334AE"
                BuildableName = "libPods-SFRoundProgressCounterView.a"
                BlueprintName = "Pods-SFRoundProgressCounterView"
                ReferencedContainer = "container:Pods.xcodeproj">

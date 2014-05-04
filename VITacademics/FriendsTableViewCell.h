@@ -16,4 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *friendname;
 @property (weak, nonatomic) IBOutlet UILabel *friendClassStatus;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+
+@property NSMutableData *imageData;
+
+@property (strong) NSManagedObjectContext *context;
 @end

@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_CDZQRScanningViewController 0
 #define COCOAPODS_VERSION_PATCH_CDZQRScanningViewController 7
 
+// Canvas
+#define COCOAPODS_POD_AVAILABLE_Canvas
+#define COCOAPODS_VERSION_MAJOR_Canvas 0
+#define COCOAPODS_VERSION_MINOR_Canvas 1
+#define COCOAPODS_VERSION_PATCH_Canvas 1
+
 // DPMeterView
 #define COCOAPODS_POD_AVAILABLE_DPMeterView
 #define COCOAPODS_VERSION_MAJOR_DPMeterView 0
