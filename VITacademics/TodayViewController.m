@@ -12,7 +12,6 @@
 #import "CurrentClassTableViewCell.h"
 #import "UpcomingClassCell.h"
 #import "Subject.h"
-#import "SFRoundProgressCounterView.h"
 #import "NotificationViewController.h"
 
 
@@ -53,6 +52,7 @@
  - [DEFERRED] Notifications System
  - [DEFERRED] Fix Notification Model Type (Bool, NSNumber, or what?)
  - [FIXED] Remove Transparency from cell to increase performance
+ - [FIXED] Add Friends Deletion Feature.
 
  
  [CRITICAL]
@@ -65,7 +65,6 @@
  - Add New Progress Bar Integration in the finalSetup
  - Fix Misalignment in DetailsViewController
  - When runs for the first time from old version, timetable is empty.
- - Add Friends Deletion Feature feature.
  - Add Blocked list on Parse for those who have privacy concerns.
  
  

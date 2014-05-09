@@ -11,6 +11,10 @@
 #import "VITxAPI.h"
 #import "Friend+Operations.h"
 
+
+
+
+
 @interface AddFriendViewController ()
 
 @end
@@ -103,6 +107,7 @@
             [MWKProgressIndicator dismiss];
             if(timeTable){
                 [Friend insertFriendWithName:registrationNumber withTimetable:timeTable withPicture:nil withFacebookID:@"sample" withRegistrationNumber:registrationNumber withDateOfBirth:dateOfBirth WithContext:sharedManager.context];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadFriends" object:nil];
                 [MWKProgressIndicator showSuccessMessage:@"Friend Added!"];
             }
             else{
@@ -111,7 +116,7 @@
         });
         
     });//end of GCD
-
+    
 }
 
 

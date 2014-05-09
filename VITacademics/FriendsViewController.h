@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Friend.h"
 #import "FriendsTableViewCell.h"
+#import "AddFriendViewController.h"
 
 @interface FriendsViewController : UITableViewController
 
@@ -19,5 +20,5 @@
 @property (retain, nonatomic) UISearchBar *searchBar;
 @property (retain, nonatomic) NSString *searchText;
 
-@property (strong) NSArray *friends;
+@property (strong) NSMutableArray *friends;
 @end

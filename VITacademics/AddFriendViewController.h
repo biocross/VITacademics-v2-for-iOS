@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface AddFriendViewController : UIViewController <UITextFieldDelegate>
+
+
 - (IBAction)addWithPIN:(id)sender;
 - (IBAction)addManually:(id)sender;
 - (IBAction)scanCode:(id)sender;

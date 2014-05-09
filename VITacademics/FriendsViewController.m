@@ -24,6 +24,10 @@
     return self;
 }
 
+-(void)friendWasAdded{
+    [self initData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,6 +37,11 @@
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"FriendCell"];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(friendWasAdded)
+     name:@"reloadFriends"
+     object:nil];
     
     [self initData];
     
@@ -45,8 +54,10 @@
 }
 
 -(void)initData{
-    self.friends = [[NSArray alloc] init];
-    self.friends = [[DataManager sharedManager] getFriends];
+    self.friends = [[NSMutableArray alloc] init];
+    NSArray *friends = [[DataManager sharedManager] getFriends];
+    [self.friends setArray:friends];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -86,12 +97,6 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         
-        
-        NSMutableArray *friends = [[NSMutableArray alloc] initWithArray:self.friends];
-        [friends removeObjectAtIndex:indexPath.row];
-        self.friends = friends;
-        
-        /*
         NSManagedObjectContext *context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Friend" inManagedObjectContext:context];
@@ -106,19 +111,17 @@
             
             
             if([friend.registrationNumber isEqualToString:selectedFriend.registrationNumber]){
+                NSLog(@"deleting freinds: %@", friend.registrationNumber);
                 [context deleteObject:managedObject];
-                NSMutableArray *friends = [[NSMutableArray alloc] initWithArray:self.friends];
-                [friends removeObjectAtIndex:indexPath.row];
-                self.friends = friends;
-                [self.tableView reloadData];
             }
             NSLog(@"%@ friend object deleted", context);
         }
         if (![context save:&error]) {
             NSLog(@"Error deleting friend %@ - error:%@",context,error);
-        }*/
+        }
         
-        
+        NSArray *friends = [[DataManager sharedManager] getFriends];
+        [self.friends setArray:friends];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
@@ -132,6 +135,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     
     FriendsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FriendCell"];
     cell.friend = self.friends[indexPath.row];
