@@ -7,6 +7,7 @@
 //
 
 #import "FriendsViewController.h"
+#import "AppDelegate.h"
 
 @interface FriendsViewController ()
 
@@ -32,9 +33,8 @@
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"FriendCell"];
     
-    self.friends = [[NSArray alloc] init];
-    self.friends = [[DataManager sharedManager] getFriends];
     
+    [self initData];
     
 }
 
@@ -42,6 +42,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)initData{
+    self.friends = [[NSArray alloc] init];
+    self.friends = [[DataManager sharedManager] getFriends];
 }
 
 #pragma mark - Table view data source
@@ -73,6 +78,51 @@
     }
     
     return [self.friends count];
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"Deleted Row");
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        
+        
+        NSMutableArray *friends = [[NSMutableArray alloc] initWithArray:self.friends];
+        [friends removeObjectAtIndex:indexPath.row];
+        self.friends = friends;
+        
+        /*
+        NSManagedObjectContext *context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Friend" inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        
+        NSError *error;
+        NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
+        
+        for (NSManagedObject *managedObject in items) {
+            Friend *friend = (Friend *)managedObject;
+            Friend *selectedFriend = self.friends[indexPath.row];
+            
+            
+            if([friend.registrationNumber isEqualToString:selectedFriend.registrationNumber]){
+                [context deleteObject:managedObject];
+                NSMutableArray *friends = [[NSMutableArray alloc] initWithArray:self.friends];
+                [friends removeObjectAtIndex:indexPath.row];
+                self.friends = friends;
+                [self.tableView reloadData];
+            }
+            NSLog(@"%@ friend object deleted", context);
+        }
+        if (![context save:&error]) {
+            NSLog(@"Error deleting friend %@ - error:%@",context,error);
+        }*/
+        
+        
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

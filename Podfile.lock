@@ -1,6 +1,5 @@
 PODS:
   - Appirater (2.0.2)
-  - Canvas (0.1.1)
   - CDZQRScanningViewController (1.0.7)
   - DateTools (1.2.0)
   - DPMeterView (0.0.1)
@@ -9,14 +8,10 @@ PODS:
     - UICountingLabel (~> 1.0.0)
   - PulsingHalo (0.0.1)
   - RMStepsController (1.0.0)
-  - SFRoundProgressCounterView (0.0.4):
-    - TTTAttributedLabel (~> 1.7.1)
-  - TTTAttributedLabel (1.7.5)
   - UICountingLabel (1.0.0)
 
 DEPENDENCIES:
   - Appirater
-  - Canvas
   - CDZQRScanningViewController
   - DateTools
   - DPMeterView (= 0.0.1)
@@ -24,11 +19,9 @@ DEPENDENCIES:
   - PNChart (~> 0.3.1)
   - PulsingHalo
   - RMStepsController (~> 1.0.0)
-  - SFRoundProgressCounterView
 
 SPEC CHECKSUMS:
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
-  Canvas: f1911025fc9ec9c7339df6e4399c90c87ce6b631
   CDZQRScanningViewController: 8a4eff67b0b9adf54bc19fc87f7c071be368e6a3
   DateTools: 6989dcb0df9dad3ae499f5e9efbd988116586f67
   DPMeterView: 0cfa41936a00d60938cdfd8a298ce399bc1bbd53
@@ -36,8 +29,6 @@ SPEC CHECKSUMS:
   PNChart: dc66d8bb6da180223438b949aa281c8dc890590e
   PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
   RMStepsController: bd30e3eb7bead3a3b93d34d912dc24ba0d1256fc
-  SFRoundProgressCounterView: fb24feb3fddfc0b86ba08bc73195dfc79cf1f9b1
-  TTTAttributedLabel: 1eb635d4d844cb7abce4d839faefca2a3409950d
   UICountingLabel: bb976960c0130785a600aac592954c23eb395096
 
 COCOAPODS: 0.32.1

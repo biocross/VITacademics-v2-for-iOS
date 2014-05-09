@@ -52,6 +52,7 @@
  - [DERERRED] Set Default notifications as YES to all
  - [DEFERRED] Notifications System
  - [DEFERRED] Fix Notification Model Type (Bool, NSNumber, or what?)
+ - [FIXED] Remove Transparency from cell to increase performance
 
  
  [CRITICAL]
@@ -60,12 +61,11 @@
  
  [IMPORTANT]
  - Check server status - See iOS Documentaion for response.code
- - Remove Transparency from cell to increase performance
  - Switch to new dateTools Library
  - Add New Progress Bar Integration in the finalSetup
  - Fix Misalignment in DetailsViewController
  - When runs for the first time from old version, timetable is empty.
- - Add Friends feature.
+ - Add Friends Deletion Feature feature.
  - Add Blocked list on Parse for those who have privacy concerns.
  
  
@@ -83,15 +83,6 @@
 @end
 
 @implementation TodayViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 -(void)viewDidAppear:(BOOL)animated{
     
@@ -521,11 +512,7 @@
             NSLog(@"Error at 3: %@", [exception description]);
         }
 
-        
-        
-        
-        
-        
+    
         return cell;
     }
     
@@ -539,7 +526,7 @@
 
 - (IBAction)notificationButtonPressed:(id)sender {
     
-    // Abandoning Notifcation until I find a better solution.
+    // Abandoning Notifcations until I find a better solution.
     /*
     NotificationViewController *notificationController = [[NotificationViewController alloc] init];
     UINavigationController *temp = [[UINavigationController alloc] init];
