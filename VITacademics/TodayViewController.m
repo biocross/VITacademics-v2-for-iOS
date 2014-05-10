@@ -62,7 +62,6 @@
  [IMPORTANT]
  - Check server status - See iOS Documentaion for response.code
  - Switch to new dateTools Library
- - Add New Progress Bar Integration in the finalSetup
  - Fix Misalignment in DetailsViewController
  - When runs for the first time from old version, timetable is empty.
  - Add Blocked list on Parse for those who have privacy concerns.

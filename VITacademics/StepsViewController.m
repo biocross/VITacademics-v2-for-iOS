@@ -71,42 +71,12 @@
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *registrationNumber = [preferences objectForKey:@"registrationNumber"];
     NSString *dateOfBirth = [preferences objectForKey:@"dateOfBirth"];
-    NSString *name;
-    if([preferences objectForKey:@"facebookName"]){
-         name = [preferences objectForKey:@"facebookName"];
-    }
-    else{
-        name = @"No Facebook";
-    }
     
     
     //Contacting Backend
     PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        if([PFFacebookUtils isLinkedWithUser:currentUser]){
-            currentUser[@"facebookName"] = name;
-            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if(succeeded){
-                    NSLog(@"Saved credentials to currentUser");
-                    self.one.enabled = NO;
-                }
-                else{
-                    NSLog(@"There was a problem saving to current user");
-                    [self.one setTitle:@"Error, Nevermind." forState:UIControlStateNormal];
-                }
-            }];
-        }
-        else{
-            NSLog(@"Facebook No Connected");
-            [self.one setTitle:@"You didn't login with facebook." forState:UIControlStateNormal];
-            self.one.enabled = NO;
-        }
-    }
-    else {
-        // show the signup or login screen
     
-    }
-    
+    self.one.enabled = NO;
     //Saving Data
     self.two.enabled = NO;
     
@@ -135,10 +105,7 @@
     
     //Creating Binding on Parse
     self.four.enabled = NO;
-    
-    
-    
-    
+
     
     //Loading Time Table
     dispatch_queue_t secondQueue = dispatch_queue_create("attendanceLoader", nil);
@@ -149,11 +116,6 @@
             NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [preferences objectForKey:@"registrationNumber"]];
             [preferences removeObjectForKey:ttKey];
             [preferences setObject:timetable forKey:ttKey];
-            
-            
-            
-            
-            
             
             self.five.enabled = NO;
             currentUser[@"timeTable"] = timetable;
@@ -187,7 +149,7 @@
     });//end of GCD
     
     
-    //Parsing Data (Verificastion!)
+    //Parsing Data (Verification!)
     
     
     

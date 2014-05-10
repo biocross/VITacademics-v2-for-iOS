@@ -417,8 +417,6 @@
                 [MWKProgressIndicator showSuccessMessage:cardMessage];
 
             });
-            
-            
         }
         [self processMarks];
         
@@ -426,11 +424,8 @@
 
 - (void)processMarks{
     
-    NSError *e = nil;
-    NSData *attendanceDataFromString = [self.marksCacheString dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: attendanceDataFromString options: NSJSONReadingMutableContainers error: &e];
-    
-    marksArray = jsonArray[0];
+    DataManager *sharedManager = [DataManager sharedManager];
+    [sharedManager parseMarksString];
     
 }
 
