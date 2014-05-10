@@ -43,7 +43,6 @@
         }
         else{
             [_days addObject:[_detailsArray objectAtIndex:i]];
-
         }
     }
     
@@ -97,7 +96,16 @@
     int daysCount = [_days count] - 1;
     int statusesCount = [_statuses count] - 1;
     
-    cell.detailTextLabel.text = [_days objectAtIndex:daysCount - indexPath.row];
+    NSString *dateString = [_days objectAtIndex:daysCount - indexPath.row];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-LLLL-yyyy"];
+    NSDate *dateObject = [dateFormat dateFromString:dateString];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *dayName = [dateFormatter stringFromDate:dateObject];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", dateString, dayName];
     cell.textLabel.text = [_statuses objectAtIndex:statusesCount - indexPath.row];
     
     if([[_statuses objectAtIndex: statusesCount - indexPath.row] isEqualToString:@"Absent"]){

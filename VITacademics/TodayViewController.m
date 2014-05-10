@@ -53,6 +53,8 @@
  - [DEFERRED] Fix Notification Model Type (Bool, NSNumber, or what?)
  - [FIXED] Remove Transparency from cell to increase performance
  - [FIXED] Add Friends Deletion Feature.
+ - [DEFERRED] Add Blocked list on Parse for those who have privacy concerns.
+ - [FIXED] add days to details view (like thursday etc)
 
  
  [CRITICAL]
@@ -61,14 +63,12 @@
  
  [IMPORTANT]
  - Check server status - See iOS Documentaion for response.code
- - Switch to new dateTools Library
  - Fix Misalignment in DetailsViewController
  - When runs for the first time from old version, timetable is empty.
- - Add Blocked list on Parse for those who have privacy concerns.
- 
+ - Make Marks compaitable with 3.5 inch screens
  
  [LOW PRIORITY]
- - add days to details view (like thursday etc)
+ - AutoRefresh Friends view
 
  
  */
