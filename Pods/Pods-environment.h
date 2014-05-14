@@ -6,6 +6,12 @@
 // project.
 
 
+// AHKActionSheet
+#define COCOAPODS_POD_AVAILABLE_AHKActionSheet
+#define COCOAPODS_VERSION_MAJOR_AHKActionSheet 0
+#define COCOAPODS_VERSION_MINOR_AHKActionSheet 1
+#define COCOAPODS_VERSION_PATCH_AHKActionSheet 2
+
 // Appirater
 #define COCOAPODS_POD_AVAILABLE_Appirater
 #define COCOAPODS_VERSION_MAJOR_Appirater 2
@@ -53,6 +59,12 @@
 #define COCOAPODS_VERSION_MAJOR_RMStepsController 1
 #define COCOAPODS_VERSION_MINOR_RMStepsController 0
 #define COCOAPODS_VERSION_PATCH_RMStepsController 0
+
+// Shimmer
+#define COCOAPODS_POD_AVAILABLE_Shimmer
+#define COCOAPODS_VERSION_MAJOR_Shimmer 1
+#define COCOAPODS_VERSION_MINOR_Shimmer 0
+#define COCOAPODS_VERSION_PATCH_Shimmer 1
 
 // UICountingLabel
 #define COCOAPODS_POD_AVAILABLE_UICountingLabel

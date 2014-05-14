@@ -74,8 +74,6 @@
     
     
     //Contacting Backend
-    PFUser *currentUser = [PFUser currentUser];
-    
     self.one.enabled = NO;
     //Saving Data
     self.two.enabled = NO;
@@ -101,12 +99,8 @@
         
     });//end of GCD
     
-    //Loading Marks
-    
-    //Creating Binding on Parse
     self.four.enabled = NO;
 
-    
     //Loading Time Table
     dispatch_queue_t secondQueue = dispatch_queue_create("attendanceLoader", nil);
     dispatch_async(secondQueue, ^{
@@ -118,43 +112,15 @@
             [preferences setObject:timetable forKey:ttKey];
             
             self.five.enabled = NO;
-            currentUser[@"timeTable"] = timetable;
-            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if(succeeded){
-                    NSLog(@"Saved timetable to server!");
-                    self.six.enabled = NO;
-                    self.seven.enabled = YES;
-                    NSLog(@"Finished Everything");
-                    //[self.activityIndicator stopAnimating];
-                    /*UIImageView *icon = [[UIImageView alloc] initWithFrame:self.activityIndicator.frame];
-                    [icon setImage:[UIImage imageNamed:@"loadingImage.png"]];
-                    [self.view addSubview:icon];*/
-                    NSLog(@"added image");
-                    [[DataManager sharedManager] initializeDataSources];
-                }
-                else{
-                    NSLog(@"Problem saving timetable to server");
-                    NSLog(@"%@", [error localizedDescription]);
-                    self.six.enabled = NO;
-                    self.seven.enabled = YES;
-                    
-                    [[DataManager sharedManager] initializeDataSources];
-                }
-            }];
+            self.six.enabled = NO;
+            self.seven.enabled = YES;
             
-            
+            [[DataManager sharedManager] initializeDataSources];
             
         });
         
     });//end of GCD
-    
-    
-    //Parsing Data (Verification!)
-    
-    
-    
-    //All done
-    
+
     
 }
 

@@ -24,10 +24,8 @@
 
 - (void)startLoadingAttendance:(id)sender;
 - (void)completedProcess;
-- (void)processMarks;
 
 //@property NSString *attendanceCacheString;
-@property NSString *marksCacheString;
 
 
 @property (nonatomic, strong) NSMutableArray *theorySubjects;

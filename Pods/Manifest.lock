@@ -1,4 +1,5 @@
 PODS:
+  - AHKActionSheet (0.1.2)
   - Appirater (2.0.2)
   - CDZQRScanningViewController (1.0.7)
   - DateTools (1.2.0)
@@ -8,9 +9,11 @@ PODS:
     - UICountingLabel (~> 1.0.0)
   - PulsingHalo (0.0.1)
   - RMStepsController (1.0.0)
+  - Shimmer (1.0.1)
   - UICountingLabel (1.0.0)
 
 DEPENDENCIES:
+  - AHKActionSheet
   - Appirater
   - CDZQRScanningViewController
   - DateTools
@@ -19,8 +22,10 @@ DEPENDENCIES:
   - PNChart (~> 0.3.1)
   - PulsingHalo
   - RMStepsController (~> 1.0.0)
+  - Shimmer
 
 SPEC CHECKSUMS:
+  AHKActionSheet: e24368bd5f72ab9d592aefea8ad0b93f5a43f904
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
   CDZQRScanningViewController: 8a4eff67b0b9adf54bc19fc87f7c071be368e6a3
   DateTools: 6989dcb0df9dad3ae499f5e9efbd988116586f67
@@ -29,6 +34,7 @@ SPEC CHECKSUMS:
   PNChart: dc66d8bb6da180223438b949aa281c8dc890590e
   PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
   RMStepsController: bd30e3eb7bead3a3b93d34d912dc24ba0d1256fc
+  Shimmer: a1b92685f04ae7363e655f636a41a276dbb1507e
   UICountingLabel: bb976960c0130785a600aac592954c23eb395096
 
 COCOAPODS: 0.32.1

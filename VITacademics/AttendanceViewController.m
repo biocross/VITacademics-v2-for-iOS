@@ -118,6 +118,9 @@
 
 
 -(void)refreshAttendance:(id)sender{
+    
+#warning add response code check here
+    
     UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CaptchaView"];
     [self.navigationController pushViewController:vc animated:YES];
     [(UIRefreshControl *)sender endRefreshing];
@@ -357,11 +360,7 @@
         [MWKProgressIndicator show];
     });
     
-    
-    
-    
-    
-    //getting the regno, dob from preferences.
+
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *registrationNumber = [preferences stringForKey:@"registrationNumber"];
     NSString *dateOfBirth = [preferences stringForKey:@"dateOfBirth"];
@@ -377,10 +376,6 @@
             //update table here!"
             //[alert dismissWithClickedButtonIndex:0 animated:YES];
             [MWKProgressIndicator dismiss];
-            
-            
-            //self.attendanceCacheString = result;
-            self.marksCacheString = marks;
             
             [preferences removeObjectForKey:[preferences objectForKey:@"registrationNumber"]];
             [preferences setObject:result forKey:[preferences objectForKey:@"registrationNumber"]];
@@ -401,6 +396,7 @@
     
         DataManager *sharedManager = [DataManager sharedManager];
         [sharedManager parseAttendanceString];
+        [sharedManager parseMarksString];
         self.subjects = [sharedManager getAllSubjects];
         [self.tableView reloadData];
     
@@ -418,15 +414,8 @@
 
             });
         }
-        [self processMarks];
-        
-    } //end of else
-
-- (void)processMarks{
-    
-    DataManager *sharedManager = [DataManager sharedManager];
-    [sharedManager parseMarksString];
     
 }
+
 
 @end

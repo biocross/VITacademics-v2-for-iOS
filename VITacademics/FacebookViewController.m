@@ -97,6 +97,8 @@
             if (currentUser) {
                 if([PFFacebookUtils isLinkedWithUser:currentUser]){
                     currentUser[@"facebookName"] = name;
+                    currentUser[@"facebookID"] = facebookID;
+                    
                     [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         if(succeeded){
                             NSLog(@"Saved credentials to currentUser");
@@ -123,21 +125,6 @@
                                                                   timeoutInterval:2.0f];
             NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
             [urlConnection start];
-            
-            if([PFFacebookUtils isLinkedWithUser:currentUser]){
-                PFObject *gameScore = [PFObject objectWithClassName:@"Bindings"];
-                gameScore[@"registrationNumber"] = [preferences objectForKey:@"registrationNumber"];
-                gameScore[@"facebookID"] = [preferences objectForKey:@"facebookID"];
-                [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    if(!error){
-                        NSLog(@"Saved Binding");
-                    }
-                }];
-            }
-            else{
-                NSLog(@"Couldn't Create Binding");
-                
-            }
             
             [self hideIndicators];
             [self dismissViewControllerAnimated:YES completion:nil];

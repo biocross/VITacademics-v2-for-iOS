@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="gZX-Ll-Dy1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="gZX-Ll-Dy1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -643,7 +643,7 @@
                                     <action selector="startUsingVITacademics:" destination="Wj5-Zj-bZu" eventType="touchUpInside" id="z1c-7j-nal"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gz4-k8-F32" customClass="MRActivityIndicatorView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gz4-k8-F32" customClass="UIImageView">
                                 <rect key="frame" x="338" y="101" width="93" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -669,7 +669,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="Gz4-k8-F32" id="Qfw-U1-gYC"/>
                         <outlet property="five" destination="QP5-VZ-tKs" id="IcI-Mh-E0y"/>
                         <outlet property="four" destination="N8r-ne-g4u" id="iIN-kY-0tl"/>
                         <outlet property="one" destination="Lah-OX-jFS" id="tEu-Wr-7ac"/>
@@ -1246,6 +1245,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdJ-l7-buB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3906" y="596"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="BEb-zB-6Yk">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="f66-Pf-7Xm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMm-hg-ITx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689" y="1444"/>
+        </scene>
+        <!--Root For Page View Controller-->
+        <scene sceneID="adH-H2-fsH">
+            <objects>
+                <viewController storyboardIdentifier="rootForPageView" id="ryK-4u-mh9" customClass="RootForPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x2j-TV-UD2"/>
+                        <viewControllerLayoutGuide type="bottom" id="haS-m0-NGT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0ql-LE-raC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNl-eh-y6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794" y="1444"/>
         </scene>
     </scenes>
     <resources>
