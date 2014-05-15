@@ -140,13 +140,28 @@
             user.password = _dateOfBirth.text;
             user[@"registrationNumber"] = _registrationNumber.text;
             user[@"dateOfBirth"] = _dateOfBirth.text;
+            user[@"isSignedIn"] = @"false";
+            user[@"platform"] = @"iOS";
             
             [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
                     // Hooray! Let them use the app now.
                     [_buttonOutlet setTitle:@"Verified." forState:UIControlStateNormal];
-                    [self.stepsController showNextStep];
-                    [self.sender finalSetup];
+                    
+                    [PFUser logInWithUsernameInBackground:_registrationNumber.text password:_dateOfBirth.text
+                                                    block:^(PFUser *user, NSError *error) {
+                                                        if (user) {
+                                                            // Do stuff after successful login.
+                                                            NSLog(@"Login Complete");
+                                                            [self.stepsController showNextStep];
+                                                            [self.sender finalSetup];
+                                                        } else {
+                                                            // The login failed. Check error to see why.
+                                                        }
+                                                    }];
+                    
+                    
+                    
                 } else {
                     NSString *errorString = [error userInfo][@"error"];
                     NSLog(@"%@", errorString);
@@ -168,13 +183,24 @@
                             user.password = _dateOfBirth.text;
                             user[@"registrationNumber"] = _registrationNumber.text;
                             user[@"dateOfBirth"] = _dateOfBirth.text;
+                            user[@"isSignedIn"] = @"false";
+                            user[@"platform"] = @"iOS";
                             
                             [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                 if (!error) {
                                     // Hooray! Let them use the app now.
                                     [_buttonOutlet setTitle:@"Verified." forState:UIControlStateNormal];
-                                    [self.stepsController showNextStep];
-                                    [self.sender finalSetup];
+                                    [PFUser logInWithUsernameInBackground:_registrationNumber.text password:_dateOfBirth.text
+                                                                    block:^(PFUser *user, NSError *error) {
+                                                                        if (user) {
+                                                                            // Do stuff after successful login.
+                                                                            NSLog(@"Login Complete");
+                                                                            [self.stepsController showNextStep];
+                                                                            [self.sender finalSetup];
+                                                                        } else {
+                                                                        }
+                                                                    }];
+                                    
                                 } else {
                                     NSString *errorString = [error userInfo][@"error"];
                                     NSLog(@"%@", errorString);

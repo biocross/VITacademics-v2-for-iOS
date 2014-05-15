@@ -65,7 +65,19 @@
     if([self.friend.name isEqualToString:self.friend.registrationNumber]){
         NSLog(@"Loading data for %@", self.friend.registrationNumber);
         
-        PFQuery *query = [PFQuery queryWithClassName:@"Bindings"];
+        PFQuery *query = [PFUser query];
+        [query whereKey:@"username" equalTo:self.friend.registrationNumber];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!object) {
+                NSLog(@"No Parse Object for friend: %@", self.friend.registrationNumber);
+            }
+            else{
+                [self extractDetailsForFacebookID: [object valueForKey:@"facebookID"]];
+            }
+        }];
+            
+        /*
+        PFQuery *query = [PFQuery queryWithClassName:@"User"];
         [query whereKey:@"registrationNumber" equalTo:self.friend.registrationNumber];
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             if (!object) {
@@ -75,6 +87,7 @@
                 [self extractDetailsForFacebookID: facebookID];
             }
         }];
+         */
     }
     
 

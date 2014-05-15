@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3504D006190D76310016DF61 /* OLDTimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3504D005190D76310016DF61 /* OLDTimeTable.m */; };
+		350CD8AF19238B04005D10E5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350CD8AE19238B04005D10E5 /* FacebookSDK.framework */; };
 		3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3510174E18661DC7005F4101 /* StoreKit.framework */; };
 		35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35128E80186844E500DBC06D /* NoClassRightNow.xib */; };
 		35155D8118781A8100513E05 /* SettingsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35155D8018781A8100513E05 /* SettingsTabViewController.m */; };
@@ -49,7 +50,6 @@
 		3518D1C21854F84900EFC1AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C11854F84900EFC1AF /* QuartzCore.framework */; };
 		3518D1C41854F85000EFC1AF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C31854F85000EFC1AF /* Security.framework */; };
 		3518D1C81854F85800EFC1AF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */; };
-		3518D1CA1854F97000EFC1AF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1C91854F97000EFC1AF /* FacebookSDK.framework */; };
 		3518E96C189B9981001F32A8 /* CaptchaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518E96B189B9981001F32A8 /* CaptchaViewController.m */; };
 		3518E96F189B9F56001F32A8 /* SubjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518E96E189B9F56001F32A8 /* SubjectDetailsViewController.m */; };
 		351B91E51904655A005170E0 /* FriendsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351B91E31904655A005170E0 /* FriendsTableViewCell.m */; };
@@ -142,6 +142,7 @@
 /* Begin PBXFileReference section */
 		3504D004190D76310016DF61 /* OLDTimeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLDTimeTable.h; sourceTree = "<group>"; };
 		3504D005190D76310016DF61 /* OLDTimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLDTimeTable.m; sourceTree = "<group>"; };
+		350CD8AE19238B04005D10E5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		3510174E18661DC7005F4101 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		35128E80186844E500DBC06D /* NoClassRightNow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoClassRightNow.xib; path = ../NoClassRightNow.xib; sourceTree = "<group>"; };
 		35155D7F18781A8100513E05 /* SettingsTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTabViewController.h; sourceTree = "<group>"; };
@@ -190,7 +191,6 @@
 		3518D1C11854F84900EFC1AF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3518D1C31854F85000EFC1AF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3518D1C91854F97000EFC1AF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		3518E96A189B9981001F32A8 /* CaptchaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaViewController.h; sourceTree = "<group>"; };
 		3518E96B189B9981001F32A8 /* CaptchaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaViewController.m; sourceTree = "<group>"; };
 		3518E96D189B9F56001F32A8 /* SubjectDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectDetailsViewController.h; sourceTree = "<group>"; };
@@ -348,9 +348,9 @@
 				3518D1BA1854F82800EFC1AF /* CFNetwork.framework in Frameworks */,
 				3518D1B81854F82200EFC1AF /* AudioToolbox.framework in Frameworks */,
 				3518D1B61854F7F800EFC1AF /* Parse.framework in Frameworks */,
+				350CD8AF19238B04005D10E5 /* FacebookSDK.framework in Frameworks */,
 				3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */,
 				3526825D18ACAABB0082D518 /* libGoogleAnalyticsServices.a in Frameworks */,
-				3518D1CA1854F97000EFC1AF /* FacebookSDK.framework in Frameworks */,
 				F05DA906B6EC44E6B2253C4C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,10 +429,10 @@
 				3562D5F518ACFE1600C1146D /* Analytics */,
 				3526824C18ACA76D0082D518 /* libz.dylib */,
 				3526824A18ACA7660082D518 /* libsqlite3.0.dylib */,
+				350CD8AE19238B04005D10E5 /* FacebookSDK.framework */,
 				35470D6118ACA6F5004546DB /* CoreTelephony.framework */,
 				35470D5F18ACA6EC004546DB /* CoreText.framework */,
 				3510174E18661DC7005F4101 /* StoreKit.framework */,
-				3518D1C91854F97000EFC1AF /* FacebookSDK.framework */,
 				3518D1C71854F85800EFC1AF /* SystemConfiguration.framework */,
 				3518D1C31854F85000EFC1AF /* Security.framework */,
 				3518D1C11854F84900EFC1AF /* QuartzCore.framework */,
@@ -1084,6 +1084,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Siddharth/Documents/VITacademics,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VITacademics/VITacademics-Prefix.pch";
@@ -1111,6 +1112,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Siddharth/Documents/VITacademics,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VITacademics/VITacademics-Prefix.pch";

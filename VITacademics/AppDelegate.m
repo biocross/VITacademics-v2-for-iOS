@@ -71,6 +71,16 @@
     
     if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
         NSLog(@"All Systems OK");
+        
+        [PFUser logInWithUsernameInBackground:[temp objectForKey:@"registrationNumber"] password:[temp objectForKey:@"dateOfBirth"]
+                                        block:^(PFUser *user, NSError *error) {
+                                            if (user) {
+                                                NSLog(@"Login Complete");
+                                            } else {
+                                            }
+                                        }];
+        
+        
     }
     else{
         NSLog(@"Error Found in starting, resetting App.");
@@ -79,7 +89,6 @@
         [new removeObjectForKey:@"dateOfBirth"];
     }
     
-    /*
     
     [Appirater setAppId:@"727796987"];
     [Appirater setDaysUntilPrompt:6];
@@ -88,7 +97,6 @@
     [Appirater setTimeBeforeReminding:2];
     [Appirater setDebug:NO];
     [Appirater appLaunched:YES];
-    */
     
     return YES;
 }

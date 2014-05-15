@@ -44,35 +44,17 @@
     [self.loadingLabel setAlpha:1];
     [self.activityIndicator setAlpha:1];
     [self.activityIndicator startAnimating];
-    
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
-            
-            [PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    NSLog(@"Logged In With FB!");
-                    [self extractUserInfo];
-                }
-                else{
-                    NSLog(@"Facebook Account linking failure.");
-                }
-            }];
-        } else {
-            NSLog(@"User logged in through Facebook!");
-            [PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    NSLog(@"Logged In With FB!");
-                    [self extractUserInfo];
-                }
-                else{
-                    NSLog(@"Facebook Account linking failure.");
-                }
-            }];
-        }
-    }];
+
+    PFUser *user = [PFUser currentUser];
+    NSLog(@"%@", [user description]);
+    if (![PFFacebookUtils isLinkedWithUser:user]) {
+        [PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Woohoo, user logged in with Facebook!");
+                [self extractUserInfo];
+            }
+        }];
+    }
     
     
 }
@@ -98,6 +80,7 @@
                 if([PFFacebookUtils isLinkedWithUser:currentUser]){
                     currentUser[@"facebookName"] = name;
                     currentUser[@"facebookID"] = facebookID;
+                    currentUser[@"isSignedIn"] = @"true";
                     
                     [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         if(succeeded){
