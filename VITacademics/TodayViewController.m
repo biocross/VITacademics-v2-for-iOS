@@ -55,20 +55,21 @@
  - [FIXED] Add Friends Deletion Feature.
  - [DEFERRED] Add Blocked list on Parse for those who have privacy concerns.
  - [FIXED] add days to details view (like thursday etc)
+ - [FIXED] Fix iPad Crash
+ - [FIXED] Check server status - See iOS Documentaion for response.code
+ - [FIXED] Make Marks compaitable with 3.5 inch screens
 
  
  [CRITICAL]
- - Fix iPad Crash
  - Clear CoreData on "Reset VITacademics"
  
  [IMPORTANT]
- - Check server status - See iOS Documentaion for response.code
  - Fix Misalignment in DetailsViewController
  - When runs for the first time from old version, timetable is empty.
- - Make Marks compaitable with 3.5 inch screens
  
  [LOW PRIORITY]
  - AutoRefresh Friends view
+ - Fix Alignment in Steps INIT
 
  
  */
@@ -148,19 +149,10 @@
 
 - (void)refreshTable{
     NSLog(@"refreshing table");
-    @try {
-        currentClass = [[ofToday getCurrentClass] isKindOfClass:[Subject class]] ? [ofToday getCurrentClass] : 0;
-    }
-    @catch (NSException *exception) {
-        NSLog(@"%@", [exception description]);
-    }
-    
-    
-    if(currentClass){
+
         NSIndexSet *new = [[NSIndexSet alloc] initWithIndex:0];
         [self.tableView reloadSections:new withRowAnimation:UITableViewRowAnimationFade];
-        
-    }
+
 }
 
 -(void)reloadSelf{
@@ -270,7 +262,14 @@
 {
     if(indexPath.section == 0){
         
-    
+        @try {
+            currentClass = [[ofToday getCurrentClass] isKindOfClass:[Subject class]] ? [ofToday getCurrentClass] : 0;
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@", [exception description]);
+        }
+        
+        
         if(currentClass){
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CurrentClassTableViewCell" owner:self options:nil];
             CurrentClassTableViewCell *cell = [nib objectAtIndex:0];

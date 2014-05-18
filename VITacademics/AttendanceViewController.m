@@ -119,13 +119,36 @@
 
 -(void)refreshAttendance:(id)sender{
     
-#warning add response code check here
+    dispatch_queue_t downloadQueue = dispatch_queue_create("serverStatus", nil);
+    dispatch_async(downloadQueue, ^{
+        
+        VITxAPI *attendanceManager = [[VITxAPI alloc] init];
+        int shouldLoadAttendance = [attendanceManager checkServerStatus];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Status: %d", shouldLoadAttendance);
+            if(!shouldLoadAttendance){
+                [self showNetworkError];
+                [(UIRefreshControl *)sender endRefreshing];
+            }
+            else if(shouldLoadAttendance == 200){
+                UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CaptchaView"];
+                [self.navigationController pushViewController:vc animated:YES];
+                [(UIRefreshControl *)sender endRefreshing];
+            }
+            else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Looks like our free servers are overloaded!\n\nOur quotas reset at 12.30PM, so please again at that time! Really sorry!" delegate:self cancelButtonTitle:@"Well, Okay" otherButtonTitles: nil];
+                [alert show];
+                [(UIRefreshControl *)sender endRefreshing];
+            }
+            
+        });//end of GCD
+    });
     
-    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CaptchaView"];
-    [self.navigationController pushViewController:vc animated:YES];
-    [(UIRefreshControl *)sender endRefreshing];
+    
     
 }
+                
 
 -(void)showCaptchaError{
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC));
@@ -367,14 +390,11 @@
     
     VITxAPI *attendanceManager = [[VITxAPI alloc] init];
     
-    
     dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
     dispatch_async(downloadQueue, ^{
         NSString *result = [attendanceManager loadAttendanceWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
         NSString *marks = [attendanceManager loadMarksWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
         dispatch_async(dispatch_get_main_queue(), ^{
-            //update table here!"
-            //[alert dismissWithClickedButtonIndex:0 animated:YES];
             [MWKProgressIndicator dismiss];
             
             [preferences removeObjectForKey:[preferences objectForKey:@"registrationNumber"]];

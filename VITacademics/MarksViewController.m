@@ -5,6 +5,7 @@
 //  Created by Siddharth Gupta on 19/10/13.
 //  Copyright (c) 2013 Siddharth Gupta. All rights reserved.
 //
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 #import "MarksViewController.h"
 #import "PNChart.h"
@@ -34,7 +35,22 @@
     
     float totalInternals = cat1Marks15 + cat2Marks15 + quiz1Marks + quiz2Marks + quiz3Marks + assignmentMarks;
     
-    barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150.0)];
+    int barChartHeight = 150;
+    int catBarChartHeight = 200;
+    int smallMarksX = barChartHeight + catBarChartHeight - 20;
+    int bigMarksX = barChartHeight + catBarChartHeight + 10;
+    
+    if( !IS_IPHONE_5 )
+    {
+        barChartHeight = 120;
+        catBarChartHeight = 170;
+        smallMarksX = barChartHeight + catBarChartHeight - 20;
+        bigMarksX = barChartHeight + catBarChartHeight + 10;
+    }
+
+    
+    
+    barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, barChartHeight)];
     barChart.backgroundColor = [UIColor clearColor];
     [barChart setXLabels:@[@"Quiz 1",@"Quiz 2",@"Quiz 3", @"Assignment"]];
     [barChart setYValues:@[[NSNumber numberWithFloat:quiz1Marks], [NSNumber numberWithFloat:quiz2Marks], [NSNumber numberWithFloat:quiz3Marks], [NSNumber numberWithFloat:assignmentMarks]]];
@@ -43,7 +59,7 @@
     
     [self.view addSubview:barChart];
     
-    catBarChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 150.0, SCREEN_WIDTH, 200.0)];
+    catBarChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, barChartHeight, SCREEN_WIDTH, catBarChartHeight)];
     catBarChart.backgroundColor = [UIColor clearColor];
     [catBarChart setXLabels:@[@"CAT I",@"CAT II",@"Total"]];
     [catBarChart setYValues:@[[NSNumber numberWithFloat:cat1Marks], [NSNumber numberWithFloat:cat2Marks], [NSNumber numberWithFloat:totalInternals]]];
@@ -52,12 +68,12 @@
     
     [self.view addSubview:catBarChart];
     
-    UILabel *smallMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, 330, SCREEN_WIDTH, 100)];
+    UILabel *smallMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, smallMarksX, SCREEN_WIDTH, 100)];
     smallMarks.text = [NSString stringWithFormat:@"Quiz I: %1.0f/5   Quiz II: %1.0f/5   Quiz III: %1.0f/5   Assignment: %1.0f/5", quiz1Marks, quiz2Marks, quiz3Marks, assignmentMarks];
     [smallMarks setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:smallMarks];
     
-    UILabel *bigMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, 360, SCREEN_WIDTH, 100)];
+    UILabel *bigMarks = [[UILabel alloc] initWithFrame:CGRectMake(0, bigMarksX, SCREEN_WIDTH, 100)];
     bigMarks.text = [NSString stringWithFormat:@"CAT I: %1.0f/50   CAT II: %1.0f/50   Total: %1.0f/50", cat1Marks, cat2Marks, totalInternals];
     [bigMarks setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:bigMarks];

@@ -42,6 +42,26 @@
     }
 }
 
+-(int)checkServerStatus{
+    NSString *buildingUrl = [NSString stringWithFormat:@"http://vitacademicsrel.appspot.com"];
+    NSURL *url = [NSURL URLWithString:buildingUrl];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    NSError * error = nil;
+    NSURLResponse * response = nil;
+    
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                          returningResponse:&response
+                                                      error:&error];
+    NSLog(@"%@", [data description]);
+    
+    NSInteger httpCode = [(NSHTTPURLResponse *)response statusCode];
+    
+    if(!httpCode){
+        return 0;
+    }
+    return httpCode;
+    
+}
 
 -(UIImage *)loadCaptchaIntoImageView{
     

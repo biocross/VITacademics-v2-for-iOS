@@ -17,6 +17,7 @@
 -(NSString *)loadMarksWithRegistrationNumber: (NSString *)registrationNumber andDateOfBirth: (NSString *) dateOfBirth;
 -(NSString *)captchaLessTrasactionWith: (NSString *)registrationNumber andDateOfBirth: (NSString *)dateOfBirth;
 -(NSString *)loadTimeTableWithRegistrationNumber: (NSString *)registrationNumber andDateOfBirth: (NSString *) dateOfBirth;
+-(int)checkServerStatus;
 @end
 
 
