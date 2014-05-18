@@ -58,13 +58,13 @@
  - [FIXED] Fix iPad Crash
  - [FIXED] Check server status - See iOS Documentaion for response.code
  - [FIXED] Make Marks compaitable with 3.5 inch screens
+ - [FIXED] Fix Misalignment in DetailsViewController
 
  
  [CRITICAL]
  - Clear CoreData on "Reset VITacademics"
  
  [IMPORTANT]
- - Fix Misalignment in DetailsViewController
  - When runs for the first time from old version, timetable is empty.
  
  [LOW PRIORITY]
