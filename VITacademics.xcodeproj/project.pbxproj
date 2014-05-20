@@ -91,6 +91,7 @@
 		359D2CAE18AD0168007565C1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D2CAD18AD0168007565C1 /* MessageUI.framework */; };
 		359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359EDB99185DBA1600D14248 /* FriendsViewController.m */; };
 		35A32CB618A4B3DF00898607 /* captchaError.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A32CB518A4B3DF00898607 /* captchaError.png */; };
+		35A51AB0192C003A00968389 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A51AAF192C003A00968389 /* PurchaseViewController.m */; };
 		35A6547618BA89C500095B72 /* libCrittercism_v4_3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547518BA89C500095B72 /* libCrittercism_v4_3_0.a */; };
 		35A6547A18BA8A7800095B72 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */; };
 		35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
@@ -251,6 +252,8 @@
 		359EDB98185DBA1600D14248 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		359EDB99185DBA1600D14248 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		35A32CB518A4B3DF00898607 /* captchaError.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captchaError.png; sourceTree = "<group>"; };
+		35A51AAE192C003A00968389 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
+		35A51AAF192C003A00968389 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		35A6547218BA89C500095B72 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
 		35A6547318BA89C500095B72 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
 		35A6547418BA89C500095B72 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
@@ -613,6 +616,8 @@
 				35A751F4185B9608009FC74D /* TabViewController.m */,
 				35D4A317189E51F400F23A28 /* DataController.h */,
 				35D4A318189E51F400F23A28 /* DataController.m */,
+				35A51AAE192C003A00968389 /* PurchaseViewController.h */,
+				35A51AAF192C003A00968389 /* PurchaseViewController.m */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -932,6 +937,7 @@
 				355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */,
 				35EF94B51909151A00854E93 /* FacebookViewController.m in Sources */,
 				35D2181D188FDBF5000E5BEC /* DetailViewController.m in Sources */,
+				35A51AB0192C003A00968389 /* PurchaseViewController.m in Sources */,
 				359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */,
 				35DE51FE190BBDA3002199B7 /* qrencode.c in Sources */,
 				355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */,

@@ -19,4 +19,5 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+- (IBAction)getRidOfCaptcha:(id)sender;
 @end

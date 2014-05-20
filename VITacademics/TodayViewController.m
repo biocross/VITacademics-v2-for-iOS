@@ -66,6 +66,7 @@
  
  [IMPORTANT]
  - When runs for the first time from old version, timetable is empty.
+ - In-App Purchase
  
  [LOW PRIORITY]
  - AutoRefresh Friends view

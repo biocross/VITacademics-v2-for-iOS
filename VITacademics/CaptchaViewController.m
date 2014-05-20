@@ -8,6 +8,7 @@
 
 #import "CaptchaViewController.h"
 #import "VITxAPI.h"
+#import "PurchaseViewController.h"
 
 @interface CaptchaViewController ()
 
@@ -167,4 +168,10 @@
     }
 }
 
+- (IBAction)getRidOfCaptcha:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    PurchaseViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PurchaseViewNav"];
+    [self presentViewController:detailViewController animated:YES completion:nil];
+}
 @end
