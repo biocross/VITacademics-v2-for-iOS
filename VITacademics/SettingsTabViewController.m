@@ -114,8 +114,9 @@
         [new removeObjectForKey:ttKey];
         [new removeObjectForKey:@"dateOfBirth"];
         
-        NSManagedObjectContext *context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-        
+        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate] ;
+        [app clearCoreData];
+        /*
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Subject" inManagedObjectContext:context];
         [fetchRequest setEntity:entity];
@@ -130,7 +131,9 @@
         }
         if (![context save:&error]) {
             NSLog(@"Error deleting %@ - error:%@",context,error);
-        }
+        }*/
+        
+        
         
         [self.tabBarController viewDidLoad];
     }

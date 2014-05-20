@@ -212,6 +212,28 @@
     return _persistentStoreCoordinator;
 }
 
+
+- (void) clearCoreData{
+    NSError * error;
+    // retrieve the store URL
+    NSURL * storeURL = [[_managedObjectContext persistentStoreCoordinator] URLForPersistentStore:[[[_managedObjectContext persistentStoreCoordinator] persistentStores] lastObject]];
+    // lock the current context
+    [_managedObjectContext lock];
+    [_managedObjectContext reset];//to drop pending changes
+    //delete the store from the current managedObjectContext
+    if ([[_managedObjectContext persistentStoreCoordinator] removePersistentStore:[[[_managedObjectContext persistentStoreCoordinator] persistentStores] lastObject] error:&error])
+    {
+        // remove the file containing the data
+        [[NSFileManager defaultManager] removeItemAtURL:storeURL error:&error];
+        //recreate the store like in the  appDelegate method
+        [[_managedObjectContext persistentStoreCoordinator] addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];//recreates the persistent store
+    }
+    [_managedObjectContext unlock];
+    
+    NSLog(@"Core Data Reset: New DB is active.");
+    
+}
+
 #pragma mark - Application's Documents directory
 
 // Returns the URL to the application's Documents directory.
