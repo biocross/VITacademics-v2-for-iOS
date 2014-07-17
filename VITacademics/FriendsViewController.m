@@ -65,7 +65,32 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    if ([self.friends count]) {
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+        
+        self.tableView.backgroundView = nil;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        messageLabel.text = @"Add some friends using the + above, or share your time table with your friends!";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        UIFont *newFont = [UIFont fontWithName:@"MuseoSans-300" size:14];
+        [messageLabel setFont:newFont];
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        [messageLabel sizeToFit];
+        
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    
+    return 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

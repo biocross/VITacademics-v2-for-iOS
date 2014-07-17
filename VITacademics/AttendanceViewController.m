@@ -127,13 +127,9 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Status: %d", shouldLoadAttendance);
-#warning CHange this
+#warning CHange this - looks okay now
             
-            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CaptchaView"];
-            [self.navigationController pushViewController:vc animated:YES];
-            [(UIRefreshControl *)sender endRefreshing];
             
-            /*
             if(!shouldLoadAttendance){
                 [self showNetworkError];
                 [(UIRefreshControl *)sender endRefreshing];
@@ -147,7 +143,7 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Looks like our free servers are overloaded!\n\nOur quotas reset at 12.30PM, so please again at that time! Really sorry!" delegate:self cancelButtonTitle:@"Well, Okay" otherButtonTitles: nil];
                 [alert show];
                 [(UIRefreshControl *)sender endRefreshing];
-            }*/
+            }
             
         });//end of GCD
     });

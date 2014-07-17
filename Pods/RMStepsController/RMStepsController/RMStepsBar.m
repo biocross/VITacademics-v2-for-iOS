@@ -461,7 +461,7 @@
         }
         
         RMStep *step = [self.dataSource stepsBar:self stepAtIndex:i];
-        step.numberLabel.text = [NSString stringWithFormat:@"%lu", i+1];
+        step.numberLabel.text = [NSString stringWithFormat:@"%u", i+1];
         [self addSubview:step.stepView];
         
         UIView *leftEnd = leftSeperator ? leftSeperator : self.cancelSeperator;
@@ -501,8 +501,6 @@
 }
 
 - (void)cancelButtonTapped:(id)sender {
-    NSLog(@"Cencel tapped");
-#warning  CHangeThis!
     [self.delegate stepsBarDidSelectCancelButton:self];
 }
 

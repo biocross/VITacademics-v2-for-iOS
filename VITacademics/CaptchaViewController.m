@@ -169,9 +169,11 @@
 }
 
 - (IBAction)getRidOfCaptcha:(id)sender {
+    /* Deferred
     [self.navigationController popViewControllerAnimated:YES];
     
     PurchaseViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PurchaseViewNav"];
     [self presentViewController:detailViewController animated:YES completion:nil];
+     */
 }
 @end

@@ -55,7 +55,7 @@
     
     
     if(currentClass){
-        self.friendClassStatus.text = [NSString stringWithFormat:@"has a class at %@.", [currentClass objectForKey:@"venue"]];
+        self.friendClassStatus.text = [NSString stringWithFormat:@"has a class in %@.", [currentClass objectForKey:@"venue"]];
         [self.friendClassStatus setTextColor:[UIColor orangeColor]];
     }
     else{

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00B8BB48E4844BA3AE08CD25"
+               BlueprintIdentifier = "9D465DF03DF94A61B88279D0"
                BuildableName = "libPods-CDZQRScanningViewController.a"
                BlueprintName = "Pods-CDZQRScanningViewController"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -59,6 +59,8 @@
  - [FIXED] Check server status - See iOS Documentaion for response.code
  - [FIXED] Make Marks compaitable with 3.5 inch screens
  - [FIXED] Fix Misalignment in DetailsViewController
+ - [DEFERRED] In-App Purchase
+ - [FIXED] AutoRefresh Friends view
 
  
  [CRITICAL]
@@ -66,10 +68,10 @@
  
  [IMPORTANT]
  - When runs for the first time from old version, timetable is empty.
- - In-App Purchase
+ - Share URL
+
  
  [LOW PRIORITY]
- - AutoRefresh Friends view
  - Fix Alignment in Steps INIT
 
  
@@ -248,7 +250,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    int height = 183;
+    int height = 192;
 
     if(indexPath.section == 1){
         height = 79;
