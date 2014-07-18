@@ -41,6 +41,7 @@ install_resource()
       ;;
   esac
 }
+install_resource "CrittercismSDK/CrittercismSDK/dsym_upload.sh"
 install_resource "DateTools/DateTools/DateTools.bundle"
 install_resource "NSDate+TimeAgo/NSDateTimeAgo.bundle"
 install_resource "${BUILT_PRODUCTS_DIR}/Appirater.bundle"

@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CrittercismSDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-DPMeterView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,11 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Shimmer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-UICountingLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,67 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>45FB7EA319164D2DA6B4CE35</key>
+		<key>0C3749BF44DF4AC9BF5A7FD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53C586B532C74DC78E89330B</key>
+		<key>2B4F67E97F32449BAF796807</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6499DD32D7E848CCA2D267B7</key>
+		<key>631852876BC040889559809E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>78CE66DFF9FC4BB49DC4D8F9</key>
+		<key>66DA48C1ECA045E5816F896F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85D884F0AA3A4874AE734C5B</key>
+		<key>6A27459D857748DEAE04F4EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90913FBFD61C4F43A18D1A85</key>
+		<key>8EB590A95DB24359800FDB5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>949CEDDE90934FB38D35C3BB</key>
+		<key>9AEFD547194D482EBBC85E43</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D465DF03DF94A61B88279D0</key>
+		<key>9F6B7F5893204509A557DE0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A66B494D7E2C4275B0E254AF</key>
+		<key>B1E210D8163C478F9EEC8EFD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A94D2778F2B944B0A8CFCBB6</key>
+		<key>D02EF613629D4C1791C2473C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D81186CF573C449FB9930396</key>
+		<key>DE1370A2854243CC968C701B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2B0D019BD7F4EF681523F20</key>
+		<key>EB85DF0D77734F79B1C5B493</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7B6265549DA4DFB9CFF098C</key>
+		<key>FC37742D6F444C8186A4E391</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -2,39 +2,39 @@ PODS:
   - AHKActionSheet (0.1.2)
   - Appirater (2.0.2)
   - CDZQRScanningViewController (1.0.7)
+  - CrittercismSDK (4.3.4)
   - DateTools (1.2.0)
-  - DPMeterView (0.0.1)
+  - DPMeterView (1.0.1)
   - NSDate+TimeAgo (1.0.3)
-  - PNChart (0.3.3):
+  - PNChart (0.5):
     - UICountingLabel (~> 1.0.0)
   - PulsingHalo (0.0.1)
-  - RMStepsController (1.0.0)
-  - Shimmer (1.0.1)
+  - RMStepsController (1.0.1)
   - UICountingLabel (1.0.0)
 
 DEPENDENCIES:
   - AHKActionSheet
   - Appirater
   - CDZQRScanningViewController
+  - CrittercismSDK
   - DateTools
-  - DPMeterView (= 0.0.1)
+  - DPMeterView (= 1.0.1)
   - NSDate+TimeAgo
-  - PNChart (~> 0.3.1)
+  - PNChart (~> 0.5)
   - PulsingHalo
-  - RMStepsController (~> 1.0.0)
-  - Shimmer
+  - RMStepsController (~> 1.0.1)
 
 SPEC CHECKSUMS:
   AHKActionSheet: bc7f01e1f096a95113d311099c1b896eec60e6d6
   Appirater: a5e00fb01d47a9a6acf4b2f22323b4ccf4f23fbb
   CDZQRScanningViewController: 69cb48a4d02c483a8ee43da15b8fd23fc4e853f3
+  CrittercismSDK: d32f9f730158e3e646c445b752d7851710a1fed2
   DateTools: 1765514cd526b2c2ab491b7747df67e0a82e97c1
-  DPMeterView: 4a6a77dd879406f98d06dea2c4c0384b747e6867
+  DPMeterView: f9c1b961024be953c877789bdec891656e654b26
   NSDate+TimeAgo: f3533e0198fab05b716368b19f8c2185d53d6f3b
-  PNChart: c77c6880b03851f01d7b5523648e0b93cfe51978
+  PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
   PulsingHalo: 4f5fbc25f9efb9f949e4ddad05ca885a11667aa0
-  RMStepsController: 4541ceeeb90a5b7369c6cc2d7ad732d6d0838017
-  Shimmer: 35aa2a57b8fbc17f9e16706021665966fd93dbd1
+  RMStepsController: 8ff91f169d884fdd834ad37007f553c7bed333eb
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
 
 COCOAPODS: 0.33.1

@@ -23,7 +23,7 @@ This is an iOS control for guiding users through a process step-by-step
 ###CocoaPods
 ```ruby
 platform :ios, '7.0'
-pod "RMStepsController", "~> 1.0.0"
+pod "RMStepsController", "~> 1.0.1"
 ```
 
 ##Usage
@@ -72,6 +72,9 @@ pod "RMStepsController", "~> 1.0.0"
 	
 4. Open `YourStepsController` by presenting it modally or pushing it in a navigation controller.
 
+## Documentation
+There is an additional documentation available provided by the CocoaPods team. Take a look at [cocoadocs.org](http://cocoadocs.org/docsets/RMStepsController/).
+
 ## Requirements
 Works with:
 
@@ -80,6 +83,11 @@ Works with:
 * ARC (You can turn it on and off on a per file basis)
 
 May also work with previous Xcode and iOS SDK versions. But it will at least need a system capable of Autolayout (and I think it will look awful on iOS 6 ;)...)
+
+## Apps using this control
+Using this control in your app or know anyone who does?
+
+Feel free to add the app to this list: [Apps using RMStepsController](https://github.com/CooperRS/RMStepsController/wiki/Apps-using-RMStepsController)
 
 ## Credits
 Resources:

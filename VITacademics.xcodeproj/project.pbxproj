@@ -92,7 +92,6 @@
 		359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359EDB99185DBA1600D14248 /* FriendsViewController.m */; };
 		35A32CB618A4B3DF00898607 /* captchaError.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A32CB518A4B3DF00898607 /* captchaError.png */; };
 		35A51AB0192C003A00968389 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A51AAF192C003A00968389 /* PurchaseViewController.m */; };
-		35A6547618BA89C500095B72 /* libCrittercism_v4_3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547518BA89C500095B72 /* libCrittercism_v4_3_0.a */; };
 		35A6547A18BA8A7800095B72 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */; };
 		35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
 		35A6A2C118C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
@@ -254,10 +253,6 @@
 		35A32CB518A4B3DF00898607 /* captchaError.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captchaError.png; sourceTree = "<group>"; };
 		35A51AAE192C003A00968389 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		35A51AAF192C003A00968389 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
-		35A6547218BA89C500095B72 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
-		35A6547318BA89C500095B72 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
-		35A6547418BA89C500095B72 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
-		35A6547518BA89C500095B72 /* libCrittercism_v4_3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_0.a; sourceTree = "<group>"; };
 		35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		35A6A2BE18C4A956004BC6C5 /* RootForPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootForPageViewController.h; sourceTree = "<group>"; };
 		35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootForPageViewController.m; sourceTree = "<group>"; };
@@ -330,7 +325,6 @@
 			files = (
 				355364C318F4436F001ABBAA /* EventKit.framework in Frameworks */,
 				355364C418F4436F001ABBAA /* EventKitUI.framework in Frameworks */,
-				35A6547618BA89C500095B72 /* libCrittercism_v4_3_0.a in Frameworks */,
 				359D2CAE18AD0168007565C1 /* MessageUI.framework in Frameworks */,
 				3526826118ACAAD80082D518 /* AdSupport.framework in Frameworks */,
 				3526825F18ACAACE0082D518 /* CoreData.framework in Frameworks */,
@@ -479,7 +473,6 @@
 				35167C9818DE020500B81229 /* 83-calendar.png */,
 				35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */,
 				35A6547818BA89DA00095B72 /* Icons LI */,
-				35A6547718BA89CE00095B72 /* Crittercism */,
 				3518D19A1854633100EFC1AF /* Fonts */,
 				3518D15C1854583000EFC1AF /* VITacademics-Info.plist */,
 				3518D15D1854583000EFC1AF /* InfoPlist.strings */,
@@ -538,17 +531,6 @@
 				3526825C18ACAABB0082D518 /* libGoogleAnalyticsServices.a */,
 			);
 			name = Analytics;
-			sourceTree = "<group>";
-		};
-		35A6547718BA89CE00095B72 /* Crittercism */ = {
-			isa = PBXGroup;
-			children = (
-				35A6547218BA89C500095B72 /* CRFilter.h */,
-				35A6547318BA89C500095B72 /* Crittercism.h */,
-				35A6547418BA89C500095B72 /* CrittercismDelegate.h */,
-				35A6547518BA89C500095B72 /* libCrittercism_v4_3_0.a */,
-			);
-			name = Crittercism;
 			sourceTree = "<group>";
 		};
 		35A6547818BA89DA00095B72 /* Icons LI */ = {

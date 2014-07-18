@@ -1,5 +1,5 @@
 #include "Pods-PulsingHalo.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/PulsingHalo" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AHKActionSheet" "${PODS_ROOT}/Headers/Appirater" "${PODS_ROOT}/Headers/CDZQRScanningViewController" "${PODS_ROOT}/Headers/DPMeterView" "${PODS_ROOT}/Headers/DateTools" "${PODS_ROOT}/Headers/NSDate+TimeAgo" "${PODS_ROOT}/Headers/PNChart" "${PODS_ROOT}/Headers/PulsingHalo" "${PODS_ROOT}/Headers/RMStepsController" "${PODS_ROOT}/Headers/Shimmer" "${PODS_ROOT}/Headers/UICountingLabel"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/PulsingHalo" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AHKActionSheet" "${PODS_ROOT}/Headers/Appirater" "${PODS_ROOT}/Headers/CDZQRScanningViewController" "${PODS_ROOT}/Headers/CrittercismSDK" "${PODS_ROOT}/Headers/DPMeterView" "${PODS_ROOT}/Headers/DateTools" "${PODS_ROOT}/Headers/NSDate+TimeAgo" "${PODS_ROOT}/Headers/PNChart" "${PODS_ROOT}/Headers/PulsingHalo" "${PODS_ROOT}/Headers/RMStepsController" "${PODS_ROOT}/Headers/UICountingLabel"
 OTHER_LDFLAGS = -ObjC ${PODS_PULSINGHALO_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}

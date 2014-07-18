@@ -39,7 +39,6 @@
 
 -(IBAction)loginWithFacebook:(id)sender{
     
-    NSArray *permissionsArray = @[@"user_about_me", @"email"];
     //[_activityIndicator startAnimating];
     [self.loadingLabel setAlpha:1];
     [self.activityIndicator setAlpha:1];

@@ -63,7 +63,6 @@
                 mailCont.mailComposeDelegate = self;
                 [mailCont setToRecipients:[NSArray arrayWithObject:@"sids.1992@gmail.com"]];
                 [mailCont setSubject:@"VITacademics iOS Bug Report"];
-                [mailCont setMessageBody:[@"Please report your problem here" stringByAppendingString:@"."] isHTML:NO];
                 [self presentViewController:mailCont animated:YES completion:nil];
             }
         }

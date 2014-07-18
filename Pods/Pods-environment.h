@@ -24,9 +24,15 @@
 #define COCOAPODS_VERSION_MINOR_CDZQRScanningViewController 0
 #define COCOAPODS_VERSION_PATCH_CDZQRScanningViewController 7
 
+// CrittercismSDK
+#define COCOAPODS_POD_AVAILABLE_CrittercismSDK
+#define COCOAPODS_VERSION_MAJOR_CrittercismSDK 4
+#define COCOAPODS_VERSION_MINOR_CrittercismSDK 3
+#define COCOAPODS_VERSION_PATCH_CrittercismSDK 4
+
 // DPMeterView
 #define COCOAPODS_POD_AVAILABLE_DPMeterView
-#define COCOAPODS_VERSION_MAJOR_DPMeterView 0
+#define COCOAPODS_VERSION_MAJOR_DPMeterView 1
 #define COCOAPODS_VERSION_MINOR_DPMeterView 0
 #define COCOAPODS_VERSION_PATCH_DPMeterView 1
 
@@ -45,8 +51,8 @@
 // PNChart
 #define COCOAPODS_POD_AVAILABLE_PNChart
 #define COCOAPODS_VERSION_MAJOR_PNChart 0
-#define COCOAPODS_VERSION_MINOR_PNChart 3
-#define COCOAPODS_VERSION_PATCH_PNChart 3
+#define COCOAPODS_VERSION_MINOR_PNChart 5
+#define COCOAPODS_VERSION_PATCH_PNChart 0
 
 // PulsingHalo
 #define COCOAPODS_POD_AVAILABLE_PulsingHalo
@@ -58,13 +64,7 @@
 #define COCOAPODS_POD_AVAILABLE_RMStepsController
 #define COCOAPODS_VERSION_MAJOR_RMStepsController 1
 #define COCOAPODS_VERSION_MINOR_RMStepsController 0
-#define COCOAPODS_VERSION_PATCH_RMStepsController 0
-
-// Shimmer
-#define COCOAPODS_POD_AVAILABLE_Shimmer
-#define COCOAPODS_VERSION_MAJOR_Shimmer 1
-#define COCOAPODS_VERSION_MINOR_Shimmer 0
-#define COCOAPODS_VERSION_PATCH_Shimmer 1
+#define COCOAPODS_VERSION_PATCH_RMStepsController 1
 
 // UICountingLabel
 #define COCOAPODS_POD_AVAILABLE_UICountingLabel

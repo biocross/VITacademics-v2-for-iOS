@@ -61,14 +61,15 @@
  - [FIXED] Fix Misalignment in DetailsViewController
  - [DEFERRED] In-App Purchase
  - [FIXED] AutoRefresh Friends view
+ - [FIXED] Clear CoreData on "Reset VITacademics"
 
  
  [CRITICAL]
- - Clear CoreData on "Reset VITacademics"
+ 
  
  [IMPORTANT]
  - When runs for the first time from old version, timetable is empty.
- - Share URL
+ - Crash if marks not uploaded
 
  
  [LOW PRIORITY]
