@@ -9,6 +9,7 @@
 #import "SettingsTabViewController.h"
 #import "SettingsViewController.h"
 #import "AppDelegate.h"
+#import "CampusMapViewController.h"
 
 @interface SettingsTabViewController ()
 
@@ -50,12 +51,20 @@
     
     if(indexPath.section == 0){
         
+        CampusMapViewController *mapController = [self.storyboard instantiateViewControllerWithIdentifier:@"campusMapViewController"];
+        [self.navigationController pushViewController:mapController animated:YES];
+        
+        
+    }
+    
+    if(indexPath.section == 1){
+        
         UIAlertView *betaAcess = [[UIAlertView alloc] initWithTitle:@"Reset" message:@"This will reset VITacademics to the way it was when you installed it.\n\n For now, this is the only way to change credentials in the app." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Reset", nil];
         [betaAcess show];
         
     }
     
-    if(indexPath.section == 1){
+    if(indexPath.section == 2){
         
         if(indexPath.row == 0){
             if([MFMailComposeViewController canSendMail]) {
@@ -78,7 +87,7 @@
         }
     }
 #warning Add Automatic detection of fb and hence enable or disable.
-    if(indexPath.section == 2){
+    if(indexPath.section == 3){
         [PFFacebookUtils unlinkUserInBackground:[PFUser currentUser] block:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"The user is no longer associated with their Facebook account.");

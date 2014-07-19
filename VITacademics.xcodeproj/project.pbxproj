@@ -41,7 +41,6 @@
 		3518D1AD1854633B00EFC1AF /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1A31854633B00EFC1AF /* MuseoSans-700Italic.otf */; };
 		3518D1AE1854633B00EFC1AF /* MuseoSans-900Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3518D1A41854633B00EFC1AF /* MuseoSans-900Italic.otf */; };
 		3518D1B41854CF7600EFC1AF /* StepsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3518D1B31854CF7600EFC1AF /* StepsViewController.m */; };
-		3518D1B61854F7F800EFC1AF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1B51854F7F800EFC1AF /* Parse.framework */; };
 		3518D1B81854F82200EFC1AF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1B71854F82200EFC1AF /* AudioToolbox.framework */; };
 		3518D1BA1854F82800EFC1AF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1B91854F82800EFC1AF /* CFNetwork.framework */; };
 		3518D1BC1854F83400EFC1AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3518D1BB1854F83400EFC1AF /* CoreLocation.framework */; };
@@ -95,6 +94,7 @@
 		35A6547A18BA8A7800095B72 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */; };
 		35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
 		35A6A2C118C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
+		35A6C8C61979B26B00AF4FE1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6C8C51979B26B00AF4FE1 /* Parse.framework */; };
 		35A751EF185B90AF009FC74D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751EE185B90AF009FC74D /* TodayViewController.m */; };
 		35A751F2185B91E6009FC74D /* TimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F1185B91E6009FC74D /* TimeTable.m */; };
 		35A751F5185B9608009FC74D /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A751F4185B9608009FC74D /* TabViewController.m */; };
@@ -102,6 +102,8 @@
 		35BC0D9C1902FC76007CE6E4 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC0D9B1902FC76007CE6E4 /* Friend.m */; };
 		35BC0D9F1902FF40007CE6E4 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC0D9E1902FF40007CE6E4 /* AddFriendViewController.m */; };
 		35BC32DD189D950400B2999D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BC32DC189D950400B2999D /* ShareViewController.m */; };
+		35C1FFF0197A73AA002699DE /* vit-university-map-no-numbers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35C1FFEF197A73AA002699DE /* vit-university-map-no-numbers.jpg */; };
+		35C1FFF3197A742A002699DE /* CampusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C1FFF2197A742A002699DE /* CampusMapViewController.m */; };
 		35C9DF2F18DEE39D000E1260 /* Subject+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */; };
 		35C9DF3218DEE672000E1260 /* Attendance+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF3118DEE672000E1260 /* Attendance+Operations.m */; };
 		35C9DF3518DEED1D000E1260 /* Marks+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C9DF3418DEED1D000E1260 /* Marks+Operations.m */; };
@@ -182,7 +184,6 @@
 		3518D1A41854633B00EFC1AF /* MuseoSans-900Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900Italic.otf"; sourceTree = "<group>"; };
 		3518D1B21854CF7600EFC1AF /* StepsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepsViewController.h; sourceTree = "<group>"; };
 		3518D1B31854CF7600EFC1AF /* StepsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsViewController.m; sourceTree = "<group>"; };
-		3518D1B51854F7F800EFC1AF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		3518D1B71854F82200EFC1AF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3518D1B91854F82800EFC1AF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3518D1BB1854F83400EFC1AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -256,6 +257,7 @@
 		35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		35A6A2BE18C4A956004BC6C5 /* RootForPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootForPageViewController.h; sourceTree = "<group>"; };
 		35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootForPageViewController.m; sourceTree = "<group>"; };
+		35A6C8C51979B26B00AF4FE1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		35A751ED185B90AF009FC74D /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		35A751EE185B90AF009FC74D /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		35A751F0185B91E6009FC74D /* TimeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTable.h; sourceTree = "<group>"; };
@@ -270,6 +272,9 @@
 		35BC0D9E1902FF40007CE6E4 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		35BC32DB189D950400B2999D /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		35BC32DC189D950400B2999D /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		35C1FFEF197A73AA002699DE /* vit-university-map-no-numbers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "vit-university-map-no-numbers.jpg"; sourceTree = "<group>"; };
+		35C1FFF1197A742A002699DE /* CampusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampusMapViewController.h; sourceTree = "<group>"; };
+		35C1FFF2197A742A002699DE /* CampusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampusMapViewController.m; sourceTree = "<group>"; };
 		35C9DF2D18DEE39D000E1260 /* Subject+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subject+Operations.h"; sourceTree = "<group>"; };
 		35C9DF2E18DEE39D000E1260 /* Subject+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subject+Operations.m"; sourceTree = "<group>"; };
 		35C9DF3018DEE672000E1260 /* Attendance+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Attendance+Operations.h"; sourceTree = "<group>"; };
@@ -329,6 +334,7 @@
 				3526826118ACAAD80082D518 /* AdSupport.framework in Frameworks */,
 				3526825F18ACAACE0082D518 /* CoreData.framework in Frameworks */,
 				3526824D18ACA76D0082D518 /* libz.dylib in Frameworks */,
+				35A6C8C61979B26B00AF4FE1 /* Parse.framework in Frameworks */,
 				3526824B18ACA7660082D518 /* libsqlite3.0.dylib in Frameworks */,
 				3518D1591854583000EFC1AF /* UIKit.framework in Frameworks */,
 				3518D1551854583000EFC1AF /* Foundation.framework in Frameworks */,
@@ -344,7 +350,6 @@
 				3518D1571854583000EFC1AF /* CoreGraphics.framework in Frameworks */,
 				3518D1BA1854F82800EFC1AF /* CFNetwork.framework in Frameworks */,
 				3518D1B81854F82200EFC1AF /* AudioToolbox.framework in Frameworks */,
-				3518D1B61854F7F800EFC1AF /* Parse.framework in Frameworks */,
 				350CD8AF19238B04005D10E5 /* FacebookSDK.framework in Frameworks */,
 				3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */,
 				3526825D18ACAABB0082D518 /* libGoogleAnalyticsServices.a in Frameworks */,
@@ -369,6 +374,8 @@
 			isa = PBXGroup;
 			children = (
 				3518D1661854583000EFC1AF /* Main_iPhone.storyboard */,
+				35C1FFF1197A742A002699DE /* CampusMapViewController.h */,
+				35C1FFF2197A742A002699DE /* CampusMapViewController.m */,
 				3518D1691854583000EFC1AF /* Main_iPad.storyboard */,
 				351B91E21904655A005170E0 /* FriendsTableViewCell.h */,
 				351B91E31904655A005170E0 /* FriendsTableViewCell.m */,
@@ -415,6 +422,7 @@
 		3518D1531854583000EFC1AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35A6C8C51979B26B00AF4FE1 /* Parse.framework */,
 				355364C118F44346001ABBAA /* EventKitUI.framework */,
 				355364BF18F4433C001ABBAA /* EventKit.framework */,
 				3584E3EF18CDE3530004CF20 /* Pigeon.bundle */,
@@ -438,7 +446,6 @@
 				3518D1BB1854F83400EFC1AF /* CoreLocation.framework */,
 				3518D1B91854F82800EFC1AF /* CFNetwork.framework */,
 				3518D1B71854F82200EFC1AF /* AudioToolbox.framework */,
-				3518D1B51854F7F800EFC1AF /* Parse.framework */,
 				3518D1541854583000EFC1AF /* Foundation.framework */,
 				3518D1561854583000EFC1AF /* CoreGraphics.framework */,
 				3518D1581854583000EFC1AF /* UIKit.framework */,
@@ -468,6 +475,7 @@
 		3518D15B1854583000EFC1AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35C1FFEF197A73AA002699DE /* vit-university-map-no-numbers.jpg */,
 				35DE51EA190BBDA3002199B7 /* QR */,
 				35167C9618DE014800B81229 /* 13-target.png */,
 				35167C9818DE020500B81229 /* 83-calendar.png */,
@@ -820,6 +828,7 @@
 				35128E81186844E500DBC06D /* NoClassRightNow.xib in Resources */,
 				35961C6518A14E71009F09C8 /* 120.png in Resources */,
 				3518D1AE1854633B00EFC1AF /* MuseoSans-900Italic.otf in Resources */,
+				35C1FFF0197A73AA002699DE /* vit-university-map-no-numbers.jpg in Resources */,
 				3518D1A51854633B00EFC1AF /* MuseoSans_500_Italic.otf in Resources */,
 				3518D1701854583000EFC1AF /* Images.xcassets in Resources */,
 				351B91E61904655A005170E0 /* FriendsTableViewCell.xib in Resources */,
@@ -907,6 +916,7 @@
 				3584E3F318CDE3530004CF20 /* Pigeon.m in Sources */,
 				35157EB918C6F78500C51FA3 /* MarksViewController.m in Sources */,
 				35C9DF2F18DEE39D000E1260 /* Subject+Operations.m in Sources */,
+				35C1FFF3197A742A002699DE /* CampusMapViewController.m in Sources */,
 				35DE5203190BBDA3002199B7 /* UIImage+MDQRCode.m in Sources */,
 				35D20BE81864FF46001139C9 /* UpcomingClassCell.m in Sources */,
 				35DE5201190BBDA3002199B7 /* rscode.c in Sources */,
