@@ -101,7 +101,7 @@
     
     if([preferences objectForKey:@"registrationNumber"]){
         [self initData];
-        [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
     }
     
     
@@ -267,6 +267,7 @@
     if(indexPath.section == 0){
         
         @try {
+            [self initData];
             currentClass = [[ofToday getCurrentClass] isKindOfClass:[Subject class]] ? [ofToday getCurrentClass] : 0;
         }
         @catch (NSException *exception) {

@@ -257,7 +257,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="More" footerTitle="The official campus map of VIT, Vellore." id="tJH-M6-Gim">
+                            <tableViewSection headerTitle="Map" footerTitle="The official campus map of VIT, Vellore." id="tJH-M6-Gim">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8FW-NB-ENj">
                                         <rect key="frame" x="0.0" y="119" width="320" height="44"/>
@@ -547,7 +547,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="snM-2f-6Sj">
-                                <rect key="frame" x="135" y="104" width="50" height="50"/>
+                                <rect key="frame" x="135" y="157" width="50" height="50"/>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HJC-fd-Mg7">
                                 <rect key="frame" x="98" y="390" width="20" height="20"/>
@@ -1139,11 +1139,13 @@
             </objects>
             <point key="canvasLocation" x="1182" y="-572"/>
         </scene>
-        <!--Navigation Controller - Settings-->
+        <!--Navigation Controller - More-->
         <scene sceneID="04h-fr-irf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XNT-ys-zvR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="h3j-R0-ivS"/>
+                    <tabBarItem key="tabBarItem" title="More" image="full__0000s_0047_more.png" id="h3j-R0-ivS">
+                        <inset key="imageInsets" minX="15" minY="4" maxX="15" maxY="2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hnq-sC-z1c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1566,8 +1568,8 @@
         <image name="Layers" width="27" height="22"/>
         <image name="LogInFB" width="222" height="30"/>
         <image name="Mobile_Signal" width="26" height="23"/>
+        <image name="full__0000s_0047_more.png" width="60" height="12"/>
         <image name="loadingImage.png" width="130" height="130"/>
-        <image name="settings" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

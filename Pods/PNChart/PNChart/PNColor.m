@@ -10,10 +10,19 @@
 
 @implementation PNColor
 
-- (UIImage *)imageFromColor:(UIColor *)color
+-(id)init{
+    if (self = [super init]) {
+
+
+    }
+    return self;
+}
+
+
+
+-(UIImage *)imageFromColor:(UIColor*)color
 {
     CGRect rect = CGRectMake(0, 0, 1, 1);
-
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context,
@@ -24,6 +33,8 @@
     UIGraphicsEndImageContext();
     return img;
 }
+
+
 
 
 @end

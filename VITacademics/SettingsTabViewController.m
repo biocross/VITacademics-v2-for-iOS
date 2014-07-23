@@ -10,6 +10,7 @@
 #import "SettingsViewController.h"
 #import "AppDelegate.h"
 #import "CampusMapViewController.h"
+#import "AHKActionSheet.h"
 
 @interface SettingsTabViewController ()
 
@@ -59,8 +60,38 @@
     
     if(indexPath.section == 1){
         
-        UIAlertView *betaAcess = [[UIAlertView alloc] initWithTitle:@"Reset" message:@"This will reset VITacademics to the way it was when you installed it.\n\n For now, this is the only way to change credentials in the app." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Reset", nil];
-        [betaAcess show];
+        AHKActionSheet *actionSheet = [[AHKActionSheet alloc] initWithTitle:nil];
+        
+        actionSheet.blurTintColor = [UIColor colorWithWhite:0.0f alpha:0.75f];
+        actionSheet.blurRadius = 8.0f;
+        actionSheet.buttonHeight = 50.0f;
+        actionSheet.cancelButtonHeight = 50.0f;
+        actionSheet.cancelButtonShadowColor = [UIColor colorWithWhite:0.0f alpha:0.1f];
+        actionSheet.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.3f];
+        actionSheet.selectedBackgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];\
+        UIFont *defaultFont = [UIFont fontWithName:@"Avenir" size:17.0f];
+        actionSheet.destructiveButtonTextAttributes = @{ NSFontAttributeName : defaultFont,
+                                                         NSForegroundColorAttributeName : [UIColor redColor] };
+        
+        
+        [actionSheet addButtonWithTitle:@"Reset VITacademics" type:AHKActionSheetButtonTypeDestructive handler:^(AHKActionSheet *as) {
+            [self resetApp];
+        }];
+        
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 300, 150)];
+        UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 150)];
+        label1.text = @"This will reset VITacademics to the way it was when you installed it.\n\nFor now, this is the only way to change credentials in the app.";
+        label1.minimumScaleFactor = 0.2;
+        label1.textColor = [UIColor whiteColor];
+        label1.numberOfLines = 5;
+        label1.font = [UIFont fontWithName:@"Avenir" size:17.0f];
+        label1.backgroundColor = [UIColor clearColor];
+        [headerView addSubview:label1];
+        
+        actionSheet.headerView = headerView;
+        
+        [actionSheet show];
+        
         
     }
     
@@ -88,18 +119,58 @@
     }
 #warning Add Automatic detection of fb and hence enable or disable.
     if(indexPath.section == 3){
-        [PFFacebookUtils unlinkUserInBackground:[PFUser currentUser] block:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"The user is no longer associated with their Facebook account.");
-            }
-        }];
-        
-        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-        [preferences removeObjectForKey:@"facebookID"];
-        [preferences removeObjectForKey:@"facebookName"];
         
         
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         
+        if([prefs objectForKey:@"facebookID"]){
+            AHKActionSheet *actionSheet = [[AHKActionSheet alloc] initWithTitle:nil];
+            
+            actionSheet.blurTintColor = [UIColor colorWithWhite:0.0f alpha:0.75f];
+            actionSheet.blurRadius = 8.0f;
+            actionSheet.buttonHeight = 50.0f;
+            actionSheet.cancelButtonHeight = 50.0f;
+            actionSheet.cancelButtonShadowColor = [UIColor colorWithWhite:0.0f alpha:0.1f];
+            actionSheet.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.3f];
+            actionSheet.selectedBackgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];\
+            UIFont *defaultFont = [UIFont fontWithName:@"Avenir" size:17.0f];
+            actionSheet.destructiveButtonTextAttributes = @{ NSFontAttributeName : defaultFont,
+                                                             NSForegroundColorAttributeName : [UIColor redColor] };
+            
+            
+            [actionSheet addButtonWithTitle:@"Disconnect Facebook" type:AHKActionSheetButtonTypeDestructive handler:^(AHKActionSheet *as) {
+                
+                [PFFacebookUtils unlinkUserInBackground:[PFUser currentUser] block:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"The user is no longer associated with their Facebook account.");
+                    }
+                }];
+                
+                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                [preferences removeObjectForKey:@"facebookID"];
+                [preferences removeObjectForKey:@"facebookName"];
+                
+            }];
+            
+            UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 300, 150)];
+            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 150)];
+            label1.text = @"Disconnecting facebook disables the Friends Feature.";
+            label1.minimumScaleFactor = 0.2;
+            label1.textColor = [UIColor whiteColor];
+            label1.numberOfLines = 5;
+            label1.font = [UIFont fontWithName:@"Avenir" size:17.0f];
+            label1.backgroundColor = [UIColor clearColor];
+            [headerView addSubview:label1];
+            
+            actionSheet.headerView = headerView;
+            
+            [actionSheet show];
+        }
+        else
+        {
+            UIAlertView *nope = [[UIAlertView alloc] initWithTitle:@"Facebook" message:@"Looks like you haven't activated the friends feature yet. There's nothing to disconnect!" delegate:self cancelButtonTitle:@"Oh, alright." otherButtonTitles:nil, nil];
+            [nope show];
+        }
         
     }
     
@@ -114,38 +185,24 @@
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     if([title isEqualToString:@"Reset"]){
-        NSLog(@"Resetting App.");
-        NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
-        [new removeObjectForKey:[new stringForKey:@"registrationNumber"]];
-        [new removeObjectForKey:@"registrationNumber"];
-        NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [new objectForKey:@"registrationNumber"]];
-        [new removeObjectForKey:ttKey];
-        [new removeObjectForKey:@"dateOfBirth"];
         
-        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate] ;
-        [app clearCoreData];
-        /*
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Subject" inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        
-        NSError *error;
-        NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
-        
-        
-        for (NSManagedObject *managedObject in items) {
-            [context deleteObject:managedObject];
-            NSLog(@"%@ object deleted",context);
-        }
-        if (![context save:&error]) {
-            NSLog(@"Error deleting %@ - error:%@",context,error);
-        }*/
-        
-        
-        
-        [self.tabBarController viewDidLoad];
     }
     
+}
+
+- (void) resetApp{
+    NSLog(@"Resetting App.");
+    NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
+    [new removeObjectForKey:[new stringForKey:@"registrationNumber"]];
+    [new removeObjectForKey:@"registrationNumber"];
+    NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [new objectForKey:@"registrationNumber"]];
+    [new removeObjectForKey:ttKey];
+    [new removeObjectForKey:@"dateOfBirth"];
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate] ;
+    [app clearCoreData];
+    
+    [self.tabBarController viewDidLoad];
 }
 
 /*
