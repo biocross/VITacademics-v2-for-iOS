@@ -117,7 +117,6 @@
             [self presentViewController:activityVC animated:YES completion:nil];
         }
     }
-#warning Add Automatic detection of fb and hence enable or disable.
     if(indexPath.section == 3){
         
         

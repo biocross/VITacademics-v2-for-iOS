@@ -62,19 +62,22 @@
  - [DEFERRED] In-App Purchase
  - [FIXED] AutoRefresh Friends view
  - [FIXED] Clear CoreData on "Reset VITacademics"
+ - [FIXED] Crash if marks not uploaded
+ - [FIXED] Friends should be disabled on disconnection
+ - [SCREW IT]Fix Alignment in Steps INIT
+ - [FIXED _ KINDA] When runs for the first time from old version, timetable is empty.
 
  
  [CRITICAL]
  
  
  [IMPORTANT]
- - When runs for the first time from old version, timetable is empty.
- - Crash if marks not uploaded
- - Friends should be disabled on disconnection
-
+- update libraries, analytics
+- disable cancel button in setup
+- check warnings and fix.
  
  [LOW PRIORITY]
- - Fix Alignment in Steps INIT
+
 
  
  */
@@ -103,6 +106,12 @@
     if([preferences objectForKey:@"registrationNumber"]){
         [self initData];
         [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(refreshTable) userInfo:nil repeats:YES];
+    }
+    
+    if(![preferences objectForKey:@"version2.2"]){
+        [preferences setObject:@"done" forKey:@"version2.2"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Don't Panic!" message:@"If you don't see your timetable, don't panic! Just restart the app (after quitting completely from multitasking) to make sure everything works as expected.\n\nEnjoy the new VITacademics." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
     }
     
     

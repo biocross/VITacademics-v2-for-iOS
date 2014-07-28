@@ -127,7 +127,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Status: %d", shouldLoadAttendance);
-#warning CHange this - looks okay now
             
             
             if(!shouldLoadAttendance){
