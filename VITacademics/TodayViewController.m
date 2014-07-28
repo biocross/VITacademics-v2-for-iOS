@@ -70,6 +70,7 @@
  [IMPORTANT]
  - When runs for the first time from old version, timetable is empty.
  - Crash if marks not uploaded
+ - Friends should be disabled on disconnection
 
  
  [LOW PRIORITY]

@@ -43,8 +43,16 @@
      name:@"reloadFriends"
      object:nil];
     
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshControlAction:) forControlEvents:UIControlEventValueChanged];
+    [self setRefreshControl:refreshControl];
+    
     [self initData];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self initData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,40 +61,59 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)refreshControlAction:(id)sender{
+    [self initData];
+    [(UIRefreshControl *)sender endRefreshing];
+}
+
+
 -(void)initData{
     self.friends = [[NSMutableArray alloc] init];
     NSArray *friends = [[DataManager sharedManager] getFriends];
     [self.friends setArray:friends];
     [self.tableView reloadData];
+    
+
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    messageLabel.textColor = [UIColor blackColor];
+    messageLabel.numberOfLines = 0;
+    UIFont *newFont = [UIFont fontWithName:@"MuseoSans-300" size:15];
+    [messageLabel setFont:newFont];
+    messageLabel.textAlignment = NSTextAlignmentCenter;
+    [messageLabel sizeToFit];
     // Return the number of sections.
+    
     if ([self.friends count]) {
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         return 1;
         
         self.tableView.backgroundView = nil;
+        messageLabel.text = @"";
         
     } else {
         
-        // Display a message when the table is empty
-        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
         
-        messageLabel.text = @"Add some friends using the + above, or share your time table with your friends!";
-        messageLabel.textColor = [UIColor blackColor];
-        messageLabel.numberOfLines = 0;
-        UIFont *newFont = [UIFont fontWithName:@"MuseoSans-300" size:14];
-        [messageLabel setFont:newFont];
-        messageLabel.textAlignment = NSTextAlignmentCenter;
-        [messageLabel sizeToFit];
+        
+        
+        if([prefs objectForKey:@"facebookID"]){
+            messageLabel.text = @"Add some friends using the + above, or share your time table with your friends!";
+        }
+        else{
+            messageLabel.text = @"The friends feature requires connection to Facebook. Tap any of the buttons above to activate the feature.";
+        }
+        
         
         self.tableView.backgroundView = messageLabel;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+     
         
     }
     
@@ -97,10 +124,7 @@
     return 69;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-        return @"You've Added";
 
-}
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
@@ -136,7 +160,7 @@
             
             
             if([friend.registrationNumber isEqualToString:selectedFriend.registrationNumber]){
-                NSLog(@"deleting freinds: %@", friend.registrationNumber);
+                NSLog(@"deleting friends: %@", friend.registrationNumber);
                 [context deleteObject:managedObject];
             }
             NSLog(@"%@ friend object deleted", context);
@@ -148,7 +172,12 @@
         NSArray *friends = [[DataManager sharedManager] getFriends];
         [self.friends setArray:friends];
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        
+        
+        [self.tableView beginUpdates];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationRight];
+        [self.tableView endUpdates];
     }
     
 }
