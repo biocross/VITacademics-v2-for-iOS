@@ -1148,11 +1148,11 @@
             </objects>
             <point key="canvasLocation" x="1182" y="-572"/>
         </scene>
-        <!--Navigation Controller - More-->
+        <!--Navigation Controller-->
         <scene sceneID="04h-fr-irf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XNT-ys-zvR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="full__0000s_0047_more.png" id="h3j-R0-ivS">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="h3j-R0-ivS">
                         <inset key="imageInsets" minX="15" minY="4" maxX="15" maxY="2"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1577,7 +1577,6 @@
         <image name="Layers" width="27" height="22"/>
         <image name="LogInFB" width="222" height="30"/>
         <image name="Mobile_Signal" width="26" height="23"/>
-        <image name="full__0000s_0047_more.png" width="60" height="12"/>
         <image name="loadingImage.png" width="130" height="130"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
