@@ -233,7 +233,7 @@
 }
 
 - (void)stepsBarDidSelectCancelButton:(RMStepsBar *)bar {
-    [self canceled];
+    //[self canceled];
 }
 
 - (void)stepsBar:(RMStepsBar *)bar shouldSelectStepAtIndex:(NSInteger)index {

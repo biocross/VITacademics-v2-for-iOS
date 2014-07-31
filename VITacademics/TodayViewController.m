@@ -66,15 +66,16 @@
  - [FIXED] Friends should be disabled on disconnection
  - [SCREW IT]Fix Alignment in Steps INIT
  - [FIXED _ KINDA] When runs for the first time from old version, timetable is empty.
-
+ - [DONE] update libraries, analytics
+ - [DONE] disable cancel button in setup
+ - [DONE] check warnings and fix.
+ 
  
  [CRITICAL]
  
  
  [IMPORTANT]
-- update libraries, analytics
-- disable cancel button in setup
-- check warnings and fix.
+
  
  [LOW PRIORITY]
 
@@ -110,7 +111,7 @@
     
     if(![preferences objectForKey:@"version2.2"]){
         [preferences setObject:@"done" forKey:@"version2.2"];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Don't Panic!" message:@"If you don't see your timetable, don't panic! Just restart the app (after quitting completely from multitasking) to make sure everything works as expected.\n\nEnjoy the new VITacademics." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Don't Worry!" message:@"If you don't see your timetable, Just restart the app (after quitting completely from multitasking) to make sure everything works as expected.\n\nEnjoy the new VITacademics." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
         [alert show];
     }
     

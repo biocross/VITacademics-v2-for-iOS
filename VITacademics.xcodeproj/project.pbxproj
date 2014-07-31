@@ -56,7 +56,6 @@
 		35204C5918586CC20005319B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35204C5818586CC20005319B /* SettingsViewController.m */; };
 		3526824B18ACA7660082D518 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3526824A18ACA7660082D518 /* libsqlite3.0.dylib */; };
 		3526824D18ACA76D0082D518 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3526824C18ACA76D0082D518 /* libz.dylib */; };
-		3526825D18ACAABB0082D518 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3526825C18ACAABB0082D518 /* libGoogleAnalyticsServices.a */; };
 		3526825F18ACAACE0082D518 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3526825E18ACAACE0082D518 /* CoreData.framework */; };
 		3526826118ACAAD80082D518 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3526826018ACAAD80082D518 /* AdSupport.framework */; };
 		35470D6018ACA6EC004546DB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35470D5F18ACA6EC004546DB /* CoreText.framework */; };
@@ -72,6 +71,7 @@
 		355F962C188D1BBB00BB0945 /* iPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962A188D1BBB00BB0945 /* iPhoneTableViewCell.m */; };
 		355F962D188D1BBB00BB0945 /* iPhoneCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */; };
 		355F9630188D1E8700BB0945 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355F962F188D1E8700BB0945 /* AttendanceViewController.m */; };
+		3565457F198954E50028D535 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565457E198954E50028D535 /* libGoogleAnalyticsServices.a */; };
 		356802AD1859118E00C41D69 /* VITxAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 356802AC1859118E00C41D69 /* VITxAPI.m */; };
 		357228E218F57C100057771F /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357228E118F57C100057771F /* NotificationCell.xib */; };
 		357228E518F57CA40057771F /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 357228E418F57CA40057771F /* NotificationCell.m */; };
@@ -92,7 +92,6 @@
 		359EDB9A185DBA1600D14248 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359EDB99185DBA1600D14248 /* FriendsViewController.m */; };
 		35A32CB618A4B3DF00898607 /* captchaError.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A32CB518A4B3DF00898607 /* captchaError.png */; };
 		35A51AB0192C003A00968389 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A51AAF192C003A00968389 /* PurchaseViewController.m */; };
-		35A6547A18BA8A7800095B72 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */; };
 		35A6A2C018C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
 		35A6A2C118C4A956004BC6C5 /* RootForPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */; };
 		35A6C8C61979B26B00AF4FE1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6C8C51979B26B00AF4FE1 /* Parse.framework */; };
@@ -204,13 +203,6 @@
 		35204C5818586CC20005319B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3526824A18ACA7660082D518 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		3526824C18ACA76D0082D518 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		3526825618ACAAB20082D518 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		3526825718ACAAB20082D518 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		3526825818ACAAB20082D518 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		3526825918ACAAB20082D518 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		3526825A18ACAAB20082D518 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		3526825B18ACAAB20082D518 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		3526825C18ACAABB0082D518 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		3526825E18ACAACE0082D518 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3526826018ACAAD80082D518 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		35470D5F18ACA6EC004546DB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -229,6 +221,13 @@
 		355F962B188D1BBB00BB0945 /* iPhoneCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhoneCellNib.xib; sourceTree = "<group>"; };
 		355F962E188D1E8700BB0945 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
 		355F962F188D1E8700BB0945 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
+		3565457E198954E50028D535 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		35654580198955120028D535 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		35654581198955120028D535 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		35654582198955120028D535 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		35654583198955120028D535 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		35654584198955120028D535 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		35654585198955120028D535 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		356802AB1859118E00C41D69 /* VITxAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VITxAPI.h; sourceTree = "<group>"; };
 		356802AC1859118E00C41D69 /* VITxAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VITxAPI.m; sourceTree = "<group>"; };
 		357228E118F57C100057771F /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
@@ -256,7 +255,6 @@
 		35A32CB518A4B3DF00898607 /* captchaError.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captchaError.png; sourceTree = "<group>"; };
 		35A51AAE192C003A00968389 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		35A51AAF192C003A00968389 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
-		35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		35A6A2BE18C4A956004BC6C5 /* RootForPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootForPageViewController.h; sourceTree = "<group>"; };
 		35A6A2BF18C4A956004BC6C5 /* RootForPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootForPageViewController.m; sourceTree = "<group>"; };
 		35A6C8C51979B26B00AF4FE1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -343,9 +341,9 @@
 				35470D6218ACA6F5004546DB /* CoreTelephony.framework in Frameworks */,
 				35470D6018ACA6EC004546DB /* CoreText.framework in Frameworks */,
 				3518D1C81854F85800EFC1AF /* SystemConfiguration.framework in Frameworks */,
+				3565457F198954E50028D535 /* libGoogleAnalyticsServices.a in Frameworks */,
 				3518D1C41854F85000EFC1AF /* Security.framework in Frameworks */,
 				3518D1C21854F84900EFC1AF /* QuartzCore.framework in Frameworks */,
-				35A6547A18BA8A7800095B72 /* libGoogleAnalyticsServices.a in Frameworks */,
 				3518D1C01854F84500EFC1AF /* MobileCoreServices.framework in Frameworks */,
 				3518D1BE1854F83D00EFC1AF /* libz.1.1.3.dylib in Frameworks */,
 				3518D1BC1854F83400EFC1AF /* CoreLocation.framework in Frameworks */,
@@ -354,7 +352,6 @@
 				3518D1B81854F82200EFC1AF /* AudioToolbox.framework in Frameworks */,
 				350CD8AF19238B04005D10E5 /* FacebookSDK.framework in Frameworks */,
 				3510174F18661DC7005F4101 /* StoreKit.framework in Frameworks */,
-				3526825D18ACAABB0082D518 /* libGoogleAnalyticsServices.a in Frameworks */,
 				F05DA906B6EC44E6B2253C4C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +421,7 @@
 		3518D1531854583000EFC1AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3565457E198954E50028D535 /* libGoogleAnalyticsServices.a */,
 				35A6C8C51979B26B00AF4FE1 /* Parse.framework */,
 				355364C118F44346001ABBAA /* EventKitUI.framework */,
 				355364BF18F4433C001ABBAA /* EventKit.framework */,
@@ -482,7 +480,6 @@
 				35DE51EA190BBDA3002199B7 /* QR */,
 				35167C9618DE014800B81229 /* 13-target.png */,
 				35167C9818DE020500B81229 /* 83-calendar.png */,
-				35A6547918BA8A7800095B72 /* libGoogleAnalyticsServices.a */,
 				35A6547818BA89DA00095B72 /* Icons LI */,
 				3518D19A1854633100EFC1AF /* Fonts */,
 				3518D15C1854583000EFC1AF /* VITacademics-Info.plist */,
@@ -533,13 +530,12 @@
 		3562D5F518ACFE1600C1146D /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				3526825618ACAAB20082D518 /* GAI.h */,
-				3526825718ACAAB20082D518 /* GAIDictionaryBuilder.h */,
-				3526825818ACAAB20082D518 /* GAIFields.h */,
-				3526825918ACAAB20082D518 /* GAILogger.h */,
-				3526825A18ACAAB20082D518 /* GAITrackedViewController.h */,
-				3526825B18ACAAB20082D518 /* GAITracker.h */,
-				3526825C18ACAABB0082D518 /* libGoogleAnalyticsServices.a */,
+				35654580198955120028D535 /* GAI.h */,
+				35654581198955120028D535 /* GAIDictionaryBuilder.h */,
+				35654582198955120028D535 /* GAIFields.h */,
+				35654583198955120028D535 /* GAILogger.h */,
+				35654584198955120028D535 /* GAITrackedViewController.h */,
+				35654585198955120028D535 /* GAITracker.h */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
@@ -760,6 +756,7 @@
 				ORGANIZATIONNAME = "Siddharth Gupta";
 				TargetAttributes = {
 					3518D1501854583000EFC1AF = {
+						DevelopmentTeam = GC4Z88CPZF;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -1094,9 +1091,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Siddharth/Desktop/vitacad2,
-					/Users/Siddharth/Desktop/vitacad2/CrittercismSDK,
 					"/Users/Siddharth/Desktop/VITacademics-v2-for-iOS/VITacademics",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1122,9 +1118,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Siddharth/Desktop/vitacad2,
-					/Users/Siddharth/Desktop/vitacad2/CrittercismSDK,
 					"/Users/Siddharth/Desktop/VITacademics-v2-for-iOS/VITacademics",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

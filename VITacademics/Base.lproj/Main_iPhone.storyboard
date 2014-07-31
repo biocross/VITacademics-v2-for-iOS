@@ -150,26 +150,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="IvX-01-pDE">
                                 <rect key="frame" x="125" y="111" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="8qX-U7-ajP"/>
-                                    <constraint firstAttribute="width" constant="70" id="KqV-us-fmz"/>
+                                    <constraint firstAttribute="height" constant="70" id="RNQ-0c-TRS"/>
+                                    <constraint firstAttribute="width" constant="70" id="WgL-nS-Omo"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to VITacademics for iOS. Your TimeTable, Attendance, Marks and more, all in one place. Let's get some things set up." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="46x-1F-OPe">
-                                <rect key="frame" x="20" y="186" width="280" height="199"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to VITacademics for iOS. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="46x-1F-OPe">
+                                <rect key="frame" x="20" y="228" width="280" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="TGO-CR-sqr"/>
-                                    <constraint firstAttribute="height" constant="199" id="hTS-6q-6dg"/>
+                                    <constraint firstAttribute="height" constant="35" id="85z-4m-8SQ"/>
+                                    <constraint firstAttribute="width" constant="280" id="cKJ-sw-dCn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJK-Rq-Ta0">
-                                <rect key="frame" x="0.0" y="395" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="360" width="320" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZYc-ZG-iYq"/>
-                                    <constraint firstAttribute="width" constant="320" id="bvL-YL-0yj"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mEe-U5-Xiz"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="oYu-t5-6Bd"/>
+                                    <constraint firstAttribute="height" constant="30" id="AhR-2w-NzH"/>
+                                    <constraint firstAttribute="width" constant="320" id="erN-g5-2jX"/>
                                 </constraints>
                                 <state key="normal" title="Let's Begin!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,15 +176,26 @@
                                     <action selector="letsBegin:" destination="5b4-6F-Mh2" eventType="touchUpInside" id="vSZ-RU-lx7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your TimeTable, Attendance, Marks and more, all in one place. Let's get some things set up." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="f5d-Ca-mEb">
+                                <rect key="frame" x="20" y="267" width="280" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="cS8-f2-jNd"/>
+                                    <constraint firstAttribute="width" constant="280" id="saG-Qy-TfT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="46x-1F-OPe" firstAttribute="top" secondItem="IvX-01-pDE" secondAttribute="bottom" constant="5" id="4Zk-K5-IoC"/>
-                            <constraint firstItem="UJK-Rq-Ta0" firstAttribute="top" secondItem="46x-1F-OPe" secondAttribute="bottom" constant="10" id="FnH-7Q-ICn"/>
-                            <constraint firstItem="IvX-01-pDE" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" constant="125" id="FoL-5Q-w9n"/>
-                            <constraint firstItem="46x-1F-OPe" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" constant="20" id="Hql-a5-Nop"/>
-                            <constraint firstItem="UJK-Rq-Ta0" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" id="Tqj-b4-AJk"/>
-                            <constraint firstItem="IvX-01-pDE" firstAttribute="top" secondItem="fbu-DL-tWU" secondAttribute="bottom" constant="91" id="kHt-OA-akO"/>
+                            <constraint firstItem="f5d-Ca-mEb" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" constant="20" id="DUe-CC-ABn"/>
+                            <constraint firstItem="IvX-01-pDE" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" constant="125" id="JCO-nQ-MIk"/>
+                            <constraint firstItem="46x-1F-OPe" firstAttribute="top" secondItem="IvX-01-pDE" secondAttribute="bottom" constant="47" id="d2V-XK-dht"/>
+                            <constraint firstItem="UJK-Rq-Ta0" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" id="eah-C4-yVn"/>
+                            <constraint firstItem="UJK-Rq-Ta0" firstAttribute="top" secondItem="f5d-Ca-mEb" secondAttribute="bottom" constant="23" id="tpb-pB-WPt"/>
+                            <constraint firstItem="f5d-Ca-mEb" firstAttribute="top" secondItem="46x-1F-OPe" secondAttribute="bottom" constant="4" id="u6O-dU-Zfd"/>
+                            <constraint firstItem="IvX-01-pDE" firstAttribute="top" secondItem="fbu-DL-tWU" secondAttribute="bottom" constant="91" id="wzm-qw-Ztk"/>
+                            <constraint firstItem="46x-1F-OPe" firstAttribute="leading" secondItem="pmQ-LB-Fsg" secondAttribute="leading" constant="20" id="xuj-zY-bSB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1473,7 +1482,7 @@
         <!--Navigation Controller-->
         <scene sceneID="s8b-vN-7CF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Q0-Tb-u0H" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="someNav" automaticallyAdjustsScrollViewInsets="NO" id="6Q0-Tb-u0H" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YQz-Jx-wly">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

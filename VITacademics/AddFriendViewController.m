@@ -126,8 +126,8 @@
     // configure the scanning view controller:
     scanningVC.resultBlock = ^(NSString *result) {
         NSLog(@"Scanned: %@", result);
-        [self getCredentialsFromPIN:result];
         [scanningNavVC dismissViewControllerAnimated:YES completion:nil];
+        [self getCredentialsFromPIN:result];
     };
     scanningVC.cancelBlock = ^() {
         [scanningNavVC dismissViewControllerAnimated:YES completion:nil];

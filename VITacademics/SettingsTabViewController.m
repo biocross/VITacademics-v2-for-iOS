@@ -180,14 +180,6 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"Reset"]){
-        
-    }
-    
-}
 
 - (void) resetApp{
     NSLog(@"Resetting App.");
@@ -197,6 +189,8 @@
     NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [new objectForKey:@"registrationNumber"]];
     [new removeObjectForKey:ttKey];
     [new removeObjectForKey:@"dateOfBirth"];
+    [new removeObjectForKey:@"facebookID"];
+    [new removeObjectForKey:@"facebookName"];
     
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate] ;
     [app clearCoreData];

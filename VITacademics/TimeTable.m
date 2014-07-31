@@ -124,7 +124,7 @@
         if(currentHour >= 18 && currentMinute <50){
             currentClass = self.todaysTimeTable[10];
         }
-        if(currentHour >= 19 && currentMinute <30){
+        if(currentHour >= 19 && currentMinute <30 && currentHour < 20){
             currentClass = self.todaysTimeTable[11];
         }
     }

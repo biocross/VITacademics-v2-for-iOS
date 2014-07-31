@@ -37,21 +37,20 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
     
-    /*
+    
     [Crittercism enableWithAppID:@"526e47368b2e337b2700000a" andDelegate:self andURLFilters:nil disableInstrumentation:NO];
     [Crittercism setAsyncBreadcrumbMode:YES];
-    [Crittercism leaveBreadcrumb:@"<breadcrumb>"];
+    [Crittercism leaveBreadcrumb:@"App Started!"];
     
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [GAI sharedInstance].dispatchInterval = 30;
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-38195928-4"];
-    NSLog(@"%@", [tracker debugDescription]);
+    
+    [GAI sharedInstance].dispatchInterval = 20;
+    //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-38195928-6"];
     
     
     [[Pigeon sharedInstance] enableLocalNotification];
     [[Pigeon sharedInstance] startWithAppleId:@"727796987"];
-     */
+    
     
     //Failsafe:
     /*
