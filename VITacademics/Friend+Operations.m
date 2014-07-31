@@ -31,4 +31,15 @@
         NSLog(@"Saved in Friend Operations: %@", friend.name);
     }
 }
+
++ (BOOL) checkForFriendWithRegistrationNumber:(NSString *)regNo withContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
+    request.predicate = [NSPredicate predicateWithFormat:@"registrationNumber = %@",regNo];
+    
+    NSArray *results = [context executeFetchRequest:request error:nil];
+    
+    if(results.count == 0) return NO;
+    else return YES;
+}
 @end

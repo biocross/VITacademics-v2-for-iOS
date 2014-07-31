@@ -17,5 +17,5 @@
               withDateOfBirth:(NSString *)dateOfBirth
                   WithContext:(NSManagedObjectContext *) context;
 
-
++ (BOOL) checkForFriendWithRegistrationNumber:(NSString *)regNo withContext:(NSManagedObjectContext *)context;
 @end

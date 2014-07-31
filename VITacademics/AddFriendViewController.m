@@ -94,29 +94,38 @@
 }
 
 -(void)addFriendwithRegistrationNumber:(NSString *)registrationNumber andDateOfBirth:(NSString *)dateOfBirth{
+    
+    
     VITxAPI *handler = [[VITxAPI alloc] init];
     DataManager *sharedManager = [DataManager sharedManager];
     
-    [MWKProgressIndicator updateMessage:@"Loading Friend's TT"];
-    [MWKProgressIndicator show];
-    
-    dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
-    dispatch_async(downloadQueue, ^{
-        NSString *timeTable = [handler loadTimeTableWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [MWKProgressIndicator dismiss];
-            if(timeTable){
-                [Friend insertFriendWithName:registrationNumber withTimetable:timeTable withPicture:nil withFacebookID:@"sample" withRegistrationNumber:registrationNumber withDateOfBirth:dateOfBirth WithContext:sharedManager.context];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadFriends" object:nil];
-                [MWKProgressIndicator showSuccessMessage:@"Friend Added!"];
-            }
-            else{
-                [MWKProgressIndicator showErrorMessage:@"Error adding friend"];
-            }
-        });
+    if(![Friend checkForFriendWithRegistrationNumber:registrationNumber withContext:sharedManager.context])
+    {
+        [MWKProgressIndicator updateMessage:@"Loading Friend's TT"];
+        [MWKProgressIndicator show];
         
-    });//end of GCD
-    
+        dispatch_queue_t downloadQueue = dispatch_queue_create("attendanceLoader", nil);
+        dispatch_async(downloadQueue, ^{
+            NSString *timeTable = [handler loadTimeTableWithRegistrationNumber:registrationNumber andDateOfBirth:dateOfBirth];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MWKProgressIndicator dismiss];
+                if(timeTable){
+                    [Friend insertFriendWithName:registrationNumber withTimetable:timeTable withPicture:nil withFacebookID:@"sample" withRegistrationNumber:registrationNumber withDateOfBirth:dateOfBirth WithContext:sharedManager.context];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadFriends" object:nil];
+                    [MWKProgressIndicator showSuccessMessage:@"Friend Added!"];
+                }
+                else{
+                    [MWKProgressIndicator showErrorMessage:@"Error adding friend"];
+                }
+            });
+            
+        });//end of GCD
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"You've already added this friend!" message:@"If you can't see them yet, just give the app some time to download the data." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 

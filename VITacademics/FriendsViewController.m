@@ -93,10 +93,12 @@
     if ([self.friends count]) {
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        return 1;
+        
         
         self.tableView.backgroundView = nil;
         messageLabel.text = @"";
+        
+        return 1;
         
     } else {
         
