@@ -192,6 +192,11 @@
     [new removeObjectForKey:@"facebookID"];
     [new removeObjectForKey:@"facebookName"];
     
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"App Reset" properties:@{
+                                                 }];
+    
+    
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate] ;
     [app clearCoreData];
     

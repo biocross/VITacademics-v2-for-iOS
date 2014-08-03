@@ -141,6 +141,9 @@
             else{
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Looks like our free servers are overloaded!\n\nOur quotas reset at 12.30PM, so please again at that time! Really sorry!" delegate:self cancelButtonTitle:@"Well, Okay" otherButtonTitles: nil];
                 [alert show];
+                Mixpanel *mixpanel = [Mixpanel sharedInstance];
+                [mixpanel track:@"Server Over Quota" properties:@{
+                                                             }];
                 [(UIRefreshControl *)sender endRefreshing];
             }
             
@@ -168,7 +171,9 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
         [MWKProgressIndicator showErrorMessage:@"Network Error"];
-
+        Mixpanel *mixpanel = [Mixpanel sharedInstance];
+        [mixpanel track:@"Network Error" properties:@{
+                                                     }];
         
     });
 }
@@ -433,6 +438,9 @@
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 
                 [MWKProgressIndicator showSuccessMessage:cardMessage];
+                Mixpanel *mixpanel = [Mixpanel sharedInstance];
+                [mixpanel track:@"Attendance Refreshed" properties:@{
+                                                             }];
 
             });
         }

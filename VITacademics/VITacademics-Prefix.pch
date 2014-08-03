@@ -20,4 +20,5 @@
 #import "Marks.h"
 #import "MWKProgressIndicator.h"
 #import "DateTools.h"
+#import "Mixpanel.h"
 #endif

@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "GAI.h"
 #import "Appirater.h"
 #import "Pigeon.h"
+
+#define MIXPANEL_TOKEN @"a24729f70174747da8bdd913eacf9643"
 
 @implementation AppDelegate
 
@@ -42,34 +43,19 @@
     [Crittercism setAsyncBreadcrumbMode:YES];
     [Crittercism leaveBreadcrumb:@"App Started!"];
     
-    
-    [GAI sharedInstance].dispatchInterval = 20;
-    //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-38195928-6"];
-    
-    
     [[Pigeon sharedInstance] enableLocalNotification];
     [[Pigeon sharedInstance] startWithAppleId:@"727796987"];
     
-    
-    //Failsafe:
-    /*
-    if([temp objectForKey:@"firstRun"]){
-        NSLog(@"This is not the first Run");
-    }
-    else{
-        NSLog(@"firstRun Detected: Resetting Old Data");
-        NSUserDefaults *new = [NSUserDefaults standardUserDefaults];
-        [new removeObjectForKey:[new stringForKey:@"registrationNumber"]];
-        [new removeObjectForKey:@"registrationNumber"];
-        [new removeObjectForKey:@"dateOfBirth"];
-    }*/
-    
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+
     NSUserDefaults *temp = [NSUserDefaults standardUserDefaults];
     NSString *ttKey = [NSString stringWithFormat:@"TTOf%@", [temp objectForKey:@"registrationNumber"]];
     
     if([temp objectForKey:@"registrationNumber"] && [temp objectForKey:[temp objectForKey:@"registrationNumber"]] && [temp objectForKey:@"dateOfBirth"] && [temp objectForKey:ttKey]){
         NSLog(@"All Systems OK");
+        [mixpanel identify:[temp objectForKey:@"registrationNumber"]];
+        [mixpanel track:@"App Init" properties:@{@"Version": [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] }];
         
         [PFUser logInWithUsernameInBackground:[temp objectForKey:@"registrationNumber"] password:[temp objectForKey:@"dateOfBirth"]
                                         block:^(PFUser *user, NSError *error) {

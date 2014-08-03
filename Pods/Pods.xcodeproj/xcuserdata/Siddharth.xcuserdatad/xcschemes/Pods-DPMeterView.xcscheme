@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "49EE551CA4A8421582398B66"
+               BlueprintIdentifier = "832A38C1EC1C472CA7F66472"
                BuildableName = "libPods-DPMeterView.a"
                BlueprintName = "Pods-DPMeterView"
                ReferencedContainer = "container:Pods.xcodeproj">

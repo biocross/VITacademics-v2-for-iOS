@@ -5,6 +5,7 @@ PODS:
   - CrittercismSDK (4.3.4)
   - DateTools (1.2.0)
   - DPMeterView (1.0.1)
+  - Mixpanel (2.4.1)
   - NSDate+TimeAgo (1.0.3)
   - PNChart (0.3.3):
     - UICountingLabel (~> 1.0.0)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - CrittercismSDK
   - DateTools
   - DPMeterView (= 1.0.1)
+  - Mixpanel
   - NSDate+TimeAgo
   - PNChart (~> 0.3.1)
   - PulsingHalo
@@ -31,6 +33,7 @@ SPEC CHECKSUMS:
   CrittercismSDK: d32f9f730158e3e646c445b752d7851710a1fed2
   DateTools: 1765514cd526b2c2ab491b7747df67e0a82e97c1
   DPMeterView: f9c1b961024be953c877789bdec891656e654b26
+  Mixpanel: a29ff32db93936dea24162f0dc4fecc4a8f17071
   NSDate+TimeAgo: f3533e0198fab05b716368b19f8c2185d53d6f3b
   PNChart: c77c6880b03851f01d7b5523648e0b93cfe51978
   PulsingHalo: 4f5fbc25f9efb9f949e4ddad05ca885a11667aa0

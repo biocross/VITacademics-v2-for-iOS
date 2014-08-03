@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_DateTools 2
 #define COCOAPODS_VERSION_PATCH_DateTools 0
 
+// Mixpanel
+#define COCOAPODS_POD_AVAILABLE_Mixpanel
+#define COCOAPODS_VERSION_MAJOR_Mixpanel 2
+#define COCOAPODS_VERSION_MINOR_Mixpanel 4
+#define COCOAPODS_VERSION_PATCH_Mixpanel 1
+
 // NSDate+TimeAgo
 #define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
 #define COCOAPODS_VERSION_MAJOR_NSDate_TimeAgo 1
